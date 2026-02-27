@@ -1,4 +1,4 @@
-from src.core.BaseTaxonomy import BaseTaxonomy
+from ..core.BaseTaxonomy import BaseTaxonomy
 
 class OSTaxonomy(BaseTaxonomy):
     WINDOWS = "Microsoft Windows"

@@ -1,10 +1,10 @@
 from __future__ import annotations
 
-from src.core.Cardinality import Cardinality
-from src.core.BaseRelationship import BaseRelationship
+from ....core.Cardinality import Cardinality
+from ....core.BaseRelationship import BaseRelationship
 
-from src.metamodel.infrastructure.entities.SecurityRequirement import SecurityRequirement
-from src.metamodel.infrastructure.entities.AssetSecurityRequirement import AssetSecurityRequirement
+from ..entities.SecurityRequirement import SecurityRequirement
+from ..entities.AssetSecurityRequirement import AssetSecurityRequirement
 
 class ImplementationOfRelationship(BaseRelationship):
     """

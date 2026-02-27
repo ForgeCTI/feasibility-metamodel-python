@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-from src.core.Cardinality import Cardinality
-from src.core.BaseRelationship import BaseRelationship
-from src.metamodel.organization.entities.Organization import Organization
-from src.metamodel.infrastructure.entities.Infrastructure import Infrastructure
+from ....core.Cardinality import Cardinality
+from ....core.BaseRelationship import BaseRelationship
+from ...organization.entities.Organization import Organization
+from ..entities.Infrastructure import Infrastructure
 
 class ManagesRelationship(BaseRelationship):
     def __init__(self, src: str, dst: str) -> None:

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Optional, Set, Tuple
 
-from src.core.BaseEntity import BaseEntity
+from ....core.BaseEntity import BaseEntity
 
 class Organization(BaseEntity):
     """

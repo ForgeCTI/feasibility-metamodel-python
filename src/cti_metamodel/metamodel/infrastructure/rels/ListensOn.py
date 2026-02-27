@@ -1,10 +1,10 @@
 from __future__ import annotations
 
-from src.core.Cardinality import Cardinality
-from src.core.BaseRelationship import BaseRelationship
+from ....core.Cardinality import Cardinality
+from ....core.BaseRelationship import BaseRelationship
 
-from src.metamodel.infrastructure.entities.Process import Process
-from src.metamodel.infrastructure.entities.Port import Port
+from ..entities.Process import Process
+from ..entities.Port import Port
 
 class ListensOnRelationship(BaseRelationship):
     def __init__(self, src: str, dst: str) -> None:

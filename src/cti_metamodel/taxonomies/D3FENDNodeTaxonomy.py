@@ -1,4 +1,4 @@
-from src.core.BaseTaxonomy import BaseTaxonomy
+from ..core.BaseTaxonomy import BaseTaxonomy
 
 class D3FENDNodeTaxonomy(BaseTaxonomy):
     WEB_APPLICATION_FIREWALL = "Web Application Firewall"

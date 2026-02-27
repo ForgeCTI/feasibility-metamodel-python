@@ -8,4 +8,4 @@ Python package to be used in the framework. Provides access to the metamodel's e
 
 In the file requirements.txt add:
 
-cti-metamodel @ git+https://github.com/ForgeCTI/cti-metamodel.git@<version>
+cti-metamodel @ git+https://github.com/ForgeCTI/cti-metamodel.git@[version]

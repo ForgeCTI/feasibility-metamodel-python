@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Any
 
-from src.core.BaseEntity import BaseEntity
+from ....core.BaseEntity import BaseEntity
 
 class InternationalBody(BaseEntity):
     """

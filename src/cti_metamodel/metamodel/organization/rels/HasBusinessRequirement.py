@@ -1,8 +1,9 @@
 from __future__ import annotations
 
-from src.core.Cardinality import Cardinality
-from src.core.BaseRelationship import BaseRelationship
-from src.metamodel.organization.entities import BusinessRequirement, Organization
+from ....core.Cardinality import Cardinality
+from ....core.BaseRelationship import BaseRelationship
+from ..entities.BusinessRequirement import BusinessRequirement
+from ..entities.Organization import Organization
 
 class HasBusinessRequirementRelationship(BaseRelationship):
     def __init__(self, src: str, dst: str) -> None:

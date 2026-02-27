@@ -1,4 +1,4 @@
-from src.core.BaseTaxonomy import BaseTaxonomy
+from ..core.BaseTaxonomy import BaseTaxonomy
 
 class CIATaxonomy(BaseTaxonomy):
     CONFIDENTIALITY = "Confidentiality"
