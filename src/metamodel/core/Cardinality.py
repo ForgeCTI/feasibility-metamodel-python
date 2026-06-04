@@ -5,7 +5,7 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True)
 class Cardinality:
-    """Represents a relationship cardinality such as 0..*, 1, or 1..*."""
+    """Represents a relationship cardinality such as 0..\*, 1, or 1..*."""
 
     minimum: int
     maximum: int | None
