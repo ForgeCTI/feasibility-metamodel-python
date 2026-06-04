@@ -1,0 +1,17 @@
+taxonomy:
+  id: attackTools
+  version: "example.1"
+  concepts:
+    - id: cobaltStrike
+      name: Cobalt Strike
+      category: command_and_control
+      aliases:
+        - Beacon
+      capabilities:
+        - command_and_control
+        - lateral_movement
+    - id: mimikatz
+      name: Mimikatz
+      category: credential_tool
+      capabilities:
+        - credential_access

@@ -1,0 +1,14 @@
+entities:
+  - id: org-examplebank
+    type: Organization
+    name: ExampleBank
+    criticality: critical
+  - id: sector-finance
+    type: Sector
+    name: Finance
+    taxonomy_ref: sectors:finance
+relationships:
+  - id: rel-operates-in
+    type: operatesIn
+    source: org-examplebank
+    target: sector-finance

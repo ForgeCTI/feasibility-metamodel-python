@@ -1,2 +1,7 @@
 __pycache__/
 .pytest_cache/
+case_studies/**/output/*
+!case_studies/**/output/.gitkeep
+
+examples/**/output/*
+!examples/**/output/.gitkeep

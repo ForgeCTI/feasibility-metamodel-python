@@ -1,0 +1,3 @@
+# Keep generated outputs out of version control while preserving output folders.
+**/output/*
+!**/output/.gitkeep

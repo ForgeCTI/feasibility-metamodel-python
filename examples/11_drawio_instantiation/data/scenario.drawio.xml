@@ -1,0 +1,19 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Example">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="org" value="Organization: ExampleBank" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="sector" value="Sector: Finance" vertex="1" parent="1">
+          <mxGeometry x="360" y="80" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel" value="operatesIn" edge="1" source="org" target="sector" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
