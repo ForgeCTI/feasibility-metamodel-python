@@ -1,0 +1,11 @@
+taxonomy:
+  id: mitreAttackEnterprise
+  version: "0.1"
+  source: internal-placeholder
+  concepts:
+    - id: T1059
+      name: Command and Scripting Interpreter
+      category: execution
+    - id: T1105
+      name: Ingress Tool Transfer
+      category: command_and_control

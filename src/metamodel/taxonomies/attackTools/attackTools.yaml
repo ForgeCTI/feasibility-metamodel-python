@@ -1,0 +1,17 @@
+taxonomy:
+  id: attackTools
+  version: "0.1"
+  source: internal
+  concepts:
+    - id: cobaltStrike
+      name: Cobalt Strike
+      category: command_and_control
+      aliases: [Beacon]
+      description: Commercial adversary simulation framework frequently abused by threat actors.
+      external_references:
+        - source: MITRE ATT&CK Software
+          external_id: S0154
+    - id: mimikatz
+      name: Mimikatz
+      category: credential_tool
+      description: Credential access tool commonly used to extract credentials from Windows systems.

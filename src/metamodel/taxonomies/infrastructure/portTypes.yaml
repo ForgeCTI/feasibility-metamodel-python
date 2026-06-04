@@ -1,0 +1,11 @@
+taxonomy:
+  id: portTypes
+  version: "0.1"
+  source: internal
+  concepts:
+    - id: http
+      name: HTTP
+      properties: {number: 80, protocol: tcp}
+    - id: https
+      name: HTTPS
+      properties: {number: 443, protocol: tcp}

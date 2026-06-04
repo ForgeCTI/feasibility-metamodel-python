@@ -1,0 +1,11 @@
+taxonomy:
+  id: userTypes
+  version: "0.1"
+  source: internal
+  concepts:
+    - id: employee
+      name: Employee
+    - id: administrator
+      name: Administrator
+    - id: serviceAccount
+      name: Service Account

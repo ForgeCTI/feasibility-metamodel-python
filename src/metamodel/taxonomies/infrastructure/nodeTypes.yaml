@@ -1,0 +1,11 @@
+taxonomy:
+  id: nodeTypes
+  version: "0.1"
+  source: internal
+  concepts:
+    - id: server
+      name: Server
+    - id: workstation
+      name: Workstation
+    - id: router
+      name: Router

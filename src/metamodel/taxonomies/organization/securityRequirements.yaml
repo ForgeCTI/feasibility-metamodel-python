@@ -1,0 +1,11 @@
+taxonomy:
+  id: securityRequirements
+  version: "0.1"
+  source: internal
+  concepts:
+    - id: confidentiality
+      name: Confidentiality
+    - id: integrity
+      name: Integrity
+    - id: availability
+      name: Availability

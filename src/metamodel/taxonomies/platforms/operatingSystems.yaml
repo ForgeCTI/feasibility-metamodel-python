@@ -1,0 +1,11 @@
+taxonomy:
+  id: operatingSystems
+  version: "0.1"
+  source: internal
+  concepts:
+    - id: windows
+      name: Windows
+    - id: linux
+      name: Linux
+    - id: macos
+      name: macOS

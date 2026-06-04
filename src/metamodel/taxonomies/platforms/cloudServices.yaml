@@ -1,0 +1,9 @@
+taxonomy:
+  id: cloudServices
+  version: "0.1"
+  source: internal
+  concepts:
+    - id: aws
+      name: Amazon Web Services
+    - id: azure
+      name: Microsoft Azure

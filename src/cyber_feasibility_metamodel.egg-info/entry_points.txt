@@ -1,0 +1,2 @@
+[console_scripts]
+metamodel = metamodel.cli.main:main

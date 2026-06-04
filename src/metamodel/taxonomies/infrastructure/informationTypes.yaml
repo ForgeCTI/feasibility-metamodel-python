@@ -1,0 +1,9 @@
+taxonomy:
+  id: informationTypes
+  version: "0.1"
+  source: internal
+  concepts:
+    - id: pii
+      name: Personally Identifiable Information
+    - id: credentials
+      name: Credentials

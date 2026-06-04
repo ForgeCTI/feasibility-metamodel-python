@@ -1,0 +1,9 @@
+taxonomy:
+  id: internationalBodies
+  version: "0.1"
+  source: internal
+  concepts:
+    - id: EU
+      name: European Union
+    - id: NATO
+      name: North Atlantic Treaty Organization

@@ -1,0 +1,11 @@
+taxonomy:
+  id: sectors
+  version: "0.1"
+  source: internal
+  concepts:
+    - id: finance
+      name: Finance
+    - id: healthcare
+      name: Healthcare
+    - id: energy
+      name: Energy

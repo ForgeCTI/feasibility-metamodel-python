@@ -1,0 +1,8 @@
+taxonomy:
+  id: capec
+  version: "0.1"
+  source: internal-placeholder
+  concepts:
+    - id: CAPEC-100
+      name: Overflow Buffers
+      category: attack_pattern

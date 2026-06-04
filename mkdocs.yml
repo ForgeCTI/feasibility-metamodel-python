@@ -1,0 +1,25 @@
+site_name: CTI Feasibility Metamodel
+site_description: A Python package providing a CTI Metamodel to represent organization, infrastructure, and cyber-threat entities and relationships.
+theme:
+  name: material
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Quickstart: quickstart.md
+  - Metamodel: metamodel.md
+  - Taxonomies: taxonomies.md
+  - Validation: validation.md
+  - I/O: io.md
+  - Adapters: adapters.md
+  - CLI: cli.md
+  - API:
+      - Core: api/core.md
+      - Organization: api/organization.md
+      - Infrastructure: api/infrastructure.md
+      - Cyber Threat: api/cyberThreat.md

@@ -1,0 +1,9 @@
+taxonomy:
+  id: countries
+  version: "0.1"
+  source: internal
+  concepts:
+    - id: IT
+      name: Italy
+    - id: US
+      name: United States

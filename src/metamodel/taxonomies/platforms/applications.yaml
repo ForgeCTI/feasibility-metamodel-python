@@ -1,0 +1,9 @@
+taxonomy:
+  id: applications
+  version: "0.1"
+  source: internal
+  concepts:
+    - id: exchangeServer
+      name: Microsoft Exchange Server
+    - id: activeDirectory
+      name: Active Directory

@@ -1,16 +1,44 @@
-# cti-metamodel
+# CTI Feasibility Metamodel
 
-Python package to be used in the framework. Provides access to the metamodel's entities and relationships and enforce maintainability of the codebase.
+A Python package for modelling interactions among organization, infrastructure, and cyber-threat concepts.
 
-## Package Organization
+The package follows these conventions:
 
-The package is organized into three main parts:
-- `core`: it contains the abstract classes to be used to define new entities and relationships
-- `metamodel`: it contains the entities and relationships organized into the three sub-metamodels: `cyber_threat`, `infrastructure`, and `organization`. Each sub-metamodel is organized into `entities` and `rels`.
-- `taxonomies`: it contains the defined taxonomies (e.g., the CIA triad)
+- one file for each entity;
+- one file for each relationship;
+- entity file names and class names match the exact metamodel entity names;
+- relationship names are concise lower-camel-case names;
+- entity identifiers are internal and automatically generated;
+- relationships do not carry traceability metadata;
+- optional taxonomies can be used for controlled vocabularies such as attack tools, TTPs, sectors, platforms, and vulnerability classes.
 
-## How to use?
+## Installation
 
-In the file `requirements.txt` add:
+```bash
+pip install cti-feasibility-metamodel
+```
 
-`cti-metamodel @ git+https://github.com/ForgeCTI/cti-metamodel.git@<version>`
+For optional integrations:
+
+```bash
+pip install cti-feasibility-metamodel[networkx]
+pip install cti-feasibility-metamodel[neo4j]
+pip install cti-feasibility-metamodel[yaml]
+```
+
+## Minimal example
+
+```python
+from metamodel.core.Model import Model
+from metamodel.organization.entities.Organization import Organization
+from metamodel.organization.entities.Sector import Sector
+from metamodel.organization.rels.operatesIn import operatesIn
+
+model = Model()
+org = model.add_entity(Organization(name="ExampleBank"))
+sector = model.add_entity(Sector(name="Finance", taxonomy_ref="sectors:finance"))
+model.add_relationship(operatesIn(org, sector))
+
+report = model.validate()
+print(report.is_valid)
+```

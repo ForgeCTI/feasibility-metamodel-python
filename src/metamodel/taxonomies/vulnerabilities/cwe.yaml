@@ -1,0 +1,11 @@
+taxonomy:
+  id: cwe
+  version: "0.1"
+  source: internal-placeholder
+  concepts:
+    - id: CWE-79
+      name: Cross-site Scripting
+      category: software
+    - id: CWE-89
+      name: SQL Injection
+      category: software
