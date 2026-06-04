@@ -1,41 +1,226 @@
 {
   "type": "bundle",
-  "id": "bundle--11111111-1111-4111-8111-111111111111",
+  "id": "bundle--2d987166-6b4d-4fb1-a7c0-51ddf3d098d4",
   "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--33333333-3333-4333-8333-333333333333",
+      "created": "2026-01-01T00:00:00.000Z",
+      "modified": "2026-01-01T00:00:00.000Z",
+      "name": "Example Producer",
+      "identity_class": "organization"
+    },
     {
       "type": "threat-actor",
       "spec_version": "2.1",
-      "id": "threat-actor--22222222-2222-4222-8222-222222222222",
+      "id": "threat-actor--11111111-1111-4111-8111-111111111111",
       "created": "2026-01-01T00:00:00.000Z",
       "modified": "2026-01-01T00:00:00.000Z",
-      "name": "Example threat actor",
-      "threat_actor_types": ["crime-syndicate"],
-      "sophistication": "advanced"
+      "name": "Example Threat Actor",
+      "description": "A fictitious threat actor.",
+      "aliases": ["Example TA"],
+      "sophistication": "advanced",
+      "primary_motivation": "financial-gain"
+    },
+    {
+      "type": "intrusion-set",
+      "spec_version": "2.1",
+      "id": "intrusion-set--22222222-2222-4222-8222-222222222222",
+      "created": "2026-01-01T00:00:00.000Z",
+      "modified": "2026-01-01T00:00:00.000Z",
+      "name": "Example Intrusion Set",
+      "goals": ["Demonstrate parser coverage"]
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--44444444-4444-4444-8444-444444444444",
+      "created": "2026-01-02T00:00:00.000Z",
+      "modified": "2026-01-02T00:00:00.000Z",
+      "name": "Example Campaign",
+      "description": "A fictitious campaign.",
+      "first_seen": "2026-01-02T00:00:00.000Z",
+      "last_seen": "2026-02-01T00:00:00.000Z",
+      "objective": "Demonstrate STIX parsing"
     },
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
-      "id": "attack-pattern--33333333-3333-4333-8333-333333333333",
-      "created": "2026-01-01T00:00:00.000Z",
-      "modified": "2026-01-01T00:00:00.000Z",
-      "name": "Exploit Public-Facing Application",
+      "id": "attack-pattern--55555555-5555-4555-8555-555555555555",
+      "created": "2026-01-03T00:00:00.000Z",
+      "modified": "2026-01-03T00:00:00.000Z",
+      "name": "Command and Scripting Interpreter",
+      "description": "Example attack pattern.",
       "external_references": [
-        {
-          "source_name": "mitre-attack",
-          "external_id": "T1190"
-        }
+        {"source_name": "mitre-attack", "external_id": "T1059"}
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--66666666-6666-4666-8666-666666666666",
+      "created": "2026-01-04T00:00:00.000Z",
+      "modified": "2026-01-04T00:00:00.000Z",
+      "name": "Apply mitigation",
+      "description": "Example course of action."
+    },
+    {
+      "type": "grouping",
+      "spec_version": "2.1",
+      "id": "grouping--77777777-7777-4777-8777-777777777777",
+      "created": "2026-01-05T00:00:00.000Z",
+      "modified": "2026-01-05T00:00:00.000Z",
+      "name": "Example grouping",
+      "context": "suspicious-activity",
+      "object_refs": [
+        "threat-actor--11111111-1111-4111-8111-111111111111",
+        "campaign--44444444-4444-4444-8444-444444444444"
       ]
     },
     {
       "type": "indicator",
       "spec_version": "2.1",
-      "id": "indicator--44444444-4444-4444-8444-444444444444",
-      "created": "2026-01-01T00:00:00.000Z",
-      "modified": "2026-01-01T00:00:00.000Z",
+      "id": "indicator--88888888-8888-4888-8888-888888888888",
+      "created": "2026-01-06T00:00:00.000Z",
+      "modified": "2026-01-06T00:00:00.000Z",
       "name": "Example malicious domain",
-      "pattern_type": "stix",
       "pattern": "[domain-name:value = 'malicious.example']",
-      "valid_from": "2026-01-01T00:00:00Z"
+      "pattern_type": "stix",
+      "valid_from": "2026-01-06T00:00:00.000Z"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--99999999-9999-4999-8999-999999999999",
+      "created": "2026-01-07T00:00:00.000Z",
+      "modified": "2026-01-07T00:00:00.000Z",
+      "name": "Example C2 infrastructure",
+      "infrastructure_types": ["command-and-control"]
+    },
+    {
+      "type": "location",
+      "spec_version": "2.1",
+      "id": "location--aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+      "created": "2026-01-08T00:00:00.000Z",
+      "modified": "2026-01-08T00:00:00.000Z",
+      "name": "Example Location",
+      "country": "IT"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+      "created": "2026-01-09T00:00:00.000Z",
+      "modified": "2026-01-09T00:00:00.000Z",
+      "name": "Example Malware",
+      "is_family": true,
+      "malware_types": ["remote-access-trojan"]
+    },
+    {
+      "type": "malware-analysis",
+      "spec_version": "2.1",
+      "id": "malware-analysis--cccccccc-cccc-4ccc-8ccc-cccccccccccc",
+      "created": "2026-01-10T00:00:00.000Z",
+      "modified": "2026-01-10T00:00:00.000Z",
+      "product": "Example Sandbox",
+      "result_name": "Example Malware Analysis"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+      "created": "2026-01-11T00:00:00.000Z",
+      "modified": "2026-01-11T00:00:00.000Z",
+      "content": "Example analytical note.",
+      "object_refs": ["campaign--44444444-4444-4444-8444-444444444444"]
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+      "created": "2026-01-12T00:00:00.000Z",
+      "modified": "2026-01-12T00:00:00.000Z",
+      "first_observed": "2026-01-12T00:00:00.000Z",
+      "last_observed": "2026-01-12T01:00:00.000Z",
+      "number_observed": 1,
+      "object_refs": ["domain-name--abababab-abab-4aba-8bab-abababababab"]
+    },
+    {
+      "type": "opinion",
+      "spec_version": "2.1",
+      "id": "opinion--ffffffff-ffff-4fff-8fff-ffffffffffff",
+      "created": "2026-01-13T00:00:00.000Z",
+      "modified": "2026-01-13T00:00:00.000Z",
+      "opinion": "strongly-agree",
+      "object_refs": ["indicator--88888888-8888-4888-8888-888888888888"]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--12345678-1234-4234-8234-123456789abc",
+      "created": "2026-01-14T00:00:00.000Z",
+      "modified": "2026-01-14T00:00:00.000Z",
+      "name": "Example Report",
+      "published": "2026-01-14T00:00:00.000Z",
+      "report_types": ["threat-report"],
+      "object_refs": [
+        "threat-actor--11111111-1111-4111-8111-111111111111",
+        "campaign--44444444-4444-4444-8444-444444444444"
+      ]
+    },
+    {
+      "type": "tool",
+      "spec_version": "2.1",
+      "id": "tool--aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeeeee",
+      "created": "2026-01-15T00:00:00.000Z",
+      "modified": "2026-01-15T00:00:00.000Z",
+      "name": "Example Remote Access Tool",
+      "tool_types": ["remote-access"],
+      "aliases": ["Example RAT"]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--bbbbbbbb-cccc-4ddd-8eee-ffffffffffff",
+      "created": "2026-01-16T00:00:00.000Z",
+      "modified": "2026-01-16T00:00:00.000Z",
+      "name": "CVE-2026-0001",
+      "external_references": [
+        {"source_name": "cve", "external_id": "CVE-2026-0001"}
+      ],
+      "x_severity": "high",
+      "x_cvss_score": 8.1
+    },
+    {
+      "type": "domain-name",
+      "spec_version": "2.1",
+      "id": "domain-name--abababab-abab-4aba-8bab-abababababab",
+      "value": "malicious.example"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--99991111-9999-4111-8111-999911119999",
+      "created": "2026-01-17T00:00:00.000Z",
+      "modified": "2026-01-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--11111111-1111-4111-8111-111111111111",
+      "target_ref": "tool--aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeeeee"
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--88881111-8888-4111-8111-888811118888",
+      "created": "2026-01-18T00:00:00.000Z",
+      "modified": "2026-01-18T00:00:00.000Z",
+      "sighting_of_ref": "indicator--88888888-8888-4888-8888-888888888888",
+      "observed_data_refs": [
+        "observed-data--eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee"
+      ],
+      "where_sighted_refs": [
+        "identity--33333333-3333-4333-8333-333333333333"
+      ]
     }
   ]
 }

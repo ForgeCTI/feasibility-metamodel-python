@@ -7,16 +7,16 @@ from metamodel.organization.entities.Asset import Asset
 from metamodel.organization.entities.SecurityRequirement import SecurityRequirement
 from metamodel.organization.entities.AssetSecurityRequirement import AssetSecurityRequirement
 from metamodel.organization.rels.operatesIn import operatesIn
-from metamodel.organization.rels.hasAssetRequirement import hasAssetRequirement
+from metamodel.organization.rels.hasSecurityRequirement import hasSecurityRequirement
 from metamodel.organization.rels.implementsRequirement import implementsRequirement
 from metamodel.infrastructure.entities.Node import Node
 from metamodel.infrastructure.entities.Resource import Resource
-from metamodel.infrastructure.rels.implementsAsset import implementsAsset
+from metamodel.infrastructure.rels.resourceImplementsAsset import resourceImplementsAsset
 from metamodel.cyberThreat.entities.Threat import Threat
 from metamodel.cyberThreat.entities.ThreatStep import ThreatStep
 from metamodel.cyberThreat.entities.TTP import TTP
 from metamodel.cyberThreat.rels.startsWith import startsWith
-from metamodel.cyberThreat.rels.implementsTtp import implementsTtp
+from metamodel.cyberThreat.rels.implementsTTP import implementsTTP
 from metamodel.cyberThreat.rels.targetsResource import targetsResource
 from metamodel.cyberThreat.rels.compromises import compromises
 
@@ -38,11 +38,11 @@ def main() -> None:
     ttp = model.add_entity(TTP(name="Network Denial of Service", taxonomy_ref="mitreAttackEnterprise:T1498"))
 
     model.add_relationship(operatesIn(organization, sector))
-    model.add_relationship(hasAssetRequirement(asset, asset_requirement))
+    model.add_relationship(hasSecurityRequirement(asset, asset_requirement))
     model.add_relationship(implementsRequirement(asset_requirement, security_requirement))
-    model.add_relationship(implementsAsset(resource, asset))
+    model.add_relationship(resourceImplementsAsset(resource, asset))
     model.add_relationship(startsWith(threat, step))
-    model.add_relationship(implementsTtp(step, ttp))
+    model.add_relationship(implementsTTP(step, ttp))
     model.add_relationship(targetsResource(step, resource))
     model.add_relationship(compromises(step, asset_requirement))
 

@@ -12,7 +12,7 @@ from metamodel.cyberThreat.entities.SoftwareVulnerability import SoftwareVulnera
 from metamodel.cyberThreat.rels.initiates import initiates
 from metamodel.cyberThreat.rels.threatPartOf import threatPartOf
 from metamodel.cyberThreat.rels.startsWith import startsWith
-from metamodel.cyberThreat.rels.implementsTtp import implementsTtp
+from metamodel.cyberThreat.rels.implementsTTP import implementsTTP
 from metamodel.cyberThreat.rels.exploits import exploits
 from metamodel.cyberThreat.rels.employsTool import employsTool
 from metamodel.cyberThreat.rels.toolInstanceOf import toolInstanceOf
@@ -33,7 +33,7 @@ def main() -> None:
     model.add_relationship(initiates(actor, threat))
     model.add_relationship(threatPartOf(threat, campaign))
     model.add_relationship(startsWith(threat, step))
-    model.add_relationship(implementsTtp(step, ttp))
+    model.add_relationship(implementsTTP(step, ttp))
     model.add_relationship(exploits(step, vulnerability))
     model.add_relationship(employsTool(step, tool_instance))
     model.add_relationship(toolInstanceOf(tool_instance, tool))

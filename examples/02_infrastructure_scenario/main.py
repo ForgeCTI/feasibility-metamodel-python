@@ -13,9 +13,9 @@ from metamodel.infrastructure.entities.OSInstance import OSInstance
 from metamodel.infrastructure.rels.hasNodeType import hasNodeType
 from metamodel.infrastructure.rels.exposesPort import exposesPort
 from metamodel.infrastructure.rels.hasUserType import hasUserType
-from metamodel.infrastructure.rels.runsApplication import runsApplication
+from metamodel.infrastructure.rels.runsApp import runsApp
 from metamodel.infrastructure.rels.applicationInstanceOf import applicationInstanceOf
-from metamodel.infrastructure.rels.runsOs import runsOs
+from metamodel.infrastructure.rels.runsOS import runsOS
 from metamodel.infrastructure.rels.osInstanceOf import osInstanceOf
 
 
@@ -42,9 +42,9 @@ def main() -> None:
     model.add_relationship(hasNodeType(node, node_type))
     model.add_relationship(exposesPort(node, port))
     model.add_relationship(hasUserType(user, user_type))
-    model.add_relationship(runsApplication(node, application_instance))
+    model.add_relationship(runsApp(node, application_instance))
     model.add_relationship(applicationInstanceOf(application_instance, application))
-    model.add_relationship(runsOs(node, os_instance))
+    model.add_relationship(runsOS(node, os_instance))
     model.add_relationship(osInstanceOf(os_instance, os))
 
     report = model.validate()

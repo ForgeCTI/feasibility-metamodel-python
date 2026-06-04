@@ -7,7 +7,7 @@ from metamodel.organization.entities.Asset import Asset
 from metamodel.organization.entities.SecurityRequirement import SecurityRequirement
 from metamodel.organization.entities.AssetSecurityRequirement import AssetSecurityRequirement
 from metamodel.organization.rels.operatesIn import operatesIn
-from metamodel.organization.rels.hasAssetRequirement import hasAssetRequirement
+from metamodel.organization.rels.hasSecurityRequirement import hasSecurityRequirement
 from metamodel.organization.rels.implementsRequirement import implementsRequirement
 
 
@@ -34,14 +34,12 @@ def main() -> None:
     )
     asset_requirement = model.add_entity(
         AssetSecurityRequirement(
-            name="Online banking must remain available",
-            priority="high",
-            status="active",
+            name="Online banking must remain available"
         )
     )
 
     model.add_relationship(operatesIn(organization, sector))
-    model.add_relationship(hasAssetRequirement(asset, asset_requirement))
+    model.add_relationship(hasSecurityRequirement(asset, asset_requirement))
     model.add_relationship(implementsRequirement(asset_requirement, security_requirement))
 
     report = model.validate()

@@ -13,8 +13,6 @@ class AssetSecurityRequirement(BaseEntity):
         self,
         name: str,
         description: str | None = None,
-        priority: str | None = None,
-        status: str | None = None,
         rationale: str | None = None,
         source: str | None = None,
     ) -> None:
@@ -22,8 +20,6 @@ class AssetSecurityRequirement(BaseEntity):
         self._priority: str | None
         self._status: str | None
         self._rationale: str | None
-        self.priority = priority
-        self.status = status
         self.rationale = rationale
 
     @property
