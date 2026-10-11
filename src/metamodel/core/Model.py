@@ -40,10 +40,10 @@ class Model:
     def get_entity(self, entity_id: str) -> BaseEntity:
         return self._entities[entity_id]
 
-    def entities_by_type(self, entity_type: str) -> list[BaseEntity]:
+    def get_entities_by_type(self, entity_type: str) -> list[BaseEntity]:
         return [entity for entity in self.entities if entity.type == entity_type]
 
-    def relationships_by_type(self, relationship_type: str) -> list[BaseRelationship]:
+    def get_relationships_by_type(self, relationship_type: str) -> list[BaseRelationship]:
         return [rel for rel in self.relationships if rel.type == relationship_type]
 
     def to_dict(self) -> dict:
