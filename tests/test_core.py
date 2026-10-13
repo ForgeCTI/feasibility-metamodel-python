@@ -3,6 +3,9 @@ from metamodel.core.Model import Model
 from metamodel.organization.entities.Organization import Organization
 from metamodel.organization.entities.Sector import Sector
 from metamodel.organization.rels.operatesIn import operatesIn
+from metamodel.core.Cardinality import Cardinality
+from metamodel.core.Registry import Registry
+from metamodel.core.Exceptions import RegistryError
 
 
 # Entities tests
@@ -70,7 +73,7 @@ def test_entities_list_missing_type():
     assert result == []
 
     
-# Relationship tests
+# Relationships tests
 
 
 def test_relationship_type_checks_and_model():
@@ -134,6 +137,22 @@ def test_relationships_list_missing_type():
     assert result == []
 
 
+def test_relationship_wrong_source_type():
+    sec1 = Sector(name="Finance")
+    sec2 = Sector(name="Other")
+
+    with pytest.raises(TypeError):
+        operatesIn(sec1, sec2)
+
+
+def test_relationship_wrong_target_type():
+    org1 = Organization(name="Example1")
+    org2 = Organization(name="Example2")
+
+    with pytest.raises(TypeError):
+        operatesIn(org1, org2)
+
+
 def test_model_to_dict():
     model = Model()
     org = Organization(name="Example")
@@ -150,3 +169,68 @@ def test_model_to_dict():
     assert org.to_dict() in result["entities"]
     assert sec.to_dict() in result["entities"]
     assert rel.to_dict() in result["relationships"]
+
+
+# Cardinality tests
+
+
+def test_cardinality_exact():
+    cardinality = Cardinality.parse("1")
+    assert cardinality.minimum == 1
+    assert cardinality.maximum == 1
+    assert cardinality.contains(1)
+    assert not cardinality.contains(0)
+    assert not cardinality.contains(2)
+
+
+def test_cardinality_range():
+    cardinality = Cardinality.parse("1..3")
+    assert cardinality.minimum == 1
+    assert cardinality.maximum == 3
+    assert cardinality.contains(1)
+    assert cardinality.contains(2)
+    assert cardinality.contains(3)
+    assert not cardinality.contains(0)
+    assert not cardinality.contains(4)
+
+
+def test_cardinality_unbounded():
+    cardinality = Cardinality.parse("0..*")
+    assert cardinality.minimum == 0
+    assert cardinality.maximum is None
+    assert cardinality.contains(0)
+    assert cardinality.contains(100)
+
+
+def test_invalid_cardinality():
+    with pytest.raises(ValueError):
+        Cardinality.parse("ciao")
+
+
+# Registry tests
+
+
+def test_registry_get_entity_class():
+    registry = Registry.load_default()
+    result = registry.get_entity_class("Organization")
+    assert result is Organization
+
+
+def test_registry_get_relationship_class():
+    registry = Registry.load_default()
+    result = registry.get_relationship_class("operatesIn")
+    assert result is operatesIn
+
+
+def test_registry_missing_entity_class():
+    registry = Registry.load_default()
+
+    with pytest.raises(RegistryError):
+        registry.get_entity_class("NonEsiste")
+
+
+def test_registry_missing_relationship_class():
+    registry = Registry.load_default()
+
+    with pytest.raises(RegistryError):
+        registry.get_relationship_class("NonEsiste")
