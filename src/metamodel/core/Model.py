@@ -37,6 +37,13 @@ class Model:
         self._relationships.append(relationship)
         return relationship
 
+    def remove_relationship(self, relationship: BaseRelationship) -> None:
+        if not isinstance(relationship, BaseRelationship):
+            raise TypeError("relationship must be an instance of BaseRelationship")
+        if relationship not in self._relationships:
+            raise ValueError("relationship does not belong to the model")
+        self._relationships.remove(relationship)
+    
     def get_entity(self, entity_id: str) -> BaseEntity:
         return self._entities[entity_id]
 

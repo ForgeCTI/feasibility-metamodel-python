@@ -77,6 +77,9 @@ class GenericStixObject(BaseEntity):
 class GenericStixRelationship(BaseRelationship):
     """Generic relationship preserving an arbitrary STIX relationship object."""
 
+    source_type = BaseEntity
+    target_type = BaseEntity
+    
     def __init__(
         self,
         source_entity,

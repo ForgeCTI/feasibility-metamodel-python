@@ -153,6 +153,51 @@ def test_relationship_wrong_target_type():
         operatesIn(org1, org2)
 
 
+def test_relationship_source_entity_is_read_only():
+    organization = Organization(name="Example organization")
+    sector = Sector(name="Example sector")
+    other_organization = Organization(name="Other organization")
+    relationship = operatesIn(organization, sector)
+    with pytest.raises(AttributeError):
+        relationship.source_entity = other_organization
+
+
+def test_relationship_target_entity_is_read_only():
+    organization = Organization(name="Example organization")
+    sector = Sector(name="Example sector")
+    other_sector = Sector(name="Other sector")
+    relationship = operatesIn(organization, sector)
+    with pytest.raises(AttributeError):
+        relationship.target_entity = other_sector
+
+
+def test_remove_relationship():
+    model = Model()
+    organization = Organization(name="Example organization")
+    sector = Sector(name="Example sector")
+    model.add_entity(organization)
+    model.add_entity(sector)
+    relationship = operatesIn(organization, sector)
+    model.add_relationship(relationship)
+    model.remove_relationship(relationship)
+    assert relationship not in model.relationships
+
+
+def test_remove_relationship_wrong_type():
+    model = Model()
+    with pytest.raises(TypeError):
+        model.remove_relationship("not a relationship")
+
+
+def test_remove_relationship_not_in_model():
+    organization = Organization(name="Example organization")
+    sector = Sector(name="Example sector")
+    relationship = operatesIn(organization, sector)
+    model = Model()
+    with pytest.raises(ValueError):
+        model.remove_relationship(relationship)
+
+
 def test_model_to_dict():
     model = Model()
     org = Organization(name="Example")
