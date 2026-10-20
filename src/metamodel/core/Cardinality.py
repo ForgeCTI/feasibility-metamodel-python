@@ -10,6 +10,16 @@ class Cardinality:
     minimum: int
     maximum: int | None
 
+    def __post_init__(self) -> None:
+        if type(self.minimum) is not int:
+            raise TypeError("minimum cardinality must be an integer")
+        if self.maximum is not None and type(self.maximum) is not int:
+            raise TypeError("maximum cardinality must be an integer or None")
+        if self.minimum < 0:
+            raise ValueError("minimum cardinality cannot be negative")
+        if self.maximum is not None and self.maximum < self.minimum:
+            raise ValueError("maximum cardinality cannot be lower than minimum cardinality")
+        
     @classmethod
     def parse(cls, value: str | None) -> "Cardinality | None":
         if value is None:

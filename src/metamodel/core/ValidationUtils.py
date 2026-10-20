@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from datetime import date
 from typing import Any
-
+import re
 
 def require_optional_str(value: Any, field_name: str, *, allow_empty: bool = False) -> str | None:
     if value is None:
@@ -87,14 +87,17 @@ def require_optional_date_string(value: Any, field_name: str) -> str | None:
 
 def require_optional_taxonomy_ref(value: Any, field_name: str = "taxonomy_ref") -> str | None:
     value = require_optional_str(value, field_name)
-    if value is not None and ":" not in value:
+    if value is None:
+        return None
+    parts = value.split(":")
+    if len(parts) != 2 or not parts[0] or not parts[1] or parts[0] != parts[0].strip() or parts[1] != parts[1].strip():
         raise ValueError(f"{field_name} must use '<taxonomy>:<concept>' format.")
     return value
 
 
 def require_optional_email(value: Any, field_name: str) -> str | None:
     value = require_optional_str(value, field_name)
-    if value is not None and "@" not in value:
+    if value is not None and not re.fullmatch(r"[^@\s]+@[^@\s]+\.[^@\s]+", value):
         raise ValueError(f"{field_name} must look like an email address.")
     return value
 

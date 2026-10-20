@@ -7,7 +7,8 @@ from metamodel.organization.rels.operatesIn import operatesIn
 from metamodel.core.Cardinality import Cardinality
 from metamodel.core.Registry import Registry
 from metamodel.core.Exceptions import RegistryError
-
+from metamodel.core.ValidationUtils import require_optional_taxonomy_ref, require_optional_email
+from metamodel.core.ValidationReport import ValidationMessage
 
 # Entities tests
 
@@ -265,6 +266,41 @@ def test_invalid_cardinality():
         Cardinality.parse("ciao")
 
 
+def test_cardinality_rejects_negative_minimum():
+    with pytest.raises(ValueError):
+        Cardinality(-1, 5)
+
+
+def test_cardinality_rejects_maximum_lower_than_minimum():
+    with pytest.raises(ValueError):
+        Cardinality(5, 2)
+
+
+def test_cardinality_parse_rejects_negative_minimum():
+    with pytest.raises(ValueError):
+        Cardinality.parse("-1..5")
+
+
+def test_cardinality_parse_rejects_maximum_lower_than_minimum():
+    with pytest.raises(ValueError):
+        Cardinality.parse("5..2")
+
+
+def test_cardinality_rejects_non_integer_minimum():
+    with pytest.raises(TypeError):
+        Cardinality(1.5, 5)
+
+
+def test_cardinality_rejects_non_integer_maximum():
+    with pytest.raises(TypeError):
+        Cardinality(1, 5.5)
+
+
+def test_cardinality_rejects_boolean_values():
+    with pytest.raises(TypeError):
+        Cardinality(True, 5)
+
+
 # Registry tests
 
 
@@ -304,3 +340,71 @@ def test_registry_rejects_invalid_relationship_class(monkeypatch):
     monkeypatch.setattr(registry_module, "RELATIONSHIP_IMPORTS", [("InvalidRelationship", "builtins", "str")])
     with pytest.raises(RegistryError):
         Registry.load_default()
+
+
+# ValidationUtils tests
+
+
+def test_optional_taxonomy_ref_valid():
+    assert require_optional_taxonomy_ref("sectors:finance") == "sectors:finance"
+
+
+def test_optional_taxonomy_ref_none():
+    assert require_optional_taxonomy_ref(None) is None
+
+
+@pytest.mark.parametrize(
+    "value",
+    [
+        ":",
+        "sectors:",
+        ":finance",
+        "sectors:finance:extra",
+        " sectors:finance",
+        "sectors :finance",
+        "sectors: finance",
+        "sectors:finance ",
+    ],
+)
+def test_optional_taxonomy_ref_invalid_format(value):
+    with pytest.raises(ValueError):
+        require_optional_taxonomy_ref(value)
+
+
+def test_optional_email_valid():
+    assert require_optional_email("name@example.com", "email") == "name@example.com"
+
+
+@pytest.mark.parametrize(
+    "value",
+    [
+        "@",
+        "a@",
+        "@b",
+        "a@@b.com",
+        "a@example",
+        "a b@example.com",
+    ],
+)
+def test_optional_email_invalid(value):
+    with pytest.raises(ValueError):
+        require_optional_email(value, "email")
+
+
+def test_optional_email_none():
+    assert require_optional_email(None, "email") is None
+
+
+# ValidationReport tests
+
+
+def test_validation_message_rejects_invalid_severity():
+    with pytest.raises(ValueError):
+        ValidationMessage(validator="test", message="Test message", severity="banana")
+
+
+def test_validation_message_is_immutable():
+    message = ValidationMessage(validator="test", message="Test message", severity="error")
+
+    with pytest.raises(AttributeError):
+        message.severity = "warning"      
