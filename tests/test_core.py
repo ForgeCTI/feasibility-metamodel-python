@@ -1,4 +1,5 @@
 import pytest
+import importlib
 from metamodel.core.Model import Model
 from metamodel.organization.entities.Organization import Organization
 from metamodel.organization.entities.Sector import Sector
@@ -92,6 +93,18 @@ def test_invalid_relationship_type():
     model = Model()
     with pytest.raises(TypeError):
         model.add_relationship("ciao")
+
+
+def test_add_duplicate_relationship():
+    model = Model()
+    organization = Organization(name="Example organization")
+    sector = Sector(name="Example sector")
+    model.add_entity(organization)
+    model.add_entity(sector)
+    relationship = operatesIn(organization, sector)
+    model.add_relationship(relationship)
+    with pytest.raises(ValueError):
+        model.add_relationship(relationship)
 
 
 def test_source_entity_not_added():
@@ -269,13 +282,25 @@ def test_registry_get_relationship_class():
 
 def test_registry_missing_entity_class():
     registry = Registry.load_default()
-
     with pytest.raises(RegistryError):
         registry.get_entity_class("NonEsiste")
 
 
 def test_registry_missing_relationship_class():
     registry = Registry.load_default()
-
     with pytest.raises(RegistryError):
         registry.get_relationship_class("NonEsiste")
+
+
+def test_registry_rejects_invalid_entity_class(monkeypatch):
+    registry_module = importlib.import_module("metamodel.core.Registry")
+    monkeypatch.setattr(registry_module, "ENTITY_IMPORTS", [("InvalidEntity", "builtins", "str")])
+    with pytest.raises(RegistryError):
+        Registry.load_default()
+
+
+def test_registry_rejects_invalid_relationship_class(monkeypatch):
+    registry_module = importlib.import_module("metamodel.core.Registry")
+    monkeypatch.setattr(registry_module, "RELATIONSHIP_IMPORTS", [("InvalidRelationship", "builtins", "str")])
+    with pytest.raises(RegistryError):
+        Registry.load_default()

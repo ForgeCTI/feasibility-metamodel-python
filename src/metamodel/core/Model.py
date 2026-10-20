@@ -30,6 +30,9 @@ class Model:
     def add_relationship(self, relationship: BaseRelationship) -> BaseRelationship:
         if not isinstance(relationship, BaseRelationship):
             raise TypeError("relationship must be an instance of BaseRelationship.")
+        for rel in self._relationships:
+            if rel.id == relationship.id:
+                raise ValueError(f"relationship with id {relationship.id} already exists.")
         if relationship.source_entity.id not in self._entities:
             raise ValueError("relationship source_entity is not present in the model.")
         if relationship.target_entity.id not in self._entities:

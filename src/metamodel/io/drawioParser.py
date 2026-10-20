@@ -32,7 +32,7 @@ def loadDrawioScenario(path: str | Path) -> Model:
         if cell.get("vertex") == "1" and "edgeLabel" not in cell.get("style", ""):
             label = _clean(cell.get("value"))
             label = "InternationalBody" if label == "International Body" else label
-            if label in registry.entity_classes:
+            if registry.has_entity_type(label):
                 entity = factory.create_entity(label, name=label)
                 model.add_entity(entity)
                 entity_by_cell_id[cell_id] = entity
