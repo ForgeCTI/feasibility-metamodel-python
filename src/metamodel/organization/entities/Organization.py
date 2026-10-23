@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from metamodel.core.BaseEntity import BaseEntity
-from metamodel.core.ValidationUtils import require_allowed, require_optional_str
+from metamodel.core.ValidationUtils import require_allowed, require_optional_str, require_optional_url
 
 
 class Organization(BaseEntity):
@@ -57,7 +57,7 @@ class Organization(BaseEntity):
 
     @website.setter
     def website(self, value: str | None) -> None:
-        self._website = require_optional_str(value, "website")
+        self._website = require_optional_url(value, "website")
 
     @property
     def organization_size(self) -> str | None:

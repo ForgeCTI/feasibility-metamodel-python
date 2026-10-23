@@ -29,13 +29,24 @@ class HomeCountry(BaseEntity):
         self.region = region
         self.taxonomy_ref = taxonomy_ref
 
+    @staticmethod
+    def _validate_iso_code(value: str | None, field_name: str, length: int) -> str | None:
+        value = require_optional_str(value, field_name)
+        if value is not None and (
+            len(value) != length
+            or not value.isalpha()
+            or not value.isupper()
+        ):
+            raise ValueError(f"{field_name} must contain exactly {length} uppercase letters.")
+        return value
+
     @property
     def iso2_code(self) -> str | None:
         return self._iso2_code
 
     @iso2_code.setter
     def iso2_code(self, value: str | None) -> None:
-        self._iso2_code = require_optional_str(value, "iso2_code")
+        self._iso2_code = self._validate_iso_code(value, "iso2_code", 2)
 
     @property
     def iso3_code(self) -> str | None:
@@ -43,7 +54,7 @@ class HomeCountry(BaseEntity):
 
     @iso3_code.setter
     def iso3_code(self, value: str | None) -> None:
-        self._iso3_code = require_optional_str(value, "iso3_code")
+        self._iso3_code = self._validate_iso_code(value, "iso3_code", 3)
 
     @property
     def region(self) -> str | None:

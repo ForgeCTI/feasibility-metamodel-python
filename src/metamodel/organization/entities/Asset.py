@@ -43,7 +43,11 @@ class Asset(BaseEntity):
 
     @business_value.setter
     def business_value(self, value: str | None) -> None:
-        self._business_value = require_allowed(require_optional_str(value, "business_value"), "business_value", {None, 'high', 'medium', 'low', 'critical'})
+        self._business_value = require_allowed(
+            require_optional_str(value, "business_value"), 
+            "business_value", 
+            {None, 'high', 'medium', 'low', 'critical'},
+        )
 
     @property
     def criticality(self) -> str | None:
@@ -51,7 +55,11 @@ class Asset(BaseEntity):
 
     @criticality.setter
     def criticality(self, value: str | None) -> None:
-        self._criticality = require_allowed(require_optional_str(value, "criticality"), "criticality", {None, 'high', 'medium', 'low', 'critical'})
+        self._criticality = require_allowed(
+            require_optional_str(value, "criticality"), 
+            "criticality", 
+            {None, 'high', 'medium', 'low', 'critical'},
+        )
 
     @property
     def owner(self) -> str | None:

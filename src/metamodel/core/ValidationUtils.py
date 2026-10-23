@@ -102,6 +102,16 @@ def require_optional_email(value: Any, field_name: str) -> str | None:
     return value
 
 
+def require_optional_url(value: Any, field_name: str = "url") -> str | None:
+    value = require_optional_str(value, field_name)
+    if value is None:
+        return None
+    if not re.fullmatch(r"https?://[^\s]+", value):
+        raise ValueError(f"{field_name} must be a valid HTTP or HTTPS URL.")
+
+    return value
+
+
 def require_allowed(value: Any, field_name: str, allowed: set[Any]) -> Any:
     if value not in allowed:
         readable = ", ".join(str(item) for item in sorted(item for item in allowed if item is not None))
