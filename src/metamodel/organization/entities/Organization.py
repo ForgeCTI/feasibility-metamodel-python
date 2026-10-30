@@ -7,7 +7,14 @@ from metamodel.core.ValidationUtils import require_allowed, require_optional_str
 class Organization(BaseEntity):
     """Represents the Organization entity from the metamodel."""
 
-    _domain_attributes = ('legal_name', 'short_name', 'website', 'organization_size', 'criticality', 'maturity_level')
+    _domain_attributes = (
+        'legal_name',
+        'short_name',
+        'website',
+        'organization_size',
+        'criticality',
+        'maturity_level'
+    )
 
     def __init__(
         self,

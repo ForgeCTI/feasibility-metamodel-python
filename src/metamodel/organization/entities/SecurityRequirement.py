@@ -8,9 +8,9 @@ class SecurityRequirement(BaseEntity):
     """Represents the SecurityRequirement entity from the metamodel."""
 
     _domain_attributes = (
-        'requirement_type', 
-        'taxonomy_ref', 
-        'control_framework', 
+        'requirement_type',
+        'taxonomy_ref',
+        'control_framework',
         'control_family',
     )
 
@@ -53,7 +53,7 @@ class SecurityRequirement(BaseEntity):
     @property
     def control_framework(self) -> str | None:
         return self._control_framework
-    
+
     @control_framework.setter
     def control_framework(self, value: str | None) -> None:
         value = require_optional_str(value, "control_framework")

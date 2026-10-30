@@ -1,13 +1,26 @@
 from __future__ import annotations
 
 from metamodel.core.BaseEntity import BaseEntity
-from metamodel.core.ValidationUtils import require_allowed, require_optional_list_str, require_optional_str
+from metamodel.core.ValidationUtils import (
+    require_allowed,
+    require_optional_str,
+    require_optional_ip_addresses,
+    require_optional_mac_addresses,
+)
 
 
 class Node(BaseEntity):
     """Represents the Node entity from the metamodel."""
 
-    _domain_attributes = ('hostname', 'ip_addresses', 'mac_addresses', 'fqdn', 'location', 'criticality', 'exposure')
+    _domain_attributes = (
+        'hostname',
+        'ip_addresses',
+        'mac_addresses',
+        'fqdn',
+        'location',
+        'criticality',
+        'exposure'
+    )
 
     def __init__(
         self,
@@ -48,19 +61,19 @@ class Node(BaseEntity):
 
     @property
     def ip_addresses(self) -> list[str]:
-        return self._ip_addresses
+        return list(self._ip_addresses)
 
     @ip_addresses.setter
     def ip_addresses(self, value: list[str] | None) -> None:
-        self._ip_addresses = require_optional_list_str(value, "ip_addresses")
+        self._ip_addresses = require_optional_ip_addresses(value, "ip_addresses")
 
     @property
     def mac_addresses(self) -> list[str]:
-        return self._mac_addresses
+        return list(self._mac_addresses)
 
     @mac_addresses.setter
     def mac_addresses(self, value: list[str] | None) -> None:
-        self._mac_addresses = require_optional_list_str(value, "mac_addresses")
+        self._mac_addresses = require_optional_mac_addresses(value, "mac_addresses")
 
     @property
     def fqdn(self) -> str | None:

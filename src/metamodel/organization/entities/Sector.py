@@ -8,9 +8,9 @@ class Sector(BaseEntity):
     """Represents the Sector entity from the metamodel."""
 
     _domain_attributes = (
-        'taxonomy_ref', 
-        'sector_code', 
-        'sector_standard', 
+        'taxonomy_ref',
+        'sector_code',
+        'sector_standard',
         'sector_standard_version'
     )
 
@@ -28,7 +28,7 @@ class Sector(BaseEntity):
         self._taxonomy_ref: str | None = None
         self._sector_code: str | None = None
         self._sector_standard: str | None = None
-        self._sector_standard_version: str | None = None 
+        self._sector_standard_version: str | None = None
         self.taxonomy_ref = taxonomy_ref
         self.sector_standard = sector_standard
         self.sector_code = sector_code
@@ -63,11 +63,11 @@ class Sector(BaseEntity):
     def sector_standard(self, value: str | None) -> None:
         value = require_optional_str(value, "sector_standard")
         if value is None and (
-            self._sector_code is not None 
+            self._sector_code is not None
             or self._sector_standard_version is not None
         ):
             raise ValueError(
-                "sector_standard cannot be removed while sector_code " 
+                "sector_standard cannot be removed while sector_code "
                 "or sector_standard_version is specified."
             )
         self._sector_standard = value
@@ -75,7 +75,7 @@ class Sector(BaseEntity):
     @property
     def sector_standard_version(self) -> str | None:
         return self._sector_standard_version
-    
+
     @sector_standard_version.setter
     def sector_standard_version(self, value: str | None) -> None:
         value = require_optional_str(value, "sector_standard_version")

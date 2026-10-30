@@ -7,8 +7,13 @@ from metamodel.organization.rels.operatesIn import operatesIn
 from metamodel.core.Cardinality import Cardinality
 from metamodel.core.Registry import Registry
 from metamodel.core.Exceptions import RegistryError
-from metamodel.core.ValidationUtils import require_optional_taxonomy_ref, require_optional_email
 from metamodel.core.ValidationReport import ValidationMessage
+from metamodel.core.ValidationUtils import(
+    require_optional_taxonomy_ref,
+    require_optional_email,
+    require_optional_float,
+)
+
 
 # Entities tests
 
@@ -64,7 +69,7 @@ def test_entities_list_type():
     result = model.get_entities_by_type("Organization")
     assert len(result) == 2
     assert org1 in result
-    assert org2 in result 
+    assert org2 in result
 
 
 def test_entities_list_missing_type():
@@ -74,7 +79,7 @@ def test_entities_list_missing_type():
     result = model.get_entities_by_type("Sector")
     assert result == []
 
-    
+
 # Relationships tests
 
 
@@ -115,7 +120,7 @@ def test_source_entity_not_added():
     rel = operatesIn(org, sector)
     with pytest.raises(ValueError):
         model.add_relationship(rel)
-        
+
 
 def test_target_entity_not_added():
     model = Model()
@@ -124,7 +129,7 @@ def test_target_entity_not_added():
     rel = operatesIn(org, sector)
     with pytest.raises(ValueError):
         model.add_relationship(rel)
-        
+
 
 def test_relationships_list_type():
     model = Model()
@@ -346,11 +351,11 @@ def test_registry_rejects_invalid_relationship_class(monkeypatch):
 
 
 def test_optional_taxonomy_ref_valid():
-    assert require_optional_taxonomy_ref("sectors:finance") == "sectors:finance"
+    assert require_optional_taxonomy_ref("sectors:finance", "taxonomy_ref") == "sectors:finance"
 
 
 def test_optional_taxonomy_ref_none():
-    assert require_optional_taxonomy_ref(None) is None
+    assert require_optional_taxonomy_ref(None, "taxonomy_ref") is None
 
 
 @pytest.mark.parametrize(
@@ -368,7 +373,7 @@ def test_optional_taxonomy_ref_none():
 )
 def test_optional_taxonomy_ref_invalid_format(value):
     with pytest.raises(ValueError):
-        require_optional_taxonomy_ref(value)
+        require_optional_taxonomy_ref(value, "taxonomy_ref")
 
 
 def test_optional_email_valid():
@@ -395,6 +400,21 @@ def test_optional_email_none():
     assert require_optional_email(None, "email") is None
 
 
+@pytest.mark.parametrize("value", [
+    float("nan"),
+    float("inf"),
+    float("-inf"),
+])
+def test_optional_float_rejects_non_finite_values(value):
+    with pytest.raises(ValueError):
+        require_optional_float(
+            value,
+            "cvss_score",
+            minimum=0,
+            maximum=10,
+        )
+
+
 # ValidationReport tests
 
 
@@ -407,4 +427,4 @@ def test_validation_message_is_immutable():
     message = ValidationMessage(validator="test", message="Test message", severity="error")
 
     with pytest.raises(AttributeError):
-        message.severity = "warning"      
+        message.severity = "warning"

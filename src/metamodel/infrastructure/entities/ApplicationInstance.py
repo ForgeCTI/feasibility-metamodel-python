@@ -51,7 +51,11 @@ class ApplicationInstance(BaseEntity):
 
     @runtime_state.setter
     def runtime_state(self, value: str | None) -> None:
-        self._runtime_state = require_allowed(require_optional_str(value, "runtime_state"), "runtime_state", {None, 'running', 'stopped', 'disabled', 'unknown'})
+        self._runtime_state = require_allowed(
+            require_optional_str(value, "runtime_state"),
+            "runtime_state",
+            {None, 'running', 'stopped', 'disabled', 'unknown'},
+        )
 
     @property
     def exposure(self) -> str | None:
@@ -59,5 +63,9 @@ class ApplicationInstance(BaseEntity):
 
     @exposure.setter
     def exposure(self, value: str | None) -> None:
-        self._exposure = require_allowed(require_optional_str(value, "exposure"), "exposure", {None, 'dmz', 'external', 'internal', 'unknown'})
+        self._exposure = require_allowed(
+            require_optional_str(value, "exposure"),
+            "exposure",
+            {None, 'dmz', 'external', 'internal', 'unknown'},
+        )
 

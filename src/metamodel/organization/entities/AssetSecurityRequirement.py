@@ -33,8 +33,8 @@ class AssetSecurityRequirement(BaseEntity):
     @priority.setter
     def priority(self, value: str | None) -> None:
         self._priority = require_allowed(
-            require_optional_str(value, "priority"), 
-            "priority", 
+            require_optional_str(value, "priority"),
+            "priority",
             {None, 'high', 'medium', 'low', 'critical'},
         )
 
@@ -45,8 +45,8 @@ class AssetSecurityRequirement(BaseEntity):
     @status.setter
     def status(self, value: str | None) -> None:
         self._status = require_allowed(
-            require_optional_str(value, "status"), 
-            "status", 
+            require_optional_str(value, "status"),
+            "status",
             {None, 'implemented', 'partially_implemented', 'unknown', 'not_implemented', 'planned'}
         )
 

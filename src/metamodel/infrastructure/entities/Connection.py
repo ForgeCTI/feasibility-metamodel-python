@@ -1,7 +1,11 @@
 from __future__ import annotations
 
 from metamodel.core.BaseEntity import BaseEntity
-from metamodel.core.ValidationUtils import require_allowed, require_optional_bool, require_optional_str
+from metamodel.core.ValidationUtils import(
+    require_allowed,
+    require_optional_bool,
+    require_optional_str,
+)
 
 
 class Connection(BaseEntity):
@@ -43,7 +47,11 @@ class Connection(BaseEntity):
 
     @direction.setter
     def direction(self, value: str | None) -> None:
-        self._direction = require_allowed(require_optional_str(value, "direction"), "direction", {None, 'outbound', 'inbound', 'unknown', 'bidirectional'})
+        self._direction = require_allowed(
+            require_optional_str(value, "direction"),
+            "direction",
+            {None, 'outbound', 'inbound', 'unknown', 'bidirectional'}
+        )
 
     @property
     def encrypted(self) -> bool | None:

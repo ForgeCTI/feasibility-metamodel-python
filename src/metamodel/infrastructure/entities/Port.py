@@ -1,7 +1,11 @@
 from __future__ import annotations
 
 from metamodel.core.BaseEntity import BaseEntity
-from metamodel.core.ValidationUtils import require_allowed, require_optional_int, require_optional_str
+from metamodel.core.ValidationUtils import (
+    require_allowed,
+    require_optional_int,
+    require_optional_str,
+)
 
 
 class Port(BaseEntity):
@@ -46,7 +50,11 @@ class Port(BaseEntity):
 
     @protocol.setter
     def protocol(self, value: str | None) -> None:
-        self._protocol = require_allowed(require_optional_str(value, "protocol"), "protocol", {None, 'tcp', 'udp', 'sctp', 'unknown', 'icmp'})
+        self._protocol = require_allowed(
+            require_optional_str(value, "protocol"),
+            "protocol",
+            {None, 'tcp', 'udp', 'sctp', 'unknown'},
+        )
 
     @property
     def service_name(self) -> str | None:
@@ -62,7 +70,11 @@ class Port(BaseEntity):
 
     @state.setter
     def state(self, value: str | None) -> None:
-        self._state = require_allowed(require_optional_str(value, "state"), "state", {None, 'open', 'unknown', 'closed', 'filtered'})
+        self._state = require_allowed(
+            require_optional_str(value, "state"),
+            "state",
+            {None, 'open', 'unknown', 'closed', 'filtered'},
+        )
 
     @property
     def exposure(self) -> str | None:
@@ -70,5 +82,9 @@ class Port(BaseEntity):
 
     @exposure.setter
     def exposure(self, value: str | None) -> None:
-        self._exposure = require_allowed(require_optional_str(value, "exposure"), "exposure", {None, 'dmz', 'external', 'internal', 'unknown'})
+        self._exposure = require_allowed(
+            require_optional_str(value, "exposure"),
+            "exposure",
+            {None, 'dmz', 'external', 'internal', 'unknown'},
+        )
 

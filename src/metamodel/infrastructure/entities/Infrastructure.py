@@ -29,7 +29,11 @@ class Infrastructure(BaseEntity):
 
     @environment_type.setter
     def environment_type(self, value: str | None) -> None:
-        self._environment_type = require_allowed(require_optional_str(value, "environment_type"), "environment_type", {None, 'test', 'staging', 'development', 'unknown', 'production', 'hybrid'})
+        self._environment_type = require_allowed(
+            require_optional_str(value, "environment_type"),
+            "environment_type",
+            {None, 'test', 'staging', 'development', 'unknown', 'production', 'hybrid'},
+        )
 
     @property
     def scope(self) -> str | None:

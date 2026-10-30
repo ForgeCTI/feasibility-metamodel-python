@@ -1,8 +1,12 @@
 from __future__ import annotations
 
 from metamodel.core.BaseEntity import BaseEntity
-from metamodel.core.ValidationUtils import require_allowed, require_optional_bool, require_optional_email, require_optional_str
-
+from metamodel.core.ValidationUtils import(
+    require_allowed,
+    require_optional_bool,
+    require_optional_email,
+    require_optional_str
+)
 
 class User(BaseEntity):
     """Represents the User entity from the metamodel."""
@@ -62,7 +66,11 @@ class User(BaseEntity):
 
     @privilege_level.setter
     def privilege_level(self, value: str | None) -> None:
-        self._privilege_level = require_allowed(require_optional_str(value, "privilege_level"), "privilege_level", {None, 'root', 'unknown', 'standard', 'privileged', 'low', 'none', 'admin'})
+        self._privilege_level = require_allowed(
+            require_optional_str(value, "privilege_level"),
+            "privilege_level",
+            {None, 'root', 'unknown', 'standard', 'privileged', 'low', 'none', 'admin'}
+        )
 
     @property
     def mfa_enabled(self) -> bool | None:

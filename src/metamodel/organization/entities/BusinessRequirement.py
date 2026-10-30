@@ -33,8 +33,8 @@ class BusinessRequirement(BaseEntity):
     @priority.setter
     def priority(self, value: str | None) -> None:
         self._priority = require_allowed(
-            require_optional_str(value, "priority"), 
-            "priority", 
+            require_optional_str(value, "priority"),
+            "priority",
             {None, 'high', 'medium', 'low', 'critical'},
         )
 

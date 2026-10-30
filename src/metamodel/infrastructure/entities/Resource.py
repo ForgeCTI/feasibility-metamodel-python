@@ -40,7 +40,11 @@ class Resource(BaseEntity):
 
     @criticality.setter
     def criticality(self, value: str | None) -> None:
-        self._criticality = require_allowed(require_optional_str(value, "criticality"), "criticality", {None, 'high', 'medium', 'low', 'critical'})
+        self._criticality = require_allowed(
+            require_optional_str(value, "criticality"),
+            "criticality",
+            {None, 'high', 'medium', 'low', 'critical'}
+    )
 
     @property
     def sensitivity(self) -> str | None:
@@ -48,5 +52,9 @@ class Resource(BaseEntity):
 
     @sensitivity.setter
     def sensitivity(self, value: str | None) -> None:
-        self._sensitivity = require_allowed(require_optional_str(value, "sensitivity"), "sensitivity", {None, 'internal', 'confidential', 'secret', 'unknown', 'public', 'restricted'})
+        self._sensitivity = require_allowed(
+            require_optional_str(value, "sensitivity"),
+            "sensitivity",
+            {None, 'internal', 'confidential', 'secret', 'unknown', 'public', 'restricted'}
+    )
 

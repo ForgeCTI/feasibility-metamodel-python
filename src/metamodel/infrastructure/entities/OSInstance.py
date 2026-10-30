@@ -59,5 +59,9 @@ class OSInstance(BaseEntity):
 
     @support_status.setter
     def support_status(self, value: str | None) -> None:
-        self._support_status = require_allowed(require_optional_str(value, "support_status"), "support_status", {None, 'unknown', 'end_of_life', 'supported'})
+        self._support_status = require_allowed(
+            require_optional_str(value, "support_status"),
+            "support_status",
+            {None, 'unknown', 'end_of_life', 'supported'},
+        )
 

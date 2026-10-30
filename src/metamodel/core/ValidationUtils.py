@@ -2,9 +2,17 @@ from __future__ import annotations
 
 from datetime import date
 from typing import Any
+from ipaddress import ip_address
+from math import isfinite
 import re
 
-def require_optional_str(value: Any, field_name: str, *, allow_empty: bool = False) -> str | None:
+
+
+def require_optional_str(
+    value: Any,
+    field_name: str, *,
+    allow_empty: bool = False
+) -> str | None:
     if value is None:
         return None
     if not isinstance(value, str):
@@ -30,7 +38,12 @@ def require_optional_bool(value: Any, field_name: str) -> bool | None:
     return value
 
 
-def require_optional_int(value: Any, field_name: str, *, minimum: int | None = None, maximum: int | None = None) -> int | None:
+def require_optional_int(
+    value: Any,
+    field_name: str, *,
+    minimum: int | None = None,
+    maximum: int | None = None
+) -> int | None:
     if value is None:
         return None
     if not isinstance(value, int) or isinstance(value, bool):
@@ -42,12 +55,19 @@ def require_optional_int(value: Any, field_name: str, *, minimum: int | None = N
     return value
 
 
-def require_optional_float(value: Any, field_name: str, *, minimum: float | None = None, maximum: float | None = None) -> float | None:
+def require_optional_float(
+    value: Any,
+    field_name: str, *,
+    minimum: float | None = None,
+    maximum: float | None = None
+) -> float | None:
     if value is None:
         return None
     if not isinstance(value, (int, float)) or isinstance(value, bool):
         raise TypeError(f"{field_name} must be a number or None.")
     value = float(value)
+    if not isfinite(value):
+        raise ValueError(f"{field_name} must be a finite number.")
     if minimum is not None and value < minimum:
         raise ValueError(f"{field_name} must be >= {minimum}.")
     if maximum is not None and value > maximum:
@@ -85,7 +105,7 @@ def require_optional_date_string(value: Any, field_name: str) -> str | None:
     return value
 
 
-def require_optional_taxonomy_ref(value: Any, field_name: str = "taxonomy_ref") -> str | None:
+def require_optional_taxonomy_ref(value: Any, field_name: str) -> str | None:
     value = require_optional_str(value, field_name)
     if value is None:
         return None
@@ -102,7 +122,32 @@ def require_optional_email(value: Any, field_name: str) -> str | None:
     return value
 
 
-def require_optional_url(value: Any, field_name: str = "url") -> str | None:
+def require_optional_ip_addresses(value: Any, field_name: str) -> list[str]:
+    addresses = require_optional_list_str(value, field_name)
+    for address in addresses:
+        try:
+            ip_address(address)
+        except ValueError as exc:
+            raise ValueError(
+                f"{field_name} contains an invalid IP address: {address!r}"
+            ) from exc
+    return addresses
+
+
+def require_optional_mac_addresses(value: Any, field_name: str) -> list[str]:
+    addresses = require_optional_list_str(value, field_name)
+    for address in addresses:
+        if not re.fullmatch(
+            r"(?:[0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}|(?:[0-9A-Fa-f]{2}-){5}[0-9A-Fa-f]{2}",
+            address,
+        ):
+            raise ValueError(
+                f"{field_name} contains an invalid MAC address: {address!r}"
+            )
+    return addresses
+
+
+def require_optional_url(value: Any, field_name: str) -> str | None:
     value = require_optional_str(value, field_name)
     if value is None:
         return None
