@@ -34,7 +34,7 @@ class ThreatActor(BaseEntity):
 
     @property
     def aliases(self) -> list[str]:
-        return self._aliases
+        return list(self._aliases)
 
     @aliases.setter
     def aliases(self, value: list[str] | None) -> None:

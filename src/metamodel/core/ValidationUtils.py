@@ -162,3 +162,10 @@ def require_allowed(value: Any, field_name: str, allowed: set[Any]) -> Any:
         readable = ", ".join(str(item) for item in sorted(item for item in allowed if item is not None))
         raise ValueError(f"{field_name} must be one of: {readable}.")
     return value
+
+
+def require_date_order(first_seen: str | None, last_seen: str | None) -> None:
+    if first_seen is None or last_seen is None:
+        return
+    if date.fromisoformat(first_seen) > date.fromisoformat(last_seen):
+        raise ValueError("first_seen cannot be after last_seen")

@@ -48,5 +48,9 @@ class Adversary(BaseEntity):
 
     @capability_level.setter
     def capability_level(self, value: str | None) -> None:
-        self._capability_level = require_allowed(require_optional_str(value, "capability_level"), "capability_level", {None, 'high', 'medium', 'advanced', 'unknown', 'low'})
+        self._capability_level = require_allowed(
+            require_optional_str(value, "capability_level"),
+            "capability_level",
+            {None, 'high', 'medium', 'advanced', 'unknown', 'low'},
+        )
 

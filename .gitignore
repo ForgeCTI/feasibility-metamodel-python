@@ -5,3 +5,6 @@ case_studies/**/output/*
 
 examples/**/output/*
 !examples/**/output/.gitkeep
+
+.venv/
+venv/

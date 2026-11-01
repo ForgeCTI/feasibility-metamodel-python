@@ -7,7 +7,13 @@ from metamodel.core.ValidationUtils import require_optional_int, require_optiona
 class ThreatStep(BaseEntity):
     """Represents the ThreatStep entity from the metamodel."""
 
-    _domain_attributes = ('sequence_index', 'phase', 'objective', 'preconditions', 'postconditions')
+    _domain_attributes = (
+        'sequence_index',
+        'phase',
+        'objective',
+        'preconditions',
+        'postconditions',
+    )
 
     def __init__(
         self,
@@ -38,7 +44,12 @@ class ThreatStep(BaseEntity):
 
     @sequence_index.setter
     def sequence_index(self, value: int | None) -> None:
-        self._sequence_index = require_optional_int(value, "sequence_index", minimum=0, maximum=None)
+        self._sequence_index = require_optional_int(
+            value,
+            "sequence_index",
+            minimum=0,
+            maximum=None,
+        )
 
     @property
     def phase(self) -> str | None:
@@ -58,7 +69,7 @@ class ThreatStep(BaseEntity):
 
     @property
     def preconditions(self) -> list[str]:
-        return self._preconditions
+        return list(self._preconditions)
 
     @preconditions.setter
     def preconditions(self, value: list[str] | None) -> None:
@@ -66,7 +77,7 @@ class ThreatStep(BaseEntity):
 
     @property
     def postconditions(self) -> list[str]:
-        return self._postconditions
+        return list(self._postconditions)
 
     @postconditions.setter
     def postconditions(self, value: list[str] | None) -> None:
