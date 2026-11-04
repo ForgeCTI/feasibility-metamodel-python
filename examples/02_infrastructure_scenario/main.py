@@ -22,30 +22,40 @@ from metamodel.infrastructure.rels.osInstanceOf import osInstanceOf
 def main() -> None:
     model = Model()
 
-    node = model.add_entity(
+    node = model.add(
         Node(
             name="web-server-01",
             hostname="web-server-01.example.local",
             ip_addresses=["10.0.0.10"],
-            exposure="internet_facing",
         )
     )
-    node_type = model.add_entity(NodeType(name="Server", taxonomy_ref="nodeTypes:server"))
-    port = model.add_entity(Port(name="HTTPS", number=443, protocol="tcp", state="open"))
-    user = model.add_entity(User(name="Alice Admin", username="alice", privilege_level="admin", mfa_enabled=True))
-    user_type = model.add_entity(UserType(name="Administrator", taxonomy_ref="userTypes:administrator"))
-    application = model.add_entity(Application(name="Nginx", vendor="F5", product="Nginx", version="1.24"))
-    application_instance = model.add_entity(ApplicationInstance(name="Nginx on web-server-01", version="1.24"))
-    os = model.add_entity(OS(name="Ubuntu Server", vendor="Canonical", product="Ubuntu", version="22.04"))
-    os_instance = model.add_entity(OSInstance(name="Ubuntu Server on web-server-01", version="22.04", patch_level="current"))
+    node_type = model.add(NodeType(name="Server"))
+    port = model.add(Port(name="HTTPS", number=443, protocol="tcp", state="open"))
+    user = model.add(
+        User(
+            name="Alice Admin",
+            username="alice",
+            mfa_enabled=True,
+        )
+    )
+    user_type = model.add(
+        UserType(
+            name="Administrator",
+            privilege_level="admin",
+        )
+    )
+    application = model.add(Application(name="Nginx", vendor="F5", product="Nginx", version="1.24"))
+    application_instance = model.add(ApplicationInstance(name="Nginx on web-server-01", version="1.24"))
+    os = model.add(OS(name="Ubuntu Server", vendor="Canonical", product="Ubuntu", version="22.04"))
+    os_instance = model.add(OSInstance(name="Ubuntu Server on web-server-01", version="22.04", patch_level="current"))
 
-    model.add_relationship(hasNodeType(node, node_type))
-    model.add_relationship(exposesPort(node, port))
-    model.add_relationship(hasUserType(user, user_type))
-    model.add_relationship(runsApp(node, application_instance))
-    model.add_relationship(applicationInstanceOf(application_instance, application))
-    model.add_relationship(runsOS(node, os_instance))
-    model.add_relationship(osInstanceOf(os_instance, os))
+    model.add(hasNodeType(node, node_type))
+    model.add(exposesPort(node, port))
+    model.add(hasUserType(user, user_type))
+    model.add(runsApp(node, application_instance))
+    model.add(applicationInstanceOf(application_instance, application))
+    model.add(runsOS(node, os_instance))
+    model.add(osInstanceOf(os_instance, os))
 
     report = model.validate()
 

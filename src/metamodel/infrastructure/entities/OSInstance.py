@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from metamodel.core.BaseEntity import BaseEntity
-from metamodel.core.ValidationUtils import require_allowed, require_optional_str
+from metamodel.core.ValidationUtils import require_optional_str
 
 
 class OSInstance(BaseEntity):
@@ -57,11 +57,7 @@ class OSInstance(BaseEntity):
     def support_status(self) -> str | None:
         return self._support_status
 
+
     @support_status.setter
     def support_status(self, value: str | None) -> None:
-        self._support_status = require_allowed(
-            require_optional_str(value, "support_status"),
-            "support_status",
-            {None, 'unknown', 'end_of_life', 'supported'},
-        )
-
+        self._support_status = require_optional_str(value, "support_status")

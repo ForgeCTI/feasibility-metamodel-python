@@ -166,10 +166,10 @@ from metamodel.organization.rels.operatesIn import operatesIn
 
 model = Model()
 
-organization = model.add_entity(Organization(name="ExampleBank"))
+organization = model.add(Organization(name="ExampleBank"))
 sector = Sector(name="Finance")  # Created but not added to the model.
 
-model.add_relationship(
+model.add(
     operatesIn(
         source_entity=organization,
         target_entity=sector,
@@ -186,7 +186,7 @@ Reference validation should report that the target entity is missing from the mo
 Correct version:
 
 ```python
-sector = model.add_entity(Sector(name="Finance"))
+sector = model.add(Sector(name="Finance"))
 ```
 
 ## Cardinality validation
@@ -217,7 +217,7 @@ from metamodel.core.Model import Model
 from metamodel.organization.entities.Organization import Organization
 
 model = Model()
-organization = model.add_entity(Organization(name="ExampleBank"))
+organization = model.add(Organization(name="ExampleBank"))
 
 report = model.validate()
 ```
@@ -230,9 +230,9 @@ Correct example:
 from metamodel.organization.entities.Sector import Sector
 from metamodel.organization.rels.operatesIn import operatesIn
 
-sector = model.add_entity(Sector(name="Finance"))
+sector = model.add(Sector(name="Finance"))
 
-model.add_relationship(
+model.add(
     operatesIn(
         source_entity=organization,
         target_entity=sector,
@@ -483,13 +483,13 @@ Relationship targets an entity that is not in the model.
 Cause:
 
 ```text
-An entity object was created but not added with model.add_entity(...).
+An entity object was created but not added with model.add(...).
 ```
 
 Fix:
 
 ```python
-sector = model.add_entity(Sector(name="Finance"))
+sector = model.add(Sector(name="Finance"))
 ```
 
 ### Cardinality violation

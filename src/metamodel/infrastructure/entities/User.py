@@ -1,17 +1,17 @@
 from __future__ import annotations
 
 from metamodel.core.BaseEntity import BaseEntity
-from metamodel.core.ValidationUtils import(
-    require_allowed,
+from metamodel.core.ValidationUtils import (
     require_optional_bool,
     require_optional_email,
-    require_optional_str
+    require_optional_str,
 )
+
 
 class User(BaseEntity):
     """Represents the User entity from the metamodel."""
 
-    _domain_attributes = ('username', 'email', 'role', 'privilege_level', 'mfa_enabled')
+    _domain_attributes = ('username', 'email', 'role', 'mfa_enabled')
 
     def __init__(
         self,
@@ -20,7 +20,6 @@ class User(BaseEntity):
         username: str | None = None,
         email: str | None = None,
         role: str | None = None,
-        privilege_level: str | None = None,
         mfa_enabled: bool | None = None,
         source: str | None = None,
     ) -> None:
@@ -28,12 +27,10 @@ class User(BaseEntity):
         self._username: str | None
         self._email: str | None
         self._role: str | None
-        self._privilege_level: str | None
         self._mfa_enabled: bool | None
         self.username = username
         self.email = email
         self.role = role
-        self.privilege_level = privilege_level
         self.mfa_enabled = mfa_enabled
 
     @property
@@ -61,22 +58,9 @@ class User(BaseEntity):
         self._role = require_optional_str(value, "role")
 
     @property
-    def privilege_level(self) -> str | None:
-        return self._privilege_level
-
-    @privilege_level.setter
-    def privilege_level(self, value: str | None) -> None:
-        self._privilege_level = require_allowed(
-            require_optional_str(value, "privilege_level"),
-            "privilege_level",
-            {None, 'root', 'unknown', 'standard', 'privileged', 'low', 'none', 'admin'}
-        )
-
-    @property
     def mfa_enabled(self) -> bool | None:
         return self._mfa_enabled
 
     @mfa_enabled.setter
     def mfa_enabled(self, value: bool | None) -> None:
         self._mfa_enabled = require_optional_bool(value, "mfa_enabled")
-

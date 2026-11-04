@@ -23,12 +23,24 @@ class BaseRelationship:
         self._target_entity = self._validate_endpoint(target_entity, self.target_type, "target")
 
     @staticmethod
-    def _validate_endpoint(entity: BaseEntity, expected_type: type[BaseEntity] | None, role: str) -> BaseEntity:
+    def _validate_endpoint(
+        entity: BaseEntity,
+        expected_type: type[BaseEntity] | None,
+        role: str
+    ) -> BaseEntity:
         if expected_type is None:
             raise TypeError(f"{role}_type is not defined")
         if not isinstance(entity, expected_type):
             raise TypeError(f"{role}_entity must be an instance of {expected_type.__name__}")
         return entity
+
+    def _update_endpoints(self, source_entity: BaseEntity, target_entity: BaseEntity) -> None:
+        """Update relationship endpoints after validating their types."""
+
+        source = self._validate_endpoint(source_entity, self.source_type, "source")
+        target = self._validate_endpoint(target_entity, self.target_type, "target")
+        self._source_entity = source
+        self._target_entity = target
 
     @property
     def id(self) -> str:

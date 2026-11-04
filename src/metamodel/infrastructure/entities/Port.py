@@ -11,7 +11,7 @@ from metamodel.core.ValidationUtils import (
 class Port(BaseEntity):
     """Represents the Port entity from the metamodel."""
 
-    _domain_attributes = ('number', 'protocol', 'service_name', 'state', 'exposure')
+    _domain_attributes = ('number', 'protocol', 'service_name', 'state')
 
     def __init__(
         self,
@@ -21,7 +21,6 @@ class Port(BaseEntity):
         protocol: str | None = None,
         service_name: str | None = None,
         state: str | None = None,
-        exposure: str | None = None,
         source: str | None = None,
     ) -> None:
         super().__init__(name=name, description=description, source=source)
@@ -29,12 +28,10 @@ class Port(BaseEntity):
         self._protocol: str | None
         self._service_name: str | None
         self._state: str | None
-        self._exposure: str | None
         self.number = number
         self.protocol = protocol
         self.service_name = service_name
         self.state = state
-        self.exposure = exposure
 
     @property
     def number(self) -> int | None:
@@ -42,7 +39,9 @@ class Port(BaseEntity):
 
     @number.setter
     def number(self, value: int | None) -> None:
-        self._number = require_optional_int(value, "number", minimum=0, maximum=65535)
+        self._number = require_optional_int(
+            value, "number", minimum=0, maximum=65535
+        )
 
     @property
     def protocol(self) -> str | None:
@@ -75,16 +74,3 @@ class Port(BaseEntity):
             "state",
             {None, 'open', 'unknown', 'closed', 'filtered'},
         )
-
-    @property
-    def exposure(self) -> str | None:
-        return self._exposure
-
-    @exposure.setter
-    def exposure(self, value: str | None) -> None:
-        self._exposure = require_allowed(
-            require_optional_str(value, "exposure"),
-            "exposure",
-            {None, 'dmz', 'external', 'internal', 'unknown'},
-        )
-

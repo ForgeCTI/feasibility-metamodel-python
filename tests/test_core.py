@@ -27,7 +27,7 @@ def test_entity_id_is_generated():
 def test_valid_add_entity():
     model = Model()
     org = Organization(name="Example")
-    result = model.add_entity(org)
+    result = model.add(org)
     assert result is org
     assert org in model.entities
 
@@ -35,21 +35,15 @@ def test_valid_add_entity():
 def test_duplicate_entity_id():
     model = Model()
     org = Organization(name="Example")
-    model.add_entity(org)
+    model.add(org)
     with pytest.raises(ValueError):
-        model.add_entity(org)
-
-
-def test_invalid_entity_type():
-    model = Model()
-    with pytest.raises(TypeError):
-        model.add_entity("ciao")
+        model.add(org)
 
 
 def test_valid_get_entity():
     model = Model()
     org = Organization(name="Example")
-    model.add_entity(org)
+    model.add(org)
     assert model.get_entity(org.id) is org
 
 
@@ -64,8 +58,8 @@ def test_entities_list_type():
     model = Model()
     org1 = Organization(name="Example1")
     org2 = Organization(name="Example2")
-    model.add_entity(org1)
-    model.add_entity(org2)
+    model.add(org1)
+    model.add(org2)
     result = model.get_entities_by_type("Organization")
     assert len(result) == 2
     assert org1 in result
@@ -75,9 +69,55 @@ def test_entities_list_type():
 def test_entities_list_missing_type():
     model = Model()
     org1 = Organization(name="Example1")
-    model.add_entity(org1)
+    model.add(org1)
     result = model.get_entities_by_type("Sector")
     assert result == []
+
+
+def test_remove_isolated_entity():
+    model = Model()
+    org = model.add(Organization(name="Example"))
+    model.remove(org)
+    assert org not in model.entities
+    with pytest.raises(KeyError):
+        model.get_entity(org.id)
+
+
+def test_remove_entity_with_incident_relationship():
+    model = Model()
+    org = model.add(Organization(name="Example"))
+    sector = model.add(Sector(name="Finance"))
+    rel = model.add(operatesIn(org, sector))
+    with pytest.raises(ValueError):
+        model.remove(org)
+    with pytest.raises(ValueError):
+        model.remove(sector)
+    assert org in model.entities
+    assert sector in model.entities
+    assert model.relationships == [rel]
+
+
+def test_remove_relationship_then_entities():
+    model = Model()
+    org = model.add(Organization(name="Example"))
+    sector = model.add(Sector(name="Finance"))
+    rel = model.add(operatesIn(org, sector))
+    model.remove(rel)
+    assert model.relationships == []
+    model.remove(org)
+    model.remove(sector)
+    assert model.entities == []
+    assert model.relationships == []
+
+
+def test_remove_missing_entity():
+    model = Model()
+    org = model.add(Organization(name="Organization 1"))
+    external_org = Organization(name="External organization")
+    with pytest.raises(ValueError):
+        model.remove(external_org)
+    assert model.entities == [org]
+    assert model.relationships == []
 
 
 # Relationships tests
@@ -85,50 +125,63 @@ def test_entities_list_missing_type():
 
 def test_relationship_type_checks_and_model():
     model = Model()
-    org = model.add_entity(Organization(name="Example"))
-    sector = model.add_entity(Sector(name="Finance"))
+    org = model.add(Organization(name="Example"))
+    sector = model.add(Sector(name="Finance"))
     rel = operatesIn(org, sector)
-    result = model.add_relationship(rel)
+    result = model.add(rel)
     assert result is rel
     assert rel.type == "operatesIn"
     assert rel in model.relationships
     assert len(model.relationships) == 1
 
 
-def test_invalid_relationship_type():
+def test_invalid_add_type():
     model = Model()
     with pytest.raises(TypeError):
-        model.add_relationship("ciao")
+        model.add("ciao")
 
 
 def test_add_duplicate_relationship():
     model = Model()
     organization = Organization(name="Example organization")
     sector = Sector(name="Example sector")
-    model.add_entity(organization)
-    model.add_entity(sector)
+    model.add(organization)
+    model.add(sector)
     relationship = operatesIn(organization, sector)
-    model.add_relationship(relationship)
+    model.add(relationship)
     with pytest.raises(ValueError):
-        model.add_relationship(relationship)
+        model.add(relationship)
+
+
+def test_add_duplicate_relationship_same_endpoints():
+    model = Model()
+    org = model.add(Organization(name="Example"))
+    sector = model.add(Sector(name="Finance"))
+    rel1 = operatesIn(org, sector)
+    rel2 = operatesIn(org, sector)
+    assert rel1.id != rel2.id
+    model.add(rel1)
+    with pytest.raises(ValueError):
+        model.add(rel2)
+    assert model.relationships == [rel1]
 
 
 def test_source_entity_not_added():
     model = Model()
     org = Organization(name="Example")
-    sector = model.add_entity(Sector(name="Finance"))
+    sector = model.add(Sector(name="Finance"))
     rel = operatesIn(org, sector)
     with pytest.raises(ValueError):
-        model.add_relationship(rel)
+        model.add(rel)
 
 
 def test_target_entity_not_added():
     model = Model()
-    org = model.add_entity(Organization(name="Example"))
+    org = model.add(Organization(name="Example"))
     sector = Sector(name="Finance")
     rel = operatesIn(org, sector)
     with pytest.raises(ValueError):
-        model.add_relationship(rel)
+        model.add(rel)
 
 
 def test_relationships_list_type():
@@ -136,9 +189,9 @@ def test_relationships_list_type():
     org = Organization(name="Example")
     sec = Sector(name="Finance")
     rel = operatesIn(org, sec)
-    model.add_entity(org)
-    model.add_entity(sec)
-    model.add_relationship(rel)
+    model.add(org)
+    model.add(sec)
+    model.add(rel)
     result = model.get_relationships_by_type("operatesIn")
     assert len(result) == 1
     assert rel in result
@@ -149,9 +202,9 @@ def test_relationships_list_missing_type():
     org = Organization(name="Example")
     sec = Sector(name="Finance")
     rel = operatesIn(org, sec)
-    model.add_entity(org)
-    model.add_entity(sec)
-    model.add_relationship(rel)
+    model.add(org)
+    model.add(sec)
+    model.add(rel)
     result = model.get_relationships_by_type("altraRelazione")
     assert result == []
 
@@ -194,18 +247,18 @@ def test_remove_relationship():
     model = Model()
     organization = Organization(name="Example organization")
     sector = Sector(name="Example sector")
-    model.add_entity(organization)
-    model.add_entity(sector)
+    model.add(organization)
+    model.add(sector)
     relationship = operatesIn(organization, sector)
-    model.add_relationship(relationship)
-    model.remove_relationship(relationship)
+    model.add(relationship)
+    model.remove(relationship)
     assert relationship not in model.relationships
 
 
 def test_remove_relationship_wrong_type():
     model = Model()
     with pytest.raises(TypeError):
-        model.remove_relationship("not a relationship")
+        model.remove("not a relationship")
 
 
 def test_remove_relationship_not_in_model():
@@ -214,7 +267,94 @@ def test_remove_relationship_not_in_model():
     relationship = operatesIn(organization, sector)
     model = Model()
     with pytest.raises(ValueError):
-        model.remove_relationship(relationship)
+        model.remove(relationship)
+
+
+def test_update_relationship_source():
+    model = Model()
+    org1 = model.add(Organization(name="Organization 1"))
+    org2 = model.add(Organization(name="Organization 2"))
+    sector = model.add(Sector(name="Finance"))
+    rel = model.add(operatesIn(org1, sector))
+    model.update_relationship(rel, source_entity=org2)
+    assert rel.source_entity is org2
+    assert rel.target_entity is sector
+    assert rel in model.relationships
+
+
+def test_update_relationship_both_endpoints():
+    model = Model()
+    org1 = model.add(Organization(name="Organization 1"))
+    org2 = model.add(Organization(name="Organization 2"))
+    sector1 = model.add(Sector(name="Finance"))
+    sector2 = model.add(Sector(name="Technology"))
+    rel = model.add(operatesIn(org1, sector1))
+    model.update_relationship(
+        rel,
+        source_entity=org2,
+        target_entity=sector2,
+    )
+    assert rel.source_entity is org2
+    assert rel.target_entity is sector2
+    assert rel in model.relationships
+
+
+def test_update_relationship_wrong_source_type():
+    model = Model()
+    org = model.add(Organization(name="Example"))
+    sector = model.add(Sector(name="Finance"))
+    other_sector = model.add(Sector(name="Technology"))
+    rel = model.add(operatesIn(org, sector))
+    with pytest.raises(TypeError):
+        model.update_relationship(rel, source_entity=other_sector)
+    assert rel.source_entity is org
+    assert rel.target_entity is sector
+
+
+def test_update_relationship_rejects_duplicate():
+    model = Model()
+    org1 = model.add(Organization(name="Organization 1"))
+    org2 = model.add(Organization(name="Organization 2"))
+    sector = model.add(Sector(name="Finance"))
+    rel1 = model.add(operatesIn(org1, sector))
+    rel2 = model.add(operatesIn(org2, sector))
+    with pytest.raises(ValueError):
+        model.update_relationship(rel2, source_entity=org1)
+    assert rel2.source_entity is org2
+    assert rel2.target_entity is sector
+    assert model.relationships == [rel1, rel2]
+
+
+def test_update_relationship_rejects_missing_entity():
+    model = Model()
+    org = model.add(Organization(name="Organization 1"))
+    sector = model.add(Sector(name="Finance"))
+
+    other_org = Organization(name="External organization")
+    rel = model.add(operatesIn(org, sector))
+
+    with pytest.raises(ValueError):
+        model.update_relationship(rel, source_entity=other_org)
+
+    assert rel.source_entity is org
+    assert rel.target_entity is sector
+    assert model.relationships == [rel]
+
+
+def test_update_relationship_rejects_missing_relationship():
+    model = Model()
+    org = model.add(Organization(name="Example"))
+    sector = model.add(Sector(name="Finance"))
+    other_org = model.add(Organization(name="Other organization"))
+
+    rel = operatesIn(org, sector)
+
+    with pytest.raises(ValueError):
+        model.update_relationship(rel, source_entity=other_org)
+
+    assert rel.source_entity is org
+    assert rel.target_entity is sector
+    assert model.relationships == []
 
 
 def test_model_to_dict():
@@ -222,9 +362,9 @@ def test_model_to_dict():
     org = Organization(name="Example")
     sec = Sector(name="Finance")
     rel = operatesIn(org, sec)
-    model.add_entity(org)
-    model.add_entity(sec)
-    model.add_relationship(rel)
+    model.add(org)
+    model.add(sec)
+    model.add(rel)
     result = model.to_dict()
     assert "entities" in result
     assert "relationships" in result

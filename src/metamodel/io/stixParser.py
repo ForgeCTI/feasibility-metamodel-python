@@ -137,7 +137,7 @@ class StixParser:
                 )
                 continue
 
-            model.add_entity(entity)
+            model.add(entity)
 
             stix_id = stix_object.get("id")
             if isinstance(stix_id, str):
@@ -176,7 +176,7 @@ class StixParser:
                 continue
 
             for relationship in relationships:
-                model.add_relationship(relationship)
+                model.add(relationship)
 
         return StixParseResult(
             model=model,

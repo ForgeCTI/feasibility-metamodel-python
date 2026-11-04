@@ -7,7 +7,7 @@ from metamodel.core.ValidationUtils import require_optional_str
 class Code(BaseEntity):
     """Represents the Code entity from the metamodel."""
 
-    _domain_attributes = ('language', 'version', 'repository_url', 'hash')
+    _domain_attributes = ('language', 'version', 'repository_url')
 
     def __init__(
         self,
@@ -16,18 +16,15 @@ class Code(BaseEntity):
         language: str | None = None,
         version: str | None = None,
         repository_url: str | None = None,
-        hash: str | None = None,
         source: str | None = None,
     ) -> None:
         super().__init__(name=name, description=description, source=source)
         self._language: str | None
         self._version: str | None
         self._repository_url: str | None
-        self._hash: str | None
         self.language = language
         self.version = version
         self.repository_url = repository_url
-        self.hash = hash
 
     @property
     def language(self) -> str | None:
@@ -52,12 +49,3 @@ class Code(BaseEntity):
     @repository_url.setter
     def repository_url(self, value: str | None) -> None:
         self._repository_url = require_optional_str(value, "repository_url")
-
-    @property
-    def hash(self) -> str | None:
-        return self._hash
-
-    @hash.setter
-    def hash(self, value: str | None) -> None:
-        self._hash = require_optional_str(value, "hash")
-

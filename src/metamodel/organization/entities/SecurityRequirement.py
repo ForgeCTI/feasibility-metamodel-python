@@ -1,17 +1,17 @@
 from __future__ import annotations
 
 from metamodel.core.BaseEntity import BaseEntity
-from metamodel.core.ValidationUtils import require_optional_str, require_optional_taxonomy_ref
+from metamodel.core.ValidationUtils import (
+    require_allowed,
+    require_optional_str,
+)
 
 
 class SecurityRequirement(BaseEntity):
-    """Represents the SecurityRequirement entity from the metamodel."""
+    """Represents a security requirement based on the CIA triad."""
 
     _domain_attributes = (
         'requirement_type',
-        'taxonomy_ref',
-        'control_framework',
-        'control_family',
     )
 
     def __init__(
@@ -19,20 +19,11 @@ class SecurityRequirement(BaseEntity):
         name: str,
         description: str | None = None,
         requirement_type: str | None = None,
-        taxonomy_ref: str | None = None,
-        control_framework: str | None = None,
-        control_family: str | None = None,
         source: str | None = None,
     ) -> None:
         super().__init__(name=name, description=description, source=source)
         self._requirement_type: str | None
-        self._taxonomy_ref: str | None
-        self._control_family: str | None = None
-        self._control_framework: str | None = None
         self.requirement_type = requirement_type
-        self.taxonomy_ref = taxonomy_ref
-        self.control_framework = control_framework
-        self.control_family = control_family
 
     @property
     def requirement_type(self) -> str | None:
@@ -40,39 +31,8 @@ class SecurityRequirement(BaseEntity):
 
     @requirement_type.setter
     def requirement_type(self, value: str | None) -> None:
-        self._requirement_type = require_optional_str(value, "requirement_type")
-
-    @property
-    def taxonomy_ref(self) -> str | None:
-        return self._taxonomy_ref
-
-    @taxonomy_ref.setter
-    def taxonomy_ref(self, value: str | None) -> None:
-        self._taxonomy_ref = require_optional_taxonomy_ref(value, "taxonomy_ref")
-
-    @property
-    def control_framework(self) -> str | None:
-        return self._control_framework
-
-    @control_framework.setter
-    def control_framework(self, value: str | None) -> None:
-        value = require_optional_str(value, "control_framework")
-        if value is None and self._control_family is not None:
-            raise ValueError(
-                "control_framework cannot be removed while control_family is specified."
-            )
-        self._control_framework = value
-
-    @property
-    def control_family(self) -> str | None:
-        return self._control_family
-
-    @control_family.setter
-    def control_family(self, value: str | None) -> None:
-        value = require_optional_str(value, "control_family")
-        if value is not None and self._control_framework is None:
-            raise ValueError(
-                "control_framework must be specified when control_family is provided."
-            )
-        self._control_family = value
-
+        self._requirement_type = require_allowed(
+            require_optional_str(value, "requirement_type"),
+            "requirement_type",
+            {None, "confidentiality", "integrity", "availability"}
+        )

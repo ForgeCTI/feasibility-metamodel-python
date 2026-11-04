@@ -14,9 +14,9 @@ OUTPUT_DIR = BASE_DIR / "output"
 
 def main() -> None:
     model = Model()
-    organization = model.add_entity(Organization(name="ExampleBank"))
-    sector = model.add_entity(Sector(name="Finance", taxonomy_ref="sectors:finance"))
-    model.add_relationship(operatesIn(organization, sector))
+    organization = model.add(Organization(name="ExampleBank"))
+    sector = model.add(Sector(name="Finance", taxonomy_ref="sectors:finance"))
+    model.add(operatesIn(organization, sector))
 
     graph = toNetworkx(model)
 

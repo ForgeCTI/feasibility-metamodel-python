@@ -34,7 +34,7 @@ def loadDrawioScenario(path: str | Path) -> Model:
             label = "InternationalBody" if label == "International Body" else label
             if registry.has_entity_type(label):
                 entity = factory.create_entity(label, name=label)
-                model.add_entity(entity)
+                model.add(entity)
                 entity_by_cell_id[cell_id] = entity
 
     labels_by_parent = {}
@@ -56,6 +56,6 @@ def loadDrawioScenario(path: str | Path) -> Model:
                 rel = factory.create_relationship_from_alias(label, source_entity, target_entity)
             except Exception:
                 continue
-            model.add_relationship(rel)
+            model.add(rel)
 
     return model

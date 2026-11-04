@@ -459,8 +459,8 @@ from metamodel.core.Model import Model
 
 model = Model()
 
-model.add_entity(entity)
-model.add_relationship(relationship)
+model.add(entity)
+model.add(relationship)
 ```
 
 The model is responsible for whole-scenario operations such as validation and export.

@@ -81,7 +81,7 @@ def build_model() -> Model:
     # Organization sub-metamodel
     # -------------------------------------------------------------------------
 
-    organization = model.add_entity(
+    organization = model.add(
         Organization(
             name="ExampleBank",
             description="Example financial organization.",
@@ -91,14 +91,14 @@ def build_model() -> Model:
         )
     )
 
-    sector = model.add_entity(
+    sector = model.add(
         Sector(
             name="Finance",
             taxonomy_ref="sectors:finance",
         )
     )
 
-    model.add_relationship(
+    model.add(
         operatesIn(
             source_entity=organization,
             target_entity=sector,
@@ -109,7 +109,7 @@ def build_model() -> Model:
     # Infrastructure sub-metamodel
     # -------------------------------------------------------------------------
 
-    infrastructure = model.add_entity(
+    infrastructure = model.add(
         Infrastructure(
             name="ExampleBank production infrastructure",
             description="Simplified production infrastructure.",
@@ -119,7 +119,7 @@ def build_model() -> Model:
         )
     )
 
-    web_server_type = model.add_entity(
+    web_server_type = model.add(
         NodeType(
             name="Web server",
             taxonomy_ref="nodeTypes:webServer",
@@ -127,7 +127,7 @@ def build_model() -> Model:
         )
     )
 
-    web_server = model.add_entity(
+    web_server = model.add(
         Node(
             name="public-web-01",
             hostname="public-web-01.examplebank.test",
@@ -138,7 +138,7 @@ def build_model() -> Model:
         )
     )
 
-    https_port = model.add_entity(
+    https_port = model.add(
         Port(
             name="HTTPS",
             number=443,
@@ -149,7 +149,7 @@ def build_model() -> Model:
         )
     )
 
-    web_application = model.add_entity(
+    web_application = model.add(
         Resource(
             name="Customer web portal",
             description="Public-facing customer web application.",
@@ -160,35 +160,35 @@ def build_model() -> Model:
         )
     )
 
-    model.add_relationship(
+    model.add(
         manages(
             source_entity=organization,
             target_entity=infrastructure,
         )
     )
 
-    model.add_relationship(
+    model.add(
         madeBy(
             source_entity=infrastructure,
             target_entity=web_server,
         )
     )
 
-    model.add_relationship(
+    model.add(
         hasNodeType(
             source_entity=web_server,
             target_entity=web_server_type,
         )
     )
 
-    model.add_relationship(
+    model.add(
         exposesPort(
             source_entity=web_server,
             target_entity=https_port,
         )
     )
 
-    model.add_relationship(
+    model.add(
         hosts(
             source_entity=web_server,
             target_entity=web_application,
@@ -199,7 +199,7 @@ def build_model() -> Model:
     # Cyber-threat sub-metamodel
     # -------------------------------------------------------------------------
 
-    threat_actor = model.add_entity(
+    threat_actor = model.add(
         ThreatActor(
             name="Example financially motivated actor",
             description="Fictitious actor used in the quickstart.",
@@ -210,7 +210,7 @@ def build_model() -> Model:
         )
     )
 
-    threat = model.add_entity(
+    threat = model.add(
         Threat(
             name="Web portal compromise",
             description="Threat scenario targeting the public web portal.",
@@ -220,7 +220,7 @@ def build_model() -> Model:
         )
     )
 
-    threat_step = model.add_entity(
+    threat_step = model.add(
         ThreatStep(
             name="Exploit public-facing web application",
             description="The attacker exploits a web application vulnerability.",
@@ -238,7 +238,7 @@ def build_model() -> Model:
         )
     )
 
-    ttp = model.add_entity(
+    ttp = model.add(
         TTP(
             name="Exploit Public-Facing Application",
             description="Adversaries exploit a public-facing application.",
@@ -250,7 +250,7 @@ def build_model() -> Model:
         )
     )
 
-    vulnerability = model.add_entity(
+    vulnerability = model.add(
         Vulnerability(
             name="Example web application vulnerability",
             description="Fictitious vulnerability used in the quickstart.",
@@ -262,35 +262,35 @@ def build_model() -> Model:
         )
     )
 
-    model.add_relationship(
+    model.add(
         initiates(
             source_entity=threat_actor,
             target_entity=threat,
         )
     )
 
-    model.add_relationship(
+    model.add(
         startsWith(
             source_entity=threat,
             target_entity=threat_step,
         )
     )
 
-    model.add_relationship(
+    model.add(
         implementsTtp(
             source_entity=threat_step,
             target_entity=ttp,
         )
     )
 
-    model.add_relationship(
+    model.add(
         exploits(
             source_entity=threat_step,
             target_entity=vulnerability,
         )
     )
 
-    model.add_relationship(
+    model.add(
         targetsResource(
             source_entity=threat_step,
             target_entity=web_application,

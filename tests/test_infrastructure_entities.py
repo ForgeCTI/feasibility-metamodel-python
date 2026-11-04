@@ -2,6 +2,7 @@ import pytest
 
 from metamodel.infrastructure.entities.Node import Node
 
+
 # Node tests
 
 

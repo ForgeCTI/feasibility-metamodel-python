@@ -6,7 +6,6 @@ from metamodel.cyberThreat.entities.ThreatActor import ThreatActor
 from metamodel.cyberThreat.entities.Campaign import Campaign
 
 
-
 # Threat tests
 
 

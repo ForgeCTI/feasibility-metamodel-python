@@ -191,7 +191,7 @@ from metamodel.organization.rels.operatesIn import operatesIn
 
 model = Model()
 
-organization = model.add_entity(
+organization = model.add(
     Organization(
         name="ExampleBank",
         description="Example financial organization",
@@ -199,14 +199,14 @@ organization = model.add_entity(
     )
 )
 
-sector = model.add_entity(
+sector = model.add(
     Sector(
         name="Finance",
         taxonomy_ref="sectors:finance"
     )
 )
 
-model.add_relationship(
+model.add(
     operatesIn(
         source_entity=organization,
         target_entity=sector

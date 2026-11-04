@@ -19,34 +19,86 @@ class Model:
     def relationships(self) -> list[BaseRelationship]:
         return list(self._relationships)
 
-    def add_entity(self, entity: BaseEntity) -> BaseEntity:
-        if not isinstance(entity, BaseEntity):
-            raise TypeError("entity must be an instance of BaseEntity.")
-        if entity.id in self._entities:
-            raise ValueError(f"entity with id {entity.id} already exists.")
-        self._entities[entity.id] = entity
-        return entity
+    def add(self, obj: BaseEntity | BaseRelationship) -> BaseEntity | BaseRelationship:
+        """Add an entity or relationship to the model."""
 
-    def add_relationship(self, relationship: BaseRelationship) -> BaseRelationship:
+        if isinstance(obj, BaseEntity):
+            if obj.id in self._entities:
+                raise ValueError(f"entity with id {obj.id} already exists.")
+            self._entities[obj.id] = obj
+            return obj
+        if isinstance(obj, BaseRelationship):
+            for rel in self._relationships:
+                if rel.id == obj.id:
+                    raise ValueError(f"relationship with id {obj.id} already exists.")
+            if obj.source_entity.id not in self._entities:
+                raise ValueError("relationship source_entity is not present in the model.")
+            if obj.target_entity.id not in self._entities:
+                raise ValueError("relationship target_entity is not present in the model.")
+            for rel in self._relationships:
+                if (
+                    rel.type == obj.type
+                    and rel.source_entity.id == obj.source_entity.id
+                    and rel.target_entity.id == obj.target_entity.id
+                ):
+                    raise ValueError("relationship already exists between these entities.")
+            self._relationships.append(obj)
+            return obj
+        raise TypeError("obj must be an instance of BaseEntity or BaseRelationship.")
+
+    def remove(self, obj: BaseEntity | BaseRelationship) -> None:
+        """Remove an entity or relationship from the model.
+
+        Entities cannot be removed while incident relationships exist.
+        """
+
+        if isinstance(obj, BaseEntity):
+            if obj.id not in self._entities:
+                raise ValueError("entity does not belong to the model.")
+            for rel in self._relationships:
+                if rel.source_entity.id == obj.id or rel.target_entity.id == obj.id:
+                    raise ValueError("entity has incident relationships.")
+            del self._entities[obj.id]
+            return
+        if isinstance(obj, BaseRelationship):
+            if obj not in self._relationships:
+                raise ValueError("relationship does not belong to the model.")
+            self._relationships.remove(obj)
+            return
+        raise TypeError("obj must be an instance of BaseEntity or BaseRelationship.")
+
+
+    def update_relationship(
+        self,
+        relationship: BaseRelationship,
+        source_entity: BaseEntity | None = None,
+        target_entity: BaseEntity | None = None,
+    ) -> None:
+        """Update relationship endpoints while preserving model consistency."""
+
         if not isinstance(relationship, BaseRelationship):
             raise TypeError("relationship must be an instance of BaseRelationship.")
-        for rel in self._relationships:
-            if rel.id == relationship.id:
-                raise ValueError(f"relationship with id {relationship.id} already exists.")
-        if relationship.source_entity.id not in self._entities:
-            raise ValueError("relationship source_entity is not present in the model.")
-        if relationship.target_entity.id not in self._entities:
-            raise ValueError("relationship target_entity is not present in the model.")
-        self._relationships.append(relationship)
-        return relationship
-
-    def remove_relationship(self, relationship: BaseRelationship) -> None:
-        if not isinstance(relationship, BaseRelationship):
-            raise TypeError("relationship must be an instance of BaseRelationship")
         if relationship not in self._relationships:
-            raise ValueError("relationship does not belong to the model")
-        self._relationships.remove(relationship)
-    
+            raise ValueError("relationship does not belong to the model.")
+        new_source = source_entity if source_entity is not None else relationship.source_entity
+        new_target = target_entity if target_entity is not None else relationship.target_entity
+        relationship._validate_endpoint(new_source, relationship.source_type, "source")
+        relationship._validate_endpoint(new_target, relationship.target_type, "target")
+        if new_source.id not in self._entities:
+            raise ValueError("source_entity is not present in the model.")
+        if new_target.id not in self._entities:
+            raise ValueError("target_entity is not present in the model.")
+        for rel in self._relationships:
+            if rel is relationship:
+                continue
+            if (
+                rel.type == relationship.type
+                and rel.source_entity.id == new_source.id
+                and rel.target_entity.id == new_target.id
+            ):
+                raise ValueError("relationship already exists between these entities.")
+        relationship._update_endpoints(new_source, new_target)
+
     def get_entity(self, entity_id: str) -> BaseEntity:
         return self._entities[entity_id]
 

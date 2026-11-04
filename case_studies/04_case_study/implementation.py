@@ -16,7 +16,7 @@ def build_model() -> Model:
     """Build and return the case-study model."""
     model = Model()
 
-    organization = model.add_entity(
+    organization = model.add(
         Organization(
             name="Example Organization 4",
             description="Placeholder organization for Case Study 4.",
@@ -24,14 +24,13 @@ def build_model() -> Model:
         )
     )
 
-    sector = model.add_entity(
+    sector = model.add(
         Sector(
             name="Example Sector",
-            taxonomy_ref="sectors:example",
         )
     )
 
-    model.add_relationship(
+    model.add(
         operatesIn(
             source_entity=organization,
             target_entity=sector,

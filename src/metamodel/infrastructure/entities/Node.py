@@ -2,12 +2,10 @@ from __future__ import annotations
 
 from metamodel.core.BaseEntity import BaseEntity
 from metamodel.core.ValidationUtils import (
-    require_allowed,
     require_optional_str,
     require_optional_ip_addresses,
     require_optional_mac_addresses,
 )
-
 
 class Node(BaseEntity):
     """Represents the Node entity from the metamodel."""
@@ -17,9 +15,6 @@ class Node(BaseEntity):
         'ip_addresses',
         'mac_addresses',
         'fqdn',
-        'location',
-        'criticality',
-        'exposure'
     )
 
     def __init__(
@@ -30,9 +25,6 @@ class Node(BaseEntity):
         ip_addresses: list[str] | None = None,
         mac_addresses: list[str] | None = None,
         fqdn: str | None = None,
-        location: str | None = None,
-        criticality: str | None = None,
-        exposure: str | None = None,
         source: str | None = None,
     ) -> None:
         super().__init__(name=name, description=description, source=source)
@@ -40,16 +32,10 @@ class Node(BaseEntity):
         self._ip_addresses: list[str]
         self._mac_addresses: list[str]
         self._fqdn: str | None
-        self._location: str | None
-        self._criticality: str | None
-        self._exposure: str | None
         self.hostname = hostname
         self.ip_addresses = ip_addresses
         self.mac_addresses = mac_addresses
         self.fqdn = fqdn
-        self.location = location
-        self.criticality = criticality
-        self.exposure = exposure
 
     @property
     def hostname(self) -> str | None:
@@ -65,7 +51,9 @@ class Node(BaseEntity):
 
     @ip_addresses.setter
     def ip_addresses(self, value: list[str] | None) -> None:
-        self._ip_addresses = require_optional_ip_addresses(value, "ip_addresses")
+        self._ip_addresses = require_optional_ip_addresses(
+            value, "ip_addresses"
+        )
 
     @property
     def mac_addresses(self) -> list[str]:
@@ -73,7 +61,9 @@ class Node(BaseEntity):
 
     @mac_addresses.setter
     def mac_addresses(self, value: list[str] | None) -> None:
-        self._mac_addresses = require_optional_mac_addresses(value, "mac_addresses")
+        self._mac_addresses = require_optional_mac_addresses(
+            value, "mac_addresses"
+        )
 
     @property
     def fqdn(self) -> str | None:
@@ -82,28 +72,3 @@ class Node(BaseEntity):
     @fqdn.setter
     def fqdn(self, value: str | None) -> None:
         self._fqdn = require_optional_str(value, "fqdn")
-
-    @property
-    def location(self) -> str | None:
-        return self._location
-
-    @location.setter
-    def location(self, value: str | None) -> None:
-        self._location = require_optional_str(value, "location")
-
-    @property
-    def criticality(self) -> str | None:
-        return self._criticality
-
-    @criticality.setter
-    def criticality(self, value: str | None) -> None:
-        self._criticality = require_allowed(require_optional_str(value, "criticality"), "criticality", {None, 'high', 'medium', 'low', 'critical'})
-
-    @property
-    def exposure(self) -> str | None:
-        return self._exposure
-
-    @exposure.setter
-    def exposure(self, value: str | None) -> None:
-        self._exposure = require_allowed(require_optional_str(value, "exposure"), "exposure", {None, 'dmz', 'external', 'internal', 'unknown'})
-

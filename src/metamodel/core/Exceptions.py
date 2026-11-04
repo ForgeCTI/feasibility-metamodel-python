@@ -8,7 +8,3 @@ class ValidationError(MetamodelError):
 
 class RegistryError(MetamodelError):
     """Raised when an entity or relationship type cannot be resolved."""
-
-
-class TaxonomyError(MetamodelError):
-    """Raised when taxonomy references cannot be resolved."""
