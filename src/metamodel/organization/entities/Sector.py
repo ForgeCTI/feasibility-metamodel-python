@@ -44,26 +44,20 @@ class Sector(BaseEntity):
     def sector_standard(self) -> str | None:
         return self._sector_standard
 
+
     @sector_standard.setter
     def sector_standard(self, value: str | None) -> None:
-        value = require_optional_str(value, "sector_standard")
-        if value is None and self._sector_standard_version is not None:
-            raise ValueError(
-                "sector_standard cannot be removed while "
-                "sector_standard_version is specified."
-            )
-        self._sector_standard = value
+        self._sector_standard = require_optional_str(value, "sector_standard")
+
 
     @property
     def sector_standard_version(self) -> str | None:
         return self._sector_standard_version
 
+
     @sector_standard_version.setter
     def sector_standard_version(self, value: str | None) -> None:
-        value = require_optional_str(value, "sector_standard_version")
-        if value is not None and self._sector_standard is None:
-            raise ValueError(
-                "sector_standard must be specified when "
-                "sector_standard_version is provided."
-            )
-        self._sector_standard_version = value
+        self._sector_standard_version = require_optional_str(
+            value, "sector_standard_version"
+        )
+

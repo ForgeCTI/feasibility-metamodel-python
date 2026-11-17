@@ -17,23 +17,6 @@ def test_sector_code_without_standard():
     assert sector.sector_standard is None
 
 
-
-def test_sector_standard_version_requires_standard():
-    with pytest.raises(ValueError):
-        Sector(name="Finance", sector_standard_version="Rev. 2.1")
-
-
-def test_sector_standard_cannot_be_removed_when_version_exists():
-    sector = Sector(
-        name="Finance",
-        sector_standard="NACE",
-        sector_code="K",
-        sector_standard_version="Rev. 2.1",
-    )
-    with pytest.raises(ValueError):
-        sector.sector_standard = None
-
-
 def test_sector_standard_version_is_serialized():
     sector = Sector(
         name="Finance",

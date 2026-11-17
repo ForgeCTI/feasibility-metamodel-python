@@ -224,7 +224,6 @@ def build_model() -> Model:
         ThreatStep(
             name="Exploit public-facing web application",
             description="The attacker exploits a web application vulnerability.",
-            sequence_index=1,
             phase="initial_access",
             objective="Obtain initial access through the web portal.",
             preconditions=[

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from metamodel.core.BaseEntity import BaseEntity
-from metamodel.core.ValidationUtils import require_allowed, require_optional_str
+from metamodel.core.ValidationUtils import require_optional_str
 
 
 class ApplicationInstance(BaseEntity):
@@ -37,8 +37,4 @@ class ApplicationInstance(BaseEntity):
 
     @runtime_state.setter
     def runtime_state(self, value: str | None) -> None:
-        self._runtime_state = require_allowed(
-            require_optional_str(value, "runtime_state"),
-            "runtime_state",
-            {None, 'running', 'stopped', 'disabled', 'unknown'},
-        )
+        self._runtime_state = require_optional_str(value, "runtime_state")

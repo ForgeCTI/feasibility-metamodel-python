@@ -24,7 +24,7 @@ def main() -> None:
     actor = model.add(ThreatActor(name="Example threat actor", sophistication="high"))
     campaign = model.add(Campaign(name="Example phishing campaign", status="observed"))
     threat = model.add(Threat(name="Credential theft threat", objective="credential_access"))
-    step = model.add(ThreatStep(name="Exploit public-facing application", sequence_index=1, phase="initial_access"))
+    step = model.add(ThreatStep(name="Exploit public-facing application", phase="initial_access"))
     ttp = model.add(TTP(name="Exploit Public-Facing Application", taxonomy_ref="mitreAttackEnterprise:T1190"))
     vulnerability = model.add(SoftwareVulnerability(name="Example CVE", cve_id="CVE-2099-0001", cvss_score=8.8))
     tool = model.add(AttackTool(name="Example exploit kit", tool_type="exploit_kit"))

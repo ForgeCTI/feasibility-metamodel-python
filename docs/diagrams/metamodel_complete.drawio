@@ -1,0 +1,1981 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram id="complete-metamodel" name="Complete Metamodel Class Diagram">
+    <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="5840" pageHeight="4620" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title0" value="CTI Feasibility Metamodel | Complete Class Diagram" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=36;fontStyle=1;fontColor=#172B40;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="12" width="5760" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="title1" value="39 domain entities  /  102 domain attribute declarations  /  62 associations  /  3 generalizations" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=22;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="63" width="5760" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="title2" value="All domain entities inherit directly or indirectly from BaseEntity. Common attributes (id, type, name, description, source), optionality, methods and visibility are omitted." style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=19;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="97" width="5760" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="title3" value="Open arrows: directed associations. Hollow triangles: generalization. Blank multiplicities: unspecified. Line breaks at crossings distinguish independent connectors." style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=19;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="126" width="5760" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-organization" value="" style="fillColor=#DCEBFA;strokeColor=#285E96;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="170" width="25" height="23" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-label-organization" value="Organization" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=20;fontStyle=1;fontColor=#285E96;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="76" y="167" width="244" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-infrastructure" value="" style="fillColor=#DDEFE3;strokeColor=#397B54;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="330" y="170" width="25" height="23" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-label-infrastructure" value="Infrastructure" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=20;fontStyle=1;fontColor=#397B54;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="366" y="167" width="244" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-cyberThreat" value="" style="fillColor=#FCE7D2;strokeColor=#A45B20;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="620" y="170" width="25" height="23" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-label-cyberThreat" value="CyberThreat" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=20;fontStyle=1;fontColor=#A45B20;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="656" y="167" width="244" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-operatesIn" value="" edge="1" parent="1" source="Organization" target="Sector" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.5;exitY=1.0;entryX=0.5;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="1900" />
+              <mxPoint x="1200" y="1900" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-manages" value="" edge="1" parent="1" source="Organization" target="Infrastructure" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.7142857142857143;exitY=1.0;entryX=0.5;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="820" y="1880" />
+              <mxPoint x="1760" y="1880" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-basedIn" value="" edge="1" parent="1" source="Organization" target="HomeCountry" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.2857142857142857;exitY=1.0;entryX=0.5;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="1860" />
+              <mxPoint x="280" y="1860" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-madeBy" value="" edge="1" parent="1" source="Infrastructure" target="Node" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.5;exitY=1.0;entryX=0.35714285714285715;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1760" y="2800" />
+              <mxPoint x="1720" y="2800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasBusinessRequirement" value="" edge="1" parent="1" source="Organization" target="BusinessRequirement" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=1.0;exitY=0.4444444444444444;entryX=0.0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2400" y="400" />
+              <mxPoint x="2400" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasNodeType" value="" edge="1" parent="1" source="Node" target="NodeType" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.21428571428571427;exitY=1.0;entryX=0.5;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1680" y="3420" />
+              <mxPoint x="1440" y="3420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hostsResource" value="" edge="1" parent="1" source="Node" target="Resource" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=1.0;exitY=0.5714285714285714;entryX=0.0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2340" y="2960" />
+              <mxPoint x="2340" y="2560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-exposesPort" value="" edge="1" parent="1" source="Node" target="Port" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.42857142857142855;exitY=1.0;entryX=0.2857142857142857;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1740" y="4180" />
+              <mxPoint x="1700" y="4180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-isDestination" value="" edge="1" parent="1" source="Node" target="Connection" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.5714285714285714;exitY=1.0;entryX=0.35714285714285715;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1780" y="3360" />
+              <mxPoint x="2000" y="3360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-runsOS" value="" edge="1" parent="1" source="Node" target="OSInstance" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=1.0;exitY=0.8571428571428571;entryX=0.0;entryY=0.5714285714285714;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2320" y="3000" />
+              <mxPoint x="2320" y="3520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-runsApp" value="" edge="1" parent="1" source="Node" target="ApplicationInstance" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=1.0;exitY=0.7142857142857143;entryX=0.0;entryY=0.4;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2340" y="2980" />
+              <mxPoint x="2340" y="3280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-osInstanceOf" value="" edge="1" parent="1" source="OSInstance" target="OS" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.5;exitY=1.0;entryX=0.5;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2640" y="4000" />
+              <mxPoint x="2560" y="4000" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-applicationInstanceOf" value="" edge="1" parent="1" source="ApplicationInstance" target="Application" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.5;exitY=1.0;entryX=0.35714285714285715;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2640" y="3380" />
+              <mxPoint x="2940" y="3380" />
+              <mxPoint x="2940" y="4180" />
+              <mxPoint x="3020" y="4180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-isSource" value="" edge="1" parent="1" source="Node" target="Connection" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.7857142857142857;exitY=1.0;entryX=0.6428571428571429;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1840" y="3340" />
+              <mxPoint x="2080" y="3340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-threatPartOf" value="" edge="1" parent="1" source="Threat" target="Campaign" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=1.0;exitY=0.5;entryX=0.0;entryY=0.14285714285714285;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4780" y="1400" />
+              <mxPoint x="4780" y="1740" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-relatedTo" value="" edge="1" parent="1" source="ThreatActor" target="Adversary" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=1.0;exitY=0.7142857142857143;entryX=0.0;entryY=0.4;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="5260" y="1000" />
+              <mxPoint x="5260" y="960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-initiates" value="" edge="1" parent="1" source="ThreatActor" target="Threat" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.5;exitY=1.0;entryX=0.5;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-exploits" value="" edge="1" parent="1" source="ThreatStep" target="Vulnerability" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.0;exitY=0.14285714285714285;entryX=1.0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3920" y="1740" />
+              <mxPoint x="3920" y="1400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasExpertise" value="" edge="1" parent="1" source="ThreatActor" target="Expertise" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=1.0;exitY=0.2857142857142857;entryX=0.0;entryY=0.4;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="5120" y="940" />
+              <mxPoint x="5120" y="700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-implementsTTP" value="" edge="1" parent="1" source="ThreatStep" target="TTP" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.6428571428571429;exitY=1.0;entryX=0.5;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4640" y="2060" />
+              <mxPoint x="4600" y="2060" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-producesIndicator" value="" edge="1" parent="1" source="AttackToolInstance" target="Indicator" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.0;exitY=0.5714285714285714;entryX=0.0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4000" y="2480" />
+              <mxPoint x="4000" y="2980" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-toolInstanceOf" value="" edge="1" parent="1" source="AttackToolInstance" target="AttackTool" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.6428571428571429;exitY=1.0;entryX=0.35714285714285715;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4320" y="2860" />
+              <mxPoint x="4520" y="2860" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasConfig" value="" edge="1" parent="1" source="AttackToolInstance" target="AttackToolConfiguration" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.35714285714285715;exitY=1.0;entryX=0.35714285714285715;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4240" y="2840" />
+              <mxPoint x="4380" y="2840" />
+              <mxPoint x="4380" y="3580" />
+              <mxPoint x="4240" y="3580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-designedFor" value="" edge="1" parent="1" source="AttackToolInstance" target="OSInstance" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.0;exitY=0.7142857142857143;entryX=1.0;entryY=0.5714285714285714;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3740" y="2500" />
+              <mxPoint x="3740" y="3360" />
+              <mxPoint x="2820" y="3360" />
+              <mxPoint x="2820" y="3520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-targetsSector" value="" edge="1" parent="1" source="Campaign" target="Sector" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.0;exitY=0.5714285714285714;entryX=1.0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4780" y="1800" />
+              <mxPoint x="4780" y="1920" />
+              <mxPoint x="1780" y="1920" />
+              <mxPoint x="1780" y="1900" />
+              <mxPoint x="1380" y="1900" />
+              <mxPoint x="1380" y="2000" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-focusesOnCountry" value="" edge="1" parent="1" source="Campaign" target="HomeCountry" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.0;exitY=0.42857142857142855;entryX=1.0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4800" y="1780" />
+              <mxPoint x="4800" y="1940" />
+              <mxPoint x="1940" y="1940" />
+              <mxPoint x="1940" y="1860" />
+              <mxPoint x="700" y="1860" />
+              <mxPoint x="700" y="1960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-targetsInternationalBody" value="" edge="1" parent="1" source="Campaign" target="InternationalBody" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.0;exitY=0.8571428571428571;entryX=1.0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4860" y="1840" />
+              <mxPoint x="4860" y="2340" />
+              <mxPoint x="980" y="2340" />
+              <mxPoint x="980" y="2560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-associatedToTool" value="" edge="1" parent="1" source="Indicator" target="AttackToolInstance" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=1.0;exitY=0.5;entryX=1.0;entryY=0.5714285714285714;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4360" y="2980" />
+              <mxPoint x="4360" y="2580" />
+              <mxPoint x="4460" y="2580" />
+              <mxPoint x="4460" y="2480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-exploitsVulnerability" value="" edge="1" parent="1" source="TTP" target="Vulnerability" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.0;exitY=0.7142857142857143;entryX=0.7857142857142857;entryY=1.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3820" y="2200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-deploysTool" value="" edge="1" parent="1" source="AttackToolInstance" target="AttackToolInstance" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.2857142857142857;exitY=0.0;entryX=0.5;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4220" y="2360" />
+              <mxPoint x="4280" y="2360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-affectsCode" value="" edge="1" parent="1" source="ConfigVulnerability" target="Code" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.0;exitY=0.4;entryX=1.0;entryY=0.8333333333333334;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3200" y="3460" />
+              <mxPoint x="3200" y="3020" />
+              <mxPoint x="2700" y="3020" />
+              <mxPoint x="2700" y="2940" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-compromises" value="" edge="1" parent="1" source="ThreatStep" target="AssetSecurityRequirement" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.0;exitY=0.42857142857142855;entryX=1.0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2760" y="1780" />
+              <mxPoint x="2760" y="1400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-countryPartOf" value="" edge="1" parent="1" source="HomeCountry" target="InternationalBody" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.5;exitY=1.0;entryX=0.5;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="280" y="2060" />
+              <mxPoint x="800" y="2060" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasInformationType" value="" edge="1" parent="1" source="Information" target="InformationType" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=1.0;exitY=0.5;entryX=0.0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3240" y="2940" />
+              <mxPoint x="3240" y="3160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-resourceImplementsCode" value="" edge="1" parent="1" source="Resource" target="Code" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.5;exitY=1.0;entryX=1.0;entryY=0.3333333333333333;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3060" y="2620" />
+              <mxPoint x="2720" y="2620" />
+              <mxPoint x="2720" y="2880" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasAdversaryType" value="" edge="1" parent="1" source="Adversary" target="AdversaryType" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.5;exitY=1.0;entryX=0.5;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-aliasOf" value="" edge="1" parent="1" source="ThreatActor" target="ThreatActor" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.5;exitY=0.0;entryX=0.0;entryY=0.5714285714285714;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4600" y="860" />
+              <mxPoint x="4420" y="860" />
+              <mxPoint x="4420" y="980" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-startsWith" value="" edge="1" parent="1" source="Threat" target="ThreatStep" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.5;exitY=1.0;entryX=0.35714285714285715;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4600" y="1680" />
+              <mxPoint x="4560" y="1680" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-affectsUser" value="" edge="1" parent="1" source="HumanVulnerability" target="User" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.35714285714285715;exitY=0.0;entryX=0.6428571428571429;entryY=1.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3760" y="2640" />
+              <mxPoint x="3520" y="2640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-accessesInformation" value="" edge="1" parent="1" source="Code" target="Information" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=1.0;exitY=0.6666666666666666;entryX=0.0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2880" y="2920" />
+              <mxPoint x="2880" y="2940" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-listensOn" value="" edge="1" parent="1" source="Code" target="Port" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.35714285714285715;exitY=1.0;entryX=0.7142857142857143;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2480" y="3200" />
+              <mxPoint x="2360" y="3200" />
+              <mxPoint x="2360" y="4180" />
+              <mxPoint x="1820" y="4180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-drivesSecurityRequirement" value="" edge="1" parent="1" source="BusinessRequirement" target="AssetSecurityRequirement" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.5;exitY=1.0;entryX=0.5;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasAccessTo" value="" edge="1" parent="1" source="User" target="Node" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.0;exitY=0.7142857142857143;entryX=1.0;entryY=0.2857142857142857;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3300" y="2560" />
+              <mxPoint x="3300" y="2800" />
+              <mxPoint x="1960" y="2800" />
+              <mxPoint x="1960" y="2920" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-launches" value="" edge="1" parent="1" source="User" target="Code" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.0;exitY=0.5714285714285714;entryX=1.0;entryY=0.16666666666666666;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3260" y="2540" />
+              <mxPoint x="3260" y="2840" />
+              <mxPoint x="2700" y="2840" />
+              <mxPoint x="2700" y="2860" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-userAccessesInformation" value="" edge="1" parent="1" source="User" target="Information" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.35714285714285715;exitY=1.0;entryX=0.5;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3440" y="2640" />
+              <mxPoint x="3060" y="2640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasUserType" value="" edge="1" parent="1" source="User" target="UserType" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.5;exitY=0.0;entryX=0.5;entryY=1.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-applicationImplementsCode" value="" edge="1" parent="1" source="ApplicationInstance" target="Code" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.5;exitY=0.0;entryX=0.6428571428571429;entryY=1.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2640" y="3000" />
+              <mxPoint x="2560" y="3000" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-employsTool" value="" edge="1" parent="1" source="ThreatStep" target="AttackToolInstance" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.35714285714285715;exitY=1.0;entryX=0.7142857142857143;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4560" y="1900" />
+              <mxPoint x="4340" y="1900" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-followedBy" value="" edge="1" parent="1" source="ThreatStep" target="ThreatStep" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.6428571428571429;exitY=0.0;entryX=0.0;entryY=0.5714285714285714;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4640" y="1680" />
+              <mxPoint x="4620" y="1680" />
+              <mxPoint x="4620" y="1660" />
+              <mxPoint x="4400" y="1660" />
+              <mxPoint x="4400" y="1800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-usedBy" value="" edge="1" parent="1" source="Infrastructure" target="User" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=1.0;exitY=0.4;entryX=0.0;entryY=0.2857142857142857;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1940" y="2000" />
+              <mxPoint x="1940" y="2480" />
+              <mxPoint x="3300" y="2480" />
+              <mxPoint x="3300" y="2500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-requiresConfig" value="" edge="1" parent="1" source="AttackTool" target="AttackToolConfiguration" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.5;exitY=1.0;entryX=0.6428571428571429;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4560" y="3600" />
+              <mxPoint x="4320" y="3600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-requiresExpertise" value="" edge="1" parent="1" source="AttackTool" target="Expertise" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.6428571428571429;exitY=0.0;entryX=0.5;entryY=1.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4600" y="2280" />
+              <mxPoint x="5240" y="2280" />
+              <mxPoint x="5240" y="800" />
+              <mxPoint x="5300" y="800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasSecurityRequirement" value="" edge="1" parent="1" source="Asset" target="AssetSecurityRequirement" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.0;exitY=0.5;entryX=0.5;entryY=1.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2780" y="1400" />
+              <mxPoint x="2780" y="1460" />
+              <mxPoint x="2580" y="1460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-implementsRequirement" value="" edge="1" parent="1" source="AssetSecurityRequirement" target="SecurityRequirement" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.0;exitY=0.5;entryX=1.0;entryY=0.25;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2400" y="1400" />
+              <mxPoint x="2400" y="940" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-resourceImplementsAsset" value="" edge="1" parent="1" source="Resource" target="Asset" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.5;exitY=0.0;entryX=0.5;entryY=1.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3060" y="1460" />
+              <mxPoint x="3140" y="1460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-targetsResource" value="" edge="1" parent="1" source="ThreatStep" target="Resource" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.0;exitY=0.8571428571428571;entryX=1.0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3240" y="1840" />
+              <mxPoint x="3240" y="2560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-violates" value="" edge="1" parent="1" source="TTP" target="SecurityRequirement" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.0;exitY=0.2857142857142857;entryX=1.0;entryY=0.75;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3940" y="2140" />
+              <mxPoint x="3940" y="980" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasDestinationPort" value="" edge="1" parent="1" source="Connection" target="Port" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.5;exitY=1.0;entryX=0.5;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2040" y="4160" />
+              <mxPoint x="1760" y="4160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-affectsApplication" value="" edge="1" parent="1" source="SoftwareVulnerability" target="Application" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.5;exitY=1.0;entryX=0.6428571428571429;entryY=0.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3140" y="4180" />
+              <mxPoint x="3100" y="4180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-affectsOS" value="" edge="1" parent="1" source="SoftwareVulnerability" target="OS" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.0;exitY=0.5;entryX=1.0;entryY=0.5714285714285714;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2960" y="3760" />
+              <mxPoint x="2960" y="4120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-runs" value="" edge="1" parent="1" source="Node" target="Node" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.6428571428571429;exitY=0.0;entryX=0.0;entryY=0.5714285714285714;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1800" y="2840" />
+              <mxPoint x="1740" y="2840" />
+              <mxPoint x="1740" y="2820" />
+              <mxPoint x="1580" y="2820" />
+              <mxPoint x="1580" y="2960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-deployedTo" value="" edge="1" parent="1" source="AttackToolInstance" target="Node" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=open;endFill=0;endSize=8;strokeColor=#536173;strokeWidth=1.6;exitX=0.0;exitY=0.2857142857142857;entryX=1.0;entryY=0.14285714285714285;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3660" y="2440" />
+              <mxPoint x="3660" y="2780" />
+              <mxPoint x="1940" y="2780" />
+              <mxPoint x="1940" y="2900" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-inherits-SoftwareVulnerability" value="" edge="1" parent="1" source="SoftwareVulnerability" target="Vulnerability" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=block;endFill=0;endSize=12;strokeColor=#172B40;strokeWidth=2.1;exitX=0.5;exitY=0.0;entryX=0.21428571428571427;entryY=1.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3140" y="3040" />
+              <mxPoint x="3680" y="3040" />
+              <mxPoint x="3680" y="1500" />
+              <mxPoint x="3660" y="1500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-inherits-ConfigVulnerability" value="" edge="1" parent="1" source="ConfigVulnerability" target="Vulnerability" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=block;endFill=0;endSize=12;strokeColor=#172B40;strokeWidth=2.1;exitX=0.5;exitY=0.0;entryX=0.42857142857142855;entryY=1.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3380" y="3380" />
+              <mxPoint x="3720" y="3380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-inherits-HumanVulnerability" value="" edge="1" parent="1" source="HumanVulnerability" target="Vulnerability" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;jumpStyle=gap;jumpSize=8;endArrow=block;endFill=0;endSize=12;strokeColor=#172B40;strokeWidth=2.1;exitX=0.6428571428571429;exitY=0.0;entryX=0.5714285714285714;entryY=1.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3840" y="2220" />
+              <mxPoint x="3760" y="2220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Organization" value="" style="rounded=0;html=0;fillColor=#F4F8FD;strokeColor=#285E96;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="620" y="320" width="280" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="Organization-header" value="Organization" style="rounded=0;html=0;fillColor=#DCEBFA;strokeColor=#285E96;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Organization">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="Organization-attr-0" value="legal_name : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Organization">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Organization-attr-1" value="short_name : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Organization">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Organization-attr-2" value="website : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Organization">
+          <mxGeometry x="12" y="81" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Organization-attr-3" value="organization_size : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Organization">
+          <mxGeometry x="12" y="102" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Organization-attr-4" value="criticality : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Organization">
+          <mxGeometry x="12" y="123" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Organization-attr-5" value="maturity_level : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Organization">
+          <mxGeometry x="12" y="144" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Sector" value="" style="rounded=0;html=0;fillColor=#F4F8FD;strokeColor=#285E96;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="1940" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Sector-header" value="Sector" style="rounded=0;html=0;fillColor=#DCEBFA;strokeColor=#285E96;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Sector">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="Sector-attr-0" value="sector_code : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Sector">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Sector-attr-1" value="sector_standard : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Sector">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Sector-attr-2" value="sector_standard_version : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Sector">
+          <mxGeometry x="12" y="81" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="HomeCountry" value="" style="rounded=0;html=0;fillColor=#F4F8FD;strokeColor=#285E96;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="140" y="1900" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="HomeCountry-header" value="HomeCountry" style="rounded=0;html=0;fillColor=#DCEBFA;strokeColor=#285E96;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="HomeCountry">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="HomeCountry-attr-0" value="iso2_code : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="HomeCountry">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="HomeCountry-attr-1" value="iso3_code : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="HomeCountry">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="HomeCountry-attr-2" value="region : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="HomeCountry">
+          <mxGeometry x="12" y="81" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="InternationalBody" value="" style="rounded=0;html=0;fillColor=#F4F8FD;strokeColor=#285E96;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="660" y="2520" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="InternationalBody-header" value="InternationalBody" style="rounded=0;html=0;fillColor=#DCEBFA;strokeColor=#285E96;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="InternationalBody">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="InternationalBody-attr-0" value="acronym : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="InternationalBody">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="BusinessRequirement" value="" style="rounded=0;html=0;fillColor=#F4F8FD;strokeColor=#285E96;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="2440" y="320" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="BusinessRequirement-header" value="BusinessRequirement" style="rounded=0;html=0;fillColor=#DCEBFA;strokeColor=#285E96;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="BusinessRequirement">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="BusinessRequirement-attr-0" value="priority : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="BusinessRequirement">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="SecurityRequirement" value="" style="rounded=0;html=0;fillColor=#F4F8FD;strokeColor=#285E96;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1940" y="920" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="SecurityRequirement-header" value="SecurityRequirement" style="rounded=0;html=0;fillColor=#DCEBFA;strokeColor=#285E96;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="SecurityRequirement">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="SecurityRequirement-attr-0" value="requirement_type : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="SecurityRequirement">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Asset" value="" style="rounded=0;html=0;fillColor=#F4F8FD;strokeColor=#285E96;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="3000" y="1380" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Asset-header" value="Asset" style="rounded=0;html=0;fillColor=#DCEBFA;strokeColor=#285E96;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Asset">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="AssetSecurityRequirement" value="" style="rounded=0;html=0;fillColor=#F4F8FD;strokeColor=#285E96;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="2440" y="1380" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="AssetSecurityRequirement-header" value="AssetSecurityRequirement" style="rounded=0;html=0;fillColor=#DCEBFA;strokeColor=#285E96;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="AssetSecurityRequirement">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="Infrastructure" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1620" y="1960" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Infrastructure-header" value="Infrastructure" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Infrastructure">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="Infrastructure-attr-0" value="environment_type : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Infrastructure">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Infrastructure-attr-1" value="scope : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Infrastructure">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Node" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1620" y="2880" width="280" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="Node-header" value="Node" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Node">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="Node-attr-0" value="hostname : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Node">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Node-attr-1" value="ip_addresses : list[str]" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Node">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Node-attr-2" value="mac_addresses : list[str]" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Node">
+          <mxGeometry x="12" y="81" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Node-attr-3" value="fqdn : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Node">
+          <mxGeometry x="12" y="102" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="NodeType" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="3460" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NodeType-header" value="NodeType" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="NodeType">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="NodeType-attr-0" value="category : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="NodeType">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Port" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1620" y="4220" width="280" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="Port-header" value="Port" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Port">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="Port-attr-0" value="number : int" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Port">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Port-attr-1" value="protocol : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Port">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Port-attr-2" value="service_name : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Port">
+          <mxGeometry x="12" y="81" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Port-attr-3" value="state : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Port">
+          <mxGeometry x="12" y="102" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Connection" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1900" y="3400" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Connection-header" value="Connection" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Connection">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="Connection-attr-0" value="protocol : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Connection">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Connection-attr-1" value="encrypted : bool" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Connection">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Connection-attr-2" value="allowed : bool" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Connection">
+          <mxGeometry x="12" y="81" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Resource" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="2920" y="2540" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Resource-header" value="Resource" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Resource">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="Code" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="2380" y="2840" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Code-header" value="Code" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Code">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="Code-attr-0" value="language : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Code">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Code-attr-1" value="version : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Code">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Code-attr-2" value="repository_url : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Code">
+          <mxGeometry x="12" y="81" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Information" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="2920" y="2900" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Information-header" value="Information" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Information">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="Information-attr-0" value="format : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Information">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="InformationType" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="3380" y="3120" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="InformationType-header" value="InformationType" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="InformationType">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="InformationType-attr-0" value="category : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="InformationType">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="User" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="3340" y="2460" width="280" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="User-header" value="User" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="User">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="User-attr-0" value="username : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="User">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="User-attr-1" value="email : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="User">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="User-attr-2" value="role : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="User">
+          <mxGeometry x="12" y="81" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="User-attr-3" value="mfa_enabled : bool" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="User">
+          <mxGeometry x="12" y="102" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="UserType" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="3340" y="2000" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="UserType-header" value="UserType" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="UserType">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="UserType-attr-0" value="privilege_level : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="UserType">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Application" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="2920" y="4220" width="280" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="Application-header" value="Application" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Application">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="Application-attr-0" value="vendor : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Application">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Application-attr-1" value="product : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Application">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Application-attr-2" value="version : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Application">
+          <mxGeometry x="12" y="81" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Application-attr-3" value="cpe : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Application">
+          <mxGeometry x="12" y="102" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="ApplicationInstance" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="2500" y="3240" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ApplicationInstance-header" value="ApplicationInstance" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="ApplicationInstance">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="ApplicationInstance-attr-0" value="version : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="ApplicationInstance">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="ApplicationInstance-attr-1" value="runtime_state : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="ApplicationInstance">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="OS" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="2420" y="4040" width="280" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="OS-header" value="OS" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="OS">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="OS-attr-0" value="vendor : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="OS">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="OS-attr-1" value="product : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="OS">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="OS-attr-2" value="version : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="OS">
+          <mxGeometry x="12" y="81" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="OS-attr-3" value="cpe : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="OS">
+          <mxGeometry x="12" y="102" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="OSInstance" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="2500" y="3440" width="280" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="OSInstance-header" value="OSInstance" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="OSInstance">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="OSInstance-attr-0" value="version : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="OSInstance">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="OSInstance-attr-1" value="build : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="OSInstance">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="OSInstance-attr-2" value="patch_level : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="OSInstance">
+          <mxGeometry x="12" y="81" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="OSInstance-attr-3" value="support_status : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="OSInstance">
+          <mxGeometry x="12" y="102" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="ThreatActor" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="4460" y="900" width="280" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ThreatActor-header" value="ThreatActor" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="ThreatActor">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="ThreatActor-attr-0" value="aliases : list[str]" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="ThreatActor">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="ThreatActor-attr-1" value="motivation : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="ThreatActor">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="ThreatActor-attr-2" value="sophistication : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="ThreatActor">
+          <mxGeometry x="12" y="81" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="ThreatActor-attr-3" value="country : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="ThreatActor">
+          <mxGeometry x="12" y="102" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Adversary" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="5300" y="920" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Adversary-header" value="Adversary" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Adversary">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="Adversary-attr-0" value="objective : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Adversary">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Adversary-attr-1" value="capability_level : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Adversary">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="AdversaryType" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="5300" y="1400" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="AdversaryType-header" value="AdversaryType" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="AdversaryType">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="AdversaryType-attr-0" value="category : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="AdversaryType">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Expertise" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="5160" y="660" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Expertise-header" value="Expertise" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Expertise">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="Expertise-attr-0" value="level : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Expertise">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Expertise-attr-1" value="domain : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Expertise">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Threat" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="4460" y="1340" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Threat-header" value="Threat" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Threat">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="Threat-attr-0" value="objective : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Threat">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Threat-attr-1" value="first_seen : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Threat">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Threat-attr-2" value="last_seen : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Threat">
+          <mxGeometry x="12" y="81" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="ThreatStep" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="4460" y="1720" width="280" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ThreatStep-header" value="ThreatStep" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="ThreatStep">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="ThreatStep-attr-0" value="phase : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="ThreatStep">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="ThreatStep-attr-1" value="objective : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="ThreatStep">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="ThreatStep-attr-2" value="preconditions : list[str]" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="ThreatStep">
+          <mxGeometry x="12" y="81" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="ThreatStep-attr-3" value="postconditions : list[str]" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="ThreatStep">
+          <mxGeometry x="12" y="102" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Campaign" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="4900" y="1720" width="280" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="Campaign-header" value="Campaign" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Campaign">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="Campaign-attr-0" value="first_seen : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Campaign">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Campaign-attr-1" value="last_seen : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Campaign">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Campaign-attr-2" value="status : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Campaign">
+          <mxGeometry x="12" y="81" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Campaign-attr-3" value="objective : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Campaign">
+          <mxGeometry x="12" y="102" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="TTP" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="4460" y="2100" width="280" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="TTP-header" value="TTP" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="TTP">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="TTP-attr-0" value="external_id : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="TTP">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="TTP-attr-1" value="tactic : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="TTP">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="TTP-attr-2" value="technique : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="TTP">
+          <mxGeometry x="12" y="81" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="TTP-attr-3" value="subtechnique : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="TTP">
+          <mxGeometry x="12" y="102" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Indicator" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="4040" y="2900" width="280" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="Indicator-header" value="Indicator" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Indicator">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="Indicator-attr-0" value="indicator_type : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Indicator">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Indicator-attr-1" value="value : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Indicator">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Indicator-attr-2" value="pattern : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Indicator">
+          <mxGeometry x="12" y="81" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Indicator-attr-3" value="valid_from : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Indicator">
+          <mxGeometry x="12" y="102" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Indicator-attr-4" value="valid_until : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Indicator">
+          <mxGeometry x="12" y="123" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Vulnerability" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="3600" y="1340" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Vulnerability-header" value="Vulnerability" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Vulnerability">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="Vulnerability-attr-0" value="external_id : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Vulnerability">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Vulnerability-attr-1" value="severity : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Vulnerability">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Vulnerability-attr-2" value="cvss_score : float" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="Vulnerability">
+          <mxGeometry x="12" y="81" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="SoftwareVulnerability" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="3000" y="3700" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="SoftwareVulnerability-header" value="SoftwareVulnerability" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="SoftwareVulnerability">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="SoftwareVulnerability-attr-0" value="cve_id : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="SoftwareVulnerability">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="SoftwareVulnerability-attr-1" value="cwe_id : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="SoftwareVulnerability">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="SoftwareVulnerability-attr-2" value="affected_versions : list[str]" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="SoftwareVulnerability">
+          <mxGeometry x="12" y="81" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="ConfigVulnerability" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="3240" y="3420" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ConfigVulnerability-header" value="ConfigVulnerability" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="ConfigVulnerability">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="ConfigVulnerability-attr-0" value="misconfiguration_type : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="ConfigVulnerability">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="ConfigVulnerability-attr-1" value="detectability : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="ConfigVulnerability">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="HumanVulnerability" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="3660" y="3420" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HumanVulnerability-header" value="HumanVulnerability" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="HumanVulnerability">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="HumanVulnerability-attr-0" value="vulnerability_type : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="HumanVulnerability">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="AttackTool" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="4420" y="3440" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="AttackTool-header" value="AttackTool" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="AttackTool">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="AttackTool-attr-0" value="aliases : list[str]" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="AttackTool">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="AttackTool-attr-1" value="tool_type : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="AttackTool">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="AttackTool-attr-2" value="capabilities : list[str]" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="AttackTool">
+          <mxGeometry x="12" y="81" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="AttackToolInstance" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="4140" y="2400" width="280" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="AttackToolInstance-header" value="AttackToolInstance" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="AttackToolInstance">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="AttackToolInstance-attr-0" value="observed_version : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="AttackToolInstance">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="AttackToolInstance-attr-1" value="hashes : list[str]" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="AttackToolInstance">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="AttackToolInstance-attr-2" value="first_seen : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="AttackToolInstance">
+          <mxGeometry x="12" y="81" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="AttackToolInstance-attr-3" value="last_seen : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="AttackToolInstance">
+          <mxGeometry x="12" y="102" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="AttackToolConfiguration" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="4140" y="3820" width="280" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="AttackToolConfiguration-header" value="AttackToolConfiguration" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="AttackToolConfiguration">
+          <mxGeometry x="0" y="0" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="AttackToolConfiguration-attr-0" value="configuration_type : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="AttackToolConfiguration">
+          <mxGeometry x="12" y="39" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="AttackToolConfiguration-attr-1" value="parameters : dict" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="AttackToolConfiguration">
+          <mxGeometry x="12" y="60" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="AttackToolConfiguration-attr-2" value="persistence_enabled : bool" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="AttackToolConfiguration">
+          <mxGeometry x="12" y="81" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="AttackToolConfiguration-attr-3" value="stealth_level : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;connectable=0;" vertex="1" parent="AttackToolConfiguration">
+          <mxGeometry x="12" y="102" width="256" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-operatesIn-source" value="1" vertex="1" connectable="0" parent="edge-operatesIn" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.973404255319149" y="0" relative="1" as="geometry">
+            <mxPoint x="-17.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-operatesIn-target" value="1..*" vertex="1" connectable="0" parent="edge-operatesIn" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9734042553191489" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-manages-source" value="1" vertex="1" connectable="0" parent="edge-manages" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9791666666666666" y="0" relative="1" as="geometry">
+            <mxPoint x="-17.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-manages-target" value="1..*" vertex="1" connectable="0" parent="edge-manages" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9791666666666667" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-basedIn-source" value="1" vertex="1" connectable="0" parent="edge-basedIn" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9725274725274725" y="0" relative="1" as="geometry">
+            <mxPoint x="-17.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-madeBy-source" value="1" vertex="1" connectable="0" parent="edge-madeBy" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9418604651162791" y="0" relative="1" as="geometry">
+            <mxPoint x="-17.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-madeBy-target" value="1..*" vertex="1" connectable="0" parent="edge-madeBy" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.941860465116279" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasBusinessRequirement-source" value="1" vertex="1" connectable="0" parent="edge-hasBusinessRequirement" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9683544303797469" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasBusinessRequirement-target" value="1..*" vertex="1" connectable="0" parent="edge-hasBusinessRequirement" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9556962025316456" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasNodeType-source" value="1..*" vertex="1" connectable="0" parent="edge-hasNodeType" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9264705882352942" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasNodeType-target" value="1" vertex="1" connectable="0" parent="edge-hasNodeType" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9264705882352942" y="0" relative="1" as="geometry">
+            <mxPoint x="-17.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hostsResource-source" value="1" vertex="1" connectable="0" parent="edge-hostsResource" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9647887323943662" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hostsResource-target" value="1..*" vertex="1" connectable="0" parent="edge-hostsResource" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9507042253521127" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-exposesPort-source" value="1" vertex="1" connectable="0" parent="edge-exposesPort" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9596774193548387" y="0" relative="1" as="geometry">
+            <mxPoint x="-17.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-exposesPort-target" value="1..*" vertex="1" connectable="0" parent="edge-exposesPort" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9596774193548387" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-isDestination-source" value="1" vertex="1" connectable="0" parent="edge-isDestination" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9166666666666666" y="0" relative="1" as="geometry">
+            <mxPoint x="-17.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-isDestination-target" value="0..*" vertex="1" connectable="0" parent="edge-isDestination" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9166666666666667" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-runsOS-source" value="1" vertex="1" connectable="0" parent="edge-runsOS" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9553571428571429" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-runsOS-target" value="1" vertex="1" connectable="0" parent="edge-runsOS" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9553571428571428" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-runsApp-source" value="1" vertex="1" connectable="0" parent="edge-runsApp" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9444444444444444" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="61.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-runsApp-target" value="0..*" vertex="1" connectable="0" parent="edge-runsApp" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9222222222222223" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-osInstanceOf-source" value="0..*" vertex="1" connectable="0" parent="edge-osInstanceOf" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9074074074074074" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-osInstanceOf-target" value="1" vertex="1" connectable="0" parent="edge-osInstanceOf" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9074074074074074" y="0" relative="1" as="geometry">
+            <mxPoint x="-17.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-applicationInstanceOf-source" value="0..*" vertex="1" connectable="0" parent="edge-applicationInstanceOf" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9603174603174603" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-applicationInstanceOf-target" value="1" vertex="1" connectable="0" parent="edge-applicationInstanceOf" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9603174603174602" y="0" relative="1" as="geometry">
+            <mxPoint x="-17.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-isSource-source" value="1" vertex="1" connectable="0" parent="edge-isSource" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9193548387096774" y="0" relative="1" as="geometry">
+            <mxPoint x="-17.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-isSource-target" value="0..*" vertex="1" connectable="0" parent="edge-isSource" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9193548387096775" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-threatPartOf-source" value="1..*" vertex="1" connectable="0" parent="edge-threatPartOf" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.86" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-threatPartOf-target" value="1" vertex="1" connectable="0" parent="edge-threatPartOf" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.8999999999999999" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-relatedTo-source" value="1..*" vertex="1" connectable="0" parent="edge-relatedTo" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.8833333333333333" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-relatedTo-target" value="0..*" vertex="1" connectable="0" parent="edge-relatedTo" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.8833333333333333" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-initiates-source" value="1" vertex="1" connectable="0" parent="edge-initiates" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.8333333333333334" y="0" relative="1" as="geometry">
+            <mxPoint x="-17.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-initiates-target" value="0..1" vertex="1" connectable="0" parent="edge-initiates" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.8333333333333333" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasExpertise-source" value="1..*" vertex="1" connectable="0" parent="edge-hasExpertise" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.8939393939393939" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasExpertise-target" value="1" vertex="1" connectable="0" parent="edge-hasExpertise" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9242424242424243" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-implementsTTP-source" value="1..*" vertex="1" connectable="0" parent="edge-implementsTTP" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.8214285714285714" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-implementsTTP-target" value="1" vertex="1" connectable="0" parent="edge-implementsTTP" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.8214285714285714" y="0" relative="1" as="geometry">
+            <mxPoint x="-17.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-producesIndicator-source" value="1" vertex="1" connectable="0" parent="edge-producesIndicator" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9264705882352942" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-producesIndicator-target" value="1..*" vertex="1" connectable="0" parent="edge-producesIndicator" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.8970588235294117" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-toolInstanceOf-source" value="1..*" vertex="1" connectable="0" parent="edge-toolInstanceOf" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9545454545454546" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-toolInstanceOf-target" value="1" vertex="1" connectable="0" parent="edge-toolInstanceOf" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9545454545454546" y="0" relative="1" as="geometry">
+            <mxPoint x="-17.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasConfig-source" value="1" vertex="1" connectable="0" parent="edge-hasConfig" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.967948717948718" y="0" relative="1" as="geometry">
+            <mxPoint x="-17.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasConfig-target" value="0..*" vertex="1" connectable="0" parent="edge-hasConfig" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9679487179487178" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-designedFor-source" value="1..*" vertex="1" connectable="0" parent="edge-designedFor" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9705882352941176" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-designedFor-target" value="1" vertex="1" connectable="0" parent="edge-designedFor" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9789915966386555" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-targetsSector-source" value="0..*" vertex="1" connectable="0" parent="edge-targetsSector" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9815789473684211" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-targetsSector-target" value="0..*" vertex="1" connectable="0" parent="edge-targetsSector" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9815789473684211" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-focusesOnCountry-source" value="0..*" vertex="1" connectable="0" parent="edge-focusesOnCountry" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9854771784232366" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-focusesOnCountry-target" value="0..*" vertex="1" connectable="0" parent="edge-focusesOnCountry" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9854771784232366" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-targetsInternationalBody-source" value="0..*" vertex="1" connectable="0" parent="edge-targetsInternationalBody" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9850427350427351" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-targetsInternationalBody-target" value="0..*" vertex="1" connectable="0" parent="edge-targetsInternationalBody" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9850427350427351" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-associatedToTool-source" value="1..*" vertex="1" connectable="0" parent="edge-associatedToTool" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.8970588235294118" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-associatedToTool-target" value="1" vertex="1" connectable="0" parent="edge-associatedToTool" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9264705882352942" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-exploitsVulnerability-source" value="1..*" vertex="1" connectable="0" parent="edge-exploitsVulnerability" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9492753623188406" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-exploitsVulnerability-target" value="0..1" vertex="1" connectable="0" parent="edge-exploitsVulnerability" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.963768115942029" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-deploysTool-source" value="0..*" vertex="1" connectable="0" parent="edge-deploysTool" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.6428571428571428" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-affectsCode-source" value="0..*" vertex="1" connectable="0" parent="edge-affectsCode" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9363636363636364" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-affectsCode-target" value="1..*" vertex="1" connectable="0" parent="edge-affectsCode" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9363636363636363" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-compromises-source" value="1..*" vertex="1" connectable="0" parent="edge-compromises" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9669811320754716" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-compromises-target" value="1" vertex="1" connectable="0" parent="edge-compromises" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9764150943396226" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-countryPartOf-source" value="1..*" vertex="1" connectable="0" parent="edge-countryPartOf" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9509803921568627" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-countryPartOf-target" value="1..*" vertex="1" connectable="0" parent="edge-countryPartOf" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9509803921568627" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasInformationType-source" value="1..*" vertex="1" connectable="0" parent="edge-hasInformationType" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.825" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasInformationType-target" value="1" vertex="1" connectable="0" parent="edge-hasInformationType" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.875" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasAdversaryType-source" value="1..*" vertex="1" connectable="0" parent="edge-hasAdversaryType" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.868421052631579" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasAdversaryType-target" value="1" vertex="1" connectable="0" parent="edge-hasAdversaryType" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.868421052631579" y="0" relative="1" as="geometry">
+            <mxPoint x="-17.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-aliasOf-source" value="0..*" vertex="1" connectable="0" parent="edge-aliasOf" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.868421052631579" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-startsWith-source" value="0..1" vertex="1" connectable="0" parent="edge-startsWith" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.8333333333333334" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-startsWith-target" value="1" vertex="1" connectable="0" parent="edge-startsWith" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.8333333333333333" y="0" relative="1" as="geometry">
+            <mxPoint x="-17.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-affectsUser-source" value="0..*" vertex="1" connectable="0" parent="edge-affectsUser" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9528301886792453" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-affectsUser-target" value="0..*" vertex="1" connectable="0" parent="edge-affectsUser" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9528301886792452" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-accessesInformation-source" value="0..*" vertex="1" connectable="0" parent="edge-accessesInformation" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.75" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-accessesInformation-target" value="0..*" vertex="1" connectable="0" parent="edge-accessesInformation" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.75" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-listensOn-source" value="1" vertex="1" connectable="0" parent="edge-listensOn" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9739583333333334" y="0" relative="1" as="geometry">
+            <mxPoint x="-17.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-listensOn-target" value="0..*" vertex="1" connectable="0" parent="edge-listensOn" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9739583333333333" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-drivesSecurityRequirement-source" value="1" vertex="1" connectable="0" parent="edge-drivesSecurityRequirement" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9489795918367347" y="0" relative="1" as="geometry">
+            <mxPoint x="-17.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-drivesSecurityRequirement-target" value="1..*" vertex="1" connectable="0" parent="edge-drivesSecurityRequirement" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9489795918367347" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-launches-source" value="1" vertex="1" connectable="0" parent="edge-launches" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.95" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-launches-target" value="0..*" vertex="1" connectable="0" parent="edge-launches" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9299999999999999" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-userAccessesInformation-source" value="1..*" vertex="1" connectable="0" parent="edge-userAccessesInformation" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9264705882352942" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-userAccessesInformation-target" value="0..*" vertex="1" connectable="0" parent="edge-userAccessesInformation" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9264705882352942" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasUserType-source" value="1..*" vertex="1" connectable="0" parent="edge-hasUserType" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.868421052631579" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasUserType-target" value="1" vertex="1" connectable="0" parent="edge-hasUserType" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.868421052631579" y="0" relative="1" as="geometry">
+            <mxPoint x="-17.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-employsTool-source" value="1..*" vertex="1" connectable="0" parent="edge-employsTool" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9342105263157895" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-employsTool-target" value="0..*" vertex="1" connectable="0" parent="edge-employsTool" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9342105263157894" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-followedBy-source" value="0..*" vertex="1" connectable="0" parent="edge-followedBy" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-usedBy-source" value="1" vertex="1" connectable="0" parent="edge-usedBy" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9742268041237113" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-usedBy-target" value="1..*" vertex="1" connectable="0" parent="edge-usedBy" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9639175257731958" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-requiresConfig-source" value="1" vertex="1" connectable="0" parent="edge-requiresConfig" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9" y="0" relative="1" as="geometry">
+            <mxPoint x="-17.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-requiresConfig-target" value="0..*" vertex="1" connectable="0" parent="edge-requiresConfig" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.8999999999999999" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasSecurityRequirement-source" value="1" vertex="1" connectable="0" parent="edge-hasSecurityRequirement" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9038461538461539" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasSecurityRequirement-target" value="1..*" vertex="1" connectable="0" parent="edge-hasSecurityRequirement" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9038461538461537" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-implementsRequirement-source" value="1..*" vertex="1" connectable="0" parent="edge-implementsRequirement" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.8970588235294118" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-implementsRequirement-target" value="1" vertex="1" connectable="0" parent="edge-implementsRequirement" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9264705882352942" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-targetsResource-source" value="1..*" vertex="1" connectable="0" parent="edge-targetsResource" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9646464646464646" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-targetsResource-target" value="1" vertex="1" connectable="0" parent="edge-targetsResource" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9747474747474747" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-violates-source" value="1..*" vertex="1" connectable="0" parent="edge-violates" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9794117647058823" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-violates-target" value="1..*" vertex="1" connectable="0" parent="edge-violates" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9794117647058824" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasDestinationPort-source" value="1..*" vertex="1" connectable="0" parent="edge-hasDestinationPort" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9489795918367347" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasDestinationPort-target" value="1" vertex="1" connectable="0" parent="edge-hasDestinationPort" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9489795918367347" y="0" relative="1" as="geometry">
+            <mxPoint x="-17.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-affectsApplication-source" value="0..*" vertex="1" connectable="0" parent="edge-affectsApplication" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.8863636363636364" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-affectsApplication-target" value="1" vertex="1" connectable="0" parent="edge-affectsApplication" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.8863636363636365" y="0" relative="1" as="geometry">
+            <mxPoint x="-17.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-affectsOS-source" value="1..*" vertex="1" connectable="0" parent="edge-affectsOS" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.8939393939393939" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-affectsOS-target" value="1" vertex="1" connectable="0" parent="edge-affectsOS" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9242424242424243" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-runs-source" value="0..1" vertex="1" connectable="0" parent="edge-runs" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.8913043478260869" y="0" relative="1" as="geometry">
+            <mxPoint x="-25.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-runs-target" value="0..*" vertex="1" connectable="0" parent="edge-runs" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.8478260869565217" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-deployedTo-source" value="0..*" vertex="1" connectable="0" parent="edge-deployedTo" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="-0.9740740740740741" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-deployedTo-target" value="0..1" vertex="1" connectable="0" parent="edge-deployedTo" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#415367;">
+          <mxGeometry x="0.9740740740740741" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-operatesIn-name" value="operatesIn" vertex="1" connectable="0" parent="edge-operatesIn" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.5127659574468084" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-manages-name" value="manages" vertex="1" connectable="0" parent="edge-manages" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.5025" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-basedIn-name" value="basedIn" vertex="1" connectable="0" parent="edge-basedIn" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.5175824175824175" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-madeBy-name" value="madeBy" vertex="1" connectable="0" parent="edge-madeBy" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.032558139534883734" y="0" relative="1" as="geometry">
+            <mxPoint x="-36.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasBusinessRequirement-name" value="hasBusinessRequirement" vertex="1" connectable="0" parent="edge-hasBusinessRequirement" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.044303797468354666" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasNodeType-name" value="hasNodeType" vertex="1" connectable="0" parent="edge-hasNodeType" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.21176470588235285" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hostsResource-name" value="hostsResource" vertex="1" connectable="0" parent="edge-hostsResource" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.2239436619718309" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-exposesPort-name" value="exposesPort" vertex="1" connectable="0" parent="edge-exposesPort" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.029032258064516148" y="0" relative="1" as="geometry">
+            <mxPoint x="-59.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-isDestination-name" value="isDestination" vertex="1" connectable="0" parent="edge-isDestination" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.2433333333333334" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-runsOS-name" value="runsOS" vertex="1" connectable="0" parent="edge-runsOS" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="-0.2875" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-runsApp-name" value="runsApp" vertex="1" connectable="0" parent="edge-runsApp" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="-0.12" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-34.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-osInstanceOf-name" value="osInstanceOf" vertex="1" connectable="0" parent="edge-osInstanceOf" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.011111111111111072" y="0" relative="1" as="geometry">
+            <mxPoint x="-64.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-applicationInstanceOf-name" value="applicationInstanceOf" vertex="1" connectable="0" parent="edge-applicationInstanceOf" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="-0.4841269841269841" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-isSource-name" value="isSource" vertex="1" connectable="0" parent="edge-isSource" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.07096774193548394" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-threatPartOf-name" value="threatPartOf" vertex="1" connectable="0" parent="edge-threatPartOf" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="-0.02400000000000002" y="0" relative="1" as="geometry">
+            <mxPoint x="-64.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-relatedTo-name" value="relatedTo" vertex="1" connectable="0" parent="edge-relatedTo" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.040000000000000036" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-initiates-name" value="initiates" vertex="1" connectable="0" parent="edge-initiates" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.0" y="0" relative="1" as="geometry">
+            <mxPoint x="-50.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-exploits-name" value="exploits" vertex="1" connectable="0" parent="edge-exploits" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="-0.0021739130434782483" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasExpertise-name" value="hasExpertise" vertex="1" connectable="0" parent="edge-hasExpertise" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="-0.021212121212121238" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-implementsTTP-name" value="implementsTTP" vertex="1" connectable="0" parent="edge-implementsTTP" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.0" y="0" relative="1" as="geometry">
+            <mxPoint x="-68.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-producesIndicator-name" value="producesIndicator" vertex="1" connectable="0" parent="edge-producesIndicator" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.0" y="0" relative="1" as="geometry">
+            <mxPoint x="87.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-toolInstanceOf-name" value="toolInstanceOf" vertex="1" connectable="0" parent="edge-toolInstanceOf" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="-0.07272727272727275" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasConfig-name" value="hasConfig" vertex="1" connectable="0" parent="edge-hasConfig" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.5307692307692307" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-designedFor-name" value="designedFor" vertex="1" connectable="0" parent="edge-designedFor" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.13613445378151257" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-targetsSector-name" value="targetsSector" vertex="1" connectable="0" parent="edge-targetsSector" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="-0.0052631578947367474" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-focusesOnCountry-name" value="focusesOnCountry" vertex="1" connectable="0" parent="edge-focusesOnCountry" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="-0.0020746887966804906" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-targetsInternationalBody-name" value="targetsInternationalBody" vertex="1" connectable="0" parent="edge-targetsInternationalBody" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.05982905982905984" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-associatedToTool-name" value="associatedToTool" vertex="1" connectable="0" parent="edge-associatedToTool" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.0" y="0" relative="1" as="geometry">
+            <mxPoint x="82.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-exploitsVulnerability-name" value="exploitsVulnerability" vertex="1" connectable="0" parent="edge-exploitsVulnerability" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="-0.16521739130434787" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-deploysTool-name" value="deploysTool" vertex="1" connectable="0" parent="edge-deploysTool" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.0" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-34.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-affectsCode-name" value="affectsCode" vertex="1" connectable="0" parent="edge-affectsCode" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.009090909090909038" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-compromises-name" value="compromises" vertex="1" connectable="0" parent="edge-compromises" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="-0.037735849056603765" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-countryPartOf-name" value="countryPartOf" vertex="1" connectable="0" parent="edge-countryPartOf" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="-0.0039215686274509665" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasInformationType-name" value="hasInformationType" vertex="1" connectable="0" parent="edge-hasInformationType" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.02499999999999991" y="0" relative="1" as="geometry">
+            <mxPoint x="92.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-resourceImplementsCode-name" value="resourceImplementsCode" vertex="1" connectable="0" parent="edge-resourceImplementsCode" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="-0.011428571428571455" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasAdversaryType-name" value="hasAdversaryType" vertex="1" connectable="0" parent="edge-hasAdversaryType" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.0" y="0" relative="1" as="geometry">
+            <mxPoint x="-82.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-aliasOf-name" value="aliasOf" vertex="1" connectable="0" parent="edge-aliasOf" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.015789473684210575" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-startsWith-name" value="startsWith" vertex="1" connectable="0" parent="edge-startsWith" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.026666666666666616" y="0" relative="1" as="geometry">
+            <mxPoint x="-54.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-affectsUser-name" value="affectsUser" vertex="1" connectable="0" parent="edge-affectsUser" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.7886792452830189" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-accessesInformation-name" value="accessesInformation" vertex="1" connectable="0" parent="edge-accessesInformation" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.10000000000000009" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-17.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-listensOn-name" value="listensOn" vertex="1" connectable="0" parent="edge-listensOn" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.42395833333333344" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-drivesSecurityRequirement-name" value="drivesSecurityRequirement" vertex="1" connectable="0" parent="edge-drivesSecurityRequirement" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.0" y="0" relative="1" as="geometry">
+            <mxPoint x="-124.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasAccessTo-name" value="hasAccessTo" vertex="1" connectable="0" parent="edge-hasAccessTo" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.05555555555555558" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-launches-name" value="launches" vertex="1" connectable="0" parent="edge-launches" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="-0.016000000000000014" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-userAccessesInformation-name" value="userAccessesInformation" vertex="1" connectable="0" parent="edge-userAccessesInformation" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.0117647058823529" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasUserType-name" value="hasUserType" vertex="1" connectable="0" parent="edge-hasUserType" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.0" y="0" relative="1" as="geometry">
+            <mxPoint x="-59.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-applicationImplementsCode-name" value="applicationImplementsCode" vertex="1" connectable="0" parent="edge-applicationImplementsCode" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.0" y="0" relative="1" as="geometry">
+            <mxPoint x="124.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-employsTool-name" value="employsTool" vertex="1" connectable="0" parent="edge-employsTool" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="-0.3447368421052631" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-followedBy-name" value="followedBy" vertex="1" connectable="0" parent="edge-followedBy" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="-0.020000000000000018" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-usedBy-name" value="usedBy" vertex="1" connectable="0" parent="edge-usedBy" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.02680412371134011" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-requiresConfig-name" value="requiresConfig" vertex="1" connectable="0" parent="edge-requiresConfig" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="-0.02400000000000002" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-requiresExpertise-name" value="requiresExpertise" vertex="1" connectable="0" parent="edge-requiresExpertise" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.008284023668639007" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasSecurityRequirement-name" value="hasSecurityRequirement" vertex="1" connectable="0" parent="edge-hasSecurityRequirement" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="-0.49230769230769234" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-implementsRequirement-name" value="implementsRequirement" vertex="1" connectable="0" parent="edge-implementsRequirement" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="-0.002941176470588225" y="0" relative="1" as="geometry">
+            <mxPoint x="-105.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-resourceImplementsAsset-name" value="resourceImplementsAsset" vertex="1" connectable="0" parent="edge-resourceImplementsAsset" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.08000000000000007" y="0" relative="1" as="geometry">
+            <mxPoint x="-115.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-targetsResource-name" value="targetsResource" vertex="1" connectable="0" parent="edge-targetsResource" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="-0.014141414141414121" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-violates-name" value="violates" vertex="1" connectable="0" parent="edge-violates" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.0388235294117647" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-hasDestinationPort-name" value="hasDestinationPort" vertex="1" connectable="0" parent="edge-hasDestinationPort" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.3346938775510204" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-affectsApplication-name" value="affectsApplication" vertex="1" connectable="0" parent="edge-affectsApplication" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="-0.018181818181818188" y="0" relative="1" as="geometry">
+            <mxPoint x="92.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-affectsOS-name" value="affectsOS" vertex="1" connectable="0" parent="edge-affectsOS" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.4484848484848485" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-runs-name" value="runs" vertex="1" connectable="0" parent="edge-runs" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="0.008695652173912993" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-deployedTo-name" value="deployedTo" vertex="1" connectable="0" parent="edge-deployedTo" style="edgeLabel;html=0;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFFFFF;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#172B40;">
+          <mxGeometry x="-0.010370370370370363" y="0" relative="1" as="geometry">
+            <mxPoint x="0.0" y="-14.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -10,5 +10,5 @@ class runs(BaseRelationship):
 
     source_type = Node
     target_type = Node
-    source_cardinality = '1'
-    target_cardinality = '1..*'
+    source_cardinality = '0..1'
+    target_cardinality = '0..*'

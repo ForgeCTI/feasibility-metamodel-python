@@ -1,7 +1,12 @@
 from __future__ import annotations
 
 from metamodel.core.BaseEntity import BaseEntity
-from metamodel.core.ValidationUtils import require_optional_date_string, require_optional_list_str, require_optional_str
+from metamodel.core.ValidationUtils import (
+    require_date_order,
+    require_optional_date_string,
+    require_optional_list_str,
+    require_optional_str,
+)
 
 
 class AttackToolInstance(BaseEntity):
@@ -22,8 +27,8 @@ class AttackToolInstance(BaseEntity):
         super().__init__(name=name, description=description, source=source)
         self._observed_version: str | None
         self._hashes: list[str]
-        self._first_seen: str | None
-        self._last_seen: str | None
+        self._first_seen: str | None = None
+        self._last_seen: str | None = None
         self.observed_version = observed_version
         self.hashes = hashes
         self.first_seen = first_seen
@@ -39,7 +44,7 @@ class AttackToolInstance(BaseEntity):
 
     @property
     def hashes(self) -> list[str]:
-        return self._hashes
+        return list(self._hashes)
 
     @hashes.setter
     def hashes(self, value: list[str] | None) -> None:
@@ -51,7 +56,9 @@ class AttackToolInstance(BaseEntity):
 
     @first_seen.setter
     def first_seen(self, value: str | None) -> None:
-        self._first_seen = require_optional_date_string(value, "first_seen")
+        value = require_optional_date_string(value, "first_seen")
+        require_date_order(value, self._last_seen)
+        self._first_seen = value
 
     @property
     def last_seen(self) -> str | None:
@@ -59,5 +66,7 @@ class AttackToolInstance(BaseEntity):
 
     @last_seen.setter
     def last_seen(self, value: str | None) -> None:
-        self._last_seen = require_optional_date_string(value, "last_seen")
+        value = require_optional_date_string(value, "last_seen")
+        require_date_order(self._first_seen, value)
+        self._last_seen = value
 

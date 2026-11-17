@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from metamodel.core.BaseEntity import BaseEntity
 from metamodel.core.ValidationUtils import(
-    require_allowed,
     require_optional_date_string,
     require_date_order,
     require_optional_str,
@@ -60,7 +59,7 @@ class Campaign(BaseEntity):
 
     @status.setter
     def status(self, value: str | None) -> None:
-        self._status = require_allowed(require_optional_str(value, "status"), "status", {None, 'historical', 'unknown', 'active'})
+        self._status = require_optional_str(value, "status")
 
     @property
     def objective(self) -> str | None:

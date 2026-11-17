@@ -1,14 +1,13 @@
 from __future__ import annotations
 
 from metamodel.core.BaseEntity import BaseEntity
-from metamodel.core.ValidationUtils import require_optional_int, require_optional_list_str, require_optional_str
+from metamodel.core.ValidationUtils import require_optional_list_str, require_optional_str
 
 
 class ThreatStep(BaseEntity):
     """Represents the ThreatStep entity from the metamodel."""
 
     _domain_attributes = (
-        'sequence_index',
         'phase',
         'objective',
         'preconditions',
@@ -19,7 +18,6 @@ class ThreatStep(BaseEntity):
         self,
         name: str,
         description: str | None = None,
-        sequence_index: int | None = None,
         phase: str | None = None,
         objective: str | None = None,
         preconditions: list[str] | None = None,
@@ -27,29 +25,14 @@ class ThreatStep(BaseEntity):
         source: str | None = None,
     ) -> None:
         super().__init__(name=name, description=description, source=source)
-        self._sequence_index: int | None
         self._phase: str | None
         self._objective: str | None
         self._preconditions: list[str]
         self._postconditions: list[str]
-        self.sequence_index = sequence_index
         self.phase = phase
         self.objective = objective
         self.preconditions = preconditions
         self.postconditions = postconditions
-
-    @property
-    def sequence_index(self) -> int | None:
-        return self._sequence_index
-
-    @sequence_index.setter
-    def sequence_index(self, value: int | None) -> None:
-        self._sequence_index = require_optional_int(
-            value,
-            "sequence_index",
-            minimum=0,
-            maximum=None,
-        )
 
     @property
     def phase(self) -> str | None:

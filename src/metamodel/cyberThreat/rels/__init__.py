@@ -14,7 +14,6 @@ from metamodel.cyberThreat.rels.targetsInternationalBody import targetsInternati
 from metamodel.cyberThreat.rels.associatedToTool import associatedToTool
 from metamodel.cyberThreat.rels.exploitsVulnerability import exploitsVulnerability
 from metamodel.cyberThreat.rels.deploysTool import deploysTool
-from metamodel.cyberThreat.rels.softwareVulnerabilityIsA import softwareVulnerabilityIsA
 from metamodel.cyberThreat.rels.affectsCode import affectsCode
 from metamodel.cyberThreat.rels.compromises import compromises
 from metamodel.cyberThreat.rels.hasAdversaryType import hasAdversaryType

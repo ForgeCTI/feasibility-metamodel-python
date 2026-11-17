@@ -34,7 +34,7 @@ def main() -> None:
     resource = model.add(Resource(name="Online banking API", resource_type="api", criticality="critical"))
 
     threat = model.add(Threat(name="DDoS-enabled service disruption", objective="service_disruption"))
-    step = model.add(ThreatStep(name="Flood public API", sequence_index=1, phase="impact"))
+    step = model.add(ThreatStep(name="Flood public API", phase="impact"))
     ttp = model.add(TTP(name="Network Denial of Service", taxonomy_ref="mitreAttackEnterprise:T1498"))
 
     model.add(operatesIn(organization, sector))

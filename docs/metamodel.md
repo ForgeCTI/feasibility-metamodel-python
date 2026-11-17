@@ -316,8 +316,7 @@ It captures adversaries, threat actors, campaigns, threats, attack steps, TTPs, 
 | `deploysTool`              | Connects one `AttackToolInstance` to another deployed instance.   |
 | `deployedTo`               | Connects an `AttackToolInstance` to a `Node`.                     |
 | `requiresConfig`           | Connects an `AttackTool` to an `AttackToolConfiguration`.         |
-| `requiresExpertise`        | Connects an `AttackTool` to `Expertise`.                          |
-| `softwareVulnerabilityIsA` | Connects `SoftwareVulnerability` to `Vulnerability`.              |
+| `requiresExpertise`        | Connects an `AttackTool` to `Expertise`.                          |            |
 | `affectsApplication`       | Connects `SoftwareVulnerability` to an `Application`.             |
 | `affectsOS`                | Connects `SoftwareVulnerability` to an `OS`.                      |
 | `affectsCode`              | Connects `ConfigVulnerability` to `Code`.                         |

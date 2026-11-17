@@ -1,0 +1,401 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram id="case04" name="Case Study 04 - Meridian Industrial Systems">
+    <mxGraphModel dx="6948" dy="3445" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="5580" pageHeight="2840" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;fillColor=#F8FAFD;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="2840" width="5580" as="geometry" />
+        </mxCell>
+        <mxCell id="header" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=43;fontStyle=1;fontColor=#203449;" value="Case Study 04 · Meridian Industrial Systems" vertex="1">
+          <mxGeometry height="77" width="2800" x="58" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="text;html=1;align=left;fontSize=24;fontColor=#536579;" value="Exploitation of a Vulnerable Enterprise System | Instantiated model" vertex="1">
+          <mxGeometry height="44" width="2800" x="58" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="stats" parent="1" style="text;html=1;align=right;fontSize=28;fontStyle=1;fontColor=#203449;" value="25 entities  |  38 relationships" vertex="1">
+          <mxGeometry height="48" width="745" x="4750" y="53" as="geometry" />
+        </mxCell>
+        <mxCell id="panel_org" parent="1" style="rounded=1;arcSize=4;fillColor=#FFFFFF;strokeColor=#D6E0EA;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="2502" width="1030" x="40" y="188" as="geometry" />
+        </mxCell>
+        <mxCell id="org_head" parent="1" style="text;html=1;align=left;fontSize=29;fontStyle=1;fontColor=#477DB8;" value="Organization submodel" vertex="1">
+          <mxGeometry height="53" width="700" x="76" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="org_sub" parent="1" style="text;html=1;align=left;fontSize=19;fontColor=#536579;" value="6 instantiated entities" vertex="1">
+          <mxGeometry height="40" width="650" x="95" y="267" as="geometry" />
+        </mxCell>
+        <mxCell id="panel_inf" parent="1" style="rounded=1;arcSize=4;fillColor=#FFFFFF;strokeColor=#D6E0EA;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="2502" width="1470" x="1110" y="188" as="geometry" />
+        </mxCell>
+        <mxCell id="inf_head" parent="1" style="text;html=1;align=left;fontSize=29;fontStyle=1;fontColor=#238879;" value="Infrastructure submodel" vertex="1">
+          <mxGeometry height="53" width="700" x="1146" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="inf_sub" parent="1" style="text;html=1;align=left;fontSize=19;fontColor=#536579;" value="8 instantiated entities" vertex="1">
+          <mxGeometry height="40" width="650" x="1165" y="267" as="geometry" />
+        </mxCell>
+        <mxCell id="panel_cyber" parent="1" style="rounded=1;arcSize=4;fillColor=#FFFFFF;strokeColor=#D6E0EA;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="2502" width="2920" x="2590" y="188" as="geometry" />
+        </mxCell>
+        <mxCell id="cyber_head" parent="1" style="text;html=1;align=left;fontSize=29;fontStyle=1;fontColor=#C18A46;" value="CyberThreat submodel" vertex="1">
+          <mxGeometry height="53" width="700" x="2656" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="cyber_sub" parent="1" style="text;html=1;align=left;fontSize=19;fontColor=#536579;" value="11 instantiated entities" vertex="1">
+          <mxGeometry height="40" width="650" x="2675" y="267" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-01-operatesIn" edge="1" parent="1" source="org-meridian-industrial-systems" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;" target="sector-industrial-components-manufacturing" value="operatesIn">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-02-hasBusinessRequirement" edge="1" parent="1" source="org-meridian-industrial-systems" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.48684;exitY=1.0;exitDx=0;exitDy=0;entryX=0.4625;entryY=0.0;entryDx=0;entryDy=0;" target="business-requirement-reliable-order-processing" value="hasBusinessRequirement">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-03-drivesSecurityRequirement" edge="1" parent="1" source="business-requirement-reliable-order-processing" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.51724;entryDx=0;entryDy=0;" target="asset-security-requirement-order-integrity-control" value="drivesSecurityRequirement">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="585" y="1028" />
+              <mxPoint x="585" y="1320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-04-hasSecurityRequirement" edge="1" parent="1" source="asset-order-fulfilment-process" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=1.003;exitY=0.086;exitDx=0;exitDy=0;entryX=0.0;entryY=0.77586;entryDx=0;entryDy=0;exitPerimeter=0;" target="asset-security-requirement-order-integrity-control" value="hasSecurityRequirement">
+          <mxGeometry relative="1" x="-0.1114" as="geometry">
+            <Array as="points">
+              <mxPoint x="580" y="1680" />
+              <mxPoint x="580" y="1350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-05-implementsRequirement" edge="1" parent="1" source="asset-security-requirement-order-integrity-control" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;" target="security-requirement-order-integrity" value="implementsRequirement">
+          <mxGeometry relative="1" x="-0.1816" y="5" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-06-manages" edge="1" parent="1" source="org-meridian-industrial-systems" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.32895;exitY=0.0;exitDx=0;exitDy=0;entryX=0.4878;entryY=0.0;entryDx=0;entryDy=0;" target="infrastructure-meridian-order-processing" value="manages">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="270" y="357" />
+              <mxPoint x="1390" y="357" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-07-madeBy" edge="1" parent="1" source="infrastructure-meridian-order-processing" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;" target="node-order-application-server" value="madeBy">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-08-hostsResource" edge="1" parent="1" source="node-order-application-server" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.14286;exitY=1.0;exitDx=0;exitDy=0;entryX=0.475;entryY=0.0;entryDx=0;entryDy=0;" target="resource-order-management-service" value="hostsResource">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1820" y="790" />
+              <mxPoint x="1375" y="790" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-09-runsOS" edge="1" parent="1" source="node-order-application-server" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.30952;exitY=1.0;exitDx=0;exitDy=0;entryX=0.57692;entryY=0.0;entryDx=0;entryDy=0;" target="os-instance-order-server" value="runsOS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-10-osInstanceOf" edge="1" parent="1" source="os-instance-order-server" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.48718;exitY=1.0;exitDx=0;exitDy=0;entryX=0.48718;entryY=0.0;entryDx=0;entryDy=0;" target="os-meridian-server-os" value="osInstanceOf">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-11-runsApp" edge="1" parent="1" source="node-order-application-server" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.88095;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;" target="application-instance-order-portal-production" value="runsApp">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2130" y="800" />
+              <mxPoint x="2340" y="800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-12-applicationInstanceOf" edge="1" parent="1" source="application-instance-order-portal-production" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.525;exitY=1.0;exitDx=0;exitDy=0;entryX=0.48718;entryY=0.0;entryDx=0;entryDy=0;" target="application-meridian-order-portal" value="applicationInstanceOf">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-13-applicationImplementsCode" edge="1" parent="1" source="application-instance-order-portal-production" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.0;exitY=0.47414;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;" target="code-order-maintenance-script" value="applicationImplementsCode">
+          <mxGeometry relative="1" x="-0.1042" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="2110" y="1085" />
+              <mxPoint x="2110" y="2378" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-14-resourceImplementsAsset" edge="1" parent="1" source="resource-order-management-service" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.0;exitY=0.47414;exitDx=0;exitDy=0;entryX=1.0;entryY=0.5;entryDx=0;entryDy=0;" target="asset-order-fulfilment-process" value="resourceImplementsAsset">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1090" y="1450" />
+              <mxPoint x="1090" y="1728" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-15-initiates" edge="1" parent="1" source="threat-actor-foundry-access-group" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.40541;exitY=0.0;exitDx=0;exitDy=0;entryX=0.58108;entryY=0.0;entryDx=0;entryDy=0;" target="threat-order-portal-compromise" value="initiates">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2880" y="415" />
+              <mxPoint x="3390" y="415" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-16-startsWith" edge="1" parent="1" source="threat-order-portal-compromise" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.68919;exitY=0.0;exitDx=0;exitDy=0;entryX=0.51282;entryY=0.0;entryDx=0;entryDy=0;" target="threat-step-order-portal-exploitation" value="startsWith">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3430" y="386" />
+              <mxPoint x="3830" y="386" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-17-followedBy" edge="1" parent="1" source="threat-step-order-portal-exploitation" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;" target="threat-step-maintenance-script-abuse" value="followedBy">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-18-implementsTTP" edge="1" parent="1" source="threat-step-order-portal-exploitation" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.5641;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5641;entryY=0.0;entryDx=0;entryDy=0;" target="ttp-exploit-public-facing-application" value="implementsTTP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-19-implementsTTP" edge="1" parent="1" source="threat-step-maintenance-script-abuse" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.55128;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;" target="ttp-python-interpreter" value="implementsTTP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-20-exploits" edge="1" parent="1" source="threat-step-order-portal-exploitation" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.816;entryY=-0.008;entryDx=0;entryDy=0;entryPerimeter=0;" target="software-vulnerability-shared-runtime" value="exploits">
+          <mxGeometry relative="1" x="-0.1303" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="3580" y="523" />
+              <mxPoint x="3580" y="655" />
+              <mxPoint x="3338.1" y="655" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-21-exploits" edge="1" parent="1" source="threat-step-maintenance-script-abuse" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.96154;exitY=1.0;exitDx=0;exitDy=0;entryX=1.0;entryY=0.51724;entryDx=0;entryDy=0;" target="config-vulnerability-maintenance-permissions" value="exploits">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4500" y="700" />
+              <mxPoint x="4600" y="700" />
+              <mxPoint x="4600" y="1550" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-22-exploitsVulnerability" edge="1" parent="1" source="ttp-exploit-public-facing-application" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.0;exitY=0.50862;exitDx=0;exitDy=0;entryX=1.0;entryY=0.77586;entryDx=0;entryDy=0;" target="software-vulnerability-shared-runtime" value="exploitsVulnerability">
+          <mxGeometry relative="1" x="-0.0227" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="3780" y="1034" />
+              <mxPoint x="3780" y="1580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-23-exploitsVulnerability" edge="1" parent="1" source="ttp-python-interpreter" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.0;exitY=0.50862;exitDx=0;exitDy=0;entryX=0.0;entryY=0.77586;entryDx=0;entryDy=0;" target="config-vulnerability-maintenance-permissions" value="exploitsVulnerability">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3950" y="1034" />
+              <mxPoint x="3950" y="1580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-24-affectsApplication" edge="1" parent="1" source="software-vulnerability-shared-runtime" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.0;exitY=0.43103;exitDx=0;exitDy=0;entryX=1.0;entryY=0.51724;entryDx=0;entryDy=0;" target="application-meridian-order-portal" value="affectsApplication">
+          <mxGeometry relative="1" x="-0.6051" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="2650" y="1540" />
+              <mxPoint x="2650" y="1900" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-25-affectsOS" edge="1" parent="1" source="software-vulnerability-shared-runtime" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.0;exitY=0.77586;exitDx=0;exitDy=0;entryX=0.44872;entryY=0.0;entryDx=0;entryDy=0;" target="os-meridian-server-os" value="affectsOS">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2615" y="1580" />
+              <mxPoint x="2615" y="1775" />
+              <mxPoint x="1840" y="1775" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-26-affectsCode" edge="1" parent="1" source="config-vulnerability-maintenance-permissions" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.40698;exitY=1.0;exitDx=0;exitDy=0;entryX=1.0;entryY=0.81897;entryDx=0;entryDy=0;" target="code-order-maintenance-script" value="affectsCode">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4270" y="1730" />
+              <mxPoint x="2690" y="1730" />
+              <mxPoint x="2690" y="2415" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-27-compromises" edge="1" parent="1" source="threat-step-order-portal-exploitation" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.32051;exitY=0.0;exitDx=0;exitDy=0;entryX=1.0;entryY=0.34483;entryDx=0;entryDy=0;" target="asset-security-requirement-order-integrity-control" value="compromises">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3755" y="327" />
+              <mxPoint x="1052" y="327" />
+              <mxPoint x="1052" y="1300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-28-compromises" edge="1" parent="1" source="threat-step-maintenance-script-abuse" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.32051;exitY=0.0;exitDx=0;exitDy=0;entryX=1.0;entryY=0.73276;entryDx=0;entryDy=0;" target="asset-security-requirement-order-integrity-control" value="compromises">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4250" y="306" />
+              <mxPoint x="1037" y="306" />
+              <mxPoint x="1037" y="1345" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-29-targetsResource" edge="1" parent="1" source="threat-step-order-portal-exploitation" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.20513;exitY=1.0;exitDx=0;exitDy=0;entryX=1.0;entryY=0.47414;entryDx=0;entryDy=0;" target="resource-order-management-service" value="targetsResource">
+          <mxGeometry relative="1" x="-0.1349" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="3710" y="816" />
+              <mxPoint x="2640" y="816" />
+              <mxPoint x="2640" y="1230" />
+              <mxPoint x="1628" y="1230" />
+              <mxPoint x="1628" y="1450" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-30-targetsResource" edge="1" parent="1" source="threat-step-maintenance-script-abuse" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.76923;exitY=1.0;exitDx=0;exitDy=0;entryX=1.0;entryY=0.81897;entryDx=0;entryDy=0;" target="resource-order-management-service" value="targetsResource">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4425" y="851" />
+              <mxPoint x="2695" y="851" />
+              <mxPoint x="2695" y="1270" />
+              <mxPoint x="1640" y="1270" />
+              <mxPoint x="1640" y="1490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-31-violates" edge="1" parent="1" source="ttp-exploit-public-facing-application" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.0;exitY=0.51724;exitDx=0;exitDy=0;entryX=1.0;entryY=0.43103;entryDx=0;entryDy=0;" target="security-requirement-order-integrity" value="violates">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3485" y="1035" />
+              <mxPoint x="3485" y="2530" />
+              <mxPoint x="1030" y="2530" />
+              <mxPoint x="1030" y="2120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-32-violates" edge="1" parent="1" source="ttp-python-interpreter" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.0;exitY=0.60345;exitDx=0;exitDy=0;entryX=1.0;entryY=0.86207;entryDx=0;entryDy=0;" target="security-requirement-order-integrity" value="violates">
+          <mxGeometry relative="1" x="0.0002" as="geometry">
+            <Array as="points">
+              <mxPoint x="4060" y="1045" />
+              <mxPoint x="4060" y="2592" />
+              <mxPoint x="1018" y="2592" />
+              <mxPoint x="1018" y="2170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-33-designedFor" edge="1" parent="1" source="attack-tool-instance-order-server" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.0;exitY=0.43103;exitDx=0;exitDy=0;" target="os-instance-order-server" value="designedFor">
+          <mxGeometry relative="1" x="0.0041" as="geometry">
+            <Array as="points">
+              <mxPoint x="2720" y="1970" />
+              <mxPoint x="2720" y="1210" />
+              <mxPoint x="2010.2" y="1210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-34-deployedTo" edge="1" parent="1" source="attack-tool-instance-order-server" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.0;exitY=0.87931;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;" target="node-order-application-server" value="deployedTo">
+          <mxGeometry relative="1" x="-0.094" as="geometry">
+            <Array as="points">
+              <mxPoint x="2930" y="2022" />
+              <mxPoint x="2930" y="740" />
+              <mxPoint x="1530" y="740" />
+              <mxPoint x="1530" y="523" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-35-employsTool" edge="1" parent="1" source="threat-step-maintenance-script-abuse" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=1.0;exitY=0.71552;exitDx=0;exitDy=0;entryX=1.0;entryY=0.51724;entryDx=0;entryDy=0;" target="attack-tool-instance-order-server" value="employsTool">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4770" y="548" />
+              <mxPoint x="4770" y="1980" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-36-toolInstanceOf" edge="1" parent="1" source="attack-tool-instance-order-server" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.19;exitY=1.02;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" target="attack-tool-remote-order-manipulation" value="toolInstanceOf">
+          <mxGeometry relative="1" x="-0.428" as="geometry">
+            <Array as="points">
+              <mxPoint x="4230" y="2170" />
+              <mxPoint x="3970" y="2170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-37-hasConfig" edge="1" parent="1" source="attack-tool-instance-order-server" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=1.0;exitY=0.64655;exitDx=0;exitDy=0;entryX=0.4878;entryY=0.0;entryDx=0;entryDy=0;" target="attack-tool-configuration-order-intrusion" value="hasConfig">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4900" y="1995" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-38-requiresConfig" edge="1" parent="1" source="attack-tool-remote-order-manipulation" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=1.0;exitY=0.51724;exitDx=0;exitDy=0;entryX=0.0;entryY=0.51724;entryDx=0;entryDy=0;" target="attack-tool-configuration-order-intrusion" value="requiresConfig">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="org-meridian-industrial-systems" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E8F1FD;strokeColor=#477DB8;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;Organization&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Meridian Industrial Systems&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="380" x="145" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="sector-industrial-components-manufacturing" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E8F1FD;strokeColor=#477DB8;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;Sector&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Industrial Components Manufacturing&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="364" x="630" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="business-requirement-reliable-order-processing" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E8F1FD;strokeColor=#477DB8;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;BusinessRequirement&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Reliable Industrial Order Processing&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="400" x="145" y="970" as="geometry" />
+        </mxCell>
+        <mxCell id="asset-order-fulfilment-process" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E8F1FD;strokeColor=#477DB8;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;Asset&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Order Fulfilment Process&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="375" x="150" y="1670" as="geometry" />
+        </mxCell>
+        <mxCell id="asset-security-requirement-order-integrity-control" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E8F1FD;strokeColor=#477DB8;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;AssetSecurityRequirement&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Order Records Integrity Control&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="380" x="635" y="1260" as="geometry" />
+        </mxCell>
+        <mxCell id="security-requirement-order-integrity" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E8F1FD;strokeColor=#477DB8;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;SecurityRequirement&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Integrity of Order Records&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="380" x="635" y="2070" as="geometry" />
+        </mxCell>
+        <mxCell id="infrastructure-meridian-order-processing" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;Infrastructure&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Meridian Order Processing Infrastructure&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="410" x="1190" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="node-order-application-server" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;Node&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Order Application Server&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="420" x="1760" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="resource-order-management-service" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;Resource&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Order Management Service&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="400" x="1185" y="1395" as="geometry" />
+        </mxCell>
+        <mxCell id="application-meridian-order-portal" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;Application&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Meridian Order Portal&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="390" x="2160" y="1840" as="geometry" />
+        </mxCell>
+        <mxCell id="application-instance-order-portal-production" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;ApplicationInstance&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Order Portal Production Instance&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="400" x="2140" y="1030" as="geometry" />
+        </mxCell>
+        <mxCell id="os-meridian-server-os" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;OS&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Meridian Server OS&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="390" x="1665" y="1840" as="geometry" />
+        </mxCell>
+        <mxCell id="os-instance-order-server" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;OSInstance&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Order Server OS Installation&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="390" x="1665" y="1030" as="geometry" />
+        </mxCell>
+        <mxCell id="code-order-maintenance-script" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;Code&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Order Maintenance Script&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="390" x="2160" y="2320" as="geometry" />
+        </mxCell>
+        <mxCell id="threat-actor-foundry-access-group" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF0E2;strokeColor=#D89450;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;ThreatActor&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Foundry Access Group&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="370" x="2730" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="threat-order-portal-compromise" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF0E2;strokeColor=#D89450;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;Threat&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Order Portal Compromise&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="370" x="3175" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="threat-step-order-portal-exploitation" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF0E2;strokeColor=#D89450;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;ThreatStep&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Order Portal Exploitation&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="390" x="3630" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="threat-step-maintenance-script-abuse" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF0E2;strokeColor=#D89450;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;ThreatStep&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Maintenance Script Abuse&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="390" x="4125" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="ttp-exploit-public-facing-application" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF0E2;strokeColor=#D89450;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;TTP&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Exploit Public-Facing Application&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="390" x="3630" y="975" as="geometry" />
+        </mxCell>
+        <mxCell id="ttp-python-interpreter" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF0E2;strokeColor=#D89450;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;TTP&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Command and Scripting Interpreter: Python&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="430" x="4125" y="975" as="geometry" />
+        </mxCell>
+        <mxCell id="software-vulnerability-shared-runtime" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF0E2;strokeColor=#D89450;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;SoftwareVulnerability&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Shared Runtime Input Validation Weakness&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="445" x="2975" y="1490" as="geometry" />
+        </mxCell>
+        <mxCell id="config-vulnerability-maintenance-permissions" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF0E2;strokeColor=#D89450;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;ConfigVulnerability&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Insecure Maintenance Script Permissions&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="430" x="4095" y="1490" as="geometry" />
+        </mxCell>
+        <mxCell id="attack-tool-remote-order-manipulation" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF0E2;strokeColor=#D89450;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;AttackTool&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Remote Order Manipulation Utility&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="400" x="3610" y="2230" as="geometry" />
+        </mxCell>
+        <mxCell id="attack-tool-instance-order-server" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF0E2;strokeColor=#D89450;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;AttackToolInstance&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Order Server Intrusion Utility Instance&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="420" x="4150" y="1920" as="geometry" />
+        </mxCell>
+        <mxCell id="attack-tool-configuration-order-intrusion" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF0E2;strokeColor=#D89450;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;AttackToolConfiguration&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Order Intrusion Utility Configuration&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="410" x="4700" y="2240" as="geometry" />
+        </mxCell>
+        <mxCell id="foot" parent="1" style="text;html=1;align=left;fontSize=20;fontColor=#536579;" value="Arrows follow source → target as declared in implementation.py. Entity class appears above its instance name." vertex="1">
+          <mxGeometry height="48" width="4100" x="58" y="2740" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

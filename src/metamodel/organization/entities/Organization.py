@@ -1,11 +1,7 @@
 from __future__ import annotations
 
 from metamodel.core.BaseEntity import BaseEntity
-from metamodel.core.ValidationUtils import(
-    require_allowed,
-    require_optional_str,
-    require_optional_url,
-)
+from metamodel.core.ValidationUtils import require_optional_str, require_optional_url
 
 
 class Organization(BaseEntity):
@@ -76,11 +72,7 @@ class Organization(BaseEntity):
 
     @organization_size.setter
     def organization_size(self, value: str | None) -> None:
-        self._organization_size = require_allowed(
-            require_optional_str(value, "organization_size"),
-            "organization_size",
-            {None, 'medium', 'enterprise', 'small', 'micro', 'large'}
-        )
+        self._organization_size = require_optional_str(value, "organization_size")
 
     @property
     def criticality(self) -> str | None:
@@ -96,9 +88,5 @@ class Organization(BaseEntity):
 
     @maturity_level.setter
     def maturity_level(self, value: str | None) -> None:
-        self._maturity_level = require_allowed(
-            require_optional_str(value, "maturity_level"),
-            "maturity_level",
-            {None, 'defined', 'optimized', 'quantitatively_managed', 'managed', 'initial'}
-        )
+        self._maturity_level = require_optional_str(value, "maturity_level")
 

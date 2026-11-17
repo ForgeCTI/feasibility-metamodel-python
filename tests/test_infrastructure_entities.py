@@ -1,6 +1,8 @@
 import pytest
 
+from metamodel.core.Model import Model
 from metamodel.infrastructure.entities.Node import Node
+from metamodel.infrastructure.rels.runs import runs
 
 
 # Node tests
@@ -87,3 +89,35 @@ def test_node_validates_address_assignments():
 
     assert node.ip_addresses == []
     assert node.mac_addresses == []
+
+
+# runs tests
+
+
+def test_runs_allows_one_host_and_multiple_virtual_nodes():
+    model = Model()
+    host = model.add(Node(name="Physical Server"))
+    vm1 = model.add(Node(name="Virtual Machine 1"))
+    vm2 = model.add(Node(name="Virtual Machine 2"))
+    model.add(Node(name="Standalone Server"))
+
+    model.add(runs(host, vm1))
+    model.add(runs(host, vm2))
+
+    assert model.validate().is_valid
+
+
+def test_runs_rejects_multiple_hosts_for_same_node():
+    model = Model()
+    host1 = model.add(Node(name="Physical Server 1"))
+    host2 = model.add(Node(name="Physical Server 2"))
+    vm = model.add(Node(name="Virtual Machine"))
+
+    model.add(runs(host1, vm))
+    model.add(runs(host2, vm))
+
+    report = model.validate()
+
+    assert not report.is_valid
+    assert len(report.errors) == 1
+    assert report.errors[0].validator == "cardinalityValidator"

@@ -1,13 +1,13 @@
 from __future__ import annotations
 
 from metamodel.core.BaseEntity import BaseEntity
-from metamodel.core.ValidationUtils import require_allowed, require_optional_list_str, require_optional_str, require_optional_taxonomy_ref
+from metamodel.core.ValidationUtils import require_optional_list_str, require_optional_str
 
 
 class ThreatActor(BaseEntity):
     """Represents the ThreatActor entity from the metamodel."""
 
-    _domain_attributes = ('aliases', 'motivation', 'sophistication', 'country', 'taxonomy_ref')
+    _domain_attributes = ('aliases', 'motivation', 'sophistication', 'country')
 
     def __init__(
         self,
@@ -17,7 +17,6 @@ class ThreatActor(BaseEntity):
         motivation: str | None = None,
         sophistication: str | None = None,
         country: str | None = None,
-        taxonomy_ref: str | None = None,
         source: str | None = None,
     ) -> None:
         super().__init__(name=name, description=description, source=source)
@@ -25,12 +24,10 @@ class ThreatActor(BaseEntity):
         self._motivation: str | None
         self._sophistication: str | None
         self._country: str | None
-        self._taxonomy_ref: str | None
         self.aliases = aliases
         self.motivation = motivation
         self.sophistication = sophistication
         self.country = country
-        self.taxonomy_ref = taxonomy_ref
 
     @property
     def aliases(self) -> list[str]:
@@ -54,7 +51,7 @@ class ThreatActor(BaseEntity):
 
     @sophistication.setter
     def sophistication(self, value: str | None) -> None:
-        self._sophistication = require_allowed(require_optional_str(value, "sophistication"), "sophistication", {None, 'high', 'medium', 'advanced', 'unknown', 'low'})
+        self._sophistication = require_optional_str(value, "sophistication")
 
     @property
     def country(self) -> str | None:
@@ -63,12 +60,3 @@ class ThreatActor(BaseEntity):
     @country.setter
     def country(self, value: str | None) -> None:
         self._country = require_optional_str(value, "country")
-
-    @property
-    def taxonomy_ref(self) -> str | None:
-        return self._taxonomy_ref
-
-    @taxonomy_ref.setter
-    def taxonomy_ref(self, value: str | None) -> None:
-        self._taxonomy_ref = require_optional_taxonomy_ref(value, "taxonomy_ref")
-

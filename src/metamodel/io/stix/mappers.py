@@ -73,7 +73,6 @@ def map_threat_actor(obj: dict[str, Any], context) -> ThreatActor:
         motivation=_first_str(obj.get("primary_motivation")) or _first_str(obj.get("secondary_motivations")),
         sophistication=_map_sophistication(_first_str(obj.get("sophistication"))),
         country=None,
-        taxonomy_ref=_taxonomy_ref(obj, "stixThreatActor"),
         source=_source(obj),
     )
 
@@ -83,7 +82,6 @@ def map_intrusion_set(obj: dict[str, Any], context) -> Adversary:
         name=_name(obj),
         description=_optional_str(obj.get("description")),
         objective=_first_str(obj.get("goals")),
-        intent=None,
         capability_level=None,
         source=_source(obj),
     )
@@ -107,7 +105,6 @@ def map_attack_pattern(obj: dict[str, Any], context) -> TTP:
     return TTP(
         name=_name(obj),
         description=_optional_str(obj.get("description")),
-        taxonomy_ref=_taxonomy_ref(obj, "stixAttackPattern"),
         external_id=external_id,
         tactic=None,
         technique=external_id or _name(obj),
@@ -122,7 +119,6 @@ def map_tool(obj: dict[str, Any], context) -> AttackTool:
     return AttackTool(
         name=_name(obj),
         description=_optional_str(obj.get("description")),
-        taxonomy_ref=_taxonomy_ref(obj, "stixTool"),
         aliases=_aliases(obj),
         tool_type=_map_tool_type(_first_str(tool_types)),
         capabilities=_as_str_list(tool_types),
@@ -136,7 +132,6 @@ def map_malware(obj: dict[str, Any], context) -> AttackTool:
     return AttackTool(
         name=_name(obj),
         description=_optional_str(obj.get("description")),
-        taxonomy_ref=_taxonomy_ref(obj, "stixMalware"),
         aliases=_aliases(obj),
         tool_type="malware",
         capabilities=_as_str_list(malware_types),
@@ -166,7 +161,6 @@ def map_vulnerability(obj: dict[str, Any], context) -> Vulnerability:
     return Vulnerability(
         name=str(name),
         description=_optional_str(obj.get("description")),
-        taxonomy_ref=_taxonomy_ref(obj, "stixVulnerability"),
         external_id=external_id,
         severity=_map_severity(obj.get("x_severity") or obj.get("severity")),
         cvss_score=_cvss_score(obj),

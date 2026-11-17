@@ -9,7 +9,6 @@ from metamodel.core.Registry import Registry
 from metamodel.core.Exceptions import RegistryError
 from metamodel.core.ValidationReport import ValidationMessage
 from metamodel.core.ValidationUtils import(
-    require_optional_taxonomy_ref,
     require_optional_email,
     require_optional_float,
 )
@@ -488,32 +487,6 @@ def test_registry_rejects_invalid_relationship_class(monkeypatch):
 
 
 # ValidationUtils tests
-
-
-def test_optional_taxonomy_ref_valid():
-    assert require_optional_taxonomy_ref("sectors:finance", "taxonomy_ref") == "sectors:finance"
-
-
-def test_optional_taxonomy_ref_none():
-    assert require_optional_taxonomy_ref(None, "taxonomy_ref") is None
-
-
-@pytest.mark.parametrize(
-    "value",
-    [
-        ":",
-        "sectors:",
-        ":finance",
-        "sectors:finance:extra",
-        " sectors:finance",
-        "sectors :finance",
-        "sectors: finance",
-        "sectors:finance ",
-    ],
-)
-def test_optional_taxonomy_ref_invalid_format(value):
-    with pytest.raises(ValueError):
-        require_optional_taxonomy_ref(value, "taxonomy_ref")
 
 
 def test_optional_email_valid():

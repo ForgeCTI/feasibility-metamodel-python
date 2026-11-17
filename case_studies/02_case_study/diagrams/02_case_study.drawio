@@ -1,0 +1,248 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram id="case02" name="Case Study 02">
+    <mxGraphModel dx="3953" dy="1960" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3000" pageHeight="1540" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;fillColor=#F8FAFD;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="1540" width="3000" as="geometry" />
+        </mxCell>
+        <mxCell id="header" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=41;fontStyle=1;fontColor=#203449;" value="Case Study 02 · Northstar Logistics" vertex="1">
+          <mxGeometry height="72" width="1430" x="58" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="text;html=1;align=left;fontSize=23;fontColor=#536579;" value="Logistics Tracking Infrastructure | Instantiated model" vertex="1">
+          <mxGeometry height="38" width="1350" x="58" y="94" as="geometry" />
+        </mxCell>
+        <mxCell id="stats" parent="1" style="text;html=1;align=right;fontSize=26;fontStyle=1;fontColor=#203449;" value="17 entities  |  18 relationships" vertex="1">
+          <mxGeometry height="43" width="530" x="2330" y="47" as="geometry" />
+        </mxCell>
+        <mxCell id="panel_org" parent="1" style="rounded=1;arcSize=4;fillColor=#FFFFFF;strokeColor=#D6E0EA;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="1250" width="496" x="42" y="164" as="geometry" />
+        </mxCell>
+        <mxCell id="panel_inf" parent="1" style="rounded=1;arcSize=4;fillColor=#FFFFFF;strokeColor=#D6E0EA;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="1250" width="2390" x="569" y="164" as="geometry" />
+        </mxCell>
+        <mxCell id="org_head" parent="1" style="text;html=1;align=left;fontSize=27;fontStyle=1;fontColor=#477DB8;" value="Organization submodel" vertex="1">
+          <mxGeometry height="44" width="410" x="80" y="199" as="geometry" />
+        </mxCell>
+        <mxCell id="org_sub" parent="1" style="text;html=1;align=left;fontSize=19;fontColor=#536579;" value="2 instantiated entities" vertex="1">
+          <mxGeometry height="32" width="380" x="98" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="inf_head" parent="1" style="text;html=1;align=left;fontSize=27;fontStyle=1;fontColor=#238879;" value="Infrastructure submodel" vertex="1">
+          <mxGeometry height="44" width="600" x="615" y="199" as="geometry" />
+        </mxCell>
+        <mxCell id="inf_sub" parent="1" style="text;html=1;align=left;fontSize=19;fontColor=#536579;" value="15 instantiated entities" vertex="1">
+          <mxGeometry height="32" width="430" x="630" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-01-operatesin" edge="1" parent="1" source="org-northstar-logistics" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#637990;endArrow=block;endFill=1;fontSize=15;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;" target="sector-logistics-transportation" value="operatesIn">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="285" y="464" as="sourcePoint" />
+            <mxPoint x="285" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-02-manages" edge="1" parent="1" source="org-northstar-logistics" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#637990;endArrow=block;endFill=1;fontSize=15;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;" target="infra-northstar-shipment-tracking" value="manages">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="448" y="414" as="sourcePoint" />
+            <mxPoint x="647" y="414" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-03-madeby" edge="1" parent="1" source="infra-northstar-shipment-tracking" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#637990;endArrow=block;endFill=1;fontSize=15;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;" target="node-tracking-application-server" value="madeBy">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="969" y="404" as="sourcePoint" />
+            <mxPoint x="1077" y="404" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-04-madeby" edge="1" parent="1" source="infra-northstar-shipment-tracking" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#637990;endArrow=block;endFill=1;fontSize=15;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;" target="node-tracking-database-server" value="madeBy">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1013" y="440" />
+              <mxPoint x="1013" y="826" />
+            </Array>
+            <mxPoint x="969" y="440" as="sourcePoint" />
+            <mxPoint x="1077" y="826" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-05-hasnodetype" edge="1" parent="1" source="node-tracking-application-server" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#637990;endArrow=block;endFill=1;fontSize=15;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;" target="nodetype-application-server" value="hasNodeType">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1466" y="368" />
+              <mxPoint x="1466" y="285" />
+            </Array>
+            <mxPoint x="1395" y="368" as="sourcePoint" />
+            <mxPoint x="1511" y="285" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-06-hasnodetype" edge="1" parent="1" source="node-tracking-database-server" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#637990;endArrow=block;endFill=1;fontSize=15;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;" target="nodetype-database-server" value="hasNodeType">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1395" y="849" as="sourcePoint" />
+            <mxPoint x="1511" y="849" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-07-issource" edge="1" parent="1" source="node-tracking-application-server" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#637990;endArrow=block;endFill=1;fontSize=15;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;" target="connection-tracking-database" value="isSource">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1623" y="397" />
+              <mxPoint x="1623" y="425" />
+            </Array>
+            <mxPoint x="1395" y="397" as="sourcePoint" />
+            <mxPoint x="1950" y="425" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-08-isdestination" edge="1" parent="1" source="node-tracking-database-server" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#637990;endArrow=block;endFill=1;fontSize=15;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;" target="connection-tracking-database" value="isDestination">
+          <mxGeometry relative="1" x="-0.0958" as="geometry">
+            <Array as="points">
+              <mxPoint x="1180" y="842" />
+              <mxPoint x="1180" y="792" />
+              <mxPoint x="1452" y="792" />
+              <mxPoint x="1452" y="747" />
+              <mxPoint x="1850" y="747" />
+              <mxPoint x="1850" y="465" />
+            </Array>
+            <mxPoint x="1395" y="792" as="sourcePoint" />
+            <mxPoint x="1950" y="465" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-09-hostsresource" edge="1" parent="1" source="node-tracking-database-server" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#637990;endArrow=block;endFill=1;fontSize=15;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;" target="resource-shipment-tracking-database" value="hostsResource">
+          <mxGeometry relative="1" x="-0.0356" as="geometry">
+            <Array as="points">
+              <mxPoint x="1433" y="880" />
+              <mxPoint x="1433" y="1130" />
+              <mxPoint x="1650" y="1130" />
+            </Array>
+            <mxPoint x="1395" y="860" as="sourcePoint" />
+            <mxPoint x="1511" y="1130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-10-hostsresource" edge="1" parent="1" source="node-tracking-application-server" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#637990;endArrow=block;endFill=1;fontSize=15;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;" target="resource-tracking-application-files" value="hostsResource">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1270" y="531" />
+              <mxPoint x="1661" y="531" />
+            </Array>
+            <mxPoint x="1270" y="446" as="sourcePoint" />
+            <mxPoint x="1661" y="574" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-11-hasinformationtype" edge="1" parent="1" source="information-shipment-tracking-records" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#637990;endArrow=block;endFill=1;fontSize=15;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;" target="informationtype-shipment-tracking-data" value="hasInformationType">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2533" y="1255" as="sourcePoint" />
+            <mxPoint x="2533" y="1320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-12-resourceimplementscode" edge="1" parent="1" source="resource-tracking-application-files" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#637990;endArrow=block;endFill=1;fontSize=15;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;" target="code-shipment-tracking-service" value="resourceImplementsCode">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1868" y="633" />
+              <mxPoint x="1868" y="1162" />
+            </Array>
+            <mxPoint x="1811" y="633" as="sourcePoint" />
+            <mxPoint x="1950" y="1162" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-13-accessesinformation" edge="1" parent="1" source="code-shipment-tracking-service" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#637990;endArrow=block;endFill=1;fontSize=15;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;" target="information-shipment-tracking-records" value="accessesInformation">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2330" y="1166" />
+              <mxPoint x="2330" y="1163" />
+            </Array>
+            <mxPoint x="2256" y="1166" as="sourcePoint" />
+            <mxPoint x="2380" y="1210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-14-runsapp" edge="1" parent="1" source="node-tracking-application-server" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#637990;endArrow=block;endFill=1;fontSize=15;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;" target="appinstance-northstar-tracking-production" value="runsApp">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1368" y="501" />
+              <mxPoint x="1913" y="501" />
+              <mxPoint x="1913" y="863" />
+            </Array>
+            <mxPoint x="1368" y="446" as="sourcePoint" />
+            <mxPoint x="1950" y="863" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-15-applicationinstanceof" edge="1" parent="1" source="appinstance-northstar-tracking-production" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#637990;endArrow=block;endFill=1;fontSize=15;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="application-northstar-tracking" value="applicationInstanceOf">
+          <mxGeometry relative="1" x="0.2184" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="2256" y="854" />
+            </Array>
+            <mxPoint x="2256" y="884" as="sourcePoint" />
+            <mxPoint x="2380" y="950" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-16-applicationimplementscode" edge="1" parent="1" source="appinstance-northstar-tracking-production" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#637990;endArrow=block;endFill=1;fontSize=15;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;" target="code-shipment-tracking-service" value="applicationImplementsCode">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2103" y="933" as="sourcePoint" />
+            <mxPoint x="2103" y="1113" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-17-hasdestinationport" edge="1" parent="1" source="connection-tracking-database" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#637990;endArrow=block;endFill=1;fontSize=15;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;" target="port-postgresql-5432" value="hasDestinationPort">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2246" y="429" as="sourcePoint" />
+            <mxPoint x="2380" y="429" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-18-listenson" edge="1" parent="1" source="code-postgresql-database-service" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#637990;endArrow=block;endFill=1;fontSize=15;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;" target="port-postgresql-5432" value="listensOn">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2533" y="662" as="sourcePoint" />
+            <mxPoint x="2533" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="org-northstar-logistics" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E8F1FD;strokeColor=#477DB8;strokeWidth=2.4;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=16;" value="&lt;b style=&quot;font-size:19px&quot;&gt;Organization&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px;color:#536579&quot;&gt;Northstar Logistics&lt;/span&gt;" vertex="1">
+          <mxGeometry height="94" width="326" x="122" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="sector-logistics-transportation" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E8F1FD;strokeColor=#477DB8;strokeWidth=2.4;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=16;" value="&lt;b style=&quot;font-size:19px&quot;&gt;Sector&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px;color:#536579&quot;&gt;Logistics and Transportation&lt;/span&gt;" vertex="1">
+          <mxGeometry height="94" width="326" x="122" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="infra-northstar-shipment-tracking" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.4;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=16;" value="&lt;b style=&quot;font-size:19px&quot;&gt;Infrastructure&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px;color:#536579&quot;&gt;Northstar Shipment Tracking Infrastructure&lt;/span&gt;" vertex="1">
+          <mxGeometry height="96" width="322" x="647" y="374" as="geometry" />
+        </mxCell>
+        <mxCell id="nodetype-application-server" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.4;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=16;" value="&lt;b style=&quot;font-size:19px&quot;&gt;NodeType&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px;color:#536579&quot;&gt;Application Server&lt;/span&gt;" vertex="1">
+          <mxGeometry height="94" width="300" x="1511" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="nodetype-database-server" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.4;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=16;" value="&lt;b style=&quot;font-size:19px&quot;&gt;NodeType&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px;color:#536579&quot;&gt;Database Server&lt;/span&gt;" vertex="1">
+          <mxGeometry height="94" width="300" x="1460" y="796" as="geometry" />
+        </mxCell>
+        <mxCell id="node-tracking-application-server" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.4;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=16;" value="&lt;b style=&quot;font-size:19px&quot;&gt;Node&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px;color:#536579&quot;&gt;Tracking Application Server&lt;/span&gt;" vertex="1">
+          <mxGeometry height="96" width="318" x="1077" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="node-tracking-database-server" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.4;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=16;" value="&lt;b style=&quot;font-size:19px&quot;&gt;Node&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px;color:#536579&quot;&gt;Tracking Database Server&lt;/span&gt;" vertex="1">
+          <mxGeometry height="96" width="318" x="860" y="794" as="geometry" />
+        </mxCell>
+        <mxCell id="connection-tracking-database" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.4;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=16;" value="&lt;b style=&quot;font-size:19px&quot;&gt;Connection&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px;color:#536579&quot;&gt;Tracking Database Connection&lt;/span&gt;" vertex="1">
+          <mxGeometry height="100" width="296" x="1960" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="resource-shipment-tracking-database" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.4;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=16;" value="&lt;b style=&quot;font-size:19px&quot;&gt;Resource&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px;color:#536579&quot;&gt;Shipment Tracking Database&lt;/span&gt;" vertex="1">
+          <mxGeometry height="96" width="300" x="1500" y="1140" as="geometry" />
+        </mxCell>
+        <mxCell id="resource-tracking-application-files" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.4;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=16;" value="&lt;b style=&quot;font-size:19px&quot;&gt;Resource&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px;color:#536579&quot;&gt;Shipment Tracking Application Files&lt;/span&gt;" vertex="1">
+          <mxGeometry height="100" width="300" x="1511" y="574" as="geometry" />
+        </mxCell>
+        <mxCell id="information-shipment-tracking-records" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.4;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=16;" value="&lt;b style=&quot;font-size:19px&quot;&gt;Information&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px;color:#536579&quot;&gt;Shipment Tracking Records&lt;/span&gt;" vertex="1">
+          <mxGeometry height="100" width="306" x="2490" y="1110" as="geometry" />
+        </mxCell>
+        <mxCell id="informationtype-shipment-tracking-data" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.4;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=16;" value="&lt;b style=&quot;font-size:19px&quot;&gt;InformationType&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px;color:#536579&quot;&gt;Shipment Tracking Data&lt;/span&gt;" vertex="1">
+          <mxGeometry height="100" width="306" x="2490" y="1280" as="geometry" />
+        </mxCell>
+        <mxCell id="code-shipment-tracking-service" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.4;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=16;" value="&lt;b style=&quot;font-size:19px&quot;&gt;Code&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px;color:#536579&quot;&gt;Shipment Tracking Service Code&lt;/span&gt;" vertex="1">
+          <mxGeometry height="100" width="306" x="1950" y="1113" as="geometry" />
+        </mxCell>
+        <mxCell id="application-northstar-tracking" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.4;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=16;" value="&lt;b style=&quot;font-size:19px&quot;&gt;Application&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px;color:#536579&quot;&gt;Northstar Shipment Tracking Application&lt;/span&gt;" vertex="1">
+          <mxGeometry height="100" width="306" x="2590" y="804" as="geometry" />
+        </mxCell>
+        <mxCell id="appinstance-northstar-tracking-production" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.4;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=16;" value="&lt;b style=&quot;font-size:19px&quot;&gt;ApplicationInstance&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px;color:#536579&quot;&gt;Northstar Tracking Production Instance&lt;/span&gt;" vertex="1">
+          <mxGeometry height="100" width="306" x="1950" y="790" as="geometry" />
+        </mxCell>
+        <mxCell id="port-postgresql-5432" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.4;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=16;" value="&lt;b style=&quot;font-size:19px&quot;&gt;Port&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px;color:#536579&quot;&gt;PostgreSQL Database Port&lt;/span&gt;" vertex="1">
+          <mxGeometry height="100" width="260" x="2460" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="code-postgresql-database-service" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.4;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=16;" value="&lt;b style=&quot;font-size:19px&quot;&gt;Code&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px;color:#536579&quot;&gt;PostgreSQL Database Service Code&lt;/span&gt;" vertex="1">
+          <mxGeometry height="104" width="306" x="2437" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="foot" parent="1" style="text;html=1;align=left;fontSize=18;fontColor=#536579;" value="Arrows follow source → target as declared in implementation.py. Entity class appears above its instance name." vertex="1">
+          <mxGeometry height="45" width="2720" x="58" y="1462" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

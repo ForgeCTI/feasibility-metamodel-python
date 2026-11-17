@@ -10,5 +10,5 @@ class startsWith(BaseRelationship):
 
     source_type = Threat
     target_type = ThreatStep
-    source_cardinality = '1'
+    source_cardinality = '0..1'
     target_cardinality = '1'
