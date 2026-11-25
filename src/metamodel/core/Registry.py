@@ -47,6 +47,9 @@ class Registry:
         except KeyError as exc:
             raise RegistryError(f"Unknown relationship type: {relationship_type}") from exc
 
+    def get_relationship_classes(self) -> list[type[BaseRelationship]]:
+        return list(self._relationship_classes.values())
+
     def resolve_relationship_alias(self, source_type: str, label: str, target_type: str) -> str:
         try:
             return self._relationship_aliases[(source_type, label, target_type)]

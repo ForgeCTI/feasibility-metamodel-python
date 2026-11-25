@@ -1,9 +1,7 @@
 import pytest
 import importlib
 from metamodel.core.Model import Model
-from metamodel.organization.entities.Organization import Organization
-from metamodel.organization.entities.Sector import Sector
-from metamodel.organization.rels.operatesIn import operatesIn
+from metamodel.core.BaseRelationship import BaseRelationship
 from metamodel.core.Cardinality import Cardinality
 from metamodel.core.Registry import Registry
 from metamodel.core.Exceptions import RegistryError
@@ -12,6 +10,10 @@ from metamodel.core.ValidationUtils import(
     require_optional_email,
     require_optional_float,
 )
+from metamodel.organization.entities.Organization import Organization
+from metamodel.organization.entities.Sector import Sector
+from metamodel.organization.rels.operatesIn import operatesIn
+
 
 
 # Entities tests
@@ -484,6 +486,19 @@ def test_registry_rejects_invalid_relationship_class(monkeypatch):
     monkeypatch.setattr(registry_module, "RELATIONSHIP_IMPORTS", [("InvalidRelationship", "builtins", "str")])
     with pytest.raises(RegistryError):
         Registry.load_default()
+
+
+def test_registry_get_all_relationship_classes():
+    registry = Registry.load_default()
+
+    classes = registry.get_relationship_classes()
+
+    assert len(classes) == 62
+    assert len(set(classes)) == 62
+    assert all(
+        issubclass(cls, BaseRelationship)
+        for cls in classes
+    )
 
 
 # ValidationUtils tests

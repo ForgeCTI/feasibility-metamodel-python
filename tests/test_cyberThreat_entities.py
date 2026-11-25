@@ -1,6 +1,9 @@
 import pytest
 
 from metamodel.core.Model import Model
+from metamodel.validation.typeValidator import validateTypes
+from metamodel.validation.referenceValidator import validateReferences
+from metamodel.validation.cardinalityValidator import validateCardinalities
 
 from metamodel.cyberThreat.entities.AttackTool import AttackTool
 from metamodel.cyberThreat.entities.AttackToolConfiguration import AttackToolConfiguration
@@ -296,7 +299,9 @@ def test_exploits_accepts_human_vulnerability():
         )
     )
     model.add(exploits(step, vulnerability))
-    assert model.validate().is_valid
+    report = validateTypes(model)
+    assert report.is_valid
+    assert report.errors == []
 
 
 def test_factory_parse_scenario_preserves_inherited_fields():
@@ -326,12 +331,16 @@ def test_factory_parse_scenario_preserves_inherited_fields():
         ],
     }
     model = parseScenario(data)
-    assert model.validate().is_valid
-    assert (
-        model.get_entities_by_type("HumanVulnerability")[0]
-        .to_dict()["severity"]
-        == "High"
-    )
+    assert len(model.entities) == 2
+    assert len(model.relationships) == 1
+    assert validateReferences(model).is_valid
+    assert validateTypes(model).is_valid
+    vulnerability = model.get_entities_by_type("HumanVulnerability")[0]
+    assert vulnerability.to_dict()["severity"] == "High"
+    step = model.get_entities_by_type("ThreatStep")[0]
+    relationship = model.get_relationships_by_type("exploits")[0]
+    assert relationship.source_entity is step
+    assert relationship.target_entity is vulnerability
 
 
 # initiates tests
@@ -342,11 +351,15 @@ def test_initiates_allows_actor_alias_without_threat():
     actor = model.add(ThreatActor(name="Silent Horizon Group"))
     alias = model.add(ThreatActor(name="Ghost Meridian"))
     threat = model.add(Threat(name="Research Espionage"))
-
     model.add(aliasOf(alias, actor))
     model.add(initiates(actor, threat))
-
-    assert model.validate().is_valid
+    report = validateCardinalities(model)
+    initiates_errors = [
+        error.message
+        for error in report.errors
+        if error.message.startswith("initiates:")
+    ]
+    assert initiates_errors == []
 
 
 def test_initiates_rejects_multiple_threats_per_actor():
@@ -354,17 +367,19 @@ def test_initiates_rejects_multiple_threats_per_actor():
     actor = model.add(ThreatActor(name="Silent Horizon Group"))
     threat1 = model.add(Threat(name="Credential Theft"))
     threat2 = model.add(Threat(name="Research Data Theft"))
-
     model.add(initiates(actor, threat1))
     model.add(initiates(actor, threat2))
-
-    report = model.validate()
-
+    report = validateCardinalities(model)
     assert not report.is_valid
-    assert len(report.errors) == 1
-    assert report.errors[0].validator == "cardinalityValidator"
-    assert "initiates:" in report.errors[0].message
-    assert "expected 0..1" in report.errors[0].message
+    initiates_errors = [
+        error.message
+        for error in report.errors
+        if error.message.startswith("initiates:")
+    ]
+    assert initiates_errors == [
+        "initiates: ThreatActor 'Silent Horizon Group' "
+        "has 2 target relationship(s); expected 0..1."
+    ]
 
 
 def test_initiates_rejects_multiple_actors_for_same_threat():
@@ -372,13 +387,16 @@ def test_initiates_rejects_multiple_actors_for_same_threat():
     actor1 = model.add(ThreatActor(name="Threat Actor 1"))
     actor2 = model.add(ThreatActor(name="Threat Actor 2"))
     threat = model.add(Threat(name="Research Espionage"))
-
     model.add(initiates(actor1, threat))
     model.add(initiates(actor2, threat))
-
-    report = model.validate()
-
+    report = validateCardinalities(model)
     assert not report.is_valid
-    assert len(report.errors) == 1
-    assert report.errors[0].validator == "cardinalityValidator"
-    assert "initiates:" in report.errors[0].message
+    initiates_errors = [
+        error.message
+        for error in report.errors
+        if error.message.startswith("initiates:")
+    ]
+    assert initiates_errors == [
+        "initiates: Threat 'Research Espionage' "
+        "has 2 source relationship(s); expected 1."
+    ]

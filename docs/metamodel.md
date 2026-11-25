@@ -477,7 +477,6 @@ The metamodel supports several validation levels.
 | Type validation        | Checks that relationships connect compatible entity types.          |
 | Reference validation   | Checks that relationships point to existing entities.               |
 | Cardinality validation | Checks relationship multiplicities.                                 |
-| Taxonomy validation    | Checks taxonomy references where taxonomy registries are available. |
 | Model validation       | Runs all relevant checks on a complete scenario.                    |
 
 Validation returns a report.

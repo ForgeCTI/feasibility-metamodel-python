@@ -11,8 +11,6 @@ Validation helps answer questions such as:
 * Are all relationships connected to valid entities?
 * Do relationships connect the correct source and target types?
 * Are metamodel cardinalities respected?
-* Are taxonomy references well formed?
-* Do taxonomy references point to known taxonomy concepts?
 * Are scenario files internally consistent after parsing?
 * Is the model ready for analysis or export?
 
@@ -100,7 +98,6 @@ The package supports several validation levels.
 | Type validation        | Checks that relationship endpoints have compatible entity types.    |
 | Reference validation   | Checks that relationships point to entities contained in the model. |
 | Cardinality validation | Checks whether relationship multiplicities are respected.           |
-| Taxonomy validation    | Checks taxonomy references, if a taxonomy registry is available.    |
 | Model validation       | Runs the relevant validators on the complete model.                 |
 
 ## Type validation
@@ -271,63 +268,6 @@ This means:
 * each `Organization` must operate in at least one `Sector`;
 * a `Sector` may have zero, one, or many organizations.
 
-## Taxonomy validation
-
-Taxonomy validation checks taxonomy references such as:
-
-```text
-attackTools:cobaltStrike
-mitreAttackEnterprise:T1190
-sectors:finance
-nodeTypes:webServer
-```
-
-At minimum, taxonomy validation should check the reference format:
-
-```text
-<taxonomy>:<concept>
-```
-
-Invalid examples:
-
-```text
-attackTools
-attackTools:
-:cobaltStrike
-attackTools/cobaltStrike
-```
-
-Valid examples:
-
-```text
-attackTools:cobaltStrike
-mitreAttackEnterprise:T1190
-sectors:finance
-```
-
-If a taxonomy registry is available, validation can also check whether:
-
-* the taxonomy exists;
-* the concept exists;
-* the concept is compatible with the entity type;
-* the concept is deprecated;
-* the expected taxonomy version is available.
-
-Example:
-
-```python
-from metamodel.cyberThreat.entities.AttackTool import AttackTool
-
-tool = AttackTool(
-    name="Cobalt Strike",
-    taxonomy_ref="attackTools:cobaltStrike",
-)
-```
-
-If the taxonomy registry contains `attackTools:cobaltStrike`, the reference is valid.
-
-If the registry does not contain the concept, validation should report a taxonomy error or warning.
-
 ## Attribute validation
 
 Entities use standard Python attributes with getters and setters.
@@ -361,7 +301,6 @@ Attribute validation usually checks:
 | Numeric ranges     | `cvss_score` must be between `0.0` and `10.0`.                   |
 | List element types | `aliases` must contain only strings.                             |
 | Date format        | Date fields should use an accepted format, such as `YYYY-MM-DD`. |
-| Reference format   | `taxonomy_ref` should use `<taxonomy>:<concept>`.                |
 
 Attribute validation protects individual entities before whole-model validation is executed.
 
@@ -512,46 +451,6 @@ Fix:
 Add the required relationship.
 ```
 
-### Invalid taxonomy reference
-
-Problem:
-
-```text
-taxonomy_ref must use the format '<taxonomy>:<concept>'.
-```
-
-Cause:
-
-```text
-The taxonomy reference is malformed.
-```
-
-Fix:
-
-```text
-Use attackTools:cobaltStrike instead of attackTools/cobaltStrike.
-```
-
-### Unknown taxonomy concept
-
-Problem:
-
-```text
-Unknown taxonomy concept: attackTools:unknownTool.
-```
-
-Cause:
-
-```text
-The taxonomy registry does not contain the referenced concept.
-```
-
-Fix:
-
-```text
-Correct the concept ID or add it to the taxonomy.
-```
-
 ## Validation severity
 
 A validation system may distinguish between errors and warnings.
@@ -566,11 +465,9 @@ Examples of errors:
 * wrong relationship endpoint type;
 * missing mandatory relationship;
 * relationship points to an entity outside the model;
-* malformed taxonomy reference.
 
 Examples of warnings:
 
-* taxonomy concept is deprecated;
 * optional recommended field is missing;
 * STIX object was preserved generically instead of mapped natively;
 * source field is missing for an entity derived from external information.
@@ -655,8 +552,6 @@ Before using a scenario for analysis, check:
 * Do all relationships connect the correct entity types?
 * Are mandatory relationships present?
 * Are cardinality limits respected?
-* Are taxonomy references well formed?
-* Are taxonomy references resolvable?
 * Are STIX skipped objects or relationships reviewed?
 * Are assumptions documented?
 * Does `model.validate()` return `is_valid = True`?
@@ -667,5 +562,4 @@ Continue with:
 
 * [I/O](io.md) to understand scenario loading and serialization;
 * [Adapters](adapters.md) to export validated models;
-* [Taxonomies](taxonomies.md) to understand taxonomy reference validation;
 * [Metamodel](metamodel.md) to review entity and relationship semantics.

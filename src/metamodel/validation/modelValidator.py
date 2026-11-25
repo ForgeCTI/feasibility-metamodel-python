@@ -1,14 +1,29 @@
 from metamodel.core.ValidationReport import ValidationReport
 from metamodel.validation.cardinalityValidator import validateCardinalities
 from metamodel.validation.referenceValidator import validateReferences
-from metamodel.validation.taxonomyValidator import validateTaxonomies
 from metamodel.validation.typeValidator import validateTypes
 
 
-def validateModel(model, *, validate_taxonomies: bool = True) -> ValidationReport:
+def validateModel(model) -> ValidationReport:
+    """Validate the model in two stages.
+
+    First, check references and endpoint types.
+    Run cardinality validation only if no structural errors are found.
+
+    Return a ValidationReport containing errors and warnings.
+    """
     report = ValidationReport()
-    for validator in (validateReferences, validateTypes, validateCardinalities):
-        report.extend(validator(model))
-    if validate_taxonomies:
-        report.extend(validateTaxonomies(model))
+
+    if not model.entities and not model.relationships:
+        report.add_warning(
+            "modelValidator",
+            "Model is empty: no entities or relationships to validate.",
+        )
+
+    report.extend(validateReferences(model))
+    report.extend(validateTypes(model))
+
+    if report.is_valid:
+        report.extend(validateCardinalities(model))
+
     return report

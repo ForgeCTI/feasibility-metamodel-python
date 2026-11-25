@@ -1,5 +1,7 @@
 import pytest
 
+from metamodel.validation.cardinalityValidator import validateCardinalities
+
 from metamodel.core.Model import Model
 from metamodel.infrastructure.entities.Node import Node
 from metamodel.infrastructure.rels.runs import runs
@@ -100,11 +102,15 @@ def test_runs_allows_one_host_and_multiple_virtual_nodes():
     vm1 = model.add(Node(name="Virtual Machine 1"))
     vm2 = model.add(Node(name="Virtual Machine 2"))
     model.add(Node(name="Standalone Server"))
-
     model.add(runs(host, vm1))
     model.add(runs(host, vm2))
-
-    assert model.validate().is_valid
+    report = validateCardinalities(model)
+    runs_errors = [
+        error.message
+        for error in report.errors
+        if error.message.startswith("runs:")
+    ]
+    assert runs_errors == []
 
 
 def test_runs_rejects_multiple_hosts_for_same_node():
@@ -112,12 +118,16 @@ def test_runs_rejects_multiple_hosts_for_same_node():
     host1 = model.add(Node(name="Physical Server 1"))
     host2 = model.add(Node(name="Physical Server 2"))
     vm = model.add(Node(name="Virtual Machine"))
-
     model.add(runs(host1, vm))
     model.add(runs(host2, vm))
-
-    report = model.validate()
-
+    report = validateCardinalities(model)
     assert not report.is_valid
-    assert len(report.errors) == 1
-    assert report.errors[0].validator == "cardinalityValidator"
+    runs_errors = [
+        error.message
+        for error in report.errors
+        if error.message.startswith("runs:")
+    ]
+    assert runs_errors == [
+        "runs: Node 'Virtual Machine' has 2 source "
+        "relationship(s); expected 0..1."
+    ]

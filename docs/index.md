@@ -91,7 +91,6 @@ Validation includes:
 * relationship source and target type checks;
 * missing reference checks;
 * cardinality checks;
-* taxonomy reference checks;
 * whole-model validation reports.
 
 ### Taxonomy integration
@@ -226,7 +225,7 @@ A common usage workflow is:
 ```text
 1. Define or load a scenario.
 2. Instantiate entities and relationships.
-3. Validate relationship types, references, cardinalities, and taxonomy references.
+3. Validate relationship types, references, and cardinalities.
 4. Export the scenario to another representation, such as NetworkX or Neo4j.
 5. Use the resulting model for feasibility analysis or graph-based reasoning.
 ```
