@@ -1,565 +1,148 @@
 # Validation
 
-Validation checks whether a scenario instantiated with the **CTI Feasibility Metamodel** is structurally correct and consistent with the metamodel.
+Validation checks whether a scenario is consistent with the metamodel: relationships point to entities
+of the model, connect the right entity types, respect the multiplicities of the paper, and satisfy a
+few rules that multiplicities cannot express.
 
-A model may contain valid Python objects but still be invalid as a metamodel scenario. For example, a relationship may connect the wrong entity types, a relationship may point to an entity that is not part of the model, or a required cardinality may be violated.
+Many errors are caught earlier, when objects are created:
 
-## Purpose
+* entity attributes are validated by their setters (types, allowed values, ranges);
+* a relationship checks the types of its endpoints when it is created;
+* `Model.add` rejects relationships whose endpoints (or referenced entities, such as the privilege
+  level of a grant) are not in the model, and duplicate relationships.
 
-Validation helps answer questions such as:
+`model.validate()` then checks the complete scenario.
 
-* Are all relationships connected to valid entities?
-* Do relationships connect the correct source and target types?
-* Are metamodel cardinalities respected?
-* Are scenario files internally consistent after parsing?
-* Is the model ready for analysis or export?
-
-Validation is especially important before:
-
-* running feasibility analysis;
-* exporting to NetworkX;
-* exporting to Neo4j;
-* serializing a scenario;
-* using a case study as reproducible evidence.
-
-## Validation workflow
-
-The typical workflow is:
-
-```text
-create or load scenario
-        ↓
-instantiate model
-        ↓
-validate model
-        ↓
-inspect validation report
-        ↓
-fix errors or continue with analysis/export
-```
-
-In Python:
+## Running validation
 
 ```python
 from metamodel.core.Model import Model
+from metamodel.organization.entities.Organization import Organization
+from metamodel.organization.entities.Sector import Sector
+from metamodel.organization.rels.operatesIn import operatesIn
 
 model = Model()
-
-# Add entities and relationships here.
+organization = model.add(Organization(name="ExampleBank"))
+model.add(operatesIn(organization, model.add(Sector(name="Finance"))))
 
 report = model.validate()
-
-if report.is_valid:
-    print("The model is valid.")
-else:
-    for error in report.errors:
-        print(error)
-```
-
-## Validation report
-
-Validation returns a report object.
-
-A validation report should provide at least:
-
-| Attribute  | Meaning                                       |
-| ---------- | --------------------------------------------- |
-| `is_valid` | `True` if the model has no validation errors. |
-| `errors`   | List of validation errors.                    |
-| `warnings` | List of non-blocking warnings, if supported.  |
-
-Example:
-
-```python
-report = model.validate()
-
 print(report.is_valid)
-print(report.errors)
+for message in report.messages:
+    print(f"[{message.severity}] {message.validator}: {message.message}")
 ```
 
-Possible output:
+The report exposes `is_valid` (no errors), `errors`, `warnings`, and `messages` (both). Each message is
+a `ValidationMessage` with `validator`, `message`, and `severity` (`error` or `warning`). From the
+command line:
+
+```bash
+metamodel validate scenario.yaml            # exit code 1 if not valid
+metamodel validate scenario.yaml --json     # machine-readable report
+metamodel validate scenario.yaml --strict   # warnings also make it fail
+```
+
+## Validators
+
+| Validator | Checks | Severity |
+|---|---|---|
+| `referenceValidator` | relationship endpoints and entity-valued attributes belong to the model | error |
+| `typeValidator` | relationship endpoints have the declared types (subclasses accepted) | error |
+| `cardinalityValidator` | multiplicities at both ends of every relationship | error |
+| | entities with no relationship at all | warning |
+| `semanticValidator` | connection scopes and endpoints | error |
+| | cycles in `followedBy` | error |
+| | connections without scope, privilege levels without rank | warning |
+
+Cardinality and semantic validation run only if the reference and type checks pass, since their results
+would be meaningless otherwise. `validateReferences`, `validateTypes`, `validateCardinalities`, and
+`validateSemantics` can also be called on their own from `metamodel.validation`.
+
+## Multiplicities
+
+Each relationship class declares the multiplicities at its source and target ends, as drawn in the
+paper's figures; `metamodel schema <name>` and the [schema reference](schema.md) list them.
 
 ```text
-False
-[
-    "Relationship operatesIn expects source_entity of type Organization.",
-    "Cardinality violation: Organization must operate in at least one Sector."
-]
+Organization [0..*] --operatesIn--> [1..*] Sector
 ```
 
-Errors should be treated as blocking. Warnings identify issues that may not make the model invalid but should still be reviewed.
-
-## Validation levels
-
-The package supports several validation levels.
-
-| Validator              | Purpose                                                             |
-| ---------------------- | ------------------------------------------------------------------- |
-| Type validation        | Checks that relationship endpoints have compatible entity types.    |
-| Reference validation   | Checks that relationships point to entities contained in the model. |
-| Cardinality validation | Checks whether relationship multiplicities are respected.           |
-| Model validation       | Runs the relevant validators on the complete model.                 |
-
-## Type validation
-
-Type validation checks that a relationship connects the expected source and target entity types.
-
-For example, the relationship:
-
-```text
-operatesIn
-```
-
-should connect:
-
-```text
-Organization → Sector
-```
-
-Correct usage:
+The target multiplicity constrains the outgoing relationships of each source entity (every
+organization operates in at least one sector); the source multiplicity constrains the incoming
+relationships of each target entity (a sector may have any number of organizations). Missing
+relationships count as zero, so a mandatory relationship that is absent is reported:
 
 ```python
-from metamodel.organization.entities.Organization import Organization
-from metamodel.organization.entities.Sector import Sector
-from metamodel.organization.rels.operatesIn import operatesIn
+from metamodel.validation.cardinalityValidator import validateCardinalities
 
-organization = Organization(name="ExampleBank")
-sector = Sector(name="Finance")
-
-relationship = operatesIn(
-    source_entity=organization,
-    target_entity=sector,
-)
+report = validateCardinalities(model)
+print([m.message for m in report.errors if m.message.startswith("basedIn")])
+# ["basedIn: Organization 'ExampleBank' has 0 target relationship(s); expected 1..*."]
 ```
 
-Incorrect usage:
+Two refinements follow the metamodel:
+
+* **Subclasses.** A multiplicity declared on a class applies to its subclasses: `Node --hostsResource-->
+  Resource` is `1..*` at the node end, so every `Data`, `Code`, or `Asset` must be hosted by a node.
+  Application and OS instances run by a node (`runsApp`, `runsOS`) count as hosted resources.
+* **Associations with several target types.** One association of the paper may be implemented by
+  several classes with the same label, e.g. `affects` from `SoftwareVulnerability` to `OS`
+  (`affectsOS`) and to `Application` (`affectsApplication`), both `1..*`. Their target multiplicity is
+  checked on the union: a software vulnerability must affect at least one OS or application. Likewise,
+  an account must grant access to at least one node or resource.
+
+## Semantic rules
+
+* **Connection scope.** An `internal` connection has one source and one destination node (`isSource`,
+  `isDestination`); an `inbound` connection only a destination (reachability from outside); an
+  `outbound` connection only a source. A connection without scope produces a warning.
+* **Threat-step ordering.** `followedBy` must be acyclic, so that steps can be evaluated in
+  topological order (see Section 3.7 of the paper).
+* **Privilege levels.** A level used by `grantsAccessTo` or `requiresPrivilegeLevel` should have a
+  `rank`; otherwise grants and requirements cannot be compared (warning).
 
 ```python
+from metamodel.infrastructure.entities.Connection import Connection
 from metamodel.infrastructure.entities.Node import Node
+from metamodel.infrastructure.rels.isDestination import isDestination
+from metamodel.infrastructure.rels.isSource import isSource
+from metamodel.validation.semanticValidator import validateSemantics
 
-node = Node(name="public-web-01")
-
-relationship = operatesIn(
-    source_entity=node,
-    target_entity=sector,
-)
+gateway, server = model.add(Node(name="gateway")), model.add(Node(name="server"))
+inbound = model.add(Connection(name="Inbound HTTPS", scope="inbound"))
+model.add(isSource(gateway, inbound))       # an inbound connection has no source node
+model.add(isDestination(server, inbound))
+print(validateSemantics(model).errors[0].message)
 ```
 
-This should fail because `operatesIn` does not connect `Node → Sector`.
+## Validating parsed scenarios
 
-Depending on where the check is performed, this error may be raised immediately during relationship construction or reported during model validation.
+Parsers raise `ParseError` for unknown types, unknown attributes, invalid values, or dangling
+references, naming the entity involved; with `strict=False` they skip such items and return warnings
+(`parseScenarioWithReport`). A parsed model should then be validated like any other:
 
-## Reference validation
-
-Reference validation checks that relationships point to entities that belong to the model.
-
-Example problem:
-
+<!-- no-test -->
 ```python
-from metamodel.core.Model import Model
-from metamodel.organization.entities.Organization import Organization
-from metamodel.organization.entities.Sector import Sector
-from metamodel.organization.rels.operatesIn import operatesIn
+from metamodel.io import loadModel
 
-model = Model()
-
-organization = model.add(Organization(name="ExampleBank"))
-sector = Sector(name="Finance")  # Created but not added to the model.
-
-model.add(
-    operatesIn(
-        source_entity=organization,
-        target_entity=sector,
-    )
-)
-
+model = loadModel("scenario.yaml")
 report = model.validate()
 ```
 
-In this case, the relationship points to `sector`, but `sector` was not added to the model.
+For STIX bundles, also review the objects and relationships that were skipped or kept as generic STIX
+entities:
 
-Reference validation should report that the target entity is missing from the model.
-
-Correct version:
-
-```python
-sector = model.add(Sector(name="Finance"))
-```
-
-## Cardinality validation
-
-Cardinality validation checks whether the number of relationships between entity types respects the metamodel.
-
-Typical cardinality notation:
-
-| Notation | Meaning       |
-| -------- | ------------- |
-| `1`      | Exactly one.  |
-| `0..1`   | Zero or one.  |
-| `1..*`   | One or more.  |
-| `0..*`   | Zero or more. |
-
-For example, if the metamodel says:
-
-```text
-Organization 1..* operatesIn Sector
-```
-
-then every `Organization` must be connected to at least one `Sector` through `operatesIn`.
-
-Invalid example:
-
-```python
-from metamodel.core.Model import Model
-from metamodel.organization.entities.Organization import Organization
-
-model = Model()
-organization = model.add(Organization(name="ExampleBank"))
-
-report = model.validate()
-```
-
-If `operatesIn` is mandatory for `Organization`, validation should report a cardinality violation.
-
-Correct example:
-
-```python
-from metamodel.organization.entities.Sector import Sector
-from metamodel.organization.rels.operatesIn import operatesIn
-
-sector = model.add(Sector(name="Finance"))
-
-model.add(
-    operatesIn(
-        source_entity=organization,
-        target_entity=sector,
-    )
-)
-
-report = model.validate()
-```
-
-## Cardinality direction
-
-A relationship cardinality must be interpreted from both endpoints.
-
-For a relationship:
-
-```text
-Organization → Sector
-```
-
-there can be two constraints:
-
-| Side                    | Meaning                                                                    |
-| ----------------------- | -------------------------------------------------------------------------- |
-| Source-side cardinality | How many target entities each source entity must or may connect to.        |
-| Target-side cardinality | How many source entities each target entity must or may be connected from. |
-
-Example:
-
-```text
-Organization 1..* operatesIn Sector
-Sector 0..* is operated in by Organization
-```
-
-This means:
-
-* each `Organization` must operate in at least one `Sector`;
-* a `Sector` may have zero, one, or many organizations.
-
-## Attribute validation
-
-Entities use standard Python attributes with getters and setters.
-
-This means many errors are detected when assigning values.
-
-Example:
-
-```python
-from metamodel.organization.entities.Organization import Organization
-
-organization = Organization(name="ExampleBank")
-organization.criticality = "critical"
-```
-
-Invalid assignment:
-
-```python
-organization.criticality = "very critical"
-```
-
-If `criticality` only accepts values such as `low`, `medium`, `high`, and `critical`, this should raise a `ValueError`.
-
-Attribute validation usually checks:
-
-| Check              | Example                                                          |
-| ------------------ | ---------------------------------------------------------------- |
-| Type               | `name` must be a string.                                         |
-| Non-empty values   | `name` cannot be empty.                                          |
-| Allowed values     | `criticality` must be one of a defined set.                      |
-| Numeric ranges     | `cvss_score` must be between `0.0` and `10.0`.                   |
-| List element types | `aliases` must contain only strings.                             |
-| Date format        | Date fields should use an accepted format, such as `YYYY-MM-DD`. |
-
-Attribute validation protects individual entities before whole-model validation is executed.
-
-## Structural validation
-
-Structural validation checks the shape of the complete model.
-
-It can detect:
-
-* duplicate entity IDs;
-* duplicate relationship IDs;
-* relationships with missing endpoints;
-* relationships pointing to unknown entities;
-* unsupported relationship types;
-* inconsistent source/target classes;
-* invalid or unsupported scenario file structures.
-
-This is especially useful after parsing a model from JSON, YAML, STIX, CSV, or draw.io.
-
-## STIX parser validation
-
-When a STIX bundle is parsed, the parser may produce:
-
-* native metamodel entities;
-* generic STIX entities;
-* generic STIX relationships;
-* skipped objects;
-* skipped relationships.
-
-For example:
-
+<!-- no-test -->
 ```python
 from metamodel.io.stixParser import loadStixBundleWithReport
 
 result = loadStixBundleWithReport("bundle.json")
-
-model = result.model
-
-print(result.skipped_objects)
-print(result.skipped_relationships)
-```
-
-A STIX parse result should be reviewed before using the model for analysis.
-
-Skipped objects or relationships do not necessarily mean the bundle is invalid. They may simply indicate that no native semantic mapping has been implemented yet.
-
-A good workflow is:
-
-```text
-parse STIX bundle
-        ↓
-inspect skipped objects and relationships
-        ↓
-validate resulting model
-        ↓
-decide whether custom mappers are needed
-```
-
-## Model validation after parsing
-
-File parsers and external adapters should always be followed by validation.
-
-Example:
-
-```python
-from metamodel.io.jsonParser import loadJsonScenario
-
-model = loadJsonScenario("scenario.json")
-report = model.validate()
-
-if not report.is_valid:
-    for error in report.errors:
-        print(error)
-```
-
-For STIX:
-
-```python
-from metamodel.io.stixParser import loadStixBundleWithReport
-
-result = loadStixBundleWithReport("bundle.json")
+print(result.skipped_objects, result.skipped_relationships)
 report = result.model.validate()
-
-if not report.is_valid:
-    for error in report.errors:
-        print(error)
 ```
 
-## Common validation errors
+## Checklist
 
-### Wrong relationship endpoint type
-
-Problem:
-
-```text
-operatesIn received Node as source_entity instead of Organization.
-```
-
-Cause:
-
-```text
-The relationship was created with the wrong source entity type.
-```
-
-Fix:
-
-```text
-Use Organization → Sector for operatesIn.
-```
-
-### Entity not added to the model
-
-Problem:
-
-```text
-Relationship targets an entity that is not in the model.
-```
-
-Cause:
-
-```text
-An entity object was created but not added with model.add(...).
-```
-
-Fix:
-
-```python
-sector = model.add(Sector(name="Finance"))
-```
-
-### Cardinality violation
-
-Problem:
-
-```text
-Organization must operate in at least one Sector.
-```
-
-Cause:
-
-```text
-A mandatory relationship is missing.
-```
-
-Fix:
-
-```text
-Add the required relationship.
-```
-
-## Validation severity
-
-A validation system may distinguish between errors and warnings.
-
-| Severity | Meaning                                                           |
-| -------- | ----------------------------------------------------------------- |
-| Error    | The model violates the metamodel and should not be used as valid. |
-| Warning  | The model is usable, but something should be reviewed.            |
-
-Examples of errors:
-
-* wrong relationship endpoint type;
-* missing mandatory relationship;
-* relationship points to an entity outside the model;
-
-Examples of warnings:
-
-* optional recommended field is missing;
-* STIX object was preserved generically instead of mapped natively;
-* source field is missing for an entity derived from external information.
-
-## Recommended validation policy
-
-For case studies, use a strict validation policy.
-
-Before accepting a case study:
-
-1. Run the implementation script.
-2. Validate the model.
-3. Review all errors.
-4. Review all warnings.
-5. Export a validation report to `case_studies/<case>/output/`.
-6. Document any accepted assumptions in `case_studies/<case>/notes/`.
-
-Suggested case-study workflow:
-
-```text
-case_studies/01_case_study/
-├── implementation.py
-├── scenario.yaml
-├── output/
-│   └── validation_report.json
-└── notes/
-    └── assumptions.md
-```
-
-## Example validation script
-
-```python
-from pathlib import Path
-import json
-
-from case_studies.case_01.implementation import build_model
-
-OUTPUT_FILE = Path("case_studies/01_case_study/output/validation_report.json")
-
-model = build_model()
-report = model.validate()
-
-OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
-
-with OUTPUT_FILE.open("w", encoding="utf-8") as file:
-    json.dump(
-        {
-            "is_valid": report.is_valid,
-            "errors": report.errors,
-            "warnings": getattr(report, "warnings", []),
-        },
-        file,
-        indent=2,
-    )
-
-print(f"Validation report written to {OUTPUT_FILE}")
-```
-
-## Validation before export
-
-Always validate before exporting.
-
-Recommended:
-
-```python
-report = model.validate()
-
-if not report.is_valid:
-    raise RuntimeError("Cannot export an invalid model.")
-
-graph = toNetworkx(model)
-```
-
-This avoids exporting a graph that contains broken references, invalid relationships, or incomplete mandatory structure.
-
-## Practical checklist
-
-Before using a scenario for analysis, check:
-
-* Are all entities added to the model?
-* Are all relationships added to the model?
-* Do all relationships connect the correct entity types?
-* Are mandatory relationships present?
-* Are cardinality limits respected?
-* Are STIX skipped objects or relationships reviewed?
-* Are assumptions documented?
-* Does `model.validate()` return `is_valid = True`?
-
-## Next steps
-
-Continue with:
-
-* [I/O](io.md) to understand scenario loading and serialization;
-* [Adapters](adapters.md) to export validated models;
-* [Metamodel](metamodel.md) to review entity and relationship semantics.
+* `metamodel validate` reports no errors;
+* warnings (isolated entities, connections without scope, levels without rank) have been reviewed;
+* for scenarios derived from CTI, skipped STIX objects have been reviewed and assumptions are
+  documented (e.g. in `case_studies/<case>/notes/`).

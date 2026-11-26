@@ -10,6 +10,14 @@ pip install -e ".[neo4j]"      # Neo4j driver
 
 ## NetworkX
 
+The examples on this page use the motivating example of the paper:
+
+```python
+from metamodel.io import loadModel
+
+model = loadModel("examples/13_motivating_example/data/scenario.yaml")
+```
+
 ```python
 from metamodel.adapters import toNetworkx, fromNetworkx
 
@@ -43,6 +51,7 @@ model = loadGraphML("scenario.graphml")
 
 ## Neo4j
 
+<!-- no-test -->
 ```python
 from metamodel.adapters import exportToNeo4j, importFromNeo4j, toCypherStatements, toCypherScript
 

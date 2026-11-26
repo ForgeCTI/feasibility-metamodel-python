@@ -1,535 +1,224 @@
 # Quickstart
 
-This page introduces the basic workflow of the **CTI Feasibility Metamodel** through a small end-to-end scenario.
+This page builds a small scenario in Python, validates it, saves it in several formats, and exports it
+to graph tools. It is a reduced version of the motivating example of the paper (credential phishing
+against a mailbox); the full version is `examples/13_motivating_example/data/scenario.yaml`.
 
-The goal is to show how to:
+Install the package with the optional dependencies used below:
 
-1. create a model;
-2. instantiate entities;
-3. connect entities with relationships;
-4. validate the model;
-5. inspect or export the resulting scenario.
+```bash
+pip install -e ".[yaml,networkx]"
+```
 
 ## Scenario
 
-In this quickstart, we model a simple CTI feasibility scenario:
+A defence organization runs a mail server reachable from the Internet over HTTPS. An employee has a
+cloud mailbox account with standard privileges on the mailbox emails, whose confidentiality is a
+business requirement. A threat actor's campaign phishes the employee (TS1), steals the session
+cookie (TS2), and collects the emails (TS3).
 
-```text
-An organization operates in the finance sector.
-
-The organization manages an infrastructure composed of a public-facing web server.
-The web server exposes an HTTPS port and runs a web application.
-
-A threat actor initiates a threat composed of a threat step.
-The threat step exploits a vulnerability and targets the web application resource.
-```
-
-This is intentionally small, but it already touches the three sub-metamodels:
-
-| Sub-metamodel    | Example concepts                                              |
-| ---------------- | ------------------------------------------------------------- |
-| `organization`   | `Organization`, `Sector`                                      |
-| `infrastructure` | `Infrastructure`, `Node`, `Port`, `Resource`                  |
-| `cyberThreat`    | `ThreatActor`, `Threat`, `ThreatStep`, `Vulnerability`, `TTP` |
-
-## Create a Python file
-
-Create a file named:
-
-```text
-quickstart.py
-```
-
-Then add the following code.
-
-## Complete example
+## Organization and infrastructure
 
 ```python
 from metamodel.core.Model import Model
 
 from metamodel.organization.entities.Organization import Organization
 from metamodel.organization.entities.Sector import Sector
+from metamodel.organization.entities.HomeCountry import HomeCountry
+from metamodel.organization.entities.BusinessRequirement import BusinessRequirement
+from metamodel.organization.entities.AssetSecurityRequirement import AssetSecurityRequirement
+from metamodel.organization.entities.SecurityRequirement import SecurityRequirement
+from metamodel.organization.entities.Asset import Asset
 from metamodel.organization.rels.operatesIn import operatesIn
+from metamodel.organization.rels.basedIn import basedIn
+from metamodel.organization.rels.hasBusinessRequirement import hasBusinessRequirement
+from metamodel.organization.rels.drivesSecurityRequirement import drivesSecurityRequirement
+from metamodel.organization.rels.hasSecurityRequirement import hasSecurityRequirement
+from metamodel.organization.rels.implementsRequirement import implementsRequirement
 
 from metamodel.infrastructure.entities.Infrastructure import Infrastructure
 from metamodel.infrastructure.entities.Node import Node
 from metamodel.infrastructure.entities.NodeType import NodeType
 from metamodel.infrastructure.entities.Port import Port
-from metamodel.infrastructure.entities.Resource import Resource
+from metamodel.infrastructure.entities.Connection import Connection
+from metamodel.infrastructure.entities.User import User
+from metamodel.infrastructure.entities.UserType import UserType
+from metamodel.infrastructure.entities.Account import Account
+from metamodel.infrastructure.entities.PrivilegeLevel import PrivilegeLevel
 from metamodel.infrastructure.rels.manages import manages
 from metamodel.infrastructure.rels.madeBy import madeBy
+from metamodel.infrastructure.rels.usedBy import usedBy
 from metamodel.infrastructure.rels.hasNodeType import hasNodeType
+from metamodel.infrastructure.rels.hostsResource import hostsResource
 from metamodel.infrastructure.rels.exposesPort import exposesPort
-from metamodel.infrastructure.rels.hosts import hosts
+from metamodel.infrastructure.rels.isDestination import isDestination
+from metamodel.infrastructure.rels.hasDestinationPort import hasDestinationPort
+from metamodel.infrastructure.rels.hasUserType import hasUserType
+from metamodel.infrastructure.rels.hasAccount import hasAccount
+from metamodel.infrastructure.rels.grantsAccessToResource import grantsAccessToResource
 
+model = Model()
+model.metadata["name"] = "Quickstart scenario"
+
+# Organization
+org = model.add(Organization(name="Defence organization"))
+model.add(operatesIn(org, model.add(Sector(name="Defence"))))
+model.add(basedIn(org, model.add(HomeCountry(name="United Kingdom"))))
+requirement = model.add(BusinessRequirement(name="Confidentiality of mission emails"))
+model.add(hasBusinessRequirement(org, requirement))
+
+# The emails are an Asset, i.e. a Resource with an asset security requirement.
+emails = model.add(Asset(name="Mailbox emails"))
+asr = model.add(AssetSecurityRequirement(name="Confidentiality of mailbox emails"))
+model.add(drivesSecurityRequirement(requirement, asr))
+model.add(hasSecurityRequirement(emails, asr))
+model.add(implementsRequirement(asr, model.add(SecurityRequirement(name="Confidentiality"))))
+
+# Infrastructure: a mail server reachable from the Internet on 443/tcp.
+infra = model.add(Infrastructure(name="Corporate infrastructure"))
+model.add(manages(org, infra))
+mx = model.add(Node(name="Mail server", hostname="mx1"))
+model.add(madeBy(infra, mx))
+model.add(hasNodeType(mx, model.add(NodeType(name="Server"))))
+model.add(hostsResource(mx, emails))
+https = model.add(Port(name="HTTPS", number=443, protocol="tcp"))
+model.add(exposesPort(mx, https))
+inbound = model.add(Connection(name="Inbound HTTPS", scope="inbound"))  # destination only
+model.add(isDestination(mx, inbound))
+model.add(hasDestinationPort(inbound, https))
+
+# A user, her account, and the privilege level the account grants on the emails.
+victim = model.add(User(name="Victim user"))
+model.add(usedBy(infra, victim))
+model.add(hasUserType(victim, model.add(UserType(name="Employee"))))
+account = model.add(Account(name="Mailbox account", kind="cloud"))
+model.add(hasAccount(victim, account))
+standard = model.add(PrivilegeLevel(name="Standard user", rank=1))
+model.add(grantsAccessToResource(account, emails, privilege_level=standard))
+```
+
+Relationship classes check their endpoint types when they are created, so `operatesIn(mx, org)` raises
+a `TypeError`. `grantsAccessTo` carries the privilege level of the grant (the association class
+`PrivilegeLevel` of the metamodel); the level must be added to the model before the grant.
+
+## Cyber threat
+
+```python
 from metamodel.cyberThreat.entities.ThreatActor import ThreatActor
 from metamodel.cyberThreat.entities.Threat import Threat
 from metamodel.cyberThreat.entities.ThreatStep import ThreatStep
-from metamodel.cyberThreat.entities.Vulnerability import Vulnerability
 from metamodel.cyberThreat.entities.TTP import TTP
+from metamodel.cyberThreat.entities.HumanVulnerability import HumanVulnerability
 from metamodel.cyberThreat.rels.initiates import initiates
 from metamodel.cyberThreat.rels.startsWith import startsWith
+from metamodel.cyberThreat.rels.followedBy import followedBy
+from metamodel.cyberThreat.rels.implementsTTP import implementsTTP
+from metamodel.cyberThreat.rels.affectsUser import affectsUser
 from metamodel.cyberThreat.rels.exploits import exploits
 from metamodel.cyberThreat.rels.targetsResource import targetsResource
-from metamodel.cyberThreat.rels.implementsTtp import implementsTtp
+from metamodel.cyberThreat.rels.compromises import compromises
 
+actor = model.add(ThreatActor(name="Star Blizzard"))
+threat = model.add(Threat(name="Credential phishing and mailbox exfiltration"))
+model.add(initiates(actor, threat))
 
-def build_model() -> Model:
-    model = Model()
+steps = []
+for name, technique, technique_name in [
+    ("TS1: phishing link", "T1566.001", "Spearphishing Attachment"),
+    ("TS2: steal session cookie", "T1539", "Steal Web Session Cookie"),
+    ("TS3: collect emails", "T1114.002", "Remote Email Collection"),
+]:
+    step = model.add(ThreatStep(name=name))            # join="AND" by default
+    model.add(implementsTTP(step, model.add(TTP(name=technique_name, external_id=technique))))
+    if steps:
+        model.add(followedBy(steps[-1], step))
+    steps.append(step)
+model.add(startsWith(threat, steps[0]))
 
-    # -------------------------------------------------------------------------
-    # Organization sub-metamodel
-    # -------------------------------------------------------------------------
-
-    organization = model.add(
-        Organization(
-            name="ExampleBank",
-            description="Example financial organization.",
-            organization_size="enterprise",
-            criticality="critical",
-            source="Quickstart scenario",
-        )
-    )
-
-    sector = model.add(
-        Sector(
-            name="Finance",
-            taxonomy_ref="sectors:finance",
-        )
-    )
-
-    model.add(
-        operatesIn(
-            source_entity=organization,
-            target_entity=sector,
-        )
-    )
-
-    # -------------------------------------------------------------------------
-    # Infrastructure sub-metamodel
-    # -------------------------------------------------------------------------
-
-    infrastructure = model.add(
-        Infrastructure(
-            name="ExampleBank production infrastructure",
-            description="Simplified production infrastructure.",
-            environment_type="production",
-            scope="internet-facing services",
-            source="Quickstart scenario",
-        )
-    )
-
-    web_server_type = model.add(
-        NodeType(
-            name="Web server",
-            taxonomy_ref="nodeTypes:webServer",
-            category="server",
-        )
-    )
-
-    web_server = model.add(
-        Node(
-            name="public-web-01",
-            hostname="public-web-01.examplebank.test",
-            ip_addresses=["203.0.113.10"],
-            exposure="public",
-            criticality="high",
-            source="Quickstart scenario",
-        )
-    )
-
-    https_port = model.add(
-        Port(
-            name="HTTPS",
-            number=443,
-            protocol="tcp",
-            service_name="https",
-            state="open",
-            exposure="public",
-        )
-    )
-
-    web_application = model.add(
-        Resource(
-            name="Customer web portal",
-            description="Public-facing customer web application.",
-            resource_type="web_application",
-            criticality="high",
-            sensitivity="confidential",
-            source="Quickstart scenario",
-        )
-    )
-
-    model.add(
-        manages(
-            source_entity=organization,
-            target_entity=infrastructure,
-        )
-    )
-
-    model.add(
-        madeBy(
-            source_entity=infrastructure,
-            target_entity=web_server,
-        )
-    )
-
-    model.add(
-        hasNodeType(
-            source_entity=web_server,
-            target_entity=web_server_type,
-        )
-    )
-
-    model.add(
-        exposesPort(
-            source_entity=web_server,
-            target_entity=https_port,
-        )
-    )
-
-    model.add(
-        hosts(
-            source_entity=web_server,
-            target_entity=web_application,
-        )
-    )
-
-    # -------------------------------------------------------------------------
-    # Cyber-threat sub-metamodel
-    # -------------------------------------------------------------------------
-
-    threat_actor = model.add(
-        ThreatActor(
-            name="Example financially motivated actor",
-            description="Fictitious actor used in the quickstart.",
-            aliases=["ExampleActor"],
-            motivation="financial_gain",
-            sophistication="medium",
-            source="Quickstart scenario",
-        )
-    )
-
-    threat = model.add(
-        Threat(
-            name="Web portal compromise",
-            description="Threat scenario targeting the public web portal.",
-            objective="Gain unauthorized access to customer data.",
-            status="hypothetical",
-            source="Quickstart scenario",
-        )
-    )
-
-    threat_step = model.add(
-        ThreatStep(
-            name="Exploit public-facing web application",
-            description="The attacker exploits a web application vulnerability.",
-            phase="initial_access",
-            objective="Obtain initial access through the web portal.",
-            preconditions=[
-                "The web application is reachable from the Internet.",
-                "The application contains an exploitable vulnerability.",
-            ],
-            postconditions=[
-                "The attacker gains unauthorized access to the application.",
-            ],
-            source="Quickstart scenario",
-        )
-    )
-
-    ttp = model.add(
-        TTP(
-            name="Exploit Public-Facing Application",
-            description="Adversaries exploit a public-facing application.",
-            taxonomy_ref="mitreAttackEnterprise:T1190",
-            external_id="T1190",
-            tactic="initial_access",
-            technique="Exploit Public-Facing Application",
-            source="MITRE ATT&CK",
-        )
-    )
-
-    vulnerability = model.add(
-        Vulnerability(
-            name="Example web application vulnerability",
-            description="Fictitious vulnerability used in the quickstart.",
-            external_id="CVE-2099-0001",
-            severity="high",
-            cvss_score=8.5,
-            taxonomy_ref="cve:CVE-2099-0001",
-            source="Quickstart scenario",
-        )
-    )
-
-    model.add(
-        initiates(
-            source_entity=threat_actor,
-            target_entity=threat,
-        )
-    )
-
-    model.add(
-        startsWith(
-            source_entity=threat,
-            target_entity=threat_step,
-        )
-    )
-
-    model.add(
-        implementsTtp(
-            source_entity=threat_step,
-            target_entity=ttp,
-        )
-    )
-
-    model.add(
-        exploits(
-            source_entity=threat_step,
-            target_entity=vulnerability,
-        )
-    )
-
-    model.add(
-        targetsResource(
-            source_entity=threat_step,
-            target_entity=web_application,
-        )
-    )
-
-    return model
-
-
-def main() -> None:
-    model = build_model()
-
-    print("CTI Feasibility Metamodel quickstart")
-    print(f"Entities: {len(model.entities)}")
-    print(f"Relationships: {len(model.relationships)}")
-
-    report = model.validate()
-
-    print(f"Valid: {report.is_valid}")
-
-    if report.errors:
-        print("Validation errors:")
-        for error in report.errors:
-            print(f"- {error}")
-
-    print("\nEntities:")
-    for entity in model.entities:
-        print(f"- {entity.type}: {entity.name}")
-
-    print("\nRelationships:")
-    for relationship in model.relationships:
-        print(
-            f"- {relationship.type}: "
-            f"{relationship.source_entity.name} -> {relationship.target_entity.name}"
-        )
-
-
-if __name__ == "__main__":
-    main()
+# A-posteriori knowledge: an observed weakness and the edges inferred by the evaluation.
+susceptibility = model.add(HumanVulnerability(name="Phishing susceptibility"))
+model.add(affectsUser(susceptibility, victim))
+model.add(exploits(steps[0], susceptibility))
+model.add(targetsResource(steps[2], emails))
+model.add(compromises(steps[2], asr))
 ```
 
-## Run the quickstart
-
-Run the file:
-
-```bash
-python quickstart.py
-```
-
-You should see output similar to:
-
-```text
-CTI Feasibility Metamodel quickstart
-Entities: 12
-Relationships: 10
-Valid: True
-
-Entities:
-- Organization: ExampleBank
-- Sector: Finance
-- Infrastructure: ExampleBank production infrastructure
-- NodeType: Web server
-- Node: public-web-01
-- Port: HTTPS
-- Resource: Customer web portal
-- ThreatActor: Example financially motivated actor
-- Threat: Web portal compromise
-- ThreatStep: Exploit public-facing web application
-- TTP: Exploit Public-Facing Application
-- Vulnerability: Example web application vulnerability
-
-Relationships:
-- operatesIn: ExampleBank -> Finance
-- manages: ExampleBank -> ExampleBank production infrastructure
-- madeBy: ExampleBank production infrastructure -> public-web-01
-- hasNodeType: public-web-01 -> Web server
-- exposesPort: public-web-01 -> HTTPS
-- hosts: public-web-01 -> Customer web portal
-- initiates: Example financially motivated actor -> Web portal compromise
-- startsWith: Web portal compromise -> Exploit public-facing web application
-- implementsTtp: Exploit public-facing web application -> Exploit Public-Facing Application
-- exploits: Exploit public-facing web application -> Example web application vulnerability
-- targetsResource: Exploit public-facing web application -> Customer web portal
-```
-
-The exact output may vary depending on the validation rules and entity attributes currently implemented.
-
-## Understanding the example
-
-The quickstart creates a small model:
-
-```text
-Organization → Sector
-Organization → Infrastructure
-Infrastructure → Node
-Node → NodeType
-Node → Port
-Node → Resource
-
-ThreatActor → Threat
-Threat → ThreatStep
-ThreatStep → TTP
-ThreatStep → Vulnerability
-ThreatStep → Resource
-```
-
-This is the core idea of the package: CTI feasibility is modelled by connecting threat knowledge to concrete organizational and infrastructure context.
-
-## Internal identifiers
-
-Every entity and relationship receives an internal automatically generated identifier.
-
-You do not provide the internal ID manually:
+## Validate
 
 ```python
-organization = Organization(name="ExampleBank")
-print(organization.id)
+report = model.validate()
+for message in report.messages:
+    print(f"[{message.severity}] {message.validator}: {message.message}")
+print("Valid:", report.is_valid)
+assert report.is_valid
 ```
 
-The ID is generated when the object is created. It is used internally by the model, serializers, and graph adapters.
-
-## Attribute validation
-
-Entities use normal Python attributes with getters and setters.
-
-For example:
+Validation checks references, endpoint types, multiplicities, and the rules described in
+[Validation](validation.md). Each entity also knows its knowledge class:
 
 ```python
-organization = Organization(name="ExampleBank")
-organization.criticality = "critical"
+print(account.knowledge_class, standard.knowledge_class, steps[0].knowledge_class)
+# system concept posteriori
 ```
 
-Invalid values raise exceptions:
+## Save and load
 
 ```python
-organization.criticality = "very critical"
+import tempfile
+from pathlib import Path
+
+from metamodel.io import loadModel, saveModel
+
+folder = Path(tempfile.mkdtemp())
+saveModel(model, folder / "scenario.yaml")
+saveModel(model, folder / "scenario.json")
+saveModel(model, folder / "scenario_csv", "csv")     # entities.csv + relationships.csv
+
+loaded = loadModel(folder / "scenario.yaml")
+assert loaded.get_entity(account.id).name == "Mailbox account"   # ids are preserved
+assert len(loaded.relationships) == len(model.relationships)
 ```
 
-This raises a `ValueError` if `very critical` is not an allowed value.
-
-Relationships also check source and target types. For example, `operatesIn` must connect:
-
-```text
-Organization → Sector
-```
-
-It should not connect:
-
-```text
-Node → Sector
-```
-
-## Taxonomy references
-
-Some entities can reference reusable taxonomy concepts.
-
-Example:
-
-```python
-ttp = TTP(
-    name="Exploit Public-Facing Application",
-    taxonomy_ref="mitreAttackEnterprise:T1190",
-    external_id="T1190",
-)
-```
-
-The recommended format is:
-
-```text
-<taxonomy>:<concept>
-```
-
-Examples:
-
-```text
-mitreAttackEnterprise:T1190
-attackTools:cobaltStrike
-sectors:finance
-nodeTypes:webServer
-cve:CVE-2099-0001
-```
-
-Taxonomy references allow the scenario to connect local model instances to reusable controlled vocabularies.
-
-## Exporting to NetworkX
-
-If the NetworkX extra is installed:
-
-```bash
-pip install -e ".[networkx]"
-```
-
-you can convert the model to a graph:
-
-```python
-from metamodel.adapters.networkxAdapter import toNetworkx
-
-graph = toNetworkx(model)
-
-print(graph.number_of_nodes())
-print(graph.number_of_edges())
-```
-
-This is useful for graph traversal, path analysis, centrality measures, and visualization.
-
-## Loading from files
-
-The package also supports scenario loading through the `io` module.
-
-For example, a YAML or JSON scenario can be parsed into a `Model` object, depending on the installed optional dependencies and implemented parsers.
-
-A minimal scenario file may look like this:
+In scenario files, relationships can be written with the metamodel label instead of the class name:
 
 ```yaml
-entities:
-  - id: org1
-    type: Organization
-    name: ExampleBank
-
-  - id: sector1
-    type: Sector
-    name: Finance
-    taxonomy_ref: sectors:finance
-
 relationships:
-  - id: rel1
-    type: operatesIn
-    source: org1
-    target: sector1
+  - {type: grantsAccessTo, source: mailbox-account, target: emails, privilege_level: standard}
 ```
 
-File-based scenarios are useful for repeatable case studies and automated validation.
+See [I/O](io.md) for the format.
+
+## Export to graph tools
+
+```python
+from metamodel.adapters import toNetworkx, toCypherScript
+
+graph = toNetworkx(model)
+resources = [d["name"] for _, d in graph.nodes(data=True) if "Resource" in d["labels"]]
+print(resources)                                    # ['Mailbox emails']
+
+cypher = toCypherScript(model)                      # load with cypher-shell or Neo4j Browser
+print(cypher.splitlines()[1])
+```
+
+With a running Neo4j server, `exportToNeo4j(model, uri, user, password)` writes the model directly;
+see [Adapters](adapters.md).
+
+## Command line
+
+The same steps are available from the terminal:
+
+```bash
+metamodel validate examples/13_motivating_example/data/scenario.yaml
+metamodel inspect examples/13_motivating_example/data/scenario.yaml
+metamodel convert examples/13_motivating_example/data/scenario.yaml -o scenario.graphml
+metamodel schema grantsAccessTo
+```
+
+See [CLI](cli.md).
 
 ## Next steps
 
-After this quickstart, continue with:
-
-* [Metamodel](metamodel.md) for the full conceptual structure;
-* [Taxonomies](taxonomies.md) for reusable controlled vocabularies;
-* [Validation](validation.md) for model correctness checks;
-* [I/O](io.md) for file-based scenarios and parsers;
-* [Adapters](adapters.md) for NetworkX, Neo4j, and other integrations;
-* [Examples](examples/organizationScenario.md) for runnable examples.
+* [Metamodel](metamodel.md) and the [schema reference](schema.md) for every entity, relationship, and multiplicity;
+* [Validation](validation.md) for what is checked;
+* `examples/13_motivating_example` for the full scenario and its variant with phishing-resistant MFA.
