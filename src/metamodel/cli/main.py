@@ -1,50 +1,41 @@
+"""Command-line interface: ``metamodel <command> ...`` (see ``metamodel --help``)."""
 from __future__ import annotations
 
 import argparse
-import json
+from importlib.metadata import PackageNotFoundError, version
 
-from metamodel.io.jsonParser import loadJsonScenario
-from metamodel.io.yamlParser import loadYamlScenario
+from metamodel.cli import convertCommand, inspectCommand, neo4jCommand, schemaCommand, validateCommand
+from metamodel.cli._common import ERRORS, fail
+
+COMMANDS = (validateCommand, inspectCommand, convertCommand, schemaCommand, neo4jCommand)
 
 
-def _load(path: str):
-    if path.endswith((".yaml", ".yml")):
-        return loadYamlScenario(path)
-    return loadJsonScenario(path)
+def _version() -> str:
+    try:
+        return version("cti-feasibility-metamodel")
+    except PackageNotFoundError:
+        return "unknown"
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(prog="metamodel", description="CTI feasibility metamodel tools.")
+    parser.add_argument("--version", action="version", version=f"%(prog)s {_version()}")
+    parser.add_argument("--traceback", action="store_true", help="show the full traceback on errors")
+    sub = parser.add_subparsers(dest="command", required=True)
+    for command in COMMANDS:
+        command.register(sub)
+    return parser
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(prog="metamodel")
-    sub = parser.add_subparsers(dest="command", required=True)
-
-    validate = sub.add_parser("validate", help="Validate a scenario file.")
-    validate.add_argument("path")
-
-    inspect = sub.add_parser("inspect", help="Print scenario summary.")
-    inspect.add_argument("path")
-
-    convert = sub.add_parser("convert", help="Convert scenario to JSON.")
-    convert.add_argument("path")
-
+    parser = build_parser()
     args = parser.parse_args(argv)
-    model = _load(args.path)
-
-    if args.command == "validate":
-        report = model.validate()
-        for message in report.messages:
-            print(f"[{message.severity}] {message.validator}: {message.message}")
-        return 0 if report.is_valid else 1
-
-    if args.command == "inspect":
-        print(f"Entities: {len(model.entities)}")
-        print(f"Relationships: {len(model.relationships)}")
-        return 0
-
-    if args.command == "convert":
-        print(json.dumps(model.to_dict(), indent=2))
-        return 0
-
-    return 1
+    try:
+        return args.handler(args)
+    except ERRORS as exc:
+        if args.traceback:
+            raise
+        return fail(str(exc))
 
 
 if __name__ == "__main__":

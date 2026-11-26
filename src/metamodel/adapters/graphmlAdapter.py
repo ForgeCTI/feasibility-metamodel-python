@@ -1,12 +1,15 @@
+"""GraphML export and import through NetworkX (lists and dicts are stored as JSON strings)."""
 from __future__ import annotations
 
-from metamodel.adapters.networkxAdapter import toNetworkx
+from metamodel.adapters.networkxAdapter import _nx, fromNetworkx, toNetworkx
 
 
 def saveGraphML(model, path: str) -> None:
-    try:
-        import networkx as nx
-    except ImportError as exc:
-        raise ImportError("networkx is required. Install with: pip install cyber-feasibility-metamodel[networkx]") from exc
-    graph = toNetworkx(model)
-    nx.write_graphml(graph, path)
+    nx = _nx()
+    nx.write_graphml(toNetworkx(model, flatten=True), path)
+
+
+def loadGraphML(path: str, *, strict: bool = True):
+    nx = _nx()
+    graph = nx.read_graphml(path, force_multigraph=True)
+    return fromNetworkx(graph, strict=strict, coerce=True)

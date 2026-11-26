@@ -98,14 +98,14 @@ entities:
   source: Synthetic case study data
 
 - id: information-shipment-tracking-records
-  type: Information
+  type: Data
   name: Shipment Tracking Records
   description: Shipment identifiers, current delivery statuses, and tracking events stored as JSON documents.
   format: JSON
   source: Synthetic case study data
 
 - id: informationtype-shipment-tracking-data
-  type: InformationType
+  type: DataType
   name: Shipment Tracking Data
   description: Information category describing operational shipment tracking and delivery data.
   category: Operational Data
@@ -210,18 +210,23 @@ relationships:
   target: resource-tracking-application-files
 
 - id: rel-11-hasinformationtype
-  type: hasInformationType
+  type: hasDataType
   source: information-shipment-tracking-records
   target: informationtype-shipment-tracking-data
 
-- id: rel-12-resourceimplementscode
-  type: resourceImplementsCode
-  source: resource-tracking-application-files
+- id: rel-13a-hostsresource
+  type: hostsResource
+  source: node-tracking-application-server
   target: code-shipment-tracking-service
 
-- id: rel-13-accessesinformation
-  type: accessesInformation
-  source: code-shipment-tracking-service
+- id: rel-13b-hostsresource
+  type: hostsResource
+  source: node-tracking-database-server
+  target: code-postgresql-database-service
+
+- id: rel-13-hostsresource
+  type: hostsResource
+  source: node-tracking-database-server
   target: information-shipment-tracking-records
 
 - id: rel-14-runsapp
@@ -234,17 +239,7 @@ relationships:
   source: appinstance-northstar-tracking-production
   target: application-northstar-tracking
 
-- id: rel-16-applicationimplementscode
-  type: applicationImplementsCode
-  source: appinstance-northstar-tracking-production
-  target: code-shipment-tracking-service
-
 - id: rel-17-hasdestinationport
   type: hasDestinationPort
   source: connection-tracking-database
-  target: port-postgresql-5432
-
-- id: rel-18-listenson
-  type: listensOn
-  source: code-postgresql-database-service
   target: port-postgresql-5432

@@ -1,1 +1,1 @@
-MATCH (n) DETACH DELETE n;
+MATCH (n:Entity) DETACH DELETE n;

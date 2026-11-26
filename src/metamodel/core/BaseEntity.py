@@ -13,6 +13,10 @@ class BaseEntity:
     """
 
     _domain_attributes: tuple[str, ...] = ()
+    #: Knowledge class of the entity in the paper: ``"concept"`` (a-priori,
+    #: generic), ``"system"`` (a-priori, instance-specific), or ``"posteriori"``
+    #: (observed or inferred). ``None`` for abstract or unclassified entities.
+    knowledge_class: str | None = None
 
     def __init__(self, name: str, description: str | None = None, source: str | None = None) -> None:
         self._id = str(uuid4())
@@ -27,6 +31,10 @@ class BaseEntity:
     def id(self) -> str:
         """Internal automatically generated identifier."""
         return self._id
+
+    def _restore_id(self, value: str) -> None:
+        """Restore a persisted identifier (used by importers only)."""
+        self._id = require_str(value, "id")
 
     @property
     def type(self) -> str:

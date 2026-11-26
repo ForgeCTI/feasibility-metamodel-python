@@ -1,3 +1,8 @@
-MATCH (n)-[r]->(m)
-RETURN labels(n) AS source_labels, n.name AS source_name, type(r) AS relationship, labels(m) AS target_labels, m.name AS target_name
-LIMIT 50;
+// Entities by type and knowledge class
+MATCH (n:Entity) RETURN n.type AS type, n.knowledge_class AS knowledge_class, count(*) AS entities ORDER BY type;
+
+// Relationships by metamodel label and class
+MATCH (:Entity)-[r]->(:Entity) RETURN type(r) AS label, r.class AS class, count(*) AS relationships ORDER BY label;
+
+// Supertype labels: every Resource, whatever its subtype
+MATCH (r:Resource) RETURN r.type AS type, r.name AS name;

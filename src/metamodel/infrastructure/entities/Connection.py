@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from metamodel.core.BaseEntity import BaseEntity
 from metamodel.core.ValidationUtils import (
+    require_allowed,
     require_optional_bool,
     require_optional_str,
 )
@@ -10,7 +11,8 @@ from metamodel.core.ValidationUtils import (
 class Connection(BaseEntity):
     """Represents the Connection entity from the metamodel."""
 
-    _domain_attributes = ('protocol', 'encrypted', 'allowed')
+    _domain_attributes = ('protocol', 'encrypted', 'allowed', 'scope')
+    knowledge_class = 'system'
 
     def __init__(
         self,
@@ -19,6 +21,7 @@ class Connection(BaseEntity):
         protocol: str | None = None,
         encrypted: bool | None = None,
         allowed: bool | None = None,
+        scope: str | None = None,
         source: str | None = None,
     ) -> None:
         super().__init__(name=name, description=description, source=source)
@@ -28,6 +31,8 @@ class Connection(BaseEntity):
         self.protocol = protocol
         self.encrypted = encrypted
         self.allowed = allowed
+        self._scope: str | None
+        self.scope = scope
 
     @property
     def protocol(self) -> str | None:
@@ -52,3 +57,15 @@ class Connection(BaseEntity):
     @allowed.setter
     def allowed(self, value: bool | None) -> None:
         self._allowed = require_optional_bool(value, "allowed")
+
+    @property
+    def scope(self) -> str | None:
+        return self._scope
+
+    @scope.setter
+    def scope(self, value: str | None) -> None:
+        self._scope = require_allowed(
+            require_optional_str(value, "scope"),
+            "scope",
+            {None, 'internal', 'inbound', 'outbound'},
+        )

@@ -6,8 +6,9 @@ from metamodel.organization.entities.HomeCountry import HomeCountry
 
 
 class focusesOnCountry(BaseRelationship):
-    """Connects Campaign to HomeCountry."""
+    """Campaign --focusesOn--> HomeCountry."""
 
+    label = 'focusesOn'
     source_type = Campaign
     target_type = HomeCountry
     source_cardinality = '0..*'

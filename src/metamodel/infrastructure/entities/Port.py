@@ -12,6 +12,7 @@ class Port(BaseEntity):
     """Represents the Port entity from the metamodel."""
 
     _domain_attributes = ('number', 'protocol', 'service_name', 'state')
+    knowledge_class = 'system'
 
     def __init__(
         self,

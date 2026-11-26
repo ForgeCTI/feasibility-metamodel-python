@@ -6,9 +6,12 @@ from metamodel.cyberThreat.entities.ThreatStep import ThreatStep
 
 
 class startsWith(BaseRelationship):
-    """Connects Threat to ThreatStep."""
+    """Threat --startsWith--> ThreatStep.
 
+    Paper figure: 1 at the Threat end, which would make every step a first step; relaxed to 0..* (a step may start several threats)."""
+
+    label = 'startsWith'
     source_type = Threat
     target_type = ThreatStep
-    source_cardinality = '0..1'
-    target_cardinality = '1'
+    source_cardinality = '0..*'
+    target_cardinality = '1..*'

@@ -8,6 +8,7 @@ class BusinessRequirement(BaseEntity):
     """Represents the BusinessRequirement entity from the metamodel."""
 
     _domain_attributes = ('priority',)
+    knowledge_class = 'system'
 
     def __init__(
         self,

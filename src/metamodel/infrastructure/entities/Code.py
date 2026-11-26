@@ -1,13 +1,16 @@
 from __future__ import annotations
 
-from metamodel.core.BaseEntity import BaseEntity
-from metamodel.core.ValidationUtils import require_optional_str
+from metamodel.infrastructure.entities.Resource import Resource
+from metamodel.core.ValidationUtils import (
+    require_optional_str,
+)
 
 
-class Code(BaseEntity):
-    """Represents the Code entity from the metamodel."""
+class Code(Resource):
+    """Identifiable unit of IT execution, such as a service, daemon, or application runtime."""
 
-    _domain_attributes = ('language', 'version', 'repository_url')
+    _domain_attributes = Resource._domain_attributes + ('language', 'version', 'repository_url')
+    knowledge_class = 'system'
 
     def __init__(
         self,
@@ -25,6 +28,7 @@ class Code(BaseEntity):
         self.language = language
         self.version = version
         self.repository_url = repository_url
+
 
     @property
     def language(self) -> str | None:

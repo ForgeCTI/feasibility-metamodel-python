@@ -117,9 +117,15 @@ Each relationship instance has:
 * a source entity;
 * a target entity;
 * source and target type constraints;
-* cardinality metadata.
+* cardinality metadata;
+* the metamodel label and, for some relationships, attributes.
 
 Relationships do not include a traceability `source` attribute. Traceability is stored at the entity level when needed.
+
+Each relationship class also declares its metamodel `label` (e.g. `grantsAccessTo`), which importers accept in
+place of the class name (e.g. `grantsAccessToNode`) and which the Neo4j adapter uses as relationship type.
+A relationship may carry attributes: `grantsAccessTo` has `privilege_level`, an entity-valued attribute
+(the association class `PrivilegeLevel` of the paper), which must belong to the same model.
 
 Example:
 
@@ -176,30 +182,7 @@ The organization sub-metamodel represents the organizational context in which fe
 
 It captures the organization, its sector, jurisdictional context, business requirements, security requirements, and assets.
 
-### Organization entities
-
-| Entity                     | Description                                                       |
-| -------------------------- | ----------------------------------------------------------------- |
-| `Organization`             | The organization being modelled or assessed.                      |
-| `Sector`                   | Economic, industrial, or institutional sector.                    |
-| `HomeCountry`              | Country where the organization is based.                          |
-| `InternationalBody`        | Supranational or international body relevant to the organization. |
-| `BusinessRequirement`      | Business requirement that drives organizational priorities.       |
-| `SecurityRequirement`      | Generic security requirement or control objective.                |
-| `Asset`                    | Organizational asset with business value.                         |
-| `AssetSecurityRequirement` | Security requirement associated with a specific asset.            |
-
-### Typical organization relationships
-
-| Relationship             | Meaning                                                            |
-| ------------------------ | ------------------------------------------------------------------ |
-| `operatesIn`             | Connects an `Organization` to a `Sector`.                          |
-| `basedIn`                | Connects an `Organization` to a `HomeCountry`.                     |
-| `hasBusinessRequirement` | Connects an `Organization` to a `BusinessRequirement`.             |
-| `countryPartOf`          | Connects a `HomeCountry` to an `InternationalBody`.                |
-| `drivesRequirement`      | Connects a `BusinessRequirement` to an `AssetSecurityRequirement`. |
-| `hasAssetRequirement`    | Connects an `Asset` to an `AssetSecurityRequirement`.              |
-| `implementsRequirement`  | Connects an `AssetSecurityRequirement` to a `SecurityRequirement`. |
+The entities, attributes, relationships, and multiplicities of the Organization sub-metamodel are listed in the [schema reference](schema.md#organization), generated from the code.
 
 The organization sub-metamodel is important because feasibility is not only technical. A threat may be technically possible but more or less relevant depending on the organization’s sector, assets, requirements, and exposure.
 
@@ -209,53 +192,18 @@ The infrastructure sub-metamodel represents the technical environment in which t
 
 It captures nodes, users, ports, connections, applications, operating systems, code, information, and resources.
 
-### Infrastructure entities
+The entities, attributes, relationships, and multiplicities of the Infrastructure sub-metamodel are listed in the [schema reference](schema.md#infrastructure), generated from the code.
 
-| Entity                | Description                                                     |
-| --------------------- | --------------------------------------------------------------- |
-| `Infrastructure`      | Infrastructure scope managed by an organization.                |
-| `Node`                | Host, server, endpoint, device, or logical infrastructure node. |
-| `NodeType`            | Type or category of node.                                       |
-| `Port`                | Network port or exposed service endpoint.                       |
-| `Connection`          | Network or logical connection between nodes.                    |
-| `Resource`            | Infrastructure resource relevant to the organization or threat. |
-| `Code`                | Software code, script, service logic, or executable component.  |
-| `Information`         | Information object or data item.                                |
-| `InformationType`     | Type or classification of information.                          |
-| `User`                | Human or account-level actor in the infrastructure.             |
-| `UserType`            | Category of user.                                               |
-| `Application`         | Generic application or software product.                        |
-| `ApplicationInstance` | Concrete installed or running application instance.             |
-| `OS`                  | Generic operating system.                                       |
-| `OSInstance`          | Concrete installed or running operating system instance.        |
+Notable elements (aligned with the paper):
 
-### Typical infrastructure relationships
-
-| Relationship              | Meaning                                                                               |
-| ------------------------- | ------------------------------------------------------------------------------------- |
-| `manages`                 | Connects an `Organization` to an `Infrastructure`.                                    |
-| `madeBy`                  | Connects an `Infrastructure` to a `Node`.                                             |
-| `usedBy`                  | Connects an `Infrastructure` to a `User`.                                             |
-| `hasNodeType`             | Connects a `Node` to a `NodeType`.                                                    |
-| `hosts`                   | Connects a `Node` to a `Resource`.                                                    |
-| `exposesPort`             | Connects a `Node` to a `Port`.                                                        |
-| `sourceOf`                | Connects a source `Node` to a `Connection`.                                           |
-| `destinationOf`           | Connects a destination `Node` to a `Connection`.                                      |
-| `destinationPort`         | Connects a `Connection` to a destination `Port`.                                      |
-| `runsOS`                  | Connects a `Node` to an `OSInstance`.                                                 |
-| `osInstanceOf`            | Connects an `OSInstance` to an `OS`.                                                  |
-| `runsApplication`         | Connects a `Node` to an `ApplicationInstance`.                                        |
-| `applicationInstanceOf`   | Connects an `ApplicationInstance` to an `Application`.                                |
-| `implementsCode`          | Connects a `Resource` or application instance to `Code`.                              |
-| `implementsAsset`         | Connects a `Resource` to an organizational `Asset`.                                   |
-| `accessesInformation`     | Connects `Code` to `Information`.                                                     |
-| `listensOn`               | Connects `Code` to a `Port`.                                                          |
-| `hasInformationType`      | Connects `Information` to an `InformationType`.                                       |
-| `hasAccessTo`             | Connects a `User` to a `Node`.                                                        |
-| `launches`                | Connects a `User` to `Code`.                                                          |
-| `userAccessesInformation` | Connects a `User` to `Information`.                                                   |
-| `hasUserType`             | Connects a `User` to a `UserType`.                                                    |
-| `runsNode`                | Connects a `Node` to another `Node` when nested or virtualized execution is modelled. |
+* `Code`, `Data`, and `Asset` specialize `Resource`; `ApplicationInstance` and `OSInstance` specialize `Code`.
+* `Connection.scope` is `internal`, `inbound` (destination only), or `outbound` (source only).
+* A `User` has `Account`s (`kind`: local, domain, cloud, service); `grantsAccessTo` links an account to a node or
+  resource and carries the association class `PrivilegeLevel` as the attribute `privilege_level`; a resource may
+  require a minimum level (`requiresPrivilegeLevel`). Privilege levels are ordered by `rank`.
+* A deployed `SecurityControl` is an instance of a generic `SecurityControlType`; it `protects` nodes, users,
+  accounts, and resources and `mitigates` vulnerabilities, while the type `counters` TTPs.
+* `ApplicationInstance --uses--> Port` replaces `listensOn`; `Data`/`DataType` replace `Information`/`InformationType`.
 
 The infrastructure sub-metamodel is the main bridge between abstract CTI and concrete feasibility. It represents whether the technical conditions required by a threat step are present in the scenario.
 
@@ -265,62 +213,10 @@ The cyber-threat sub-metamodel represents CTI concepts relevant to feasibility a
 
 It captures adversaries, threat actors, campaigns, threats, attack steps, TTPs, vulnerabilities, indicators, attack tools, and configurations.
 
-### Cyber-threat entities
+The entities, attributes, relationships, and multiplicities of the Cyber threat sub-metamodel are listed in the [schema reference](schema.md#cyber-threat), generated from the code.
 
-| Entity                    | Description                                                      |
-| ------------------------- | ---------------------------------------------------------------- |
-| `ThreatActor`             | Actor or group associated with threat activity.                  |
-| `Adversary`               | Adversarial profile, capability, or intent abstraction.          |
-| `AdversaryType`           | Category of adversary.                                           |
-| `Expertise`               | Skill or expertise level required or possessed.                  |
-| `Threat`                  | Threat scenario or high-level malicious activity.                |
-| `ThreatStep`              | Step in a threat or attack chain.                                |
-| `Campaign`                | Coordinated set of threat activities.                            |
-| `TTP`                     | Tactic, technique, or procedure.                                 |
-| `Indicator`               | Observable indicator associated with threat activity.            |
-| `Vulnerability`           | Generic vulnerability concept.                                   |
-| `SoftwareVulnerability`   | Vulnerability affecting software or platforms.                   |
-| `ConfigVulnerability`     | Vulnerability caused by misconfiguration.                        |
-| `HumanVulnerability`      | Vulnerability involving users or human behavior.                 |
-| `AttackTool`              | Generic attack tool, malware family, exploit kit, or capability. |
-| `AttackToolInstance`      | Concrete observed or deployed instance of an attack tool.        |
-| `AttackToolConfiguration` | Configuration of an attack tool instance.                        |
-
-### Typical cyber-threat relationships
-
-| Relationship               | Meaning                                                           |
-| -------------------------- | ----------------------------------------------------------------- |
-| `relatedTo`                | Connects a `ThreatActor` to an `Adversary`.                       |
-| `aliasOf`                  | Connects one `ThreatActor` alias to another.                      |
-| `initiates`                | Connects a `ThreatActor` to a `Threat`.                           |
-| `hasExpertise`             | Connects a `ThreatActor` or tool to `Expertise`.                  |
-| `hasAdversaryType`         | Connects an `Adversary` to an `AdversaryType`.                    |
-| `threatPartOf`             | Connects a `Threat` to a `Campaign`.                              |
-| `startsWith`               | Connects a `Threat` to its first `ThreatStep`.                    |
-| `followedBy`               | Connects one `ThreatStep` to a following `ThreatStep`.            |
-| `implementsTtp`            | Connects a `ThreatStep` to a `TTP`.                               |
-| `exploits`                 | Connects a `ThreatStep` to a `Vulnerability`.                     |
-| `compromises`              | Connects a `ThreatStep` to an `AssetSecurityRequirement`.         |
-| `targetsResource`          | Connects a `ThreatStep` to a `Resource`.                          |
-| `employsTool`              | Connects a `ThreatStep` to an `AttackToolInstance`.               |
-| `ttpExploits`              | Connects a `TTP` to a `Vulnerability`.                            |
-| `violates`                 | Connects a `TTP` to a `SecurityRequirement`.                      |
-| `targetsSector`            | Connects a `Campaign` to a `Sector`.                              |
-| `focusesOnCountry`         | Connects a `Campaign` to a `HomeCountry`.                         |
-| `targetsBody`              | Connects a `Campaign` to an `InternationalBody`.                  |
-| `producesIndicator`        | Connects an `AttackToolInstance` to an `Indicator`.               |
-| `associatedToTool`         | Connects an `Indicator` to an `AttackToolInstance`.               |
-| `toolInstanceOf`           | Connects an `AttackToolInstance` to an `AttackTool`.              |
-| `hasToolConfig`            | Connects an `AttackToolInstance` to an `AttackToolConfiguration`. |
-| `designedFor`              | Connects an `AttackToolInstance` to an `OSInstance`.              |
-| `deploysTool`              | Connects one `AttackToolInstance` to another deployed instance.   |
-| `deployedTo`               | Connects an `AttackToolInstance` to a `Node`.                     |
-| `requiresConfig`           | Connects an `AttackTool` to an `AttackToolConfiguration`.         |
-| `requiresExpertise`        | Connects an `AttackTool` to `Expertise`.                          |            |
-| `affectsApplication`       | Connects `SoftwareVulnerability` to an `Application`.             |
-| `affectsOS`                | Connects `SoftwareVulnerability` to an `OS`.                      |
-| `affectsCode`              | Connects `ConfigVulnerability` to `Code`.                         |
-| `affectsUser`              | Connects `HumanVulnerability` to a `User`.                        |
+`ThreatStep.join` (`AND` by default, or `OR`) states how the outcomes of several predecessors are combined;
+`followedBy` must be acyclic. A `ConfigVulnerability` may affect code or accounts.
 
 The cyber-threat sub-metamodel captures CTI knowledge in a form that can be checked against a concrete organization and infrastructure.
 
@@ -332,8 +228,8 @@ Examples:
 
 ```text
 Organization → Infrastructure
-Resource → Asset
 ThreatStep → Resource
+SecurityControlType → TTP
 ThreatStep → Vulnerability
 ThreatStep → AssetSecurityRequirement
 Campaign → Sector
@@ -354,9 +250,9 @@ ThreatStep
     targets Resource
     implements TTP
 
-Resource
-    implements Asset
+Asset (a Resource)
     hosted on Node
+    accessible through Account (grantsAccessTo, with a PrivilegeLevel)
 
 Node
     exposes Port

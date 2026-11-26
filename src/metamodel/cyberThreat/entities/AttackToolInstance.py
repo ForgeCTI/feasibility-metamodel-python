@@ -13,6 +13,7 @@ class AttackToolInstance(BaseEntity):
     """Represents the AttackToolInstance entity from the metamodel."""
 
     _domain_attributes = ('observed_version', 'hashes', 'first_seen', 'last_seen')
+    knowledge_class = 'posteriori'
 
     def __init__(
         self,

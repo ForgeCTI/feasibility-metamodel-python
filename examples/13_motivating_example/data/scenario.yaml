@@ -1,0 +1,93 @@
+# Motivating example of the paper (Section 2.2): Star Blizzard credential phishing
+# against a UK defence organization, variant A (no phishing-resistant MFA).
+# Variant B adds the security control at the end of this file (see main.py).
+metadata:
+  name: Motivating example - variant A
+  description: Star Blizzard phishing campaign against a UK defence organization.
+  completeness: [Node, ApplicationInstance, Account, Connection, SecurityControl]
+
+entities:
+# --- organization
+- {id: org, type: Organization, name: Defence organization}
+- {id: sector-defence, type: Sector, name: Defence}
+- {id: uk, type: HomeCountry, name: United Kingdom}
+- {id: nato, type: InternationalBody, name: North Atlantic Treaty Organization, acronym: NATO}
+- {id: br-mail, type: BusinessRequirement, name: Confidentiality of mission emails}
+- {id: sr-conf, type: SecurityRequirement, name: Confidentiality}
+- {id: asr-mail, type: AssetSecurityRequirement, name: Confidentiality of mailbox emails}
+# --- infrastructure
+- {id: infra, type: Infrastructure, name: Corporate infrastructure}
+- {id: mx, type: Node, name: Mail server, hostname: mx1}
+- {id: server, type: NodeType, name: Server}
+- {id: exchange, type: Application, name: Microsoft Exchange}
+- {id: exchange-1, type: ApplicationInstance, name: Exchange on mx1, version: "15.2", role: mail server}
+- {id: https, type: Port, name: HTTPS, number: 443, protocol: tcp}
+- {id: inbound-https, type: Connection, name: Inbound HTTPS to mx1, scope: inbound}
+- {id: emails, type: Asset, name: Mailbox emails}
+- {id: victim, type: User, name: Victim user}
+- {id: employee, type: UserType, name: Employee}
+- {id: mailbox-account, type: Account, name: Mailbox account, kind: cloud, username: victim}
+- {id: pl-standard, type: PrivilegeLevel, name: Standard user, rank: 1}
+# --- cyber threat
+- {id: star-blizzard, type: ThreatActor, name: Star Blizzard}
+- {id: fsb, type: Adversary, name: Foreign security service}
+- {id: nation-state, type: AdversaryType, name: Nation-state}
+- {id: advanced, type: Expertise, name: Advanced}
+- {id: campaign, type: Campaign, name: Star Blizzard spear-phishing 2023}
+- {id: threat, type: Threat, name: Credential phishing and mailbox exfiltration}
+- {id: ts1, type: ThreatStep, name: "TS1: phishing with a malicious link"}
+- {id: ts2, type: ThreatStep, name: "TS2: steal the session cookie"}
+- {id: ts3, type: ThreatStep, name: "TS3: collect emails"}
+- {id: t1566-001, type: TTP, name: Spearphishing Attachment, external_id: T1566.001}
+- {id: t1539, type: TTP, name: Steal Web Session Cookie, external_id: T1539}
+- {id: t1114-002, type: TTP, name: Remote Email Collection, external_id: T1114.002}
+- {id: phishing-susceptibility, type: HumanVulnerability, name: Phishing susceptibility}
+- {id: evilginx, type: AttackTool, name: EvilGinx}
+- {id: evilginx-1, type: AttackToolInstance, name: EvilGinx deployment}
+
+relationships:
+# organization
+- {type: operatesIn, source: org, target: sector-defence}
+- {type: basedIn, source: org, target: uk}
+- {type: partOf, source: uk, target: nato}
+- {type: hasBusinessRequirement, source: org, target: br-mail}
+- {type: drivesSecurityRequirement, source: br-mail, target: asr-mail}
+- {type: hasSecurityRequirement, source: emails, target: asr-mail}
+- {type: implementationOf, source: asr-mail, target: sr-conf}
+# infrastructure
+- {type: manages, source: org, target: infra}
+- {type: madeBy, source: infra, target: mx}
+- {type: usedBy, source: infra, target: victim}
+- {type: hasNodeType, source: mx, target: server}
+- {type: runsApp, source: mx, target: exchange-1}
+- {type: instanceOf, source: exchange-1, target: exchange}
+- {type: hostsResource, source: mx, target: emails}
+- {type: exposesPort, source: mx, target: https}
+- {type: uses, source: exchange-1, target: https}
+- {type: isDestination, source: mx, target: inbound-https}
+- {type: hasDestinationPort, source: inbound-https, target: https}
+- {type: hasUserType, source: victim, target: employee}
+- {type: hasAccount, source: victim, target: mailbox-account}
+- {type: grantsAccessTo, source: mailbox-account, target: emails, privilege_level: pl-standard}
+# cyber threat (CTI layer)
+- {type: initiates, source: star-blizzard, target: threat}
+- {type: relatedTo, source: star-blizzard, target: fsb}
+- {type: hasAdversaryType, source: fsb, target: nation-state}
+- {type: hasExpertise, source: star-blizzard, target: advanced}
+- {type: partOf, source: threat, target: campaign}
+- {type: focusesOn, source: campaign, target: sector-defence}
+- {type: focusesOn, source: campaign, target: uk}
+- {type: startsWith, source: threat, target: ts1}
+- {type: followedBy, source: ts1, target: ts2}
+- {type: followedBy, source: ts2, target: ts3}
+- {type: implements, source: ts1, target: t1566-001}
+- {type: implements, source: ts2, target: t1539}
+- {type: implements, source: ts3, target: t1114-002}
+- {type: employs, source: ts1, target: evilginx-1}
+- {type: instanceOf, source: evilginx-1, target: evilginx}
+- {type: requiresExpertise, source: evilginx, target: advanced}
+# a-posteriori knowledge (observed or inferred by the evaluation)
+- {type: affects, source: phishing-susceptibility, target: victim}
+- {type: exploits, source: ts1, target: phishing-susceptibility}
+- {type: targetsResource, source: ts3, target: emails}
+- {type: compromises, source: ts3, target: asr-mail}

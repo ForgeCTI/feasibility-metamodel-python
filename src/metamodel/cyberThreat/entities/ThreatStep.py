@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from metamodel.core.BaseEntity import BaseEntity
-from metamodel.core.ValidationUtils import require_optional_list_str, require_optional_str
+from metamodel.core.ValidationUtils import require_allowed, require_optional_list_str, require_optional_str
 
 
 class ThreatStep(BaseEntity):
@@ -11,8 +11,8 @@ class ThreatStep(BaseEntity):
         'phase',
         'objective',
         'preconditions',
-        'postconditions',
-    )
+        'postconditions', 'join')
+    knowledge_class = 'posteriori'
 
     def __init__(
         self,
@@ -22,6 +22,7 @@ class ThreatStep(BaseEntity):
         objective: str | None = None,
         preconditions: list[str] | None = None,
         postconditions: list[str] | None = None,
+        join: str = 'AND',
         source: str | None = None,
     ) -> None:
         super().__init__(name=name, description=description, source=source)
@@ -33,6 +34,8 @@ class ThreatStep(BaseEntity):
         self.objective = objective
         self.preconditions = preconditions
         self.postconditions = postconditions
+        self._join: str
+        self.join = join
 
     @property
     def phase(self) -> str | None:
@@ -66,3 +69,10 @@ class ThreatStep(BaseEntity):
     def postconditions(self, value: list[str] | None) -> None:
         self._postconditions = require_optional_list_str(value, "postconditions")
 
+    @property
+    def join(self) -> str:
+        return self._join
+
+    @join.setter
+    def join(self, value: str) -> None:
+        self._join = require_allowed(value, "join", {'AND', 'OR'})

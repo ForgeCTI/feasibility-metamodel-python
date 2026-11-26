@@ -7,3 +7,4 @@ class AssetSecurityRequirement(BaseEntity):
     """Represents the AssetSecurityRequirement entity from the metamodel."""
 
     _domain_attributes = ()
+    knowledge_class = 'system'

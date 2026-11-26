@@ -36,9 +36,22 @@ from metamodel.organization.rels.operatesIn import operatesIn
 
 model = Model()
 org = model.add(Organization(name="ExampleBank"))
-sector = model.add(Sector(name="Finance", taxonomy_ref="sectors:finance"))
+sector = model.add(Sector(name="Finance"))
 model.add(operatesIn(org, sector))
 
 report = model.validate()
 print(report.is_valid)
 ```
+
+## Command line
+
+```bash
+metamodel validate examples/13_motivating_example/data/scenario.yaml
+metamodel convert examples/13_motivating_example/data/scenario.yaml -o scenario.graphml
+metamodel schema grantsAccessTo
+metamodel neo4j export examples/13_motivating_example/data/scenario.yaml --password password
+```
+
+Scenarios can be stored as JSON, YAML, or CSV and exported to NetworkX, GraphML, and Neo4j (see `docs/`).
+The entities, relationships, and multiplicities follow the paper; see `docs/schema.md`.
+

@@ -14,6 +14,7 @@ class TTP(BaseEntity):
         'technique',
         'subtechnique',
     )
+    knowledge_class = 'concept'
 
     def __init__(
         self,

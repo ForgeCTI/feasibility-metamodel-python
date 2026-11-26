@@ -346,7 +346,7 @@ def test_factory_parse_scenario_preserves_inherited_fields():
 # initiates tests
 
 
-def test_initiates_allows_actor_alias_without_threat():
+def test_initiates_requires_a_threat_for_every_actor():
     model = Model()
     actor = model.add(ThreatActor(name="Silent Horizon Group"))
     alias = model.add(ThreatActor(name="Ghost Meridian"))
@@ -359,10 +359,13 @@ def test_initiates_allows_actor_alias_without_threat():
         for error in report.errors
         if error.message.startswith("initiates:")
     ]
-    assert initiates_errors == []
+    # Paper: ThreatActor --initiates--> Threat is 1..* at the threat end.
+    assert initiates_errors == [
+        "initiates: ThreatActor 'Ghost Meridian' has 0 target relationship(s); expected 1..*."
+    ]
 
 
-def test_initiates_rejects_multiple_threats_per_actor():
+def test_initiates_allows_multiple_threats_per_actor():
     model = Model()
     actor = model.add(ThreatActor(name="Silent Horizon Group"))
     threat1 = model.add(Threat(name="Credential Theft"))
@@ -370,16 +373,12 @@ def test_initiates_rejects_multiple_threats_per_actor():
     model.add(initiates(actor, threat1))
     model.add(initiates(actor, threat2))
     report = validateCardinalities(model)
-    assert not report.is_valid
     initiates_errors = [
         error.message
         for error in report.errors
         if error.message.startswith("initiates:")
     ]
-    assert initiates_errors == [
-        "initiates: ThreatActor 'Silent Horizon Group' "
-        "has 2 target relationship(s); expected 0..1."
-    ]
+    assert initiates_errors == []
 
 
 def test_initiates_rejects_multiple_actors_for_same_threat():

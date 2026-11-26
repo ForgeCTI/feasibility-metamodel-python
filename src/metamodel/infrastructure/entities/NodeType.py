@@ -8,6 +8,7 @@ class NodeType(BaseEntity):
     """Represents the NodeType entity from the metamodel."""
 
     _domain_attributes = ('category',)
+    knowledge_class = 'concept'
 
     def __init__(
         self,

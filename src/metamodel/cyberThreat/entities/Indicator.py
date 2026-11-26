@@ -12,6 +12,7 @@ class Indicator(BaseEntity):
     """Represents the Indicator entity from the metamodel."""
 
     _domain_attributes = ('indicator_type', 'value', 'pattern', 'valid_from', 'valid_until')
+    knowledge_class = 'posteriori'
 
     def __init__(
         self,

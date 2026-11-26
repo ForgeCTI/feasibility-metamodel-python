@@ -47,7 +47,6 @@ def main() -> None:
         AttackTool(
             name=cobalt_strike["name"],
             description=cobalt_strike.get("description"),
-            taxonomy_ref=f"{taxonomy['taxonomy']['id']}:{cobalt_strike['id']}",
             aliases=cobalt_strike.get("aliases", []),
             tool_type=cobalt_strike.get("category"),
             capabilities=cobalt_strike.get("capabilities", []),
@@ -58,7 +57,7 @@ def main() -> None:
     print("Loaded taxonomy:", taxonomy["taxonomy"]["id"])
     print("Created entity:", attack_tool.type)
     print("Name:", attack_tool.name)
-    print("Taxonomy reference:", attack_tool.taxonomy_ref)
+    print("Taxonomy concept:", f"{taxonomy['taxonomy']['id']}:{cobalt_strike['id']}")
 
 
 if __name__ == "__main__":

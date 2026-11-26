@@ -8,6 +8,7 @@ class AttackTool(BaseEntity):
     """Represents the AttackTool entity from the metamodel."""
 
     _domain_attributes = ('aliases', 'tool_type', 'capabilities')
+    knowledge_class = 'concept'
 
     def __init__(
         self,

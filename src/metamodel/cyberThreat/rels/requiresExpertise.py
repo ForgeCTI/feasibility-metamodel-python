@@ -6,9 +6,10 @@ from metamodel.cyberThreat.entities.Expertise import Expertise
 
 
 class requiresExpertise(BaseRelationship):
-    """Connects AttackTool to Expertise."""
+    """AttackTool --requiresExpertise--> Expertise."""
 
+    label = 'requiresExpertise'
     source_type = AttackTool
     target_type = Expertise
-    source_cardinality = None
-    target_cardinality = None
+    source_cardinality = '0..*'
+    target_cardinality = '0..1'

@@ -13,6 +13,7 @@ class SecurityRequirement(BaseEntity):
     _domain_attributes = (
         'requirement_type',
     )
+    knowledge_class = 'concept'
 
     def __init__(
         self,

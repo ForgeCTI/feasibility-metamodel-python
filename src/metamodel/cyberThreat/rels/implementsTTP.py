@@ -1,14 +1,15 @@
 from __future__ import annotations
 
 from metamodel.core.BaseRelationship import BaseRelationship
-from metamodel.cyberThreat.entities.ThreatStep import ThreatStep
 from metamodel.cyberThreat.entities.TTP import TTP
+from metamodel.cyberThreat.entities.ThreatStep import ThreatStep
 
 
 class implementsTTP(BaseRelationship):
-    """Connects ThreatStep to TTP."""
+    """ThreatStep --implements--> TTP."""
 
+    label = 'implements'
     source_type = ThreatStep
     target_type = TTP
-    source_cardinality = '1..*'
+    source_cardinality = '0..*'
     target_cardinality = '1'

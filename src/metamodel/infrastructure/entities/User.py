@@ -12,6 +12,7 @@ class User(BaseEntity):
     """Represents the User entity from the metamodel."""
 
     _domain_attributes = ('username', 'email', 'role', 'mfa_enabled')
+    knowledge_class = 'system'
 
     def __init__(
         self,

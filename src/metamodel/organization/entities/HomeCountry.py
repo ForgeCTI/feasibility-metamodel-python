@@ -8,6 +8,7 @@ class HomeCountry(BaseEntity):
     """Represents the HomeCountry entity from the metamodel."""
 
     _domain_attributes = ('iso2_code', 'iso3_code', 'region')
+    knowledge_class = 'concept'
 
     def __init__(
         self,

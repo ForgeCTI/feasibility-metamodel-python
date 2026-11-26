@@ -6,9 +6,10 @@ from metamodel.infrastructure.entities.UserType import UserType
 
 
 class hasUserType(BaseRelationship):
-    """Connects User to UserType."""
+    """User --hasUserType--> UserType."""
 
+    label = 'hasUserType'
     source_type = User
     target_type = UserType
-    source_cardinality = '1..*'
+    source_cardinality = '0..*'
     target_cardinality = '1'

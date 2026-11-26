@@ -6,9 +6,10 @@ from metamodel.cyberThreat.entities.AttackToolConfiguration import AttackToolCon
 
 
 class requiresConfig(BaseRelationship):
-    """Connects AttackTool to AttackToolConfiguration."""
+    """AttackTool --requires--> AttackToolConfiguration."""
 
+    label = 'requires'
     source_type = AttackTool
     target_type = AttackToolConfiguration
-    source_cardinality = '1'
+    source_cardinality = '0..*'
     target_cardinality = '0..*'

@@ -6,9 +6,10 @@ from metamodel.organization.entities.SecurityRequirement import SecurityRequirem
 
 
 class implementsRequirement(BaseRelationship):
-    """Connects AssetSecurityRequirement to SecurityRequirement."""
+    """AssetSecurityRequirement --implementationOf--> SecurityRequirement."""
 
+    label = 'implementationOf'
     source_type = AssetSecurityRequirement
     target_type = SecurityRequirement
-    source_cardinality = '1..*'
+    source_cardinality = '0..*'
     target_cardinality = '1'

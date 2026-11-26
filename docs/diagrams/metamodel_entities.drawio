@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <mxfile host="app.diagrams.net">
   <diagram id="entity-structure" name="Metamodel Entity Structure">
-    <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2086" pageHeight="1236" background="#FFFFFF">
+    <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2086" pageHeight="1381" background="#FFFFFF">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="title" value="CTI Feasibility Metamodel | Entity Structure" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=30;fontStyle=1;fontColor=#172B40;" vertex="1" parent="1">
           <mxGeometry x="32" y="16" width="2022" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="subtitle" value="39 domain entities  /  102 domain attribute declarations  /  3 submodels" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=17;fontStyle=0;fontColor=#536477;" vertex="1" parent="1">
+        <mxCell id="subtitle" value="43 domain entities  /  111 domain attribute declarations  /  3 submodels" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=17;fontStyle=0;fontColor=#536477;" vertex="1" parent="1">
           <mxGeometry x="32" y="58" width="2022" height="26" as="geometry" />
         </mxCell>
         <mxCell id="note0" value="All domain entities inherit directly or indirectly from BaseEntity (id, type, name, description, source). Common attributes are omitted." style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#536477;" vertex="1" parent="1">
@@ -27,21 +27,21 @@
           <mxGeometry x="904" y="176" width="252" height="32" as="geometry" />
         </mxCell>
         <mxCell id="panel-infrastructure" value="" style="rounded=1;arcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#397B54;strokeWidth=1.3;connectable=0;" vertex="1" parent="1">
-          <mxGeometry x="32" y="519" width="1142" height="625" as="geometry" />
+          <mxGeometry x="32" y="519" width="1142" height="792" as="geometry" />
         </mxCell>
         <mxCell id="panel-title-infrastructure" value="Infrastructure" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=23;fontStyle=1;fontColor=#397B54;" vertex="1" parent="1">
           <mxGeometry x="50" y="526" width="1106" height="37" as="geometry" />
         </mxCell>
-        <mxCell id="panel-count-infrastructure" value="15 entities   /   38 attributes" style="text;html=0;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#397B54;" vertex="1" parent="1">
+        <mxCell id="panel-count-infrastructure" value="19 entities   /   46 attributes" style="text;html=0;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#397B54;" vertex="1" parent="1">
           <mxGeometry x="904" y="529" width="252" height="32" as="geometry" />
         </mxCell>
         <mxCell id="panel-cyberThreat" value="" style="rounded=1;arcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#A45B20;strokeWidth=1.3;connectable=0;" vertex="1" parent="1">
-          <mxGeometry x="1192" y="166" width="862" height="1000" as="geometry" />
+          <mxGeometry x="1192" y="166" width="862" height="1021" as="geometry" />
         </mxCell>
         <mxCell id="panel-title-cyberThreat" value="CyberThreat" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=23;fontStyle=1;fontColor=#A45B20;" vertex="1" parent="1">
           <mxGeometry x="1210" y="173" width="826" height="37" as="geometry" />
         </mxCell>
-        <mxCell id="panel-count-cyberThreat" value="16 entities   /   49 attributes" style="text;html=0;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#A45B20;" vertex="1" parent="1">
+        <mxCell id="panel-count-cyberThreat" value="16 entities   /   50 attributes" style="text;html=0;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#A45B20;" vertex="1" parent="1">
           <mxGeometry x="1784" y="176" width="252" height="32" as="geometry" />
         </mxCell>
         <mxCell id="Organization" value="" style="rounded=0;html=0;fillColor=#F4F8FD;strokeColor=#285E96;strokeWidth=1.1;" vertex="1" parent="1">
@@ -195,7 +195,7 @@
           <mxGeometry x="12" y="102" width="242" height="21" as="geometry" />
         </mxCell>
         <mxCell id="Connection" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.1;" vertex="1" parent="1">
-          <mxGeometry x="50" y="723" width="266" height="111" as="geometry" />
+          <mxGeometry x="50" y="723" width="266" height="132" as="geometry" />
         </mxCell>
         <mxCell id="Connection-header" value="Connection" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Connection">
           <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
@@ -208,6 +208,9 @@
         </mxCell>
         <mxCell id="Connection-attr-2" value="allowed : bool" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="Connection">
           <mxGeometry x="12" y="81" width="242" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Connection-attr-3" value="scope : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="Connection">
+          <mxGeometry x="12" y="102" width="242" height="21" as="geometry" />
         </mxCell>
         <mxCell id="Resource" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.1;" vertex="1" parent="1">
           <mxGeometry x="330" y="723" width="266" height="34" as="geometry" />
@@ -230,26 +233,26 @@
         <mxCell id="Code-attr-2" value="repository_url : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="Code">
           <mxGeometry x="12" y="81" width="242" height="21" as="geometry" />
         </mxCell>
-        <mxCell id="Information" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.1;" vertex="1" parent="1">
+        <mxCell id="Data" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.1;" vertex="1" parent="1">
           <mxGeometry x="890" y="723" width="266" height="69" as="geometry" />
         </mxCell>
-        <mxCell id="Information-header" value="Information" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Information">
+        <mxCell id="Data-header" value="Data" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Data">
           <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="Information-attr-0" value="format : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="Information">
+        <mxCell id="Data-attr-0" value="format : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="Data">
           <mxGeometry x="12" y="39" width="242" height="21" as="geometry" />
         </mxCell>
-        <mxCell id="InformationType" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.1;" vertex="1" parent="1">
-          <mxGeometry x="50" y="848" width="266" height="69" as="geometry" />
+        <mxCell id="DataType" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="869" width="266" height="69" as="geometry" />
         </mxCell>
-        <mxCell id="InformationType-header" value="InformationType" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="InformationType">
+        <mxCell id="DataType-header" value="DataType" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="DataType">
           <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="InformationType-attr-0" value="category : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="InformationType">
+        <mxCell id="DataType-attr-0" value="category : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="DataType">
           <mxGeometry x="12" y="39" width="242" height="21" as="geometry" />
         </mxCell>
         <mxCell id="User" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.1;" vertex="1" parent="1">
-          <mxGeometry x="330" y="848" width="266" height="132" as="geometry" />
+          <mxGeometry x="330" y="869" width="266" height="132" as="geometry" />
         </mxCell>
         <mxCell id="User-header" value="User" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="User">
           <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
@@ -267,7 +270,7 @@
           <mxGeometry x="12" y="102" width="242" height="21" as="geometry" />
         </mxCell>
         <mxCell id="UserType" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.1;" vertex="1" parent="1">
-          <mxGeometry x="610" y="848" width="266" height="69" as="geometry" />
+          <mxGeometry x="610" y="869" width="266" height="69" as="geometry" />
         </mxCell>
         <mxCell id="UserType-header" value="UserType" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="UserType">
           <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
@@ -275,8 +278,32 @@
         <mxCell id="UserType-attr-0" value="privilege_level : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="UserType">
           <mxGeometry x="12" y="39" width="242" height="21" as="geometry" />
         </mxCell>
+        <mxCell id="Account" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.1;" vertex="1" parent="1">
+          <mxGeometry x="890" y="869" width="266" height="111" as="geometry" />
+        </mxCell>
+        <mxCell id="Account-header" value="Account" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Account">
+          <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="Account-attr-0" value="kind : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="Account">
+          <mxGeometry x="12" y="39" width="242" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Account-attr-1" value="username : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="Account">
+          <mxGeometry x="12" y="60" width="242" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="Account-attr-2" value="enabled : bool" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="Account">
+          <mxGeometry x="12" y="81" width="242" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="PrivilegeLevel" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1015" width="266" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="PrivilegeLevel-header" value="PrivilegeLevel" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="PrivilegeLevel">
+          <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="PrivilegeLevel-attr-0" value="rank : int" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="PrivilegeLevel">
+          <mxGeometry x="12" y="39" width="242" height="21" as="geometry" />
+        </mxCell>
         <mxCell id="Application" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.1;" vertex="1" parent="1">
-          <mxGeometry x="890" y="848" width="266" height="132" as="geometry" />
+          <mxGeometry x="330" y="1015" width="266" height="132" as="geometry" />
         </mxCell>
         <mxCell id="Application-header" value="Application" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Application">
           <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
@@ -294,19 +321,19 @@
           <mxGeometry x="12" y="102" width="242" height="21" as="geometry" />
         </mxCell>
         <mxCell id="ApplicationInstance" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.1;" vertex="1" parent="1">
-          <mxGeometry x="50" y="994" width="266" height="90" as="geometry" />
+          <mxGeometry x="610" y="1015" width="266" height="90" as="geometry" />
         </mxCell>
         <mxCell id="ApplicationInstance-header" value="ApplicationInstance" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="ApplicationInstance">
           <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="ApplicationInstance-attr-0" value="version : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="ApplicationInstance">
+        <mxCell id="ApplicationInstance-attr-0" value="runtime_state : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="ApplicationInstance">
           <mxGeometry x="12" y="39" width="242" height="21" as="geometry" />
         </mxCell>
-        <mxCell id="ApplicationInstance-attr-1" value="runtime_state : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="ApplicationInstance">
+        <mxCell id="ApplicationInstance-attr-1" value="role : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="ApplicationInstance">
           <mxGeometry x="12" y="60" width="242" height="21" as="geometry" />
         </mxCell>
         <mxCell id="OS" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.1;" vertex="1" parent="1">
-          <mxGeometry x="330" y="994" width="266" height="132" as="geometry" />
+          <mxGeometry x="890" y="1015" width="266" height="153" as="geometry" />
         </mxCell>
         <mxCell id="OS-header" value="OS" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="OS">
           <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
@@ -323,23 +350,44 @@
         <mxCell id="OS-attr-3" value="cpe : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="OS">
           <mxGeometry x="12" y="102" width="242" height="21" as="geometry" />
         </mxCell>
+        <mxCell id="OS-attr-4" value="family : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="OS">
+          <mxGeometry x="12" y="123" width="242" height="21" as="geometry" />
+        </mxCell>
         <mxCell id="OSInstance" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.1;" vertex="1" parent="1">
-          <mxGeometry x="610" y="994" width="266" height="132" as="geometry" />
+          <mxGeometry x="50" y="1182" width="266" height="111" as="geometry" />
         </mxCell>
         <mxCell id="OSInstance-header" value="OSInstance" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="OSInstance">
           <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="OSInstance-attr-0" value="version : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="OSInstance">
+        <mxCell id="OSInstance-attr-0" value="build : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="OSInstance">
           <mxGeometry x="12" y="39" width="242" height="21" as="geometry" />
         </mxCell>
-        <mxCell id="OSInstance-attr-1" value="build : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="OSInstance">
+        <mxCell id="OSInstance-attr-1" value="patch_level : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="OSInstance">
           <mxGeometry x="12" y="60" width="242" height="21" as="geometry" />
         </mxCell>
-        <mxCell id="OSInstance-attr-2" value="patch_level : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="OSInstance">
+        <mxCell id="OSInstance-attr-2" value="support_status : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="OSInstance">
           <mxGeometry x="12" y="81" width="242" height="21" as="geometry" />
         </mxCell>
-        <mxCell id="OSInstance-attr-3" value="support_status : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="OSInstance">
-          <mxGeometry x="12" y="102" width="242" height="21" as="geometry" />
+        <mxCell id="SecurityControl" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="1182" width="266" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="SecurityControl-header" value="SecurityControl" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="SecurityControl">
+          <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="SecurityControl-attr-0" value="status : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="SecurityControl">
+          <mxGeometry x="12" y="39" width="242" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="SecurityControlType" value="" style="rounded=0;html=0;fillColor=#F4FAF6;strokeColor=#397B54;strokeWidth=1.1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="1182" width="266" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="SecurityControlType-header" value="SecurityControlType" style="rounded=0;html=0;fillColor=#DDEFE3;strokeColor=#397B54;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="SecurityControlType">
+          <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="SecurityControlType-attr-0" value="external_id : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="SecurityControlType">
+          <mxGeometry x="12" y="39" width="242" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="SecurityControlType-attr-1" value="catalogue : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="SecurityControlType">
+          <mxGeometry x="12" y="60" width="242" height="21" as="geometry" />
         </mxCell>
         <mxCell id="ThreatActor" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.1;" vertex="1" parent="1">
           <mxGeometry x="1210" y="224" width="266" height="132" as="geometry" />
@@ -408,7 +456,7 @@
           <mxGeometry x="12" y="81" width="242" height="21" as="geometry" />
         </mxCell>
         <mxCell id="ThreatStep" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.1;" vertex="1" parent="1">
-          <mxGeometry x="1770" y="370" width="266" height="132" as="geometry" />
+          <mxGeometry x="1770" y="370" width="266" height="153" as="geometry" />
         </mxCell>
         <mxCell id="ThreatStep-header" value="ThreatStep" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="ThreatStep">
           <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
@@ -425,8 +473,11 @@
         <mxCell id="ThreatStep-attr-3" value="postconditions : list[str]" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="ThreatStep">
           <mxGeometry x="12" y="102" width="242" height="21" as="geometry" />
         </mxCell>
+        <mxCell id="ThreatStep-attr-4" value="join : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="ThreatStep">
+          <mxGeometry x="12" y="123" width="242" height="21" as="geometry" />
+        </mxCell>
         <mxCell id="Campaign" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.1;" vertex="1" parent="1">
-          <mxGeometry x="1210" y="516" width="266" height="132" as="geometry" />
+          <mxGeometry x="1210" y="537" width="266" height="132" as="geometry" />
         </mxCell>
         <mxCell id="Campaign-header" value="Campaign" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Campaign">
           <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
@@ -444,7 +495,7 @@
           <mxGeometry x="12" y="102" width="242" height="21" as="geometry" />
         </mxCell>
         <mxCell id="TTP" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.1;" vertex="1" parent="1">
-          <mxGeometry x="1490" y="516" width="266" height="132" as="geometry" />
+          <mxGeometry x="1490" y="537" width="266" height="132" as="geometry" />
         </mxCell>
         <mxCell id="TTP-header" value="TTP" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="TTP">
           <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
@@ -462,7 +513,7 @@
           <mxGeometry x="12" y="102" width="242" height="21" as="geometry" />
         </mxCell>
         <mxCell id="Indicator" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.1;" vertex="1" parent="1">
-          <mxGeometry x="1770" y="516" width="266" height="153" as="geometry" />
+          <mxGeometry x="1770" y="537" width="266" height="153" as="geometry" />
         </mxCell>
         <mxCell id="Indicator-header" value="Indicator" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Indicator">
           <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
@@ -483,7 +534,7 @@
           <mxGeometry x="12" y="123" width="242" height="21" as="geometry" />
         </mxCell>
         <mxCell id="Vulnerability" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.1;" vertex="1" parent="1">
-          <mxGeometry x="1490" y="861" width="266" height="111" as="geometry" />
+          <mxGeometry x="1490" y="882" width="266" height="111" as="geometry" />
         </mxCell>
         <mxCell id="Vulnerability-header" value="Vulnerability" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="Vulnerability">
           <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
@@ -498,7 +549,7 @@
           <mxGeometry x="12" y="81" width="242" height="21" as="geometry" />
         </mxCell>
         <mxCell id="SoftwareVulnerability" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.1;" vertex="1" parent="1">
-          <mxGeometry x="1210" y="1037" width="266" height="111" as="geometry" />
+          <mxGeometry x="1210" y="1058" width="266" height="111" as="geometry" />
         </mxCell>
         <mxCell id="SoftwareVulnerability-header" value="SoftwareVulnerability" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="SoftwareVulnerability">
           <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
@@ -513,7 +564,7 @@
           <mxGeometry x="12" y="81" width="242" height="21" as="geometry" />
         </mxCell>
         <mxCell id="ConfigVulnerability" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.1;" vertex="1" parent="1">
-          <mxGeometry x="1490" y="1037" width="266" height="90" as="geometry" />
+          <mxGeometry x="1490" y="1058" width="266" height="90" as="geometry" />
         </mxCell>
         <mxCell id="ConfigVulnerability-header" value="ConfigVulnerability" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="ConfigVulnerability">
           <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
@@ -525,7 +576,7 @@
           <mxGeometry x="12" y="60" width="242" height="21" as="geometry" />
         </mxCell>
         <mxCell id="HumanVulnerability" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.1;" vertex="1" parent="1">
-          <mxGeometry x="1770" y="1037" width="266" height="69" as="geometry" />
+          <mxGeometry x="1770" y="1058" width="266" height="69" as="geometry" />
         </mxCell>
         <mxCell id="HumanVulnerability-header" value="HumanVulnerability" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="HumanVulnerability">
           <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
@@ -534,7 +585,7 @@
           <mxGeometry x="12" y="39" width="242" height="21" as="geometry" />
         </mxCell>
         <mxCell id="AttackTool" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.1;" vertex="1" parent="1">
-          <mxGeometry x="1210" y="683" width="266" height="111" as="geometry" />
+          <mxGeometry x="1210" y="704" width="266" height="111" as="geometry" />
         </mxCell>
         <mxCell id="AttackTool-header" value="AttackTool" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="AttackTool">
           <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
@@ -549,7 +600,7 @@
           <mxGeometry x="12" y="81" width="242" height="21" as="geometry" />
         </mxCell>
         <mxCell id="AttackToolInstance" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.1;" vertex="1" parent="1">
-          <mxGeometry x="1490" y="683" width="266" height="132" as="geometry" />
+          <mxGeometry x="1490" y="704" width="266" height="132" as="geometry" />
         </mxCell>
         <mxCell id="AttackToolInstance-header" value="AttackToolInstance" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="AttackToolInstance">
           <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
@@ -567,7 +618,7 @@
           <mxGeometry x="12" y="102" width="242" height="21" as="geometry" />
         </mxCell>
         <mxCell id="AttackToolConfiguration" value="" style="rounded=0;html=0;fillColor=#FFF9F2;strokeColor=#A45B20;strokeWidth=1.1;" vertex="1" parent="1">
-          <mxGeometry x="1770" y="683" width="266" height="132" as="geometry" />
+          <mxGeometry x="1770" y="704" width="266" height="132" as="geometry" />
         </mxCell>
         <mxCell id="AttackToolConfiguration-header" value="AttackToolConfiguration" style="rounded=0;html=0;fillColor=#FCE7D2;strokeColor=#A45B20;fontColor=#172B40;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;connectable=0;" vertex="1" parent="AttackToolConfiguration">
           <mxGeometry x="0" y="0" width="266" height="34" as="geometry" />
@@ -584,32 +635,72 @@
         <mxCell id="AttackToolConfiguration-attr-3" value="stealth_level : str" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#172B40;" vertex="1" parent="AttackToolConfiguration">
           <mxGeometry x="12" y="102" width="242" height="21" as="geometry" />
         </mxCell>
+        <mxCell id="inherits-Asset" edge="1" parent="1" source="Asset" target="Resource" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=0;endSize=12;strokeColor=#172B40;strokeWidth=1.45;exitX=0.5;exitY=0;entryX=0.5;entryY=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="743.0" y="794" />
+              <mxPoint x="463.0" y="794" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inherits-Code" edge="1" parent="1" source="Code" target="Resource" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=0;endSize=12;strokeColor=#172B40;strokeWidth=1.45;exitX=0.5;exitY=0;entryX=0.5;entryY=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="743.0" y="794" />
+              <mxPoint x="463.0" y="794" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inherits-Data" edge="1" parent="1" source="Data" target="Resource" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=0;endSize=12;strokeColor=#172B40;strokeWidth=1.45;exitX=0.5;exitY=0;entryX=0.5;entryY=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1023.0" y="794" />
+              <mxPoint x="463.0" y="794" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inherits-ApplicationInstance" edge="1" parent="1" source="ApplicationInstance" target="Code" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=0;endSize=12;strokeColor=#172B40;strokeWidth=1.45;exitX=0.5;exitY=0;entryX=0.5;entryY=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="743.0" y="871" />
+              <mxPoint x="743.0" y="871" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inherits-OSInstance" edge="1" parent="1" source="OSInstance" target="Code" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=0;endSize=12;strokeColor=#172B40;strokeWidth=1.45;exitX=0.5;exitY=0;entryX=0.5;entryY=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="183.0" y="871" />
+              <mxPoint x="743.0" y="871" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="inherits-SoftwareVulnerability" edge="1" parent="1" source="SoftwareVulnerability" target="Vulnerability" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=0;endSize=12;strokeColor=#172B40;strokeWidth=1.45;exitX=0.5;exitY=0;entryX=0.5;entryY=1;">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1343.0" y="1009" />
-              <mxPoint x="1623.0" y="1009" />
+              <mxPoint x="1343.0" y="1030" />
+              <mxPoint x="1623.0" y="1030" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="inherits-ConfigVulnerability" edge="1" parent="1" source="ConfigVulnerability" target="Vulnerability" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=0;endSize=12;strokeColor=#172B40;strokeWidth=1.45;exitX=0.5;exitY=0;entryX=0.5;entryY=1;">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1623.0" y="1009" />
-              <mxPoint x="1623.0" y="1009" />
+              <mxPoint x="1623.0" y="1030" />
+              <mxPoint x="1623.0" y="1030" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="inherits-HumanVulnerability" edge="1" parent="1" source="HumanVulnerability" target="Vulnerability" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=0;endSize=12;strokeColor=#172B40;strokeWidth=1.45;exitX=0.5;exitY=0;entryX=0.5;entryY=1;">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1903.0" y="1009" />
-              <mxPoint x="1623.0" y="1009" />
+              <mxPoint x="1903.0" y="1030" />
+              <mxPoint x="1623.0" y="1030" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="footer" value="Domain attribute declarations are counted once, at their defining class. Associations and multiplicities are reserved for the complete view." style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#536477;" vertex="1" parent="1">
-          <mxGeometry x="32" y="1191" width="2022" height="30" as="geometry" />
+          <mxGeometry x="32" y="1336" width="2022" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

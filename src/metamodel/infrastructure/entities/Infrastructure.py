@@ -8,6 +8,7 @@ class Infrastructure(BaseEntity):
     """Represents the Infrastructure entity from the metamodel."""
 
     _domain_attributes = ('environment_type', 'scope')
+    knowledge_class = 'system'
 
     def __init__(
         self,

@@ -313,16 +313,6 @@ relationships:
   source: application-instance-order-portal-production
   target: application-meridian-order-portal
 
-- id: rel-13-applicationImplementsCode
-  type: applicationImplementsCode
-  source: application-instance-order-portal-production
-  target: code-order-maintenance-script
-
-- id: rel-14-resourceImplementsAsset
-  type: resourceImplementsAsset
-  source: resource-order-management-service
-  target: asset-order-fulfilment-process
-
 - id: rel-15-initiates
   type: initiates
   source: threat-actor-foundry-access-group
@@ -412,16 +402,6 @@ relationships:
   type: violates
   source: ttp-python-interpreter
   target: security-requirement-order-integrity
-
-- id: rel-33-designedFor
-  type: designedFor
-  source: attack-tool-instance-order-server
-  target: os-instance-order-server
-
-- id: rel-34-deployedTo
-  type: deployedTo
-  source: attack-tool-instance-order-server
-  target: node-order-application-server
 
 - id: rel-35-employsTool
   type: employsTool

@@ -15,6 +15,7 @@ class Organization(BaseEntity):
         'criticality',
         'maturity_level'
     )
+    knowledge_class = 'system'
 
     def __init__(
         self,

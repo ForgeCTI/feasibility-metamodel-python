@@ -12,6 +12,7 @@ class Campaign(BaseEntity):
     """Represents the Campaign entity from the metamodel."""
 
     _domain_attributes = ('first_seen', 'last_seen', 'status', 'objective')
+    knowledge_class = 'posteriori'
 
     def __init__(
         self,
