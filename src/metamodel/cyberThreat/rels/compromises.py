@@ -1,14 +1,15 @@
 from __future__ import annotations
 
 from metamodel.core.BaseRelationship import BaseRelationship
-from metamodel.cyberThreat.entities.ThreatStep import ThreatStep
 from metamodel.organization.entities.AssetSecurityRequirement import AssetSecurityRequirement
+from metamodel.cyberThreat.entities.ThreatStep import ThreatStep
 
 
 class compromises(BaseRelationship):
-    """Connects ThreatStep to AssetSecurityRequirement."""
+    """ThreatStep --compromises--> AssetSecurityRequirement."""
 
+    label = 'compromises'
     source_type = ThreatStep
     target_type = AssetSecurityRequirement
-    source_cardinality = '1..*'
-    target_cardinality = '1'
+    source_cardinality = '0..*'
+    target_cardinality = '0..*'

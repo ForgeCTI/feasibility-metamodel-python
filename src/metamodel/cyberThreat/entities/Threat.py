@@ -12,6 +12,7 @@ class Threat(BaseEntity):
     """Represents the Threat entity from the metamodel."""
 
     _domain_attributes = ('objective', 'first_seen', 'last_seen')
+    knowledge_class = 'posteriori'
 
     def __init__(
         self,

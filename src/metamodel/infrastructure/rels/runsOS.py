@@ -6,9 +6,10 @@ from metamodel.infrastructure.entities.OSInstance import OSInstance
 
 
 class runsOS(BaseRelationship):
-    """Connects Node to OSInstance."""
+    """Node --runsOS--> OSInstance."""
 
+    label = 'runsOS'
     source_type = Node
     target_type = OSInstance
     source_cardinality = '1'
-    target_cardinality = '1'
+    target_cardinality = '0..1'

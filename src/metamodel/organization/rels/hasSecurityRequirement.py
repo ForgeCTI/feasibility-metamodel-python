@@ -6,8 +6,9 @@ from metamodel.organization.entities.AssetSecurityRequirement import AssetSecuri
 
 
 class hasSecurityRequirement(BaseRelationship):
-    """Connects Asset to AssetSecurityRequirement."""
+    """Asset --hasSecurityRequirement--> AssetSecurityRequirement."""
 
+    label = 'hasSecurityRequirement'
     source_type = Asset
     target_type = AssetSecurityRequirement
     source_cardinality = '1'

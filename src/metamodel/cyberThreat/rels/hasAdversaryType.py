@@ -6,9 +6,10 @@ from metamodel.cyberThreat.entities.AdversaryType import AdversaryType
 
 
 class hasAdversaryType(BaseRelationship):
-    """Connects Adversary to AdversaryType."""
+    """Adversary --hasAdversaryType--> AdversaryType."""
 
+    label = 'hasAdversaryType'
     source_type = Adversary
     target_type = AdversaryType
-    source_cardinality = '1..*'
-    target_cardinality = '1'
+    source_cardinality = '0..*'
+    target_cardinality = '1..*'

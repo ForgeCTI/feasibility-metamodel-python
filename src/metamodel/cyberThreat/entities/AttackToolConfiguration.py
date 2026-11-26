@@ -12,6 +12,7 @@ class AttackToolConfiguration(BaseEntity):
     """Represents the AttackToolConfiguration entity from the metamodel."""
 
     _domain_attributes = ('configuration_type', 'parameters', 'persistence_enabled', 'stealth_level')
+    knowledge_class = 'posteriori'
 
     def __init__(
         self,

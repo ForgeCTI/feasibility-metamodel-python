@@ -6,8 +6,9 @@ from metamodel.infrastructure.entities.Node import Node
 
 
 class madeBy(BaseRelationship):
-    """Connects Infrastructure to Node."""
+    """Infrastructure --madeBy--> Node."""
 
+    label = 'madeBy'
     source_type = Infrastructure
     target_type = Node
     source_cardinality = '1'

@@ -12,13 +12,17 @@ class Factory:
     def create_entity(self, entity_type: str, **kwargs):
         kwargs.pop("id", None)
         kwargs.pop("type", None)
-        cls = self.registry.get_entity_class(entity_type)
+        cls = self.registry.get_entity_class(self.registry.canonical_entity_type(entity_type))
         return cls(**kwargs)
 
-    def create_relationship(self, relationship_type: str, source_entity, target_entity):
+    def create_relationship(self, relationship_type: str, source_entity, target_entity, **attributes):
+        """Create a relationship from its class name, legacy name, or metamodel label."""
+        relationship_type = self.registry.resolve_relationship_type(
+            relationship_type, source_entity.type, target_entity.type
+        )
         cls = self.registry.get_relationship_class(relationship_type)
-        return cls(source_entity, target_entity)
+        return cls(source_entity, target_entity, **attributes)
 
-    def create_relationship_from_alias(self, label: str, source_entity, target_entity):
+    def create_relationship_from_alias(self, label: str, source_entity, target_entity, **attributes):
         relationship_type = self.registry.resolve_relationship_alias(source_entity.type, label, target_entity.type)
-        return self.create_relationship(relationship_type, source_entity, target_entity)
+        return self.create_relationship(relationship_type, source_entity, target_entity, **attributes)

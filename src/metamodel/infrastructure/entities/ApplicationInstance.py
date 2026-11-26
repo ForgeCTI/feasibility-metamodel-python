@@ -1,35 +1,34 @@
 from __future__ import annotations
 
-from metamodel.core.BaseEntity import BaseEntity
-from metamodel.core.ValidationUtils import require_optional_str
+from metamodel.infrastructure.entities.Code import Code
+from metamodel.core.ValidationUtils import (
+    require_optional_str,
+)
 
 
-class ApplicationInstance(BaseEntity):
-    """Represents the ApplicationInstance entity from the metamodel."""
+class ApplicationInstance(Code):
+    """Instance of an Application running on a node."""
 
-    _domain_attributes = ('version', 'runtime_state')
+    _domain_attributes = Code._domain_attributes + ('runtime_state', 'role')
+    knowledge_class = 'system'
 
     def __init__(
         self,
         name: str,
         description: str | None = None,
-        version: str | None = None,
         runtime_state: str | None = None,
+        role: str | None = None,
+        version: str | None = None,
+        language: str | None = None,
+        repository_url: str | None = None,
         source: str | None = None,
     ) -> None:
-        super().__init__(name=name, description=description, source=source)
-        self._version: str | None
+        super().__init__(name=name, description=description, source=source, version=version, language=language, repository_url=repository_url)
         self._runtime_state: str | None
-        self.version = version
+        self._role: str | None
         self.runtime_state = runtime_state
+        self.role = role
 
-    @property
-    def version(self) -> str | None:
-        return self._version
-
-    @version.setter
-    def version(self, value: str | None) -> None:
-        self._version = require_optional_str(value, "version")
 
     @property
     def runtime_state(self) -> str | None:
@@ -38,3 +37,11 @@ class ApplicationInstance(BaseEntity):
     @runtime_state.setter
     def runtime_state(self, value: str | None) -> None:
         self._runtime_state = require_optional_str(value, "runtime_state")
+
+    @property
+    def role(self) -> str | None:
+        return self._role
+
+    @role.setter
+    def role(self, value: str | None) -> None:
+        self._role = require_optional_str(value, "role")

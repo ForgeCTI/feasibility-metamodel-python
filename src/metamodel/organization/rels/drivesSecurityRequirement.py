@@ -1,13 +1,14 @@
 from __future__ import annotations
 
 from metamodel.core.BaseRelationship import BaseRelationship
-from metamodel.organization.entities.BusinessRequirement import BusinessRequirement
 from metamodel.organization.entities.AssetSecurityRequirement import AssetSecurityRequirement
+from metamodel.organization.entities.BusinessRequirement import BusinessRequirement
 
 
 class drivesSecurityRequirement(BaseRelationship):
-    """Connects BusinessRequirement to AssetSecurityRequirement."""
+    """BusinessRequirement --drivesSecurityRequirement--> AssetSecurityRequirement."""
 
+    label = 'drivesSecurityRequirement'
     source_type = BusinessRequirement
     target_type = AssetSecurityRequirement
     source_cardinality = '1'

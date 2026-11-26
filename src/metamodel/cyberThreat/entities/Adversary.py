@@ -9,6 +9,7 @@ class Adversary(BaseEntity):
     """Represents the Adversary entity from the metamodel."""
 
     _domain_attributes = ('objective', 'capability_level')
+    knowledge_class = 'posteriori'
 
     def __init__(
         self,

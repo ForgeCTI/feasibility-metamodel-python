@@ -10,6 +10,9 @@ class Model:
     def __init__(self) -> None:
         self._entities: dict[str, BaseEntity] = {}
         self._relationships: list[BaseRelationship] = []
+        #: Free-form scenario metadata (name, description, completeness set, ...),
+        #: preserved by the JSON, YAML, and CSV serializers.
+        self.metadata: dict = {}
 
     @property
     def entities(self) -> list[BaseEntity]:
@@ -35,6 +38,9 @@ class Model:
                 raise ValueError("relationship source_entity is not present in the model.")
             if obj.target_entity.id not in self._entities:
                 raise ValueError("relationship target_entity is not present in the model.")
+            for referenced in obj.referenced_entities():
+                if referenced.id not in self._entities:
+                    raise ValueError(f"entity {referenced.name!r} referenced by the relationship is not present in the model.")
             for rel in self._relationships:
                 if (
                     rel.type == obj.type
@@ -58,6 +64,8 @@ class Model:
             for rel in self._relationships:
                 if rel.source_entity.id == obj.id or rel.target_entity.id == obj.id:
                     raise ValueError("entity has incident relationships.")
+                if any(ref.id == obj.id for ref in rel.referenced_entities()):
+                    raise ValueError("entity is referenced by a relationship attribute.")
             del self._entities[obj.id]
             return
         if isinstance(obj, BaseRelationship):
@@ -101,6 +109,27 @@ class Model:
 
     def get_entity(self, entity_id: str) -> BaseEntity:
         return self._entities[entity_id]
+
+    def has_entity(self, entity_id: str) -> bool:
+        return entity_id in self._entities
+
+    def get_relationship(self, relationship_id: str) -> BaseRelationship:
+        for rel in self._relationships:
+            if rel.id == relationship_id:
+                return rel
+        raise KeyError(relationship_id)
+
+    def find_entities(self, entity_type: str | type | None = None, **attributes) -> list[BaseEntity]:
+        """Entities of a type (subclasses included when a class is given) matching attribute values."""
+        result = []
+        for entity in self.entities:
+            if isinstance(entity_type, type) and not isinstance(entity, entity_type):
+                continue
+            if isinstance(entity_type, str) and entity.type != entity_type:
+                continue
+            if all(getattr(entity, key, None) == value for key, value in attributes.items()):
+                result.append(entity)
+        return result
 
     def get_entities_by_type(self, entity_type: str) -> list[BaseEntity]:
         return [entity for entity in self.entities if entity.type == entity_type]

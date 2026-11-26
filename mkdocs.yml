@@ -13,6 +13,7 @@ nav:
   - Installation: installation.md
   - Quickstart: quickstart.md
   - Metamodel: metamodel.md
+  - Schema reference: schema.md
   - Taxonomies: taxonomies.md
   - Validation: validation.md
   - I/O: io.md

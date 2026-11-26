@@ -6,8 +6,9 @@ from metamodel.organization.entities.InternationalBody import InternationalBody
 
 
 class targetsInternationalBody(BaseRelationship):
-    """Connects Campaign to InternationalBody."""
+    """Campaign --focusesOn--> InternationalBody."""
 
+    label = 'focusesOn'
     source_type = Campaign
     target_type = InternationalBody
     source_cardinality = '0..*'

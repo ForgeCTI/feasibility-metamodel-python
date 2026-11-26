@@ -25,4 +25,11 @@ def validateReferences(model) -> ValidationReport:
                     f"Relationship {rel.id} has a {role} entity not present in the model.",
                 )
 
+        for referenced in rel.referenced_entities():
+            if referenced.id not in ids:
+                report.add_error(
+                    "referenceValidator",
+                    f"Relationship {rel.id} references entity {referenced.name!r} not present in the model.",
+                )
+
     return report

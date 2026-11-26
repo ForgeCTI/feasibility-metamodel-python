@@ -12,6 +12,7 @@ class Sector(BaseEntity):
         'sector_standard',
         'sector_standard_version',
     )
+    knowledge_class = 'concept'
 
     def __init__(
         self,

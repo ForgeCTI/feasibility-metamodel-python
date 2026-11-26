@@ -6,8 +6,9 @@ from metamodel.organization.entities.Sector import Sector
 
 
 class targetsSector(BaseRelationship):
-    """Connects Campaign to Sector."""
+    """Campaign --focusesOn--> Sector."""
 
+    label = 'focusesOn'
     source_type = Campaign
     target_type = Sector
     source_cardinality = '0..*'

@@ -114,7 +114,7 @@ entities:
   source: Synthetic case study data
 
 - id: information-confidential-research-results
-  type: Information
+  type: Data
   name: Confidential Research Results
   description: Unpublished research results in PDF format, accessible to authorized researchers and sought by the attacker.
   format: PDF
@@ -243,6 +243,12 @@ entities:
   last_seen: '2026-11-06'
   source: Synthetic case study data
 
+- id: account-asterion-researcher
+  type: Account
+  name: Asterion Researcher Account (account)
+  kind: domain
+  source: Synthetic case study data
+
 relationships:
 - id: rel-01-operatesIn
   type: operatesIn
@@ -284,9 +290,14 @@ relationships:
   source: infrastructure-asterion-research-it
   target: user-asterion-researcher
 
-- id: rel-09-hasAccessTo
-  type: hasAccessTo
+- id: rel-09-hasAccount
+  type: hasAccount
   source: user-asterion-researcher
+  target: account-asterion-researcher
+
+- id: rel-09-grantsAccessTo
+  type: grantsAccessTo
+  source: account-asterion-researcher
   target: node-research-document-vm
 
 - id: rel-10-runsApp
@@ -299,24 +310,14 @@ relationships:
   source: application-instance-research-portal-production
   target: application-asterion-research-document-portal
 
-- id: rel-12-applicationImplementsCode
-  type: applicationImplementsCode
-  source: application-instance-research-portal-production
+- id: rel-12-hostsResource
+  type: hostsResource
+  source: node-research-document-vm
   target: code-research-document-viewer
 
-- id: rel-13-launches
-  type: launches
-  source: user-asterion-researcher
-  target: code-research-document-viewer
-
-- id: rel-14-accessesInformation
-  type: accessesInformation
-  source: code-research-document-viewer
-  target: information-confidential-research-results
-
-- id: rel-15-userAccessesInformation
-  type: userAccessesInformation
-  source: user-asterion-researcher
+- id: rel-15-grantsAccessToData
+  type: grantsAccessTo
+  source: account-asterion-researcher
   target: information-confidential-research-results
 
 - id: rel-16-aliasOf
@@ -388,13 +389,3 @@ relationships:
   type: toolInstanceOf
   source: attack-tool-instance-meridian-collector-vm
   target: attack-tool-meridian-collector
-
-- id: rel-30-deployedTo
-  type: deployedTo
-  source: attack-tool-instance-horizon-loader-vm
-  target: node-research-document-vm
-
-- id: rel-31-deployedTo
-  type: deployedTo
-  source: attack-tool-instance-meridian-collector-vm
-  target: node-research-document-vm

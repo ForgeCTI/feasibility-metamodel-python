@@ -2,16 +2,25 @@
 
 ## Purpose
 
-Convert a metamodel scenario to a NetworkX graph and write a simple graph summary.
+Convert the motivating example of the paper to a NetworkX `MultiDiGraph`, query it, and
+round-trip it through NetworkX and GraphML.
 
 ## Run
 
 From the repository root:
 
 ```bash
+pip install -e ".[yaml,networkx]"
 python examples/07_networkx_export/main.py
 ```
 
-## Notes
+## Graph layout
 
-The script is intentionally compact and focuses on one modelling concept. It can be extended with additional entities, relationships, validators, or exports.
+* nodes are entities (key: entity id) with attributes `type`, `labels` (the type and its
+  superclasses, e.g. `["ApplicationInstance", "Code", "Resource"]`), `knowledge_class`,
+  `name`, and the domain attributes;
+* edges are relationships (key: relationship id) with attributes `type` (class),
+  `label` (metamodel label, e.g. `grantsAccessTo`), and relationship attributes
+  (e.g. `privilege_level`, holding the id of a PrivilegeLevel entity).
+
+`fromNetworkx` converts such a graph back to a model; GraphML stores lists and dicts as JSON strings.

@@ -7,6 +7,7 @@ class Application(BaseEntity):
     """Represents the Application entity from the metamodel."""
 
     _domain_attributes = ('vendor', 'product', 'version', 'cpe')
+    knowledge_class = 'concept'
 
     def __init__(
         self,

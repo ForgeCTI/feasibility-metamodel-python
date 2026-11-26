@@ -19,18 +19,17 @@ from metamodel.cyberThreat.entities.Vulnerability import Vulnerability
 from metamodel.cyberThreat.entities.SoftwareVulnerability import SoftwareVulnerability
 from metamodel.cyberThreat.entities.ConfigVulnerability import ConfigVulnerability
 from metamodel.cyberThreat.entities.HumanVulnerability import HumanVulnerability
-from metamodel.cyberThreat.entities.TTP import TTP
 from metamodel.cyberThreat.entities.Threat import Threat
-from metamodel.cyberThreat.entities.ThreatActor import ThreatActor
-from metamodel.cyberThreat.entities.Expertise import Expertise
 
 from metamodel.organization.rels.operatesIn import operatesIn
 from metamodel.organization.rels.basedIn import basedIn
 from metamodel.infrastructure.rels.madeBy import madeBy
 from metamodel.infrastructure.rels.hasNodeType import hasNodeType
 from metamodel.cyberThreat.rels.exploits import exploits
-from metamodel.cyberThreat.rels.exploitsVulnerability import exploitsVulnerability
-from metamodel.cyberThreat.rels.hasExpertise import hasExpertise
+from metamodel.cyberThreat.rels.affectsApplication import affectsApplication
+from metamodel.infrastructure.rels.hostsResource import hostsResource
+from metamodel.infrastructure.entities.Resource import Resource
+from metamodel.infrastructure.entities.Data import Data
 
 
 # Reference Validator tests
@@ -203,9 +202,7 @@ def test_vulnerability_subtypes(vulnerability_class):
         "hasNodeType: Node 'N2' has 0 target relationship(s); expected 1.",
     ]),
 
-    (2, [(0, 0), (1, 0)], [
-        "hasNodeType: NodeType 'T2' has 0 source relationship(s); expected 1..*.",
-    ]),
+    (2, [(0, 0), (1, 0)], []),
 
     (2, [(0, 0), (0, 1), (1, 0)], [
         "hasNodeType: Node 'N1' has 2 target relationship(s); expected 1.",
@@ -214,7 +211,6 @@ def test_vulnerability_subtypes(vulnerability_class):
     (3, [(0, 0), (0, 1)], [
         "hasNodeType: Node 'N1' has 2 target relationship(s); expected 1.",
         "hasNodeType: Node 'N2' has 0 target relationship(s); expected 1.",
-        "hasNodeType: NodeType 'T3' has 0 source relationship(s); expected 1..*.",
     ]),
 ])
 def test_has_node_type_cardinalities(type_count, links, expected):
@@ -258,9 +254,10 @@ def test_partially_unspecified_cardinality(extra_country):
         for error in report.errors
         if error.message.startswith("basedIn:")
     ]
-    assert based_in_errors == ([
-        "basedIn: HomeCountry 'Germany' has 0 source relationship(s); expected 1."
-    ] if extra_country else [])
+    # Paper: Organization --basedIn--> HomeCountry is 0..* / 1..*.
+    assert based_in_errors == [
+        "basedIn: Organization 'Other org' has 0 target relationship(s); expected 1..*."
+    ]
 
     assert all(
         error.validator == "cardinalityValidator"
@@ -287,26 +284,22 @@ def test_unspecified_cardinalities():
 
 @pytest.mark.parametrize("linked", [True, False])
 def test_cardinality_with_entity_inheritance(linked):
+    # Data is a Resource: Node --hostsResource--> Resource is 1..* at the node end.
     model = Model()
-    ttp = model.add(TTP(name="Technique 1"))
-    vulnerability = model.add(Vulnerability(name="Generic"))
-    model.add(exploitsVulnerability(ttp, vulnerability))
-    software = model.add(
-        SoftwareVulnerability(name="Software")
-    )
+    node = model.add(Node(name="N1"))
+    model.add(hostsResource(node, model.add(Resource(name="Generic"))))
+    data = model.add(Data(name="Mailbox"))
     if linked:
-        second_ttp = model.add(TTP(name="Technique 2"))
-        model.add(exploitsVulnerability(second_ttp, software))
+        model.add(hostsResource(node, data))
     report = validateCardinalities(model)
-    vulnerability_errors = [
+    hosting_errors = [
         error.message
         for error in report.errors
-        if error.message.startswith("exploitsVulnerability:")
+        if error.message.startswith("hostsResource:")
     ]
-    assert vulnerability_errors == (
+    assert hosting_errors == (
         [] if linked else [
-            "exploitsVulnerability: SoftwareVulnerability 'Software' "
-            "has 0 source relationship(s); expected 1..*."
+            "hostsResource: Data 'Mailbox' has 0 source relationship(s); expected 1..*."
         ]
     )
 
@@ -314,11 +307,11 @@ def test_cardinality_with_entity_inheritance(linked):
 @pytest.mark.parametrize("entity_class, expected_relations", [
     (
         Organization,
-        {"operatesIn", "manages", "hasBusinessRequirement"},
+        {"operatesIn", "basedIn", "manages", "hasBusinessRequirement"},
     ),
     (
         Threat,
-        {"threatPartOf", "initiates", "startsWith"},
+        {"initiates", "startsWith"},
     ),
 ])
 def test_missing_mandatory_relations_across_domains(
@@ -465,7 +458,7 @@ def test_missing_relations_and_isolation():
     model.add(Node(name="N1"))
     report = model.validate()
     assert not report.is_valid
-    assert len(report.errors) == 5
+    assert len(report.errors) == 3
     assert {
         error.message.split(":", 1)[0]
         for error in report.errors
@@ -473,8 +466,6 @@ def test_missing_relations_and_isolation():
         "madeBy",
         "hasNodeType",
         "hostsResource",
-        "exposesPort",
-        "runsOS",
     }
     assert all(
         error.validator == "cardinalityValidator"
@@ -513,12 +504,10 @@ def test_empty_model_is_valid():
 
 def test_disconnected_subgraphs_are_valid():
     model = Model()
-    actor1 = model.add(ThreatActor(name="Actor 1"))
-    expertise1 = model.add(Expertise(name="Expertise 1"))
-    actor2 = model.add(ThreatActor(name="Actor 2"))
-    expertise2 = model.add(Expertise(name="Expertise 2"))
-    model.add(hasExpertise(actor1, expertise1))
-    model.add(hasExpertise(actor2, expertise2))
+    for i in (1, 2):
+        vulnerability = model.add(SoftwareVulnerability(name=f"CVE {i}"))
+        application = model.add(Application(name=f"Application {i}"))
+        model.add(affectsApplication(vulnerability, application))
     report = model.validate()
     assert report.is_valid
     assert report.errors == []

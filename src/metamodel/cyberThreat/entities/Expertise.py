@@ -8,6 +8,7 @@ class Expertise(BaseEntity):
     """Represents the Expertise entity from the metamodel."""
 
     _domain_attributes = ('level', 'domain')
+    knowledge_class = 'posteriori'
 
     def __init__(
         self,

@@ -1,14 +1,15 @@
 from __future__ import annotations
 
 from metamodel.core.BaseRelationship import BaseRelationship
+from metamodel.infrastructure.entities.Account import Account
 from metamodel.infrastructure.entities.User import User
-from metamodel.infrastructure.entities.Code import Code
 
 
-class launches(BaseRelationship):
-    """Connects User to Code."""
+class hasAccount(BaseRelationship):
+    """User --hasAccount--> Account."""
 
+    label = 'hasAccount'
     source_type = User
-    target_type = Code
+    target_type = Account
     source_cardinality = '1'
     target_cardinality = '0..*'

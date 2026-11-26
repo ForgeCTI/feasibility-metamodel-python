@@ -1,19 +1,19 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="2086" height="1236" viewBox="0 0 2086 1236">
-  <rect x="0" y="0" width="2086" height="1236" fill="#FFFFFF" stroke="none" rx="0" stroke-width="1" />
+<svg xmlns="http://www.w3.org/2000/svg" width="2086" height="1381" viewBox="0 0 2086 1381">
+  <rect x="0" y="0" width="2086" height="1381" fill="#FFFFFF" stroke="none" rx="0" stroke-width="1" />
   <text x="32" y="48" font-family="Arial" font-size="30" font-weight="700" fill="#172B40" text-anchor="start">CTI Feasibility Metamodel | Entity Structure</text>
-  <text x="32" y="77" font-family="Arial" font-size="17" font-weight="400" fill="#536477" text-anchor="start">39 domain entities  /  102 domain attribute declarations  /  3 submodels</text>
+  <text x="32" y="77" font-family="Arial" font-size="17" font-weight="400" fill="#536477" text-anchor="start">43 domain entities  /  111 domain attribute declarations  /  3 submodels</text>
   <text x="32" y="108" font-family="Arial" font-size="15" font-weight="400" fill="#536477" text-anchor="start">All domain entities inherit directly or indirectly from BaseEntity (id, type, name, description, source). Common attributes are omitted.</text>
   <text x="32" y="131" font-family="Arial" font-size="15" font-weight="400" fill="#536477" text-anchor="start">Types follow Python property annotations; optionality, methods and visibility are omitted. Only domain inheritance is shown in this view.</text>
   <rect x="32" y="166" width="1142" height="333" fill="#FFFFFF" stroke="#285E96" rx="8" stroke-width="1.3" />
   <text x="50" y="197" font-family="Arial" font-size="23" font-weight="700" fill="#285E96" text-anchor="start">Organization</text>
   <text x="1156" y="197" font-family="Arial" font-size="15" font-weight="400" fill="#285E96" text-anchor="end">8 entities   /   15 attributes</text>
-  <rect x="32" y="519" width="1142" height="625" fill="#FFFFFF" stroke="#397B54" rx="8" stroke-width="1.3" />
+  <rect x="32" y="519" width="1142" height="792" fill="#FFFFFF" stroke="#397B54" rx="8" stroke-width="1.3" />
   <text x="50" y="550" font-family="Arial" font-size="23" font-weight="700" fill="#397B54" text-anchor="start">Infrastructure</text>
-  <text x="1156" y="550" font-family="Arial" font-size="15" font-weight="400" fill="#397B54" text-anchor="end">15 entities   /   38 attributes</text>
-  <rect x="1192" y="166" width="862" height="1000" fill="#FFFFFF" stroke="#A45B20" rx="8" stroke-width="1.3" />
+  <text x="1156" y="550" font-family="Arial" font-size="15" font-weight="400" fill="#397B54" text-anchor="end">19 entities   /   46 attributes</text>
+  <rect x="1192" y="166" width="862" height="1021" fill="#FFFFFF" stroke="#A45B20" rx="8" stroke-width="1.3" />
   <text x="1210" y="197" font-family="Arial" font-size="23" font-weight="700" fill="#A45B20" text-anchor="start">CyberThreat</text>
-  <text x="2036" y="197" font-family="Arial" font-size="15" font-weight="400" fill="#A45B20" text-anchor="end">16 entities   /   49 attributes</text>
+  <text x="2036" y="197" font-family="Arial" font-size="15" font-weight="400" fill="#A45B20" text-anchor="end">16 entities   /   50 attributes</text>
   <rect x="50" y="224" width="266" height="174" fill="#F4F8FD" stroke="#285E96" rx="0" stroke-width="1.1" />
   <rect x="50" y="224" width="266" height="34" fill="#DCEBFA" stroke="#285E96" rx="0" stroke-width="1.1" />
   <text x="183.0" y="246" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">Organization</text>
@@ -76,12 +76,13 @@
   <text x="902" y="652" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">protocol : str</text>
   <text x="902" y="673" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">service_name : str</text>
   <text x="902" y="694" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">state : str</text>
-  <rect x="50" y="723" width="266" height="111" fill="#F4FAF6" stroke="#397B54" rx="0" stroke-width="1.1" />
+  <rect x="50" y="723" width="266" height="132" fill="#F4FAF6" stroke="#397B54" rx="0" stroke-width="1.1" />
   <rect x="50" y="723" width="266" height="34" fill="#DDEFE3" stroke="#397B54" rx="0" stroke-width="1.1" />
   <text x="183.0" y="745" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">Connection</text>
   <text x="62" y="777" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">protocol : str</text>
   <text x="62" y="798" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">encrypted : bool</text>
   <text x="62" y="819" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">allowed : bool</text>
+  <text x="62" y="840" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">scope : str</text>
   <rect x="330" y="723" width="266" height="34" fill="#F4FAF6" stroke="#397B54" rx="0" stroke-width="1.1" />
   <rect x="330" y="723" width="266" height="34" fill="#DDEFE3" stroke="#397B54" rx="0" stroke-width="1.1" />
   <text x="463.0" y="745" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">Resource</text>
@@ -93,49 +94,68 @@
   <text x="622" y="819" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">repository_url : str</text>
   <rect x="890" y="723" width="266" height="69" fill="#F4FAF6" stroke="#397B54" rx="0" stroke-width="1.1" />
   <rect x="890" y="723" width="266" height="34" fill="#DDEFE3" stroke="#397B54" rx="0" stroke-width="1.1" />
-  <text x="1023.0" y="745" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">Information</text>
+  <text x="1023.0" y="745" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">Data</text>
   <text x="902" y="777" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">format : str</text>
-  <rect x="50" y="848" width="266" height="69" fill="#F4FAF6" stroke="#397B54" rx="0" stroke-width="1.1" />
-  <rect x="50" y="848" width="266" height="34" fill="#DDEFE3" stroke="#397B54" rx="0" stroke-width="1.1" />
-  <text x="183.0" y="870" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">InformationType</text>
-  <text x="62" y="902" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">category : str</text>
-  <rect x="330" y="848" width="266" height="132" fill="#F4FAF6" stroke="#397B54" rx="0" stroke-width="1.1" />
-  <rect x="330" y="848" width="266" height="34" fill="#DDEFE3" stroke="#397B54" rx="0" stroke-width="1.1" />
-  <text x="463.0" y="870" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">User</text>
-  <text x="342" y="902" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">username : str</text>
-  <text x="342" y="923" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">email : str</text>
-  <text x="342" y="944" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">role : str</text>
-  <text x="342" y="965" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">mfa_enabled : bool</text>
-  <rect x="610" y="848" width="266" height="69" fill="#F4FAF6" stroke="#397B54" rx="0" stroke-width="1.1" />
-  <rect x="610" y="848" width="266" height="34" fill="#DDEFE3" stroke="#397B54" rx="0" stroke-width="1.1" />
-  <text x="743.0" y="870" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">UserType</text>
-  <text x="622" y="902" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">privilege_level : str</text>
-  <rect x="890" y="848" width="266" height="132" fill="#F4FAF6" stroke="#397B54" rx="0" stroke-width="1.1" />
-  <rect x="890" y="848" width="266" height="34" fill="#DDEFE3" stroke="#397B54" rx="0" stroke-width="1.1" />
-  <text x="1023.0" y="870" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">Application</text>
-  <text x="902" y="902" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">vendor : str</text>
-  <text x="902" y="923" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">product : str</text>
-  <text x="902" y="944" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">version : str</text>
-  <text x="902" y="965" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">cpe : str</text>
-  <rect x="50" y="994" width="266" height="90" fill="#F4FAF6" stroke="#397B54" rx="0" stroke-width="1.1" />
-  <rect x="50" y="994" width="266" height="34" fill="#DDEFE3" stroke="#397B54" rx="0" stroke-width="1.1" />
-  <text x="183.0" y="1016" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">ApplicationInstance</text>
-  <text x="62" y="1048" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">version : str</text>
-  <text x="62" y="1069" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">runtime_state : str</text>
-  <rect x="330" y="994" width="266" height="132" fill="#F4FAF6" stroke="#397B54" rx="0" stroke-width="1.1" />
-  <rect x="330" y="994" width="266" height="34" fill="#DDEFE3" stroke="#397B54" rx="0" stroke-width="1.1" />
-  <text x="463.0" y="1016" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">OS</text>
-  <text x="342" y="1048" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">vendor : str</text>
-  <text x="342" y="1069" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">product : str</text>
-  <text x="342" y="1090" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">version : str</text>
-  <text x="342" y="1111" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">cpe : str</text>
-  <rect x="610" y="994" width="266" height="132" fill="#F4FAF6" stroke="#397B54" rx="0" stroke-width="1.1" />
-  <rect x="610" y="994" width="266" height="34" fill="#DDEFE3" stroke="#397B54" rx="0" stroke-width="1.1" />
-  <text x="743.0" y="1016" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">OSInstance</text>
-  <text x="622" y="1048" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">version : str</text>
-  <text x="622" y="1069" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">build : str</text>
-  <text x="622" y="1090" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">patch_level : str</text>
-  <text x="622" y="1111" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">support_status : str</text>
+  <rect x="50" y="869" width="266" height="69" fill="#F4FAF6" stroke="#397B54" rx="0" stroke-width="1.1" />
+  <rect x="50" y="869" width="266" height="34" fill="#DDEFE3" stroke="#397B54" rx="0" stroke-width="1.1" />
+  <text x="183.0" y="891" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">DataType</text>
+  <text x="62" y="923" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">category : str</text>
+  <rect x="330" y="869" width="266" height="132" fill="#F4FAF6" stroke="#397B54" rx="0" stroke-width="1.1" />
+  <rect x="330" y="869" width="266" height="34" fill="#DDEFE3" stroke="#397B54" rx="0" stroke-width="1.1" />
+  <text x="463.0" y="891" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">User</text>
+  <text x="342" y="923" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">username : str</text>
+  <text x="342" y="944" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">email : str</text>
+  <text x="342" y="965" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">role : str</text>
+  <text x="342" y="986" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">mfa_enabled : bool</text>
+  <rect x="610" y="869" width="266" height="69" fill="#F4FAF6" stroke="#397B54" rx="0" stroke-width="1.1" />
+  <rect x="610" y="869" width="266" height="34" fill="#DDEFE3" stroke="#397B54" rx="0" stroke-width="1.1" />
+  <text x="743.0" y="891" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">UserType</text>
+  <text x="622" y="923" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">privilege_level : str</text>
+  <rect x="890" y="869" width="266" height="111" fill="#F4FAF6" stroke="#397B54" rx="0" stroke-width="1.1" />
+  <rect x="890" y="869" width="266" height="34" fill="#DDEFE3" stroke="#397B54" rx="0" stroke-width="1.1" />
+  <text x="1023.0" y="891" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">Account</text>
+  <text x="902" y="923" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">kind : str</text>
+  <text x="902" y="944" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">username : str</text>
+  <text x="902" y="965" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">enabled : bool</text>
+  <rect x="50" y="1015" width="266" height="69" fill="#F4FAF6" stroke="#397B54" rx="0" stroke-width="1.1" />
+  <rect x="50" y="1015" width="266" height="34" fill="#DDEFE3" stroke="#397B54" rx="0" stroke-width="1.1" />
+  <text x="183.0" y="1037" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">PrivilegeLevel</text>
+  <text x="62" y="1069" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">rank : int</text>
+  <rect x="330" y="1015" width="266" height="132" fill="#F4FAF6" stroke="#397B54" rx="0" stroke-width="1.1" />
+  <rect x="330" y="1015" width="266" height="34" fill="#DDEFE3" stroke="#397B54" rx="0" stroke-width="1.1" />
+  <text x="463.0" y="1037" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">Application</text>
+  <text x="342" y="1069" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">vendor : str</text>
+  <text x="342" y="1090" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">product : str</text>
+  <text x="342" y="1111" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">version : str</text>
+  <text x="342" y="1132" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">cpe : str</text>
+  <rect x="610" y="1015" width="266" height="90" fill="#F4FAF6" stroke="#397B54" rx="0" stroke-width="1.1" />
+  <rect x="610" y="1015" width="266" height="34" fill="#DDEFE3" stroke="#397B54" rx="0" stroke-width="1.1" />
+  <text x="743.0" y="1037" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">ApplicationInstance</text>
+  <text x="622" y="1069" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">runtime_state : str</text>
+  <text x="622" y="1090" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">role : str</text>
+  <rect x="890" y="1015" width="266" height="153" fill="#F4FAF6" stroke="#397B54" rx="0" stroke-width="1.1" />
+  <rect x="890" y="1015" width="266" height="34" fill="#DDEFE3" stroke="#397B54" rx="0" stroke-width="1.1" />
+  <text x="1023.0" y="1037" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">OS</text>
+  <text x="902" y="1069" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">vendor : str</text>
+  <text x="902" y="1090" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">product : str</text>
+  <text x="902" y="1111" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">version : str</text>
+  <text x="902" y="1132" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">cpe : str</text>
+  <text x="902" y="1153" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">family : str</text>
+  <rect x="50" y="1182" width="266" height="111" fill="#F4FAF6" stroke="#397B54" rx="0" stroke-width="1.1" />
+  <rect x="50" y="1182" width="266" height="34" fill="#DDEFE3" stroke="#397B54" rx="0" stroke-width="1.1" />
+  <text x="183.0" y="1204" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">OSInstance</text>
+  <text x="62" y="1236" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">build : str</text>
+  <text x="62" y="1257" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">patch_level : str</text>
+  <text x="62" y="1278" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">support_status : str</text>
+  <rect x="330" y="1182" width="266" height="69" fill="#F4FAF6" stroke="#397B54" rx="0" stroke-width="1.1" />
+  <rect x="330" y="1182" width="266" height="34" fill="#DDEFE3" stroke="#397B54" rx="0" stroke-width="1.1" />
+  <text x="463.0" y="1204" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">SecurityControl</text>
+  <text x="342" y="1236" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">status : str</text>
+  <rect x="610" y="1182" width="266" height="90" fill="#F4FAF6" stroke="#397B54" rx="0" stroke-width="1.1" />
+  <rect x="610" y="1182" width="266" height="34" fill="#DDEFE3" stroke="#397B54" rx="0" stroke-width="1.1" />
+  <text x="743.0" y="1204" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">SecurityControlType</text>
+  <text x="622" y="1236" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">external_id : str</text>
+  <text x="622" y="1257" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">catalogue : str</text>
   <rect x="1210" y="224" width="266" height="132" fill="#FFF9F2" stroke="#A45B20" rx="0" stroke-width="1.1" />
   <rect x="1210" y="224" width="266" height="34" fill="#FCE7D2" stroke="#A45B20" rx="0" stroke-width="1.1" />
   <text x="1343.0" y="246" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">ThreatActor</text>
@@ -163,81 +183,92 @@
   <text x="1502" y="424" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">objective : str</text>
   <text x="1502" y="445" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">first_seen : str</text>
   <text x="1502" y="466" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">last_seen : str</text>
-  <rect x="1770" y="370" width="266" height="132" fill="#FFF9F2" stroke="#A45B20" rx="0" stroke-width="1.1" />
+  <rect x="1770" y="370" width="266" height="153" fill="#FFF9F2" stroke="#A45B20" rx="0" stroke-width="1.1" />
   <rect x="1770" y="370" width="266" height="34" fill="#FCE7D2" stroke="#A45B20" rx="0" stroke-width="1.1" />
   <text x="1903.0" y="392" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">ThreatStep</text>
   <text x="1782" y="424" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">phase : str</text>
   <text x="1782" y="445" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">objective : str</text>
   <text x="1782" y="466" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">preconditions : list[str]</text>
   <text x="1782" y="487" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">postconditions : list[str]</text>
-  <rect x="1210" y="516" width="266" height="132" fill="#FFF9F2" stroke="#A45B20" rx="0" stroke-width="1.1" />
-  <rect x="1210" y="516" width="266" height="34" fill="#FCE7D2" stroke="#A45B20" rx="0" stroke-width="1.1" />
-  <text x="1343.0" y="538" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">Campaign</text>
-  <text x="1222" y="570" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">first_seen : str</text>
-  <text x="1222" y="591" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">last_seen : str</text>
-  <text x="1222" y="612" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">status : str</text>
-  <text x="1222" y="633" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">objective : str</text>
-  <rect x="1490" y="516" width="266" height="132" fill="#FFF9F2" stroke="#A45B20" rx="0" stroke-width="1.1" />
-  <rect x="1490" y="516" width="266" height="34" fill="#FCE7D2" stroke="#A45B20" rx="0" stroke-width="1.1" />
-  <text x="1623.0" y="538" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">TTP</text>
-  <text x="1502" y="570" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">external_id : str</text>
-  <text x="1502" y="591" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">tactic : str</text>
-  <text x="1502" y="612" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">technique : str</text>
-  <text x="1502" y="633" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">subtechnique : str</text>
-  <rect x="1770" y="516" width="266" height="153" fill="#FFF9F2" stroke="#A45B20" rx="0" stroke-width="1.1" />
-  <rect x="1770" y="516" width="266" height="34" fill="#FCE7D2" stroke="#A45B20" rx="0" stroke-width="1.1" />
-  <text x="1903.0" y="538" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">Indicator</text>
-  <text x="1782" y="570" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">indicator_type : str</text>
-  <text x="1782" y="591" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">value : str</text>
-  <text x="1782" y="612" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">pattern : str</text>
-  <text x="1782" y="633" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">valid_from : str</text>
-  <text x="1782" y="654" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">valid_until : str</text>
-  <rect x="1490" y="861" width="266" height="111" fill="#FFF9F2" stroke="#A45B20" rx="0" stroke-width="1.1" />
-  <rect x="1490" y="861" width="266" height="34" fill="#FCE7D2" stroke="#A45B20" rx="0" stroke-width="1.1" />
-  <text x="1623.0" y="883" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">Vulnerability</text>
-  <text x="1502" y="915" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">external_id : str</text>
-  <text x="1502" y="936" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">severity : str</text>
-  <text x="1502" y="957" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">cvss_score : float</text>
-  <rect x="1210" y="1037" width="266" height="111" fill="#FFF9F2" stroke="#A45B20" rx="0" stroke-width="1.1" />
-  <rect x="1210" y="1037" width="266" height="34" fill="#FCE7D2" stroke="#A45B20" rx="0" stroke-width="1.1" />
-  <text x="1343.0" y="1059" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">SoftwareVulnerability</text>
-  <text x="1222" y="1091" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">cve_id : str</text>
-  <text x="1222" y="1112" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">cwe_id : str</text>
-  <text x="1222" y="1133" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">affected_versions : list[str]</text>
-  <rect x="1490" y="1037" width="266" height="90" fill="#FFF9F2" stroke="#A45B20" rx="0" stroke-width="1.1" />
-  <rect x="1490" y="1037" width="266" height="34" fill="#FCE7D2" stroke="#A45B20" rx="0" stroke-width="1.1" />
-  <text x="1623.0" y="1059" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">ConfigVulnerability</text>
-  <text x="1502" y="1091" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">misconfiguration_type : str</text>
-  <text x="1502" y="1112" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">detectability : str</text>
-  <rect x="1770" y="1037" width="266" height="69" fill="#FFF9F2" stroke="#A45B20" rx="0" stroke-width="1.1" />
-  <rect x="1770" y="1037" width="266" height="34" fill="#FCE7D2" stroke="#A45B20" rx="0" stroke-width="1.1" />
-  <text x="1903.0" y="1059" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">HumanVulnerability</text>
-  <text x="1782" y="1091" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">vulnerability_type : str</text>
-  <rect x="1210" y="683" width="266" height="111" fill="#FFF9F2" stroke="#A45B20" rx="0" stroke-width="1.1" />
-  <rect x="1210" y="683" width="266" height="34" fill="#FCE7D2" stroke="#A45B20" rx="0" stroke-width="1.1" />
-  <text x="1343.0" y="705" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">AttackTool</text>
-  <text x="1222" y="737" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">aliases : list[str]</text>
-  <text x="1222" y="758" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">tool_type : str</text>
-  <text x="1222" y="779" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">capabilities : list[str]</text>
-  <rect x="1490" y="683" width="266" height="132" fill="#FFF9F2" stroke="#A45B20" rx="0" stroke-width="1.1" />
-  <rect x="1490" y="683" width="266" height="34" fill="#FCE7D2" stroke="#A45B20" rx="0" stroke-width="1.1" />
-  <text x="1623.0" y="705" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">AttackToolInstance</text>
-  <text x="1502" y="737" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">observed_version : str</text>
-  <text x="1502" y="758" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">hashes : list[str]</text>
-  <text x="1502" y="779" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">first_seen : str</text>
-  <text x="1502" y="800" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">last_seen : str</text>
-  <rect x="1770" y="683" width="266" height="132" fill="#FFF9F2" stroke="#A45B20" rx="0" stroke-width="1.1" />
-  <rect x="1770" y="683" width="266" height="34" fill="#FCE7D2" stroke="#A45B20" rx="0" stroke-width="1.1" />
-  <text x="1903.0" y="705" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">AttackToolConfiguration</text>
-  <text x="1782" y="737" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">configuration_type : str</text>
-  <text x="1782" y="758" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">parameters : dict</text>
-  <text x="1782" y="779" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">persistence_enabled : bool</text>
-  <text x="1782" y="800" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">stealth_level : str</text>
-  <path d="M 1343.0 1037 V 1009 H 1623.0 V 986" stroke="#172B40" stroke-width="1.45" fill="none" />
-  <path d="M 1615.0 986 L 1623.0 972 L 1631.0 986 Z" stroke="#172B40" stroke-width="1.45" fill="#FFFFFF" />
-  <path d="M 1623.0 1037 V 1009 H 1623.0 V 986" stroke="#172B40" stroke-width="1.45" fill="none" />
-  <path d="M 1615.0 986 L 1623.0 972 L 1631.0 986 Z" stroke="#172B40" stroke-width="1.45" fill="#FFFFFF" />
-  <path d="M 1903.0 1037 V 1009 H 1623.0 V 986" stroke="#172B40" stroke-width="1.45" fill="none" />
-  <path d="M 1615.0 986 L 1623.0 972 L 1631.0 986 Z" stroke="#172B40" stroke-width="1.45" fill="#FFFFFF" />
-  <text x="32" y="1211" font-family="Arial" font-size="14" font-weight="400" fill="#536477" text-anchor="start">Domain attribute declarations are counted once, at their defining class. Associations and multiplicities are reserved for the complete view.</text>
+  <text x="1782" y="508" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">join : str</text>
+  <rect x="1210" y="537" width="266" height="132" fill="#FFF9F2" stroke="#A45B20" rx="0" stroke-width="1.1" />
+  <rect x="1210" y="537" width="266" height="34" fill="#FCE7D2" stroke="#A45B20" rx="0" stroke-width="1.1" />
+  <text x="1343.0" y="559" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">Campaign</text>
+  <text x="1222" y="591" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">first_seen : str</text>
+  <text x="1222" y="612" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">last_seen : str</text>
+  <text x="1222" y="633" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">status : str</text>
+  <text x="1222" y="654" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">objective : str</text>
+  <rect x="1490" y="537" width="266" height="132" fill="#FFF9F2" stroke="#A45B20" rx="0" stroke-width="1.1" />
+  <rect x="1490" y="537" width="266" height="34" fill="#FCE7D2" stroke="#A45B20" rx="0" stroke-width="1.1" />
+  <text x="1623.0" y="559" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">TTP</text>
+  <text x="1502" y="591" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">external_id : str</text>
+  <text x="1502" y="612" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">tactic : str</text>
+  <text x="1502" y="633" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">technique : str</text>
+  <text x="1502" y="654" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">subtechnique : str</text>
+  <rect x="1770" y="537" width="266" height="153" fill="#FFF9F2" stroke="#A45B20" rx="0" stroke-width="1.1" />
+  <rect x="1770" y="537" width="266" height="34" fill="#FCE7D2" stroke="#A45B20" rx="0" stroke-width="1.1" />
+  <text x="1903.0" y="559" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">Indicator</text>
+  <text x="1782" y="591" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">indicator_type : str</text>
+  <text x="1782" y="612" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">value : str</text>
+  <text x="1782" y="633" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">pattern : str</text>
+  <text x="1782" y="654" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">valid_from : str</text>
+  <text x="1782" y="675" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">valid_until : str</text>
+  <rect x="1490" y="882" width="266" height="111" fill="#FFF9F2" stroke="#A45B20" rx="0" stroke-width="1.1" />
+  <rect x="1490" y="882" width="266" height="34" fill="#FCE7D2" stroke="#A45B20" rx="0" stroke-width="1.1" />
+  <text x="1623.0" y="904" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">Vulnerability</text>
+  <text x="1502" y="936" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">external_id : str</text>
+  <text x="1502" y="957" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">severity : str</text>
+  <text x="1502" y="978" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">cvss_score : float</text>
+  <rect x="1210" y="1058" width="266" height="111" fill="#FFF9F2" stroke="#A45B20" rx="0" stroke-width="1.1" />
+  <rect x="1210" y="1058" width="266" height="34" fill="#FCE7D2" stroke="#A45B20" rx="0" stroke-width="1.1" />
+  <text x="1343.0" y="1080" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">SoftwareVulnerability</text>
+  <text x="1222" y="1112" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">cve_id : str</text>
+  <text x="1222" y="1133" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">cwe_id : str</text>
+  <text x="1222" y="1154" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">affected_versions : list[str]</text>
+  <rect x="1490" y="1058" width="266" height="90" fill="#FFF9F2" stroke="#A45B20" rx="0" stroke-width="1.1" />
+  <rect x="1490" y="1058" width="266" height="34" fill="#FCE7D2" stroke="#A45B20" rx="0" stroke-width="1.1" />
+  <text x="1623.0" y="1080" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">ConfigVulnerability</text>
+  <text x="1502" y="1112" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">misconfiguration_type : str</text>
+  <text x="1502" y="1133" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">detectability : str</text>
+  <rect x="1770" y="1058" width="266" height="69" fill="#FFF9F2" stroke="#A45B20" rx="0" stroke-width="1.1" />
+  <rect x="1770" y="1058" width="266" height="34" fill="#FCE7D2" stroke="#A45B20" rx="0" stroke-width="1.1" />
+  <text x="1903.0" y="1080" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">HumanVulnerability</text>
+  <text x="1782" y="1112" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">vulnerability_type : str</text>
+  <rect x="1210" y="704" width="266" height="111" fill="#FFF9F2" stroke="#A45B20" rx="0" stroke-width="1.1" />
+  <rect x="1210" y="704" width="266" height="34" fill="#FCE7D2" stroke="#A45B20" rx="0" stroke-width="1.1" />
+  <text x="1343.0" y="726" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">AttackTool</text>
+  <text x="1222" y="758" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">aliases : list[str]</text>
+  <text x="1222" y="779" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">tool_type : str</text>
+  <text x="1222" y="800" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">capabilities : list[str]</text>
+  <rect x="1490" y="704" width="266" height="132" fill="#FFF9F2" stroke="#A45B20" rx="0" stroke-width="1.1" />
+  <rect x="1490" y="704" width="266" height="34" fill="#FCE7D2" stroke="#A45B20" rx="0" stroke-width="1.1" />
+  <text x="1623.0" y="726" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">AttackToolInstance</text>
+  <text x="1502" y="758" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">observed_version : str</text>
+  <text x="1502" y="779" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">hashes : list[str]</text>
+  <text x="1502" y="800" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">first_seen : str</text>
+  <text x="1502" y="821" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">last_seen : str</text>
+  <rect x="1770" y="704" width="266" height="132" fill="#FFF9F2" stroke="#A45B20" rx="0" stroke-width="1.1" />
+  <rect x="1770" y="704" width="266" height="34" fill="#FCE7D2" stroke="#A45B20" rx="0" stroke-width="1.1" />
+  <text x="1903.0" y="726" font-family="Arial" font-size="15" font-weight="700" fill="#172B40" text-anchor="middle">AttackToolConfiguration</text>
+  <text x="1782" y="758" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">configuration_type : str</text>
+  <text x="1782" y="779" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">parameters : dict</text>
+  <text x="1782" y="800" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">persistence_enabled : bool</text>
+  <text x="1782" y="821" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">stealth_level : str</text>
+  <path d="M 743.0 412 V 794 H 463.0 V 771" stroke="#172B40" stroke-width="1.45" fill="none" />
+  <path d="M 455.0 771 L 463.0 757 L 471.0 771 Z" stroke="#172B40" stroke-width="1.45" fill="#FFFFFF" />
+  <path d="M 743.0 723 V 794 H 463.0 V 771" stroke="#172B40" stroke-width="1.45" fill="none" />
+  <path d="M 455.0 771 L 463.0 757 L 471.0 771 Z" stroke="#172B40" stroke-width="1.45" fill="#FFFFFF" />
+  <path d="M 1023.0 723 V 794 H 463.0 V 771" stroke="#172B40" stroke-width="1.45" fill="none" />
+  <path d="M 455.0 771 L 463.0 757 L 471.0 771 Z" stroke="#172B40" stroke-width="1.45" fill="#FFFFFF" />
+  <path d="M 743.0 1015 V 871 H 743.0 V 848" stroke="#172B40" stroke-width="1.45" fill="none" />
+  <path d="M 735.0 848 L 743.0 834 L 751.0 848 Z" stroke="#172B40" stroke-width="1.45" fill="#FFFFFF" />
+  <path d="M 183.0 1182 V 871 H 743.0 V 848" stroke="#172B40" stroke-width="1.45" fill="none" />
+  <path d="M 735.0 848 L 743.0 834 L 751.0 848 Z" stroke="#172B40" stroke-width="1.45" fill="#FFFFFF" />
+  <path d="M 1343.0 1058 V 1030 H 1623.0 V 1007" stroke="#172B40" stroke-width="1.45" fill="none" />
+  <path d="M 1615.0 1007 L 1623.0 993 L 1631.0 1007 Z" stroke="#172B40" stroke-width="1.45" fill="#FFFFFF" />
+  <path d="M 1623.0 1058 V 1030 H 1623.0 V 1007" stroke="#172B40" stroke-width="1.45" fill="none" />
+  <path d="M 1615.0 1007 L 1623.0 993 L 1631.0 1007 Z" stroke="#172B40" stroke-width="1.45" fill="#FFFFFF" />
+  <path d="M 1903.0 1058 V 1030 H 1623.0 V 1007" stroke="#172B40" stroke-width="1.45" fill="none" />
+  <path d="M 1615.0 1007 L 1623.0 993 L 1631.0 1007 Z" stroke="#172B40" stroke-width="1.45" fill="#FFFFFF" />
+  <text x="32" y="1356" font-family="Arial" font-size="14" font-weight="400" fill="#536477" text-anchor="start">Domain attribute declarations are counted once, at their defining class. Associations and multiplicities are reserved for the complete view.</text>
 </svg>

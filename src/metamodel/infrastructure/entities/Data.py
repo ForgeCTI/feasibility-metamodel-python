@@ -1,13 +1,16 @@
 from __future__ import annotations
 
-from metamodel.core.BaseEntity import BaseEntity
-from metamodel.core.ValidationUtils import require_optional_str
+from metamodel.infrastructure.entities.Resource import Resource
+from metamodel.core.ValidationUtils import (
+    require_optional_str,
+)
 
 
-class Information(BaseEntity):
-    """Represents the Information entity from the metamodel."""
+class Data(Resource):
+    """Digital content stored, processed, or transmitted within the infrastructure (formerly Information)."""
 
-    _domain_attributes = ('format',)
+    _domain_attributes = Resource._domain_attributes + ('format',)
+    knowledge_class = 'system'
 
     def __init__(
         self,
@@ -19,6 +22,7 @@ class Information(BaseEntity):
         super().__init__(name=name, description=description, source=source)
         self._format: str | None
         self.format = format
+
 
     @property
     def format(self) -> str | None:

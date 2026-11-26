@@ -8,6 +8,7 @@ class UserType(BaseEntity):
     """Represents the UserType entity from the metamodel."""
 
     _domain_attributes = ('privilege_level',)
+    knowledge_class = 'concept'
 
     def __init__(
         self,

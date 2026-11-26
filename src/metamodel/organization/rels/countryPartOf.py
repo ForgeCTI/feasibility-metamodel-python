@@ -6,9 +6,10 @@ from metamodel.organization.entities.InternationalBody import InternationalBody
 
 
 class countryPartOf(BaseRelationship):
-    """Connects HomeCountry to InternationalBody."""
+    """HomeCountry --partOf--> InternationalBody."""
 
+    label = 'partOf'
     source_type = HomeCountry
     target_type = InternationalBody
     source_cardinality = '1..*'
-    target_cardinality = '1..*'
+    target_cardinality = '0..*'

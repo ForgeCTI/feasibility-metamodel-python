@@ -9,8 +9,7 @@
     {
       "id": "sector-finance",
       "type": "Sector",
-      "name": "Finance",
-      "taxonomy_ref": "sectors:finance"
+      "name": "Finance"
     }
   ],
   "relationships": [

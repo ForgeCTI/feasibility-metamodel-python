@@ -10,8 +10,6 @@ from metamodel.organization.rels.operatesIn import operatesIn
 from metamodel.organization.rels.hasSecurityRequirement import hasSecurityRequirement
 from metamodel.organization.rels.implementsRequirement import implementsRequirement
 from metamodel.infrastructure.entities.Node import Node
-from metamodel.infrastructure.entities.Resource import Resource
-from metamodel.infrastructure.rels.resourceImplementsAsset import resourceImplementsAsset
 from metamodel.cyberThreat.entities.Threat import Threat
 from metamodel.cyberThreat.entities.ThreatStep import ThreatStep
 from metamodel.cyberThreat.entities.TTP import TTP
@@ -25,25 +23,23 @@ def main() -> None:
     model = Model()
 
     organization = model.add(Organization(name="ExampleBank", criticality="critical"))
-    sector = model.add(Sector(name="Finance", taxonomy_ref="sectors:finance"))
-    asset = model.add(Asset(name="Online banking service", criticality="critical"))
+    sector = model.add(Sector(name="Finance"))
+    asset = model.add(Asset(name="Online banking service"))
     security_requirement = model.add(SecurityRequirement(name="Availability", requirement_type="availability"))
-    asset_requirement = model.add(AssetSecurityRequirement(name="Online banking availability", priority="high"))
+    asset_requirement = model.add(AssetSecurityRequirement(name="Online banking availability"))
 
-    node = model.add(Node(name="web-server-01", ip_addresses=["10.0.0.10"], exposure="internet_facing"))
-    resource = model.add(Resource(name="Online banking API", resource_type="api", criticality="critical"))
+    node = model.add(Node(name="web-server-01", ip_addresses=["10.0.0.10"]))
 
     threat = model.add(Threat(name="DDoS-enabled service disruption", objective="service_disruption"))
     step = model.add(ThreatStep(name="Flood public API", phase="impact"))
-    ttp = model.add(TTP(name="Network Denial of Service", taxonomy_ref="mitreAttackEnterprise:T1498"))
+    ttp = model.add(TTP(name="Network Denial of Service", external_id="T1498"))
 
     model.add(operatesIn(organization, sector))
     model.add(hasSecurityRequirement(asset, asset_requirement))
     model.add(implementsRequirement(asset_requirement, security_requirement))
-    model.add(resourceImplementsAsset(resource, asset))
     model.add(startsWith(threat, step))
     model.add(implementsTTP(step, ttp))
-    model.add(targetsResource(step, resource))
+    model.add(targetsResource(step, asset))  # an Asset is a Resource
     model.add(compromises(step, asset_requirement))
 
     report = model.validate()

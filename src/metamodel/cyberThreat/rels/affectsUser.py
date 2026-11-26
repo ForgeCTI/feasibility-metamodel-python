@@ -6,9 +6,10 @@ from metamodel.infrastructure.entities.User import User
 
 
 class affectsUser(BaseRelationship):
-    """Connects HumanVulnerability to User."""
+    """HumanVulnerability --affects--> User."""
 
+    label = 'affects'
     source_type = HumanVulnerability
     target_type = User
     source_cardinality = '0..*'
-    target_cardinality = '0..*'
+    target_cardinality = '1..*'

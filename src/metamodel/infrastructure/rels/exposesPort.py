@@ -6,9 +6,10 @@ from metamodel.infrastructure.entities.Port import Port
 
 
 class exposesPort(BaseRelationship):
-    """Connects Node to Port."""
+    """Node --exposesPort--> Port."""
 
+    label = 'exposesPort'
     source_type = Node
     target_type = Port
     source_cardinality = '1'
-    target_cardinality = '1..*'
+    target_cardinality = '0..*'

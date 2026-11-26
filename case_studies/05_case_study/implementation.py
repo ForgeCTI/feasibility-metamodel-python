@@ -20,10 +20,11 @@ from metamodel.organization.entities.InternationalBody import InternationalBody
 from metamodel.infrastructure.entities.Infrastructure import Infrastructure
 from metamodel.infrastructure.entities.Node import Node
 from metamodel.infrastructure.entities.User import User
+from metamodel.infrastructure.entities.Account import Account
 from metamodel.infrastructure.entities.Application import Application
 from metamodel.infrastructure.entities.ApplicationInstance import ApplicationInstance
 from metamodel.infrastructure.entities.Code import Code
-from metamodel.infrastructure.entities.Information import Information
+from metamodel.infrastructure.entities.Data import Data
 
 # CyberThreat entities
 from metamodel.cyberThreat.entities.ThreatActor import ThreatActor
@@ -44,17 +45,12 @@ from metamodel.infrastructure.rels.manages import manages
 from metamodel.infrastructure.rels.madeBy import madeBy
 from metamodel.infrastructure.rels.runs import runs
 from metamodel.infrastructure.rels.usedBy import usedBy
-from metamodel.infrastructure.rels.hasAccessTo import hasAccessTo
+from metamodel.infrastructure.rels.hasAccount import hasAccount
+from metamodel.infrastructure.rels.grantsAccessToNode import grantsAccessToNode
+from metamodel.infrastructure.rels.grantsAccessToResource import grantsAccessToResource
 from metamodel.infrastructure.rels.runsApp import runsApp
+from metamodel.infrastructure.rels.hostsResource import hostsResource
 from metamodel.infrastructure.rels.applicationInstanceOf import applicationInstanceOf
-from metamodel.infrastructure.rels.applicationImplementsCode import (
-    applicationImplementsCode,
-)
-from metamodel.infrastructure.rels.launches import launches
-from metamodel.infrastructure.rels.accessesInformation import accessesInformation
-from metamodel.infrastructure.rels.userAccessesInformation import (
-    userAccessesInformation,
-)
 
 # CyberThreat relationships
 from metamodel.cyberThreat.rels.aliasOf import aliasOf
@@ -69,7 +65,6 @@ from metamodel.cyberThreat.rels.exploits import exploits
 from metamodel.cyberThreat.rels.employsTool import employsTool
 from metamodel.cyberThreat.rels.deploysTool import deploysTool
 from metamodel.cyberThreat.rels.toolInstanceOf import toolInstanceOf
-from metamodel.cyberThreat.rels.deployedTo import deployedTo
 
 
 SYNTHETIC_SOURCE = "Synthetic case study data"
@@ -241,7 +236,7 @@ def build_model() -> Model:
     )
 
     research_results = model.add(
-        Information(
+        Data(
             name='Confidential Research Results',
             description=(
                 'Unpublished research results in PDF format, accessible to authorized '
@@ -438,13 +433,19 @@ def build_model() -> Model:
     model.add(madeBy(infrastructure, document_vm))
     model.add(runs(physical_hypervisor, document_vm))
     model.add(usedBy(infrastructure, researcher))
-    model.add(hasAccessTo(researcher, document_vm))
+    researcher_account = model.add(
+        Account(
+            name=f"{researcher.name} (account)",
+            kind="domain",
+            source="Synthetic case study data",
+        )
+    )
+    model.add(hasAccount(researcher, researcher_account))
+    model.add(grantsAccessToNode(researcher_account, document_vm))
     model.add(runsApp(document_vm, research_portal_instance))
     model.add(applicationInstanceOf(research_portal_instance, research_portal))
-    model.add(applicationImplementsCode(research_portal_instance, document_viewer))
-    model.add(launches(researcher, document_viewer))
-    model.add(accessesInformation(document_viewer, research_results))
-    model.add(userAccessesInformation(researcher, research_results))
+    model.add(hostsResource(document_vm, document_viewer))
+    model.add(grantsAccessToResource(researcher_account, research_results))
 
     # CyberThreat relationships
     model.add(aliasOf(threat_actor_alias, threat_actor))
@@ -461,8 +462,6 @@ def build_model() -> Model:
     model.add(deploysTool(loader_instance, collector_instance))
     model.add(toolInstanceOf(loader_instance, loader))
     model.add(toolInstanceOf(collector_instance, collector))
-    model.add(deployedTo(loader_instance, document_vm))
-    model.add(deployedTo(collector_instance, document_vm))
 
     return model
 

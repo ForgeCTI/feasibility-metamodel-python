@@ -16,6 +16,7 @@ class Node(BaseEntity):
         'mac_addresses',
         'fqdn',
     )
+    knowledge_class = 'system'
 
     def __init__(
         self,

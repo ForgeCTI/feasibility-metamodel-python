@@ -6,9 +6,10 @@ from metamodel.infrastructure.entities.User import User
 
 
 class usedBy(BaseRelationship):
-    """Connects Infrastructure to User."""
+    """Infrastructure --usedBy--> User."""
 
+    label = 'usedBy'
     source_type = Infrastructure
     target_type = User
-    source_cardinality = '1'
+    source_cardinality = '1..*'
     target_cardinality = '1..*'

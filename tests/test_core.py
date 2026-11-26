@@ -493,8 +493,8 @@ def test_registry_get_all_relationship_classes():
 
     classes = registry.get_relationship_classes()
 
-    assert len(classes) == 62
-    assert len(set(classes)) == 62
+    assert len(classes) == 65
+    assert len(set(classes)) == 65
     assert all(
         issubclass(cls, BaseRelationship)
         for cls in classes

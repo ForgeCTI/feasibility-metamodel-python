@@ -6,9 +6,10 @@ from metamodel.infrastructure.entities.Port import Port
 
 
 class hasDestinationPort(BaseRelationship):
-    """Connects Connection to Port."""
+    """Connection --hasDestinationPort--> Port."""
 
+    label = 'hasDestinationPort'
     source_type = Connection
     target_type = Port
-    source_cardinality = '1..*'
+    source_cardinality = '0..*'
     target_cardinality = '1'

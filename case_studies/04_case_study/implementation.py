@@ -58,10 +58,6 @@ from metamodel.infrastructure.rels.runsOS import runsOS
 from metamodel.infrastructure.rels.osInstanceOf import osInstanceOf
 from metamodel.infrastructure.rels.runsApp import runsApp
 from metamodel.infrastructure.rels.applicationInstanceOf import applicationInstanceOf
-from metamodel.infrastructure.rels.applicationImplementsCode import (
-    applicationImplementsCode,
-)
-from metamodel.infrastructure.rels.resourceImplementsAsset import resourceImplementsAsset
 
 # CyberThreat relationships
 from metamodel.cyberThreat.rels.initiates import initiates
@@ -76,8 +72,6 @@ from metamodel.cyberThreat.rels.affectsCode import affectsCode
 from metamodel.cyberThreat.rels.compromises import compromises
 from metamodel.cyberThreat.rels.targetsResource import targetsResource
 from metamodel.cyberThreat.rels.violates import violates
-from metamodel.cyberThreat.rels.designedFor import designedFor
-from metamodel.cyberThreat.rels.deployedTo import deployedTo
 from metamodel.cyberThreat.rels.employsTool import employsTool
 from metamodel.cyberThreat.rels.toolInstanceOf import toolInstanceOf
 from metamodel.cyberThreat.rels.hasConfig import hasConfig
@@ -466,8 +460,6 @@ def build_model() -> Model:
     model.add(osInstanceOf(server_os_instance, server_os))
     model.add(runsApp(application_server, order_portal_instance))
     model.add(applicationInstanceOf(order_portal_instance, order_portal))
-    model.add(applicationImplementsCode(order_portal_instance, maintenance_script))
-    model.add(resourceImplementsAsset(order_service, asset))
 
     # CyberThreat relationships
     model.add(initiates(threat_actor, threat))
@@ -489,8 +481,6 @@ def build_model() -> Model:
     model.add(targetsResource(maintenance_abuse_step, order_service))
     model.add(violates(portal_exploitation_ttp, security_requirement))
     model.add(violates(python_execution_ttp, security_requirement))
-    model.add(designedFor(attack_tool_instance, server_os_instance))
-    model.add(deployedTo(attack_tool_instance, application_server))
     model.add(employsTool(maintenance_abuse_step, attack_tool_instance))
     model.add(toolInstanceOf(attack_tool_instance, attack_tool))
     model.add(hasConfig(attack_tool_instance, attack_tool_configuration))

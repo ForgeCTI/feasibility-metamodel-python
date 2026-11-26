@@ -1,13 +1,14 @@
 from __future__ import annotations
 
 from metamodel.core.BaseRelationship import BaseRelationship
-from metamodel.cyberThreat.entities.ThreatActor import ThreatActor
 from metamodel.cyberThreat.entities.Adversary import Adversary
+from metamodel.cyberThreat.entities.ThreatActor import ThreatActor
 
 
 class relatedTo(BaseRelationship):
-    """Connects ThreatActor to Adversary."""
+    """ThreatActor --relatedTo--> Adversary."""
 
+    label = 'relatedTo'
     source_type = ThreatActor
     target_type = Adversary
     source_cardinality = '1..*'

@@ -1,14 +1,15 @@
 from __future__ import annotations
 
 from metamodel.core.BaseRelationship import BaseRelationship
-from metamodel.cyberThreat.entities.TTP import TTP
 from metamodel.organization.entities.SecurityRequirement import SecurityRequirement
+from metamodel.cyberThreat.entities.TTP import TTP
 
 
 class violates(BaseRelationship):
-    """Connects TTP to SecurityRequirement."""
+    """TTP --violates--> SecurityRequirement."""
 
+    label = 'violates'
     source_type = TTP
     target_type = SecurityRequirement
-    source_cardinality = '1..*'
-    target_cardinality = '1..*'
+    source_cardinality = '0..*'
+    target_cardinality = '0..*'

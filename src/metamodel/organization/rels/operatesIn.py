@@ -6,9 +6,10 @@ from metamodel.organization.entities.Sector import Sector
 
 
 class operatesIn(BaseRelationship):
-    """Connects Organization to Sector."""
+    """Organization --operatesIn--> Sector."""
 
+    label = 'operatesIn'
     source_type = Organization
     target_type = Sector
-    source_cardinality = '1'
+    source_cardinality = '0..*'
     target_cardinality = '1..*'

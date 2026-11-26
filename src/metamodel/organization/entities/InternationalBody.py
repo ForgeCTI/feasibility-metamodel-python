@@ -8,6 +8,7 @@ class InternationalBody(BaseEntity):
     """Represents the InternationalBody entity from the metamodel."""
 
     _domain_attributes = ('acronym',)
+    knowledge_class = 'concept'
 
     def __init__(
         self,

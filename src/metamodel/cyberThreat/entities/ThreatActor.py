@@ -8,6 +8,7 @@ class ThreatActor(BaseEntity):
     """Represents the ThreatActor entity from the metamodel."""
 
     _domain_attributes = ('aliases', 'motivation', 'sophistication', 'country')
+    knowledge_class = 'posteriori'
 
     def __init__(
         self,

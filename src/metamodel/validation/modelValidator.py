@@ -1,6 +1,7 @@
 from metamodel.core.ValidationReport import ValidationReport
 from metamodel.validation.cardinalityValidator import validateCardinalities
 from metamodel.validation.referenceValidator import validateReferences
+from metamodel.validation.semanticValidator import validateSemantics
 from metamodel.validation.typeValidator import validateTypes
 
 
@@ -8,7 +9,7 @@ def validateModel(model) -> ValidationReport:
     """Validate the model in two stages.
 
     First, check references and endpoint types.
-    Run cardinality validation only if no structural errors are found.
+    Run cardinality and semantic validation only if no structural errors are found.
 
     Return a ValidationReport containing errors and warnings.
     """
@@ -25,5 +26,6 @@ def validateModel(model) -> ValidationReport:
 
     if report.is_valid:
         report.extend(validateCardinalities(model))
+        report.extend(validateSemantics(model))
 
     return report

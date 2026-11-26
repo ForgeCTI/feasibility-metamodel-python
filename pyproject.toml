@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cti-feasibility-metamodel"
-version = "0.1.0"
+version = "0.2.0"
 description = "Python package for modelling organization, infrastructure, and cyber-threat interactions."
 readme = "README.md"
 requires-python = ">=3.10"

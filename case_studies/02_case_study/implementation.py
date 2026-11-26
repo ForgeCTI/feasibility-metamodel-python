@@ -23,8 +23,8 @@ from metamodel.infrastructure.entities.Node import Node
 from metamodel.infrastructure.entities.NodeType import NodeType
 from metamodel.infrastructure.entities.Connection import Connection
 from metamodel.infrastructure.entities.Resource import Resource
-from metamodel.infrastructure.entities.Information import Information
-from metamodel.infrastructure.entities.InformationType import InformationType
+from metamodel.infrastructure.entities.Data import Data
+from metamodel.infrastructure.entities.DataType import DataType
 from metamodel.infrastructure.entities.Code import Code
 from metamodel.infrastructure.entities.Application import Application
 from metamodel.infrastructure.entities.ApplicationInstance import ApplicationInstance
@@ -40,14 +40,10 @@ from metamodel.infrastructure.rels.hasNodeType import hasNodeType
 from metamodel.infrastructure.rels.isSource import isSource
 from metamodel.infrastructure.rels.isDestination import isDestination
 from metamodel.infrastructure.rels.hostsResource import hostsResource
-from metamodel.infrastructure.rels.hasInformationType import hasInformationType
-from metamodel.infrastructure.rels.resourceImplementsCode import resourceImplementsCode
-from metamodel.infrastructure.rels.accessesInformation import accessesInformation
+from metamodel.infrastructure.rels.hasDataType import hasDataType
 from metamodel.infrastructure.rels.runsApp import runsApp
 from metamodel.infrastructure.rels.applicationInstanceOf import applicationInstanceOf
-from metamodel.infrastructure.rels.applicationImplementsCode import applicationImplementsCode
 from metamodel.infrastructure.rels.hasDestinationPort import hasDestinationPort
-from metamodel.infrastructure.rels.listensOn import listensOn
 
 def build_model() -> Model:
     """Build the fictional Northstar Logistics infrastructure scenario."""
@@ -179,7 +175,7 @@ def build_model() -> Model:
     )
 
     shipment_information = model.add(
-        Information(
+        Data(
             name="Shipment Tracking Records",
             description=(
                 "Shipment identifiers, current delivery statuses, "
@@ -191,7 +187,7 @@ def build_model() -> Model:
     )
 
     shipment_information_type = model.add(
-        InformationType(
+        DataType(
             name="Shipment Tracking Data",
             description=(
                 "Information category describing operational "
@@ -288,14 +284,13 @@ def build_model() -> Model:
     model.add(isDestination(database_server, database_connection))
     model.add(hostsResource(database_server, tracking_database))
     model.add(hostsResource(application_server, tracking_application_resource))
-    model.add(hasInformationType(shipment_information, shipment_information_type))
-    model.add(resourceImplementsCode(tracking_application_resource, tracking_code))
-    model.add(accessesInformation(tracking_code, shipment_information))
+    model.add(hasDataType(shipment_information, shipment_information_type))
+    model.add(hostsResource(database_server, shipment_information))
+    model.add(hostsResource(application_server, tracking_code))
+    model.add(hostsResource(database_server, database_service_code))
     model.add(runsApp(application_server, tracking_application_instance))
     model.add(applicationInstanceOf(tracking_application_instance, tracking_application))
-    model.add(applicationImplementsCode(tracking_application_instance, tracking_code))
     model.add(hasDestinationPort(database_connection, database_port))
-    model.add(listensOn(database_service_code, database_port))
 
     return model
 
