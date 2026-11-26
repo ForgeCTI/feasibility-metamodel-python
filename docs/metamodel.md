@@ -48,7 +48,7 @@ Each relationship also has its own file.
 
 ```text
 src/metamodel/cyberThreat/rels/exploits.py
-src/metamodel/cyberThreat/rels/implementsTtp.py
+src/metamodel/cyberThreat/rels/implementsTTP.py
 src/metamodel/infrastructure/rels/exposesPort.py
 src/metamodel/organization/rels/operatesIn.py
 ```
@@ -63,7 +63,7 @@ The package follows strict naming conventions.
 | Entity class       | Exact metamodel entity name | `class AttackTool`             |
 | Relationship file  | Short lower camel case      | `targetsResource.py`           |
 | Relationship class | Short lower camel case      | `class targetsResource`        |
-| Python attributes  | Snake case                  | `taxonomy_ref`, `ip_addresses` |
+| Python attributes  | Snake case                  | `ip_addresses`, `privilege_level` |
 
 Entity names preserve acronyms when they are part of the metamodel.
 
@@ -82,9 +82,13 @@ Each entity instance has:
 * a `type` derived from the Python class name;
 * identity attributes;
 * domain-specific attributes;
-* an optional `source` attribute.
+* an optional `source` attribute;
+* a class-level `knowledge_class`: `concept` (a-priori, generic), `system` (a-priori,
+  instance-specific), or `posteriori` (observed or inferred), as in the paper.
 
-The internal identifier is generated automatically and should not be manually assigned by the user.
+The internal identifier is generated automatically; importers restore the identifiers stored in files.
+Generalizations of the metamodel are Python subclasses: `Code`, `Data`, and `Asset` are `Resource`s,
+`ApplicationInstance` and `OSInstance` are `Code`, and the three vulnerability kinds are `Vulnerability`s.
 
 ```python
 from metamodel.organization.entities.Organization import Organization
@@ -168,6 +172,7 @@ Examples of cardinality constraints include:
 
 Cardinality validation is performed at the model level because it requires knowledge of all entities and relationships in a scenario.
 
+<!-- no-test -->
 ```python
 report = model.validate()
 
@@ -267,58 +272,27 @@ This allows a threat step to be evaluated against actual infrastructure conditio
 
 ## Taxonomies
 
-The metamodel supports taxonomy references for reusable controlled vocabularies.
-
-A taxonomy is not the same as a scenario instance.
+Reusable controlled vocabularies (attack tools, ATT&CK techniques, sectors, node types, data types,
+...) are kept in taxonomies, separate from scenario instances:
 
 ```text
-Taxonomy concept:
-  generic reusable knowledge
-
-Scenario instance:
-  concrete object in a specific model
+Taxonomy concept:  generic reusable knowledge, e.g. attackTools:cobaltStrike
+Scenario instance: concrete object in a specific model, e.g. AttackTool(name="Cobalt Strike")
 ```
 
-For example, an `AttackTool` can reference an attack-tool taxonomy entry:
-
-```python
-from metamodel.cyberThreat.entities.AttackTool import AttackTool
-
-tool = AttackTool(
-    name="Cobalt Strike",
-    taxonomy_ref="attackTools:cobaltStrike",
-)
-```
-
-A `TTP` can reference MITRE ATT&CK-like taxonomy entries:
+Entities are instantiated from taxonomy concepts, and external identifiers are kept in attributes such
+as `TTP.external_id`:
 
 ```python
 from metamodel.cyberThreat.entities.TTP import TTP
+from metamodel.taxonomies.TaxonomyRegistry import TaxonomyRegistry
 
-ttp = TTP(
-    name="Exploit Public-Facing Application",
-    taxonomy_ref="mitreAttackEnterprise:T1190",
-    external_id="T1190",
-)
+taxonomies = TaxonomyRegistry.load_default()
+concept = taxonomies.resolve("mitreAttackEnterprise:T1059")
+ttp = TTP(name=concept.name, external_id=concept.id)
 ```
 
-The recommended taxonomy reference format is:
-
-```text
-<taxonomy>:<concept>
-```
-
-Examples:
-
-```text
-attackTools:cobaltStrike
-mitreAttackEnterprise:T1190
-cve:CVE-2026-0001
-sectors:finance
-nodeTypes:webServer
-userTypes:administrator
-informationTypes:personalData
-```
+See [Taxonomies](taxonomies.md).
 
 ## STIX integration
 
@@ -349,6 +323,7 @@ A complete scenario is represented by a `Model`.
 
 The model stores entities and relationships.
 
+<!-- no-test -->
 ```python
 from metamodel.core.Model import Model
 
@@ -360,6 +335,7 @@ model.add(relationship)
 
 The model is responsible for whole-scenario operations such as validation and export.
 
+<!-- no-test -->
 ```python
 report = model.validate()
 ```
@@ -373,10 +349,12 @@ The metamodel supports several validation levels.
 | Type validation        | Checks that relationships connect compatible entity types.          |
 | Reference validation   | Checks that relationships point to existing entities.               |
 | Cardinality validation | Checks relationship multiplicities.                                 |
+| Semantic validation    | Checks connection scopes, acyclic `followedBy`, privilege-level ranks. |
 | Model validation       | Runs all relevant checks on a complete scenario.                    |
 
 Validation returns a report.
 
+<!-- no-test -->
 ```python
 report = model.validate()
 
@@ -393,7 +371,8 @@ Organization: ExampleBank
 Sector: Finance
 Infrastructure: Production infrastructure
 Node: public-web-01
-Resource: Customer web portal
+Data: Customer records
+User: Portal administrator, with Account admin@portal (PrivilegeLevel: Administrator)
 ThreatActor: Example actor
 Threat: Web portal compromise
 ThreatStep: Exploit public-facing web application
@@ -407,12 +386,13 @@ with relationships such as:
 ExampleBank operatesIn Finance
 ExampleBank manages Production infrastructure
 Production infrastructure madeBy public-web-01
-public-web-01 hosts Customer web portal
+public-web-01 hostsResource Customer records
+admin@portal grantsAccessTo Customer records (privilege_level: Administrator)
 Example actor initiates Web portal compromise
 Web portal compromise startsWith Exploit public-facing web application
-Exploit public-facing web application implementsTtp Exploit Public-Facing Application
+Exploit public-facing web application implements Exploit Public-Facing Application
 Exploit public-facing web application exploits CVE-like vulnerability
-Exploit public-facing web application targetsResource Customer web portal
+Exploit public-facing web application targetsResource Customer records
 ```
 
 ## Design principles

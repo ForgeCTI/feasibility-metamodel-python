@@ -48,7 +48,7 @@ def _load_yaml_resource(package: str, filename: str) -> dict:
     except ImportError:
         # Minimal fallback for the bundled simple YAML files: convert through JSON-like subset is not supported.
         # Users who need taxonomy loading should install the yaml extra.
-        raise ImportError("PyYAML is required to load taxonomy files. Install with: pip install cyber-feasibility-metamodel[yaml]")
+        raise ImportError("PyYAML is required to load taxonomy files. Install with: pip install cti-feasibility-metamodel[yaml]")
     return yaml.safe_load(text)
 
 
@@ -57,6 +57,6 @@ DEFAULT_TAXONOMY_FILES = {
     "metamodel.taxonomies.ttps": ["mitreAttackEnterprise.yaml"],
     "metamodel.taxonomies.vulnerabilities": ["cwe.yaml", "capec.yaml"],
     "metamodel.taxonomies.platforms": ["operatingSystems.yaml", "applications.yaml", "cloudServices.yaml"],
-    "metamodel.taxonomies.infrastructure": ["nodeTypes.yaml", "userTypes.yaml", "informationTypes.yaml", "portTypes.yaml"],
+    "metamodel.taxonomies.infrastructure": ["nodeTypes.yaml", "userTypes.yaml", "dataTypes.yaml", "portTypes.yaml"],
     "metamodel.taxonomies.organization": ["sectors.yaml", "countries.yaml", "internationalBodies.yaml", "securityRequirements.yaml"],
 }

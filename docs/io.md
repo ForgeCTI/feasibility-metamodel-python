@@ -45,9 +45,9 @@ relationships:
 ```python
 from metamodel.io import loadModel, saveModel, parseScenario, model_to_data
 
-model = loadModel("scenario.yaml")          # format from the extension; a directory is CSV
+model = loadModel("examples/13_motivating_example/data/scenario.yaml")   # format from the extension
 saveModel(model, "scenario.json")
-saveModel(model, "scenario_csv", "csv")
+saveModel(model, "scenario_csv", "csv")   # a directory of CSV files
 saveModel(model, "load.cypher")
 data = model_to_data(model, include_none=False)
 model = parseScenario(data)

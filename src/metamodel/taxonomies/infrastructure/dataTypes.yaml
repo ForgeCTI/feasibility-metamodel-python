@@ -1,5 +1,5 @@
 taxonomy:
-  id: informationTypes
+  id: dataTypes
   version: "0.1"
   source: internal
   concepts:

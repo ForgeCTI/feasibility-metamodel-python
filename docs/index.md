@@ -25,7 +25,7 @@ The package is organized around three interconnected sub-metamodels.
 | Sub-metamodel    | Purpose                                                                                                                   |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | `organization`   | Models organizational context, sectors, countries, assets, business requirements, and security requirements.              |
-| `infrastructure` | Models nodes, users, ports, connections, applications, operating systems, information, code, and resources.               |
+| `infrastructure` | Models nodes, users, accounts and privilege levels, ports, connections, applications, operating systems, data, code, resources, and security controls. |
 | `cyberThreat`    | Models threat actors, adversaries, campaigns, threats, threat steps, TTPs, vulnerabilities, indicators, and attack tools. |
 
 Each sub-metamodel is organized into:
@@ -44,7 +44,7 @@ For example:
 src/metamodel/cyberThreat/entities/AttackTool.py
 src/metamodel/cyberThreat/entities/TTP.py
 src/metamodel/cyberThreat/rels/exploits.py
-src/metamodel/cyberThreat/rels/implementsTtp.py
+src/metamodel/cyberThreat/rels/implementsTTP.py
 ```
 
 ## Main features
@@ -63,10 +63,14 @@ OS.py          →  class OS
 
 Entity instances have:
 
-* an internal automatically generated identifier;
+* an internal identifier, generated automatically and preserved by the importers;
 * identity attributes such as `name` and `description`;
 * domain-specific attributes;
 * an optional `source` attribute for traceability.
+
+Each entity class also declares its knowledge class (`concept`: a-priori and generic, `system`: a-priori
+and instance-specific, `posteriori`: observed or inferred), and generalizations of the metamodel are
+Python subclasses (e.g. `Data` and `Asset` are `Resource`s).
 
 ### Explicit metamodel relationships
 
@@ -76,10 +80,11 @@ Relationships connect a source entity to a target entity and enforce source/targ
 
 Relationship instances have:
 
-* an internal automatically generated identifier;
+* an internal identifier;
 * a source entity;
 * a target entity;
-* cardinality metadata;
+* cardinality metadata and the metamodel label (e.g. `grantsAccessTo`);
+* attributes where the metamodel defines them (e.g. the `PrivilegeLevel` of a grant);
 * no traceability attributes.
 
 ### Cardinality and consistency validation
@@ -90,7 +95,8 @@ Validation includes:
 
 * relationship source and target type checks;
 * missing reference checks;
-* cardinality checks;
+* cardinality checks, following the multiplicities of the paper;
+* semantic checks (connection scopes, acyclic threat-step ordering, privilege-level ranks);
 * whole-model validation reports.
 
 ### Taxonomy integration
@@ -104,32 +110,20 @@ Taxonomies can be used for concepts such as:
 * vulnerabilities;
 * node types;
 * user types;
-* information types;
+* data types;
 * sectors;
 * countries;
 * security requirements;
 * platforms.
 
-For example, a scenario-specific `AttackTool` can reference a taxonomy concept:
-
-```yaml
-type: AttackTool
-name: Cobalt Strike
-taxonomy_ref: attackTools:cobaltStrike
-```
-
-This keeps reusable reference knowledge separate from scenario-specific instances.
+Taxonomy concepts are looked up with `TaxonomyRegistry` (e.g. `attackTools:cobaltStrike`) and used to
+instantiate entities; identifiers from external catalogues are kept in attributes such as
+`TTP.external_id`. This keeps reusable reference knowledge separate from scenario-specific instances.
 
 ### I/O support
 
-The `io` module supports loading and saving metamodel scenarios.
-
-Supported or planned formats include:
-
-* JSON;
-* YAML;
-* CSV;
-* draw.io diagrams.
+The `io` module loads and saves scenarios in JSON, YAML, and CSV, and imports STIX 2.1 bundles and
+draw.io diagrams. Identifiers, relationship attributes, and scenario metadata are preserved.
 
 The typical flow is:
 
@@ -147,13 +141,8 @@ validated scenario
 
 ### Graph adapters
 
-The package includes adapters for converting metamodel scenarios into graph-based representations.
-
-Supported or planned adapters include:
-
-* NetworkX;
-* Neo4j;
-* GraphML.
+The package includes adapters, in both directions, for NetworkX, GraphML, and Neo4j (driver or
+Cypher script).
 
 This makes it possible to analyze scenarios as graphs, compute paths, inspect neighborhoods, or store the model in a graph database.
 
@@ -198,12 +187,7 @@ organization = model.add(
     )
 )
 
-sector = model.add(
-    Sector(
-        name="Finance",
-        taxonomy_ref="sectors:finance"
-    )
-)
+sector = model.add(Sector(name="Finance"))
 
 model.add(
     operatesIn(
@@ -214,8 +198,9 @@ model.add(
 
 report = model.validate()
 
-print(report.is_valid)
-print(report.errors)
+print(report.is_valid)   # False: the organization lacks, e.g., a home country and an infrastructure
+for error in report.errors:
+    print(error.message)
 ```
 
 ## Typical workflow
@@ -239,6 +224,7 @@ Start with the following pages:
 | [Installation](installation.md) | How to install the package and optional dependencies.                          |
 | [Quickstart](quickstart.md)     | A minimal end-to-end modelling example.                                        |
 | [Metamodel](metamodel.md)       | Overview of the organization, infrastructure, and cyber-threat sub-metamodels. |
+| [Schema reference](schema.md)   | Every entity, attribute, relationship, and multiplicity (generated).           |
 | [Taxonomies](taxonomies.md)     | How controlled vocabularies are represented and referenced.                    |
 | [Validation](validation.md)     | How model correctness is checked.                                              |
 | [I/O](io.md)                    | How scenarios are loaded from and saved to files.                              |
@@ -261,14 +247,6 @@ The package follows a few core design principles.
 
 ## Project status
 
-The **CTI Feasibility Metamodel** is currently an early implementation of a metamodel-oriented Python framework for CTI-driven feasibility analysis.
-
-The current focus is on:
-
-* stabilizing the entity and relationship structure;
-* improving attribute validation;
-* expanding taxonomy coverage;
-* improving scenario parsers;
-* strengthening cardinality validation;
-* extending graph export capabilities;
-* improving documentation and examples.
+Version 0.2.0 aligns the entities, relationships, and multiplicities with the paper (43 entities,
+65 relationship classes). The evaluation of threat-step preconditions (graph patterns and their
+Cypher translation) is under development; see the [changelog](https://github.com/ForgeCTI/feasibility-metamodel-python/blob/main/CHANGELOG.md).

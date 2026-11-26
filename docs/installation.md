@@ -73,9 +73,9 @@ The package separates optional functionality into dependency groups. This keeps 
 
 | Extra      | Purpose                                      |
 | ---------- | -------------------------------------------- |
-| `yaml`     | YAML scenario parsing and serialization.     |
-| `networkx` | Conversion to NetworkX graph objects.        |
-| `neo4j`    | Export to Neo4j graph databases.             |
+| `yaml`     | YAML scenarios and the bundled taxonomies.   |
+| `networkx` | NetworkX graphs and GraphML files.           |
+| `neo4j`    | Export to and import from Neo4j.             |
 | `docs`     | Build and preview the documentation locally. |
 | `test`     | Run the test suite.                          |
 | `all`      | Install all optional dependencies.           |
@@ -114,18 +114,28 @@ ExampleBank
 
 The exact identifier will be different every time because entity IDs are generated internally.
 
+The command-line interface is installed as `metamodel`:
+
+```bash
+metamodel --version
+metamodel schema Account
+```
+
 ## Run an example (optional)
 
-After installing the package in editable mode, run the first example:
+After installing the package in editable mode, run the first example, or validate the motivating
+example of the paper:
 
 ```bash
 python examples/01_organization_scenario/main.py
+metamodel validate examples/13_motivating_example/data/scenario.yaml
 ```
 
 On Windows PowerShell:
 
 ```powershell
 python examples\01_organization_scenario\main.py
+metamodel validate examples\13_motivating_example\data\scenario.yaml
 ```
 
 If the example runs correctly, the package is installed and importable.

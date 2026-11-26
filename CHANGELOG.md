@@ -20,10 +20,13 @@ Metamodel aligned with the paper (43 entities, 65 relationships; see `docs/schem
 - CLI: `convert -o` to every format, `schema`, `neo4j export|import`, JSON output, `--strict`, `--lenient`.
 - Example 13 (motivating example of the paper, variants A and B); `scripts/build_registry.py`,
   `scripts/generate_schema_docs.py`.
+- Documentation updated to the current API: schema reference (generated), quickstart, validation,
+  taxonomies, I/O, adapters, CLI, metamodel, index, installation. `tests/test_docs.py` runs the Python
+  examples of the documentation, and `mkdocs build --strict` passes.
 
 ### Changed
 - `Information`/`InformationType` renamed `Data`/`DataType` (`hasInformationType` → `hasDataType`);
-  old names are accepted by the importers.
+  old names are accepted by the importers. The taxonomy `informationTypes` is now `dataTypes`.
 - `Code`, `Data`, and `Asset` specialize `Resource`; `ApplicationInstance` and `OSInstance` specialize `Code`.
 - Multiplicities follow the paper's figures (e.g. `runsOS` 0..1, `initiates` 1..*, `basedIn` 0..*/1..*).
   `startsWith` is 0..* at the Threat end (the figure's 1 would make every step a first step).
