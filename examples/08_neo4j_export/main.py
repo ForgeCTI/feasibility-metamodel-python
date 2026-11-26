@@ -13,9 +13,9 @@ from metamodel.adapters.neo4jAdapter import exportToNeo4j
 
 def main() -> None:
     model = Model()
-    organization = model.add_entity(Organization(name="ExampleBank"))
-    sector = model.add_entity(Sector(name="Finance", taxonomy_ref="sectors:finance"))
-    model.add_relationship(operatesIn(organization, sector))
+    organization = model.add(Organization(name="ExampleBank"))
+    sector = model.add(Sector(name="Finance", taxonomy_ref="sectors:finance"))
+    model.add(operatesIn(organization, sector))
 
     exportToNeo4j(
         model,

@@ -1,13 +1,12 @@
 from __future__ import annotations
 
 from metamodel.core.BaseEntity import BaseEntity
-from metamodel.core.ValidationUtils import require_optional_str, require_optional_taxonomy_ref
-
+from metamodel.core.ValidationUtils import require_optional_str
 
 class Application(BaseEntity):
     """Represents the Application entity from the metamodel."""
 
-    _domain_attributes = ('vendor', 'product', 'version', 'cpe', 'taxonomy_ref')
+    _domain_attributes = ('vendor', 'product', 'version', 'cpe')
 
     def __init__(
         self,
@@ -17,7 +16,6 @@ class Application(BaseEntity):
         product: str | None = None,
         version: str | None = None,
         cpe: str | None = None,
-        taxonomy_ref: str | None = None,
         source: str | None = None,
     ) -> None:
         super().__init__(name=name, description=description, source=source)
@@ -25,12 +23,10 @@ class Application(BaseEntity):
         self._product: str | None
         self._version: str | None
         self._cpe: str | None
-        self._taxonomy_ref: str | None
         self.vendor = vendor
         self.product = product
         self.version = version
         self.cpe = cpe
-        self.taxonomy_ref = taxonomy_ref
 
     @property
     def vendor(self) -> str | None:
@@ -63,12 +59,3 @@ class Application(BaseEntity):
     @cpe.setter
     def cpe(self, value: str | None) -> None:
         self._cpe = require_optional_str(value, "cpe")
-
-    @property
-    def taxonomy_ref(self) -> str | None:
-        return self._taxonomy_ref
-
-    @taxonomy_ref.setter
-    def taxonomy_ref(self, value: str | None) -> None:
-        self._taxonomy_ref = require_optional_taxonomy_ref(value, "taxonomy_ref")
-

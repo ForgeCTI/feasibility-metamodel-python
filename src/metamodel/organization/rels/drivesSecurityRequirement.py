@@ -10,5 +10,5 @@ class drivesSecurityRequirement(BaseRelationship):
 
     source_type = BusinessRequirement
     target_type = AssetSecurityRequirement
-    source_cardinality = '1..*'
+    source_cardinality = '1'
     target_cardinality = '1..*'

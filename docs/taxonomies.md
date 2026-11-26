@@ -387,7 +387,7 @@ from metamodel.cyberThreat.entities.AttackTool import AttackTool
 
 model = Model()
 
-tool = model.add_entity(
+tool = model.add(
     AttackTool(
         name="Cobalt Strike",
         taxonomy_ref="attackTools:cobaltStrike",

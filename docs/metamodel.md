@@ -316,8 +316,7 @@ It captures adversaries, threat actors, campaigns, threats, attack steps, TTPs, 
 | `deploysTool`              | Connects one `AttackToolInstance` to another deployed instance.   |
 | `deployedTo`               | Connects an `AttackToolInstance` to a `Node`.                     |
 | `requiresConfig`           | Connects an `AttackTool` to an `AttackToolConfiguration`.         |
-| `requiresExpertise`        | Connects an `AttackTool` to `Expertise`.                          |
-| `softwareVulnerabilityIsA` | Connects `SoftwareVulnerability` to `Vulnerability`.              |
+| `requiresExpertise`        | Connects an `AttackTool` to `Expertise`.                          |            |
 | `affectsApplication`       | Connects `SoftwareVulnerability` to an `Application`.             |
 | `affectsOS`                | Connects `SoftwareVulnerability` to an `OS`.                      |
 | `affectsCode`              | Connects `ConfigVulnerability` to `Code`.                         |
@@ -459,8 +458,8 @@ from metamodel.core.Model import Model
 
 model = Model()
 
-model.add_entity(entity)
-model.add_relationship(relationship)
+model.add(entity)
+model.add(relationship)
 ```
 
 The model is responsible for whole-scenario operations such as validation and export.
@@ -478,7 +477,6 @@ The metamodel supports several validation levels.
 | Type validation        | Checks that relationships connect compatible entity types.          |
 | Reference validation   | Checks that relationships point to existing entities.               |
 | Cardinality validation | Checks relationship multiplicities.                                 |
-| Taxonomy validation    | Checks taxonomy references where taxonomy registries are available. |
 | Model validation       | Runs all relevant checks on a complete scenario.                    |
 
 Validation returns a report.

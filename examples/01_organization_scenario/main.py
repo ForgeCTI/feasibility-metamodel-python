@@ -14,7 +14,7 @@ from metamodel.organization.rels.implementsRequirement import implementsRequirem
 def main() -> None:
     model = Model()
 
-    organization = model.add_entity(
+    organization = model.add(
         Organization(
             name="ExampleBank",
             legal_name="ExampleBank S.p.A.",
@@ -23,24 +23,22 @@ def main() -> None:
             source="Synthetic example",
         )
     )
-    sector = model.add_entity(Sector(name="Finance", taxonomy_ref="sectors:finance"))
-    asset = model.add_entity(Asset(name="Online banking platform", criticality="critical"))
-    security_requirement = model.add_entity(
+    sector = model.add(Sector(name="Finance"))
+    asset = model.add(Asset(name="Online banking platform"))
+    security_requirement = model.add(
         SecurityRequirement(
             name="Availability",
             requirement_type="availability",
-            taxonomy_ref="securityRequirements:availability",
         )
     )
-    asset_requirement = model.add_entity(
+    asset_requirement = model.add(
         AssetSecurityRequirement(
             name="Online banking must remain available"
         )
     )
-
-    model.add_relationship(operatesIn(organization, sector))
-    model.add_relationship(hasSecurityRequirement(asset, asset_requirement))
-    model.add_relationship(implementsRequirement(asset_requirement, security_requirement))
+    model.add(operatesIn(organization, sector))
+    model.add(hasSecurityRequirement(asset, asset_requirement))
+    model.add(implementsRequirement(asset_requirement, security_requirement))
 
     report = model.validate()
 

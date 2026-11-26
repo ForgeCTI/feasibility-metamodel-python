@@ -577,7 +577,6 @@ This is important because file-based scenarios can contain:
 * misspelled entity types;
 * misspelled relationship types;
 * invalid relationship endpoints;
-* malformed taxonomy references;
 * incomplete cardinalities;
 * unsupported STIX mappings;
 * ambiguous draw.io labels.
@@ -718,7 +717,6 @@ Before committing a file-based scenario:
 * Are all entity types valid?
 * Are all relationship types valid?
 * Are all relationship endpoints defined?
-* Are taxonomy references well formed?
 * Does `model.validate()` return `is_valid = True`?
 * Are skipped STIX objects or relationships documented?
 * Are assumptions recorded in the case-study notes?

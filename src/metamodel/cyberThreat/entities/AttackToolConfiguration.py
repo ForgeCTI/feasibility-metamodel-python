@@ -1,7 +1,11 @@
 from __future__ import annotations
 
 from metamodel.core.BaseEntity import BaseEntity
-from metamodel.core.ValidationUtils import require_allowed, require_optional_bool, require_optional_dict, require_optional_str
+from metamodel.core.ValidationUtils import(
+    require_optional_bool,
+    require_optional_dict,
+    require_optional_str,
+)
 
 
 class AttackToolConfiguration(BaseEntity):
@@ -39,7 +43,7 @@ class AttackToolConfiguration(BaseEntity):
 
     @property
     def parameters(self) -> dict:
-        return self._parameters
+        return dict(self._parameters)
 
     @parameters.setter
     def parameters(self, value: dict | None) -> None:
@@ -59,5 +63,4 @@ class AttackToolConfiguration(BaseEntity):
 
     @stealth_level.setter
     def stealth_level(self, value: str | None) -> None:
-        self._stealth_level = require_allowed(require_optional_str(value, "stealth_level"), "stealth_level", {None, 'high', 'medium', 'unknown', 'low'})
-
+        self._stealth_level = require_optional_str(value, "stealth_level")

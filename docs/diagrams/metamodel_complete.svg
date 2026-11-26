@@ -1,0 +1,960 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="5840" height="4620" viewBox="0 0 5840 4620">
+  <rect x="0" y="0" width="5840" height="4620" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="40" y="48" font-family="Arial" font-size="36" font-weight="700" fill="#172B40" text-anchor="start">CTI Feasibility Metamodel | Complete Class Diagram</text>
+  <text x="40" y="85" font-family="Arial" font-size="22" font-weight="400" fill="#172B40" text-anchor="start">39 domain entities  /  102 domain attribute declarations  /  62 associations  /  3 generalizations</text>
+  <text x="40" y="116" font-family="Arial" font-size="19" font-weight="400" fill="#172B40" text-anchor="start">All domain entities inherit directly or indirectly from BaseEntity. Common attributes (id, type, name, description, source), optionality, methods and visibility are omitted.</text>
+  <text x="40" y="145" font-family="Arial" font-size="19" font-weight="400" fill="#172B40" text-anchor="start">Open arrows: directed associations. Hollow triangles: generalization. Blank multiplicities: unspecified. Line breaks at crossings distinguish independent connectors.</text>
+  <rect x="40" y="170" width="25" height="23" fill="#DCEBFA" stroke="#285E96" stroke-width="1" />
+  <text x="76" y="188" font-family="Arial" font-size="20" font-weight="700" fill="#285E96" text-anchor="start">Organization</text>
+  <rect x="330" y="170" width="25" height="23" fill="#DDEFE3" stroke="#397B54" stroke-width="1" />
+  <text x="366" y="188" font-family="Arial" font-size="20" font-weight="700" fill="#397B54" text-anchor="start">Infrastructure</text>
+  <rect x="620" y="170" width="25" height="23" fill="#FCE7D2" stroke="#A45B20" stroke-width="1" />
+  <text x="656" y="188" font-family="Arial" font-size="20" font-weight="700" fill="#A45B20" text-anchor="start">CyberThreat</text>
+  <path d="M 760 500 L 760 1900" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 760 1900 L 1200 1900" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1200 1900 L 1200 1940" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1194.0 1928.0 L 1200 1940 L 1206.0 1928.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 820 500 L 820 1880" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 820 1880 L 1760 1880" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1760 1880 L 1760 1960" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1754.0 1948.0 L 1760 1960 L 1766.0 1948.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 700 500 L 700 1860" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 280 1860 L 700 1860" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 280 1860 L 280 1900" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 274.0 1888.0 L 280 1900 L 286.0 1888.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 1760 2060 L 1760 2800" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1720 2800 L 1760 2800" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1720 2800 L 1720 2880" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1714.0 2868.0 L 1720 2880 L 1726.0 2868.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 900 400 L 2400 400" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2400 400 L 2400 360" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2400 360 L 2440 360" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2428.0 366.0 L 2440 360 L 2428.0 354.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 1680 3020 L 1680 3420" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1440 3420 L 1680 3420" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1440 3420 L 1440 3460" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1434.0 3448.0 L 1440 3460 L 1446.0 3448.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 1900 2960 L 2340 2960" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2340 2960 L 2340 2560" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2340 2560 L 2920 2560" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2908.0 2566.0 L 2920 2560 L 2908.0 2554.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 1740 3020 L 1740 4180" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1700 4180 L 1740 4180" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1700 4180 L 1700 4220" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1694.0 4208.0 L 1700 4220 L 1706.0 4208.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 1780 3020 L 1780 3360" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1780 3360 L 2000 3360" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2000 3360 L 2000 3400" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1994.0 3388.0 L 2000 3400 L 2006.0 3388.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 1900 3000 L 2320 3000" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2320 3000 L 2320 3520" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2320 3520 L 2355 3520" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2365 3520 L 2500 3520" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2488.0 3526.0 L 2500 3520 L 2488.0 3514.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 1900 2980 L 2340 2980" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2340 2980 L 2340 3280" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2340 3280 L 2355 3280" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2365 3280 L 2500 3280" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2488.0 3286.0 L 2500 3280 L 2488.0 3274.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 2640 3580 L 2640 4000" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2560 4000 L 2640 4000" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2560 4000 L 2560 4040" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2554.0 4028.0 L 2560 4040 L 2566.0 4028.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 2640 3340 L 2640 3380" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2640 3380 L 2815 3380" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2825 3380 L 2940 3380" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2940 3380 L 2940 4180" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2940 4180 L 3020 4180" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3020 4180 L 3020 4220" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3014.0 4208.0 L 3020 4220 L 3026.0 4208.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 1840 3020 L 1840 3340" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1840 3340 L 2080 3340" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2080 3340 L 2080 3400" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2074.0 3388.0 L 2080 3400 L 2086.0 3388.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 4740 1400 L 4780 1400" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4780 1400 L 4780 1740" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4780 1740 L 4900 1740" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4888.0 1746.0 L 4900 1740 L 4888.0 1734.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 4740 1000 L 5235 1000" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 5245 1000 L 5260 1000" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 5260 1000 L 5260 960" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 5260 960 L 5300 960" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 5288.0 966.0 L 5300 960 L 5288.0 954.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 4600 1040 L 4600 1340" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4594.0 1328.0 L 4600 1340 L 4606.0 1328.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 3920 1740 L 3935 1740" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3945 1740 L 4395 1740" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4405 1740 L 4460 1740" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3920 1740 L 3920 1400" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3880 1400 L 3920 1400" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3892.0 1394.0 L 3880 1400 L 3892.0 1406.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 4740 940 L 5120 940" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 5120 940 L 5120 700" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 5120 700 L 5160 700" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 5148.0 706.0 L 5160 700 L 5148.0 694.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 4640 1860 L 4640 2060" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4600 2060 L 4640 2060" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4600 2060 L 4600 2100" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4594.0 2088.0 L 4600 2100 L 4606.0 2088.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 4000 2480 L 4140 2480" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4000 2480 L 4000 2980" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4000 2980 L 4040 2980" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4028.0 2986.0 L 4040 2980 L 4028.0 2974.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 4320 2540 L 4320 2860" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4320 2860 L 4355 2860" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4365 2860 L 4375 2860" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4385 2860 L 4520 2860" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4520 2860 L 4520 3440" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4514.0 3428.0 L 4520 3440 L 4526.0 3428.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 4240 2540 L 4240 2840" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4240 2840 L 4315 2840" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4325 2840 L 4355 2840" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4365 2840 L 4380 2840" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4380 2840 L 4380 3580" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4240 3580 L 4380 3580" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4240 3580 L 4240 3820" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4234.0 3808.0 L 4240 3820 L 4246.0 3808.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 3740 2500 L 3835 2500" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3845 2500 L 3995 2500" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4005 2500 L 4140 2500" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3740 2500 L 3740 3360" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2820 3360 L 3135 3360" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3145 3360 L 3195 3360" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3205 3360 L 3715 3360" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3725 3360 L 3740 3360" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2820 3360 L 2820 3520" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2780 3520 L 2820 3520" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2792.0 3514.0 L 2780 3520 L 2792.0 3526.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 4780 1800 L 4795 1800" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4805 1800 L 4900 1800" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4780 1800 L 4780 1920" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1780 1920 L 1935 1920" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1945 1920 L 3055 1920" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3065 1920 L 3235 1920" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3245 1920 L 3675 1920" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3685 1920 L 3715 1920" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3725 1920 L 3755 1920" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3765 1920 L 3815 1920" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3825 1920 L 3935 1920" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3945 1920 L 4335 1920" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4345 1920 L 4635 1920" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4645 1920 L 4780 1920" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1780 1920 L 1780 1900" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1380 1900 L 1755 1900" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1765 1900 L 1780 1900" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1380 1900 L 1380 2000" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1340 2000 L 1380 2000" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1352.0 1994.0 L 1340 2000 L 1352.0 2006.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 4800 1780 L 4900 1780" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4800 1780 L 4800 1940" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1940 1940 L 3055 1940" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3065 1940 L 3235 1940" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3245 1940 L 3675 1940" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3685 1940 L 3715 1940" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3725 1940 L 3755 1940" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3765 1940 L 3815 1940" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3825 1940 L 3935 1940" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3945 1940 L 4335 1940" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4345 1940 L 4635 1940" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4645 1940 L 4800 1940" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1940 1940 L 1940 1860" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 700 1860 L 755 1860" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 765 1860 L 815 1860" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 825 1860 L 1940 1860" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 700 1860 L 700 1960" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 420 1960 L 700 1960" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 432.0 1954.0 L 420 1960 L 432.0 1966.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 4860 1840 L 4900 1840" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4860 1840 L 4860 2340" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 980 2340 L 1755 2340" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1765 2340 L 1935 2340" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1945 2340 L 3055 2340" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3065 2340 L 3235 2340" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3245 2340 L 3475 2340" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3485 2340 L 3675 2340" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3685 2340 L 3715 2340" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3725 2340 L 3835 2340" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3845 2340 L 4335 2340" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4345 2340 L 4595 2340" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4605 2340 L 4860 2340" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 980 2340 L 980 2560" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 940 2560 L 980 2560" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 952.0 2554.0 L 940 2560 L 952.0 2566.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 4320 2980 L 4360 2980" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4360 2980 L 4360 2580" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4360 2580 L 4460 2580" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4460 2580 L 4460 2480" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4420 2480 L 4460 2480" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4432.0 2474.0 L 4420 2480 L 4432.0 2486.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 3820 2200 L 4335 2200" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4345 2200 L 4460 2200" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3820 2200 L 3820 1460" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3826.0 1472.0 L 3820 1460 L 3814.0 1472.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 4220 2400 L 4220 2360" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4220 2360 L 4280 2360" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4280 2360 L 4280 2400" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4274.0 2388.0 L 4280 2400 L 4286.0 2388.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 3200 3460 L 3240 3460" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3200 3460 L 3200 3020" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2700 3020 L 3200 3020" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2700 3020 L 2700 2940" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2660 2940 L 2700 2940" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2672.0 2934.0 L 2660 2940 L 2672.0 2946.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 2760 1780 L 3055 1780" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3065 1780 L 3675 1780" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3685 1780 L 3715 1780" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3725 1780 L 3755 1780" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3765 1780 L 3815 1780" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3825 1780 L 3935 1780" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3945 1780 L 4395 1780" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4405 1780 L 4460 1780" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2760 1780 L 2760 1400" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2720 1400 L 2760 1400" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2732.0 1394.0 L 2720 1400 L 2732.0 1406.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 280 2020 L 280 2060" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 280 2060 L 800 2060" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 800 2060 L 800 2520" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 794.0 2508.0 L 800 2520 L 806.0 2508.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 3200 2940 L 3240 2940" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3240 2940 L 3240 3160" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3240 3160 L 3380 3160" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3368.0 3166.0 L 3380 3160 L 3368.0 3154.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 3060 2580 L 3060 2620" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2720 2620 L 3060 2620" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2720 2620 L 2720 2880" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2660 2880 L 2720 2880" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2672.0 2874.0 L 2660 2880 L 2672.0 2886.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 5440 1020 L 5440 1400" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 5434.0 1388.0 L 5440 1400 L 5446.0 1388.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 4600 900 L 4600 860" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4420 860 L 4600 860" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4420 860 L 4420 980" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4420 980 L 4460 980" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4448.0 986.0 L 4460 980 L 4448.0 974.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 4600 1460 L 4600 1680" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4560 1680 L 4600 1680" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4560 1680 L 4560 1720" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4554.0 1708.0 L 4560 1720 L 4566.0 1708.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 3760 3420 L 3760 2640" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3520 2640 L 3655 2640" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3665 2640 L 3675 2640" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3685 2640 L 3715 2640" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3725 2640 L 3735 2640" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3745 2640 L 3760 2640" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3520 2640 L 3520 2600" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3526.0 2612.0 L 3520 2600 L 3514.0 2612.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 2660 2920 L 2880 2920" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2880 2920 L 2880 2940" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2880 2940 L 2920 2940" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2908.0 2946.0 L 2920 2940 L 2908.0 2934.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 2480 2960 L 2480 3200" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2360 3200 L 2480 3200" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2360 3200 L 2360 4180" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1820 4180 L 2360 4180" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1820 4180 L 1820 4220" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1814.0 4208.0 L 1820 4220 L 1826.0 4208.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 2580 400 L 2580 1380" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2574.0 1368.0 L 2580 1380 L 2586.0 1368.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 3300 2560 L 3340 2560" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3300 2560 L 3300 2800" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1960 2800 L 2335 2800" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2345 2800 L 2715 2800" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2725 2800 L 3055 2800" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3065 2800 L 3255 2800" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3265 2800 L 3300 2800" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1960 2800 L 1960 2920" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1900 2920 L 1960 2920" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1912.0 2914.0 L 1900 2920 L 1912.0 2926.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 3260 2540 L 3340 2540" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3260 2540 L 3260 2840" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2700 2840 L 2715 2840" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2725 2840 L 3055 2840" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3065 2840 L 3260 2840" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2700 2840 L 2700 2860" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2660 2860 L 2700 2860" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2672.0 2854.0 L 2660 2860 L 2672.0 2866.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 3440 2600 L 3440 2640" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3060 2640 L 3255 2640" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3265 2640 L 3295 2640" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3305 2640 L 3440 2640" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3060 2640 L 3060 2900" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3054.0 2888.0 L 3060 2900 L 3066.0 2888.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 3480 2460 L 3480 2080" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3486.0 2092.0 L 3480 2080 L 3474.0 2092.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 2640 3240 L 2640 3000" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2560 3000 L 2640 3000" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2560 3000 L 2560 2960" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2566.0 2972.0 L 2560 2960 L 2554.0 2972.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 4560 1860 L 4560 1900" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4340 1900 L 4560 1900" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4340 1900 L 4340 2400" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4334.0 2388.0 L 4340 2400 L 4346.0 2388.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 4640 1720 L 4640 1680" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4620 1680 L 4640 1680" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4620 1680 L 4620 1660" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4400 1660 L 4595 1660" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4605 1660 L 4620 1660" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4400 1660 L 4400 1800" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4400 1800 L 4460 1800" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4448.0 1806.0 L 4460 1800 L 4448.0 1794.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 1900 2000 L 1940 2000" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1940 2000 L 1940 2480" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1940 2480 L 3055 2480" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3065 2480 L 3235 2480" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3245 2480 L 3300 2480" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3300 2480 L 3300 2500" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3300 2500 L 3340 2500" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3328.0 2506.0 L 3340 2500 L 3328.0 2494.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 4560 3560 L 4560 3600" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4320 3600 L 4560 3600" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4320 3600 L 4320 3820" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4314.0 3808.0 L 4320 3820 L 4326.0 3808.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 4600 3440 L 4600 2280" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4600 2280 L 4855 2280" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4865 2280 L 5240 2280" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 5240 2280 L 5240 800" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 5240 800 L 5300 800" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 5300 800 L 5300 760" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 5306.0 772.0 L 5300 760 L 5294.0 772.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 2780 1400 L 3000 1400" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2780 1400 L 2780 1460" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2580 1460 L 2755 1460" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2765 1460 L 2780 1460" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2580 1460 L 2580 1420" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2586.0 1432.0 L 2580 1420 L 2574.0 1432.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 2400 1400 L 2440 1400" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2400 1400 L 2400 940" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2220 940 L 2400 940" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2232.0 934.0 L 2220 940 L 2232.0 946.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 3060 2540 L 3060 1460" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3060 1460 L 3140 1460" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3140 1460 L 3140 1420" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3146.0 1432.0 L 3140 1420 L 3134.0 1432.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 3240 1840 L 3675 1840" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3685 1840 L 3715 1840" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3725 1840 L 3755 1840" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3765 1840 L 3815 1840" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3825 1840 L 3935 1840" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3945 1840 L 4460 1840" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3240 1840 L 3240 2560" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3200 2560 L 3240 2560" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3212.0 2554.0 L 3200 2560 L 3212.0 2566.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 3940 2140 L 4335 2140" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 4345 2140 L 4460 2140" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3940 2140 L 3940 980" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2220 980 L 2395 980" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2405 980 L 2575 980" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2585 980 L 3940 980" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2232.0 974.0 L 2220 980 L 2232.0 986.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 2040 3520 L 2040 4160" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1760 4160 L 2040 4160" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1760 4160 L 1760 4220" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1754.0 4208.0 L 1760 4220 L 1766.0 4208.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 3140 3820 L 3140 4180" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3100 4180 L 3140 4180" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3100 4180 L 3100 4220" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3094.0 4208.0 L 3100 4220 L 3106.0 4208.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 2960 3760 L 3000 3760" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2960 3760 L 2960 4120" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2700 4120 L 2935 4120" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2945 4120 L 2960 4120" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2712.0 4114.0 L 2700 4120 L 2712.0 4126.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 1800 2880 L 1800 2840" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1740 2840 L 1800 2840" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1740 2840 L 1740 2820" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1580 2820 L 1715 2820" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1725 2820 L 1740 2820" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1580 2820 L 1580 2960" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1580 2960 L 1620 2960" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1608.0 2966.0 L 1620 2960 L 1608.0 2954.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 3660 2440 L 3675 2440" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3685 2440 L 3715 2440" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3725 2440 L 3835 2440" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3845 2440 L 4140 2440" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3660 2440 L 3660 2780" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1940 2780 L 2335 2780" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2345 2780 L 2715 2780" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 2725 2780 L 3055 2780" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3065 2780 L 3255 2780" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3265 2780 L 3295 2780" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 3305 2780 L 3660 2780" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1940 2780 L 1940 2900" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1900 2900 L 1940 2900" fill="none" stroke="#536173" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M 1912.0 2894.0 L 1900 2900 L 1912.0 2906.0" fill="none" stroke="#536173" stroke-width="1.6" />
+  <path d="M 3140 3700 L 3140 3040" fill="none" stroke="#172B40" stroke-width="2.1" stroke-linecap="round" />
+  <path d="M 3140 3040 L 3195 3040" fill="none" stroke="#172B40" stroke-width="2.1" stroke-linecap="round" />
+  <path d="M 3205 3040 L 3235 3040" fill="none" stroke="#172B40" stroke-width="2.1" stroke-linecap="round" />
+  <path d="M 3245 3040 L 3680 3040" fill="none" stroke="#172B40" stroke-width="2.1" stroke-linecap="round" />
+  <path d="M 3680 3040 L 3680 1500" fill="none" stroke="#172B40" stroke-width="2.1" stroke-linecap="round" />
+  <path d="M 3660 1500 L 3680 1500" fill="none" stroke="#172B40" stroke-width="2.1" stroke-linecap="round" />
+  <path d="M 3660 1500 L 3660.0 1475.0" fill="none" stroke="#172B40" stroke-width="2.1" stroke-linecap="round" />
+  <path d="M 3668.0 1475.0 L 3660 1460 L 3652.0 1475.0 Z" fill="#FFFFFF" stroke="#172B40" stroke-width="2.1" />
+  <path d="M 3380 3420 L 3380 3380" fill="none" stroke="#172B40" stroke-width="2.1" stroke-linecap="round" />
+  <path d="M 3380 3380 L 3720 3380" fill="none" stroke="#172B40" stroke-width="2.1" stroke-linecap="round" />
+  <path d="M 3720 3380 L 3720.0 1475.0" fill="none" stroke="#172B40" stroke-width="2.1" stroke-linecap="round" />
+  <path d="M 3728.0 1475.0 L 3720 1460 L 3712.0 1475.0 Z" fill="#FFFFFF" stroke="#172B40" stroke-width="2.1" />
+  <path d="M 3840 3420 L 3840 2220" fill="none" stroke="#172B40" stroke-width="2.1" stroke-linecap="round" />
+  <path d="M 3760 2220 L 3840 2220" fill="none" stroke="#172B40" stroke-width="2.1" stroke-linecap="round" />
+  <path d="M 3760 2220 L 3760.0 1475.0" fill="none" stroke="#172B40" stroke-width="2.1" stroke-linecap="round" />
+  <path d="M 3768.0 1475.0 L 3760 1460 L 3752.0 1475.0 Z" fill="#FFFFFF" stroke="#172B40" stroke-width="2.1" />
+  <rect x="620" y="320" width="280" height="180" fill="#F4F8FD" stroke="#285E96" stroke-width="1.5" />
+  <rect x="620" y="320" width="280" height="34" fill="#DCEBFA" stroke="#285E96" stroke-width="1.5" />
+  <text x="760.0" y="343" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">Organization</text>
+  <text x="632" y="374" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">legal_name : str</text>
+  <text x="632" y="395" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">short_name : str</text>
+  <text x="632" y="416" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">website : str</text>
+  <text x="632" y="437" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">organization_size : str</text>
+  <text x="632" y="458" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">criticality : str</text>
+  <text x="632" y="479" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">maturity_level : str</text>
+  <rect x="1060" y="1940" width="280" height="120" fill="#F4F8FD" stroke="#285E96" stroke-width="1.5" />
+  <rect x="1060" y="1940" width="280" height="34" fill="#DCEBFA" stroke="#285E96" stroke-width="1.5" />
+  <text x="1200.0" y="1963" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">Sector</text>
+  <text x="1072" y="1994" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">sector_code : str</text>
+  <text x="1072" y="2015" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">sector_standard : str</text>
+  <text x="1072" y="2036" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">sector_standard_version : str</text>
+  <rect x="140" y="1900" width="280" height="120" fill="#F4F8FD" stroke="#285E96" stroke-width="1.5" />
+  <rect x="140" y="1900" width="280" height="34" fill="#DCEBFA" stroke="#285E96" stroke-width="1.5" />
+  <text x="280.0" y="1923" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">HomeCountry</text>
+  <text x="152" y="1954" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">iso2_code : str</text>
+  <text x="152" y="1975" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">iso3_code : str</text>
+  <text x="152" y="1996" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">region : str</text>
+  <rect x="660" y="2520" width="280" height="80" fill="#F4F8FD" stroke="#285E96" stroke-width="1.5" />
+  <rect x="660" y="2520" width="280" height="34" fill="#DCEBFA" stroke="#285E96" stroke-width="1.5" />
+  <text x="800.0" y="2543" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">InternationalBody</text>
+  <text x="672" y="2574" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">acronym : str</text>
+  <rect x="2440" y="320" width="280" height="80" fill="#F4F8FD" stroke="#285E96" stroke-width="1.5" />
+  <rect x="2440" y="320" width="280" height="34" fill="#DCEBFA" stroke="#285E96" stroke-width="1.5" />
+  <text x="2580.0" y="343" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">BusinessRequirement</text>
+  <text x="2452" y="374" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">priority : str</text>
+  <rect x="1940" y="920" width="280" height="80" fill="#F4F8FD" stroke="#285E96" stroke-width="1.5" />
+  <rect x="1940" y="920" width="280" height="34" fill="#DCEBFA" stroke="#285E96" stroke-width="1.5" />
+  <text x="2080.0" y="943" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">SecurityRequirement</text>
+  <text x="1952" y="974" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">requirement_type : str</text>
+  <rect x="3000" y="1380" width="280" height="40" fill="#F4F8FD" stroke="#285E96" stroke-width="1.5" />
+  <rect x="3000" y="1380" width="280" height="34" fill="#DCEBFA" stroke="#285E96" stroke-width="1.5" />
+  <text x="3140.0" y="1403" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">Asset</text>
+  <rect x="2440" y="1380" width="280" height="40" fill="#F4F8FD" stroke="#285E96" stroke-width="1.5" />
+  <rect x="2440" y="1380" width="280" height="34" fill="#DCEBFA" stroke="#285E96" stroke-width="1.5" />
+  <text x="2580.0" y="1403" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">AssetSecurityRequirement</text>
+  <rect x="1620" y="1960" width="280" height="100" fill="#F4FAF6" stroke="#397B54" stroke-width="1.5" />
+  <rect x="1620" y="1960" width="280" height="34" fill="#DDEFE3" stroke="#397B54" stroke-width="1.5" />
+  <text x="1760.0" y="1983" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">Infrastructure</text>
+  <text x="1632" y="2014" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">environment_type : str</text>
+  <text x="1632" y="2035" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">scope : str</text>
+  <rect x="1620" y="2880" width="280" height="140" fill="#F4FAF6" stroke="#397B54" stroke-width="1.5" />
+  <rect x="1620" y="2880" width="280" height="34" fill="#DDEFE3" stroke="#397B54" stroke-width="1.5" />
+  <text x="1760.0" y="2903" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">Node</text>
+  <text x="1632" y="2934" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">hostname : str</text>
+  <text x="1632" y="2955" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">ip_addresses : list[str]</text>
+  <text x="1632" y="2976" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">mac_addresses : list[str]</text>
+  <text x="1632" y="2997" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">fqdn : str</text>
+  <rect x="1300" y="3460" width="280" height="80" fill="#F4FAF6" stroke="#397B54" stroke-width="1.5" />
+  <rect x="1300" y="3460" width="280" height="34" fill="#DDEFE3" stroke="#397B54" stroke-width="1.5" />
+  <text x="1440.0" y="3483" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">NodeType</text>
+  <text x="1312" y="3514" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">category : str</text>
+  <rect x="1620" y="4220" width="280" height="140" fill="#F4FAF6" stroke="#397B54" stroke-width="1.5" />
+  <rect x="1620" y="4220" width="280" height="34" fill="#DDEFE3" stroke="#397B54" stroke-width="1.5" />
+  <text x="1760.0" y="4243" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">Port</text>
+  <text x="1632" y="4274" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">number : int</text>
+  <text x="1632" y="4295" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">protocol : str</text>
+  <text x="1632" y="4316" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">service_name : str</text>
+  <text x="1632" y="4337" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">state : str</text>
+  <rect x="1900" y="3400" width="280" height="120" fill="#F4FAF6" stroke="#397B54" stroke-width="1.5" />
+  <rect x="1900" y="3400" width="280" height="34" fill="#DDEFE3" stroke="#397B54" stroke-width="1.5" />
+  <text x="2040.0" y="3423" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">Connection</text>
+  <text x="1912" y="3454" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">protocol : str</text>
+  <text x="1912" y="3475" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">encrypted : bool</text>
+  <text x="1912" y="3496" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">allowed : bool</text>
+  <rect x="2920" y="2540" width="280" height="40" fill="#F4FAF6" stroke="#397B54" stroke-width="1.5" />
+  <rect x="2920" y="2540" width="280" height="34" fill="#DDEFE3" stroke="#397B54" stroke-width="1.5" />
+  <text x="3060.0" y="2563" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">Resource</text>
+  <rect x="2380" y="2840" width="280" height="120" fill="#F4FAF6" stroke="#397B54" stroke-width="1.5" />
+  <rect x="2380" y="2840" width="280" height="34" fill="#DDEFE3" stroke="#397B54" stroke-width="1.5" />
+  <text x="2520.0" y="2863" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">Code</text>
+  <text x="2392" y="2894" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">language : str</text>
+  <text x="2392" y="2915" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">version : str</text>
+  <text x="2392" y="2936" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">repository_url : str</text>
+  <rect x="2920" y="2900" width="280" height="80" fill="#F4FAF6" stroke="#397B54" stroke-width="1.5" />
+  <rect x="2920" y="2900" width="280" height="34" fill="#DDEFE3" stroke="#397B54" stroke-width="1.5" />
+  <text x="3060.0" y="2923" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">Information</text>
+  <text x="2932" y="2954" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">format : str</text>
+  <rect x="3380" y="3120" width="280" height="80" fill="#F4FAF6" stroke="#397B54" stroke-width="1.5" />
+  <rect x="3380" y="3120" width="280" height="34" fill="#DDEFE3" stroke="#397B54" stroke-width="1.5" />
+  <text x="3520.0" y="3143" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">InformationType</text>
+  <text x="3392" y="3174" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">category : str</text>
+  <rect x="3340" y="2460" width="280" height="140" fill="#F4FAF6" stroke="#397B54" stroke-width="1.5" />
+  <rect x="3340" y="2460" width="280" height="34" fill="#DDEFE3" stroke="#397B54" stroke-width="1.5" />
+  <text x="3480.0" y="2483" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">User</text>
+  <text x="3352" y="2514" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">username : str</text>
+  <text x="3352" y="2535" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">email : str</text>
+  <text x="3352" y="2556" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">role : str</text>
+  <text x="3352" y="2577" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">mfa_enabled : bool</text>
+  <rect x="3340" y="2000" width="280" height="80" fill="#F4FAF6" stroke="#397B54" stroke-width="1.5" />
+  <rect x="3340" y="2000" width="280" height="34" fill="#DDEFE3" stroke="#397B54" stroke-width="1.5" />
+  <text x="3480.0" y="2023" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">UserType</text>
+  <text x="3352" y="2054" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">privilege_level : str</text>
+  <rect x="2920" y="4220" width="280" height="140" fill="#F4FAF6" stroke="#397B54" stroke-width="1.5" />
+  <rect x="2920" y="4220" width="280" height="34" fill="#DDEFE3" stroke="#397B54" stroke-width="1.5" />
+  <text x="3060.0" y="4243" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">Application</text>
+  <text x="2932" y="4274" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">vendor : str</text>
+  <text x="2932" y="4295" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">product : str</text>
+  <text x="2932" y="4316" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">version : str</text>
+  <text x="2932" y="4337" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">cpe : str</text>
+  <rect x="2500" y="3240" width="280" height="100" fill="#F4FAF6" stroke="#397B54" stroke-width="1.5" />
+  <rect x="2500" y="3240" width="280" height="34" fill="#DDEFE3" stroke="#397B54" stroke-width="1.5" />
+  <text x="2640.0" y="3263" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">ApplicationInstance</text>
+  <text x="2512" y="3294" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">version : str</text>
+  <text x="2512" y="3315" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">runtime_state : str</text>
+  <rect x="2420" y="4040" width="280" height="140" fill="#F4FAF6" stroke="#397B54" stroke-width="1.5" />
+  <rect x="2420" y="4040" width="280" height="34" fill="#DDEFE3" stroke="#397B54" stroke-width="1.5" />
+  <text x="2560.0" y="4063" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">OS</text>
+  <text x="2432" y="4094" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">vendor : str</text>
+  <text x="2432" y="4115" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">product : str</text>
+  <text x="2432" y="4136" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">version : str</text>
+  <text x="2432" y="4157" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">cpe : str</text>
+  <rect x="2500" y="3440" width="280" height="140" fill="#F4FAF6" stroke="#397B54" stroke-width="1.5" />
+  <rect x="2500" y="3440" width="280" height="34" fill="#DDEFE3" stroke="#397B54" stroke-width="1.5" />
+  <text x="2640.0" y="3463" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">OSInstance</text>
+  <text x="2512" y="3494" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">version : str</text>
+  <text x="2512" y="3515" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">build : str</text>
+  <text x="2512" y="3536" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">patch_level : str</text>
+  <text x="2512" y="3557" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">support_status : str</text>
+  <rect x="4460" y="900" width="280" height="140" fill="#FFF9F2" stroke="#A45B20" stroke-width="1.5" />
+  <rect x="4460" y="900" width="280" height="34" fill="#FCE7D2" stroke="#A45B20" stroke-width="1.5" />
+  <text x="4600.0" y="923" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">ThreatActor</text>
+  <text x="4472" y="954" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">aliases : list[str]</text>
+  <text x="4472" y="975" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">motivation : str</text>
+  <text x="4472" y="996" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">sophistication : str</text>
+  <text x="4472" y="1017" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">country : str</text>
+  <rect x="5300" y="920" width="280" height="100" fill="#FFF9F2" stroke="#A45B20" stroke-width="1.5" />
+  <rect x="5300" y="920" width="280" height="34" fill="#FCE7D2" stroke="#A45B20" stroke-width="1.5" />
+  <text x="5440.0" y="943" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">Adversary</text>
+  <text x="5312" y="974" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">objective : str</text>
+  <text x="5312" y="995" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">capability_level : str</text>
+  <rect x="5300" y="1400" width="280" height="80" fill="#FFF9F2" stroke="#A45B20" stroke-width="1.5" />
+  <rect x="5300" y="1400" width="280" height="34" fill="#FCE7D2" stroke="#A45B20" stroke-width="1.5" />
+  <text x="5440.0" y="1423" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">AdversaryType</text>
+  <text x="5312" y="1454" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">category : str</text>
+  <rect x="5160" y="660" width="280" height="100" fill="#FFF9F2" stroke="#A45B20" stroke-width="1.5" />
+  <rect x="5160" y="660" width="280" height="34" fill="#FCE7D2" stroke="#A45B20" stroke-width="1.5" />
+  <text x="5300.0" y="683" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">Expertise</text>
+  <text x="5172" y="714" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">level : str</text>
+  <text x="5172" y="735" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">domain : str</text>
+  <rect x="4460" y="1340" width="280" height="120" fill="#FFF9F2" stroke="#A45B20" stroke-width="1.5" />
+  <rect x="4460" y="1340" width="280" height="34" fill="#FCE7D2" stroke="#A45B20" stroke-width="1.5" />
+  <text x="4600.0" y="1363" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">Threat</text>
+  <text x="4472" y="1394" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">objective : str</text>
+  <text x="4472" y="1415" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">first_seen : str</text>
+  <text x="4472" y="1436" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">last_seen : str</text>
+  <rect x="4460" y="1720" width="280" height="140" fill="#FFF9F2" stroke="#A45B20" stroke-width="1.5" />
+  <rect x="4460" y="1720" width="280" height="34" fill="#FCE7D2" stroke="#A45B20" stroke-width="1.5" />
+  <text x="4600.0" y="1743" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">ThreatStep</text>
+  <text x="4472" y="1774" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">phase : str</text>
+  <text x="4472" y="1795" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">objective : str</text>
+  <text x="4472" y="1816" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">preconditions : list[str]</text>
+  <text x="4472" y="1837" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">postconditions : list[str]</text>
+  <rect x="4900" y="1720" width="280" height="140" fill="#FFF9F2" stroke="#A45B20" stroke-width="1.5" />
+  <rect x="4900" y="1720" width="280" height="34" fill="#FCE7D2" stroke="#A45B20" stroke-width="1.5" />
+  <text x="5040.0" y="1743" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">Campaign</text>
+  <text x="4912" y="1774" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">first_seen : str</text>
+  <text x="4912" y="1795" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">last_seen : str</text>
+  <text x="4912" y="1816" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">status : str</text>
+  <text x="4912" y="1837" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">objective : str</text>
+  <rect x="4460" y="2100" width="280" height="140" fill="#FFF9F2" stroke="#A45B20" stroke-width="1.5" />
+  <rect x="4460" y="2100" width="280" height="34" fill="#FCE7D2" stroke="#A45B20" stroke-width="1.5" />
+  <text x="4600.0" y="2123" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">TTP</text>
+  <text x="4472" y="2154" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">external_id : str</text>
+  <text x="4472" y="2175" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">tactic : str</text>
+  <text x="4472" y="2196" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">technique : str</text>
+  <text x="4472" y="2217" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">subtechnique : str</text>
+  <rect x="4040" y="2900" width="280" height="160" fill="#FFF9F2" stroke="#A45B20" stroke-width="1.5" />
+  <rect x="4040" y="2900" width="280" height="34" fill="#FCE7D2" stroke="#A45B20" stroke-width="1.5" />
+  <text x="4180.0" y="2923" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">Indicator</text>
+  <text x="4052" y="2954" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">indicator_type : str</text>
+  <text x="4052" y="2975" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">value : str</text>
+  <text x="4052" y="2996" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">pattern : str</text>
+  <text x="4052" y="3017" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">valid_from : str</text>
+  <text x="4052" y="3038" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">valid_until : str</text>
+  <rect x="3600" y="1340" width="280" height="120" fill="#FFF9F2" stroke="#A45B20" stroke-width="1.5" />
+  <rect x="3600" y="1340" width="280" height="34" fill="#FCE7D2" stroke="#A45B20" stroke-width="1.5" />
+  <text x="3740.0" y="1363" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">Vulnerability</text>
+  <text x="3612" y="1394" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">external_id : str</text>
+  <text x="3612" y="1415" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">severity : str</text>
+  <text x="3612" y="1436" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">cvss_score : float</text>
+  <rect x="3000" y="3700" width="280" height="120" fill="#FFF9F2" stroke="#A45B20" stroke-width="1.5" />
+  <rect x="3000" y="3700" width="280" height="34" fill="#FCE7D2" stroke="#A45B20" stroke-width="1.5" />
+  <text x="3140.0" y="3723" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">SoftwareVulnerability</text>
+  <text x="3012" y="3754" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">cve_id : str</text>
+  <text x="3012" y="3775" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">cwe_id : str</text>
+  <text x="3012" y="3796" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">affected_versions : list[str]</text>
+  <rect x="3240" y="3420" width="280" height="100" fill="#FFF9F2" stroke="#A45B20" stroke-width="1.5" />
+  <rect x="3240" y="3420" width="280" height="34" fill="#FCE7D2" stroke="#A45B20" stroke-width="1.5" />
+  <text x="3380.0" y="3443" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">ConfigVulnerability</text>
+  <text x="3252" y="3474" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">misconfiguration_type : str</text>
+  <text x="3252" y="3495" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">detectability : str</text>
+  <rect x="3660" y="3420" width="280" height="80" fill="#FFF9F2" stroke="#A45B20" stroke-width="1.5" />
+  <rect x="3660" y="3420" width="280" height="34" fill="#FCE7D2" stroke="#A45B20" stroke-width="1.5" />
+  <text x="3800.0" y="3443" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">HumanVulnerability</text>
+  <text x="3672" y="3474" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">vulnerability_type : str</text>
+  <rect x="4420" y="3440" width="280" height="120" fill="#FFF9F2" stroke="#A45B20" stroke-width="1.5" />
+  <rect x="4420" y="3440" width="280" height="34" fill="#FCE7D2" stroke="#A45B20" stroke-width="1.5" />
+  <text x="4560.0" y="3463" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">AttackTool</text>
+  <text x="4432" y="3494" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">aliases : list[str]</text>
+  <text x="4432" y="3515" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">tool_type : str</text>
+  <text x="4432" y="3536" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">capabilities : list[str]</text>
+  <rect x="4140" y="2400" width="280" height="140" fill="#FFF9F2" stroke="#A45B20" stroke-width="1.5" />
+  <rect x="4140" y="2400" width="280" height="34" fill="#FCE7D2" stroke="#A45B20" stroke-width="1.5" />
+  <text x="4280.0" y="2423" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">AttackToolInstance</text>
+  <text x="4152" y="2454" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">observed_version : str</text>
+  <text x="4152" y="2475" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">hashes : list[str]</text>
+  <text x="4152" y="2496" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">first_seen : str</text>
+  <text x="4152" y="2517" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">last_seen : str</text>
+  <rect x="4140" y="3820" width="280" height="140" fill="#FFF9F2" stroke="#A45B20" stroke-width="1.5" />
+  <rect x="4140" y="3820" width="280" height="34" fill="#FCE7D2" stroke="#A45B20" stroke-width="1.5" />
+  <text x="4280.0" y="3843" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">AttackToolConfiguration</text>
+  <text x="4152" y="3874" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">configuration_type : str</text>
+  <text x="4152" y="3895" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">parameters : dict</text>
+  <text x="4152" y="3916" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">persistence_enabled : bool</text>
+  <text x="4152" y="3937" font-family="Arial" font-size="14" font-weight="400" fill="#172B40" text-anchor="start">stealth_level : str</text>
+  <rect x="729.0" y="514.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="743.0" y="530.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="1152.0" y="1904.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1174.5" y="1920.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="789.0" y="514.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="803.0" y="530.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="1712.0" y="1924.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1734.5" y="1940.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="669.0" y="514.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="683.0" y="530.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="1729.0" y="2074.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1743.0" y="2090.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="1672.0" y="2844.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1694.5" y="2860.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="911.0" y="375.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="925.0" y="391.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="2382.5" y="335.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2405.0" y="351.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="1632.0" y="3034.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1654.5" y="3050.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="1409.0" y="3424.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1423.0" y="3440.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="1911.0" y="2935.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1925.0" y="2951.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="2862.5" y="2535.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2885.0" y="2551.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="1709.0" y="3034.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1723.0" y="3050.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="1652.0" y="4184.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1674.5" y="4200.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="1749.0" y="3034.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1763.0" y="3050.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="1952.0" y="3364.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1974.5" y="3380.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="1911.0" y="3003.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1925.0" y="3019.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="2461.0" y="3495.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2475.0" y="3511.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="1911.0" y="3030.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1925.0" y="3046.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="2442.5" y="3255.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2465.0" y="3271.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="2592.0" y="3594.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2614.5" y="3610.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="2529.0" y="4004.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2543.0" y="4020.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="2592.0" y="3354.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2614.5" y="3370.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="2989.0" y="4184.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3003.0" y="4200.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="1809.0" y="3034.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1823.0" y="3050.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="2032.0" y="3364.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2054.5" y="3380.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="4752.5" y="1375.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4775.0" y="1391.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="4861.0" y="1715.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4875.0" y="1731.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="4752.5" y="975.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4775.0" y="991.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="5242.5" y="935.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="5265.0" y="951.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="4569.0" y="1054.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4583.0" y="1070.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="4552.0" y="1304.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4574.5" y="1320.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..1</text>
+  <rect x="4752.5" y="915.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4775.0" y="931.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="5121.0" y="675.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="5135.0" y="691.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="4592.0" y="1874.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4614.5" y="1890.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="4569.0" y="2064.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4583.0" y="2080.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="4101.0" y="2455.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4115.0" y="2471.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="3982.5" y="2955.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4005.0" y="2971.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="4272.0" y="2554.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4294.5" y="2570.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="4489.0" y="3404.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4503.0" y="3420.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="4209.0" y="2554.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4223.0" y="2570.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="4192.0" y="3784.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4214.5" y="3800.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="4082.5" y="2503.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4105.0" y="2519.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="2791.0" y="3495.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2805.0" y="3511.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="4842.5" y="1803.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4865.0" y="1819.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="1352.5" y="1975.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1375.0" y="1991.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="4842.5" y="1755.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4865.0" y="1771.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="432.5" y="1935.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="455.0" y="1951.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="4842.5" y="1843.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4865.0" y="1859.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="952.5" y="2535.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="975.0" y="2551.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="4332.5" y="2955.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4355.0" y="2971.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="4431.0" y="2455.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4445.0" y="2471.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="4402.5" y="2175.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4425.0" y="2191.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="3772.0" y="1474.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3794.5" y="1490.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..1</text>
+  <rect x="4172.0" y="2364.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4194.5" y="2380.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="3182.5" y="3435.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3205.0" y="3451.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="2672.5" y="2943.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2695.0" y="2959.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="4402.5" y="1755.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4425.0" y="1771.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="2731.0" y="1375.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2745.0" y="1391.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="232.0" y="2034.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="254.5" y="2050.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="752.0" y="2484.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="774.5" y="2500.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="3212.5" y="2915.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3235.0" y="2931.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="3341.0" y="3135.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3355.0" y="3151.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="5392.0" y="1034.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="5414.5" y="1050.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="5409.0" y="1364.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="5423.0" y="1380.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="4552.0" y="864.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4574.5" y="880.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="4552.0" y="1474.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4574.5" y="1490.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..1</text>
+  <rect x="4529.0" y="1684.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4543.0" y="1700.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="3712.0" y="3384.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3734.5" y="3400.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="3472.0" y="2614.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3494.5" y="2630.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="2672.5" y="2895.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2695.0" y="2911.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="2862.5" y="2915.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2885.0" y="2931.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="2449.0" y="2974.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2463.0" y="2990.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="1772.0" y="4184.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1794.5" y="4200.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="2549.0" y="414.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2563.0" y="430.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="2532.0" y="1344.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2554.5" y="1360.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="3301.0" y="2515.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3315.0" y="2531.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="2672.5" y="2835.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2695.0" y="2851.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="3392.0" y="2614.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3414.5" y="2630.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="3012.0" y="2864.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3034.5" y="2880.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="3432.0" y="2424.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3454.5" y="2440.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="3449.0" y="2094.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3463.0" y="2110.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="4512.0" y="1874.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4534.5" y="1890.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="4292.0" y="2364.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4314.5" y="2380.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="4592.0" y="1684.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4614.5" y="1700.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="1911.0" y="1975.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1925.0" y="1991.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="3282.5" y="2475.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3305.0" y="2491.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="4529.0" y="3574.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4543.0" y="3590.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="4272.0" y="3784.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4294.5" y="3800.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="2961.0" y="1375.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2975.0" y="1391.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="2532.0" y="1434.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2554.5" y="1450.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="2382.5" y="1375.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2405.0" y="1391.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="2231.0" y="915.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2245.0" y="931.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="4402.5" y="1815.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4425.0" y="1831.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="3211.0" y="2535.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3225.0" y="2551.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="4402.5" y="2115.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4425.0" y="2131.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="2232.5" y="955.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2255.0" y="971.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="1992.0" y="3534.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2014.5" y="3550.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="1729.0" y="4184.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1743.0" y="4200.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="3092.0" y="3834.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3114.5" y="3850.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="3069.0" y="4184.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3083.0" y="4200.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="2942.5" y="3735.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2965.0" y="3751.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1..*</text>
+  <rect x="2711.0" y="4095.0" width="28" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2725.0" y="4111.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">1</text>
+  <rect x="1752.0" y="2844.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1774.5" y="2860.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..1</text>
+  <rect x="1562.5" y="2935.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1585.0" y="2951.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="4082.5" y="2415.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4105.0" y="2431.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..*</text>
+  <rect x="1912.5" y="2875.0" width="45" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1935.0" y="2891.1" font-family="Arial" font-size="15" font-weight="400" fill="#415367" text-anchor="middle">0..1</text>
+  <rect x="730.5" y="1903.0" width="103" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="782.0" y="1919.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">operatesIn</text>
+  <rect x="1205.5" y="1883.0" width="75" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1243.0" y="1899.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">manages</text>
+  <rect x="641.5" y="1835.0" width="75" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="679.0" y="1851.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">basedIn</text>
+  <rect x="1691.0" y="2493.0" width="66" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1724.0" y="2509.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">madeBy</text>
+  <rect x="1617.5" y="375.0" width="215" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1725.0" y="391.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">hasBusinessRequirement</text>
+  <rect x="1611.5" y="3395.0" width="113" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1668.0" y="3411.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">hasNodeType</text>
+  <rect x="2303.5" y="2535.0" width="131" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2369.0" y="2551.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">hostsResource</text>
+  <rect x="1624.0" y="3647.0" width="113" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1680.5" y="3663.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">exposesPort</text>
+  <rect x="1747.5" y="3363.0" width="131" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1813.0" y="3379.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">isDestination</text>
+  <rect x="2266.0" y="3003.0" width="66" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2299.0" y="3019.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">runsOS</text>
+  <rect x="2258.5" y="2935.0" width="75" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2296.0" y="2951.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">runsApp</text>
+  <rect x="2515.0" y="3842.0" width="122" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2576.0" y="3858.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">osInstanceOf</text>
+  <rect x="2822.5" y="3383.0" width="205" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2925.0" y="3399.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">applicationInstanceOf</text>
+  <rect x="1809.5" y="3315.0" width="85" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1852.0" y="3331.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">isSource</text>
+  <rect x="4655.0" y="1593.0" width="122" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4716.0" y="1609.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">threatPartOf</text>
+  <rect x="5005.0" y="975.0" width="94" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="5052.0" y="991.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">relatedTo</text>
+  <rect x="4503.0" y="1179.0" width="94" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4550.0" y="1195.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">initiates</text>
+  <rect x="3958.5" y="1715.0" width="85" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4001.0" y="1731.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">exploits</text>
+  <rect x="5002.0" y="915.0" width="122" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="5063.0" y="931.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">hasExpertise</text>
+  <rect x="4506.0" y="1989.0" width="131" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4571.5" y="2005.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">implementsTTP</text>
+  <rect x="4003.0" y="2669.0" width="168" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4087.0" y="2685.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">producesIndicator</text>
+  <rect x="4440.0" y="2835.0" width="140" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4510.0" y="2851.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">toolInstanceOf</text>
+  <rect x="4319.0" y="3555.0" width="94" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4366.0" y="3571.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">hasConfig</text>
+  <rect x="3591.5" y="3335.0" width="113" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3648.0" y="3351.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">designedFor</text>
+  <rect x="3064.5" y="1895.0" width="131" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3130.0" y="1911.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">targetsSector</text>
+  <rect x="2575.5" y="1943.0" width="159" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2655.0" y="1959.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">focusesOnCountry</text>
+  <rect x="2803.5" y="2315.0" width="233" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2920.0" y="2331.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">targetsInternationalBody</text>
+  <rect x="4363.0" y="2669.0" width="159" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4442.5" y="2685.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">associatedToTool</text>
+  <rect x="3781.5" y="2175.0" width="205" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3884.0" y="2191.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">exploitsVulnerability</text>
+  <rect x="4193.5" y="2315.0" width="113" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4250.0" y="2331.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">deploysTool</text>
+  <rect x="3068.5" y="2995.0" width="113" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3125.0" y="3011.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">affectsCode</text>
+  <rect x="3383.5" y="1755.0" width="113" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3440.0" y="1771.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">compromises</text>
+  <rect x="682.5" y="2035.0" width="131" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="748.0" y="2051.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">countryPartOf</text>
+  <rect x="3243.0" y="3094.0" width="178" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3332.0" y="3110.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">hasInformationType</text>
+  <rect x="2646.5" y="2595.0" width="215" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2754.0" y="2611.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">resourceImplementsCode</text>
+  <rect x="5278.0" y="1199.0" width="159" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="5357.5" y="1215.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">hasAdversaryType</text>
+  <rect x="4409.5" y="835.0" width="75" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4447.0" y="851.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">aliasOf</text>
+  <rect x="4494.0" y="1603.0" width="103" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4545.5" y="1619.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">startsWith</text>
+  <rect x="3535.5" y="2615.0" width="113" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3592.0" y="2631.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">affectsUser</text>
+  <rect x="2720.5" y="2892.0" width="187" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2814.0" y="2908.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">accessesInformation</text>
+  <rect x="2286.0" y="4155.0" width="94" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2333.0" y="4171.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">listensOn</text>
+  <rect x="2335.0" y="879.0" width="242" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2456.0" y="895.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">drivesSecurityRequirement</text>
+  <rect x="2573.5" y="2803.0" width="113" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2630.0" y="2819.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">hasAccessTo</text>
+  <rect x="3105.5" y="2815.0" width="85" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3148.0" y="2831.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">launches</text>
+  <rect x="3024.0" y="2643.0" width="224" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3136.0" y="2659.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">userAccessesInformation</text>
+  <rect x="3364.0" y="2259.0" width="113" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3420.5" y="2275.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">hasUserType</text>
+  <rect x="2643.0" y="3049.0" width="242" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2764.0" y="3065.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">applicationImplementsCode</text>
+  <rect x="4294.5" y="1875.0" width="113" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4351.0" y="1891.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">employsTool</text>
+  <rect x="4403.5" y="1635.0" width="103" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4455.0" y="1651.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">followedBy</text>
+  <rect x="2383.0" y="2455.0" width="66" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2416.0" y="2471.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">usedBy</text>
+  <rect x="4286.0" y="3603.0" width="140" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="4356.0" y="3619.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">requiresConfig</text>
+  <rect x="5060.0" y="2255.0" width="168" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="5144.0" y="2271.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">requiresExpertise</text>
+  <rect x="2760.5" y="1403.0" width="215" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2868.0" y="1419.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">hasSecurityRequirement</text>
+  <rect x="2192.0" y="1090.0" width="205" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2294.5" y="1106.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">implementsRequirement</text>
+  <rect x="2833.0" y="1881.0" width="224" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2945.0" y="1897.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">resourceImplementsAsset</text>
+  <rect x="3409.0" y="1815.0" width="150" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3484.0" y="1831.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">targetsResource</text>
+  <rect x="3811.5" y="955.0" width="85" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3854.0" y="971.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">violates</text>
+  <rect x="1937.0" y="4135.0" width="178" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2026.0" y="4151.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">hasDestinationPort</text>
+  <rect x="3143.0" y="4025.0" width="178" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3232.0" y="4041.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">affectsApplication</text>
+  <rect x="2835.0" y="4095.0" width="94" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="2882.0" y="4111.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">affectsOS</text>
+  <rect x="1604.0" y="2795.0" width="48" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="1628.0" y="2811.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">runs</text>
+  <rect x="3092.5" y="2755.0" width="103" height="22" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <text x="3144.0" y="2771.44" font-family="Arial" font-size="16" font-weight="700" fill="#172B40" text-anchor="middle">deployedTo</text>
+</svg>

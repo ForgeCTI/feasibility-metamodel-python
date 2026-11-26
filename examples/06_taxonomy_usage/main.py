@@ -43,7 +43,7 @@ def main() -> None:
 
     model = Model()
 
-    attack_tool = model.add_entity(
+    attack_tool = model.add(
         AttackTool(
             name=cobalt_strike["name"],
             description=cobalt_strike.get("description"),

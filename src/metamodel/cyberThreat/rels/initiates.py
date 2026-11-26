@@ -11,4 +11,4 @@ class initiates(BaseRelationship):
     source_type = ThreatActor
     target_type = Threat
     source_cardinality = '1'
-    target_cardinality = '1'
+    target_cardinality = '0..1'

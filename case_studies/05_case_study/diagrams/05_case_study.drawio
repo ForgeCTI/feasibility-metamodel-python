@@ -1,0 +1,263 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram id="case-study-05" name="Case Study 05">
+    <mxGraphModel dx="4777" dy="2369" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4700" pageHeight="2130" background="#F8FAFD" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;fillColor=#F8FAFD;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="2130" width="4700" as="geometry" />
+        </mxCell>
+        <mxCell id="header" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=43;fontStyle=1;fontColor=#203449;" value="Case Study 05 · Asterion Research Institute" vertex="1">
+          <mxGeometry height="77" width="2800" x="58" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="text;html=1;align=left;fontSize=24;fontColor=#536579;" value="Coordinated Cyber-Espionage Campaign | Instantiated model" vertex="1">
+          <mxGeometry height="44" width="2800" x="58" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="stats" parent="1" style="text;html=1;align=right;fontSize=28;fontStyle=1;fontColor=#203449;" value="23 entities  |  31 relationships" vertex="1">
+          <mxGeometry height="48" width="745" x="3900" y="53" as="geometry" />
+        </mxCell>
+        <mxCell id="panel_org" parent="1" style="rounded=1;arcSize=4;fillColor=#FFFFFF;strokeColor=#D6E0EA;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="1810" width="900" x="40" y="188" as="geometry" />
+        </mxCell>
+        <mxCell id="org_head" parent="1" style="text;html=1;align=left;fontSize=29;fontStyle=1;fontColor=#477DB8;" value="Organization submodel" vertex="1">
+          <mxGeometry height="53" width="700" x="76" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="org_sub" parent="1" style="text;html=1;align=left;fontSize=19;fontColor=#536579;" value="4 instantiated entities" vertex="1">
+          <mxGeometry height="40" width="650" x="95" y="267" as="geometry" />
+        </mxCell>
+        <mxCell id="panel_inf" parent="1" style="rounded=1;arcSize=4;fillColor=#FFFFFF;strokeColor=#D6E0EA;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="1810" width="1550" x="980" y="188" as="geometry" />
+        </mxCell>
+        <mxCell id="inf_head" parent="1" style="text;html=1;align=left;fontSize=29;fontStyle=1;fontColor=#238879;" value="Infrastructure submodel" vertex="1">
+          <mxGeometry height="53" width="700" x="1016" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="inf_sub" parent="1" style="text;html=1;align=left;fontSize=19;fontColor=#536579;" value="8 instantiated entities" vertex="1">
+          <mxGeometry height="40" width="650" x="1035" y="267" as="geometry" />
+        </mxCell>
+        <mxCell id="panel_cyber" parent="1" style="rounded=1;arcSize=4;fillColor=#FFFFFF;strokeColor=#D6E0EA;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="1810" width="2110" x="2550" y="188" as="geometry" />
+        </mxCell>
+        <mxCell id="cyber_head" parent="1" style="text;html=1;align=left;fontSize=29;fontStyle=1;fontColor=#C18A46;" value="CyberThreat submodel" vertex="1">
+          <mxGeometry height="53" width="700" x="2586" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="cyber_sub" parent="1" style="text;html=1;align=left;fontSize=19;fontColor=#536579;" value="11 instantiated entities" vertex="1">
+          <mxGeometry height="40" width="650" x="2605" y="267" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-01-operatesIn" edge="1" parent="1" source="org-asterion-research-institute" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.46875000;exitY=1.00000000;exitDx=0;exitDy=0;entryX=0.46875000;entryY=0.00000000;entryDx=0;entryDy=0;" target="sector-scientific-research-development" value="operatesIn">
+          <mxGeometry relative="1" x="-0.02678571" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-02-basedIn" edge="1" parent="1" source="org-asterion-research-institute" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.00000000;exitY=0.50000000;exitDx=0;exitDy=0;entryX=0.00000000;entryY=0.50000000;entryDx=0;entryDy=0;" target="country-italy" value="basedIn">
+          <mxGeometry relative="1" x="0.33846154" as="geometry">
+            <Array as="points">
+              <mxPoint x="100" y="598" />
+              <mxPoint x="100" y="1258" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-03-countryPartOf" edge="1" parent="1" source="country-italy" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.46875000;exitY=1.00000000;exitDx=0;exitDy=0;entryX=0.46875000;entryY=0.00000000;entryDx=0;entryDy=0;" target="international-body-european-research-cooperation-council" value="countryPartOf">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-04-manages" edge="1" parent="1" source="org-asterion-research-institute" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=1.00000000;exitY=0.50000000;exitDx=0;exitDy=0;entryX=0.00000000;entryY=0.50000000;entryDx=0;entryDy=0;" target="infrastructure-asterion-research-it" value="manages">
+          <mxGeometry relative="1" x="0.47058824" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-05-madeBy" edge="1" parent="1" source="infrastructure-asterion-research-it" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=1.00000000;exitY=0.50000000;exitDx=0;exitDy=0;entryX=0.00000000;entryY=0.50000000;entryDx=0;entryDy=0;" target="node-asterion-physical-hypervisor" value="madeBy">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-06-madeBy" edge="1" parent="1" source="infrastructure-asterion-research-it" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.91304348;exitY=1.00000000;exitDx=0;exitDy=0;entryX=0.32608696;entryY=0.00000000;entryDx=0;entryDy=0;" target="node-research-document-vm" value="madeBy">
+          <mxGeometry relative="1" x="0.09090909" as="geometry">
+            <Array as="points">
+              <mxPoint x="1570" y="800" />
+              <mxPoint x="2050" y="800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-07-runs" edge="1" parent="1" source="node-asterion-physical-hypervisor" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.65217391;exitY=1.00000000;exitDx=0;exitDy=0;entryX=0.65217391;entryY=0.00000000;entryDx=0;entryDy=0;" target="node-research-document-vm" value="runs">
+          <mxGeometry relative="1" x="-0.11607143" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-08-usedBy" edge="1" parent="1" source="infrastructure-asterion-research-it" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.34782609;exitY=1.00000000;exitDx=0;exitDy=0;entryX=0.34782609;entryY=0.00000000;entryDx=0;entryDy=0;" target="user-asterion-researcher" value="usedBy">
+          <mxGeometry relative="1" x="-0.02678571" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-09-hasAccessTo" edge="1" parent="1" source="user-asterion-researcher" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=1.00000000;exitY=0.50000000;exitDx=0;exitDy=0;entryX=0.00000000;entryY=0.50000000;entryDx=0;entryDy=0;" target="node-research-document-vm" value="hasAccessTo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-10-runsApp" edge="1" parent="1" source="node-research-document-vm" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.47826087;exitY=1.00000000;exitDx=0;exitDy=0;entryX=0.47826087;entryY=0.00000000;entryDx=0;entryDy=0;" target="application-instance-research-portal-production" value="runsApp">
+          <mxGeometry relative="1" x="0.01960784" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-11-applicationInstanceOf" edge="1" parent="1" source="application-instance-research-portal-production" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.47826087;exitY=1.00000000;exitDx=0;exitDy=0;entryX=0.47826087;entryY=0.00000000;entryDx=0;entryDy=0;" target="application-asterion-research-document-portal" value="applicationInstanceOf">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-12-applicationImplementsCode" edge="1" parent="1" source="application-instance-research-portal-production" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.00000000;exitY=0.50000000;exitDx=0;exitDy=0;entryX=1.00000000;entryY=0.50000000;entryDx=0;entryDy=0;" target="code-research-document-viewer" value="applicationImplementsCode">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-13-launches" edge="1" parent="1" source="user-asterion-researcher" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.48913043;exitY=1.00000000;exitDx=0;exitDy=0;entryX=0.48913043;entryY=0.00000000;entryDx=0;entryDy=0;" target="code-research-document-viewer" value="launches">
+          <mxGeometry relative="1" x="0.01960784" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-14-accessesInformation" edge="1" parent="1" source="code-research-document-viewer" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.50000000;exitY=1.00000000;exitDx=0;exitDy=0;entryX=0.50000000;entryY=0.00000000;entryDx=0;entryDy=0;" target="information-confidential-research-results" value="accessesInformation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-15-userAccessesInformation" edge="1" parent="1" source="user-asterion-researcher" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.00000000;exitY=0.50000000;exitDx=0;exitDy=0;entryX=0.00000000;entryY=0.50000000;entryDx=0;entryDy=0;" target="information-confidential-research-results" value="userAccessesInformation">
+          <mxGeometry relative="1" x="0.44383562" as="geometry">
+            <Array as="points">
+              <mxPoint x="1100" y="938" />
+              <mxPoint x="1100" y="1568" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-16-aliasOf" edge="1" parent="1" source="threat-actor-ghost-meridian" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.00000000;exitY=0.50000000;exitDx=0;exitDy=0;entryX=1.00000000;entryY=0.50000000;entryDx=0;entryDy=0;" target="threat-actor-silent-horizon-group" value="aliasOf">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-17-initiates" edge="1" parent="1" source="threat-actor-silent-horizon-group" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.50000000;exitY=1.00000000;exitDx=0;exitDy=0;entryX=0.50000000;entryY=0.00000000;entryDx=0;entryDy=0;" target="threat-research-portal-espionage" value="initiates">
+          <mxGeometry relative="1" x="-0.02678571" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-18-threatPartOf" edge="1" parent="1" source="threat-research-portal-espionage" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.00000000;exitY=0.50000000;exitDx=0;exitDy=0;entryX=0.50000000;entryY=1.00000000;entryDx=0;entryDy=0;" target="campaign-european-research-espionage" value="threatPartOf">
+          <mxGeometry relative="1" x="-0.44444444" as="geometry">
+            <Array as="points">
+              <mxPoint x="2890" y="938" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-19-focusesOnCountry" edge="1" parent="1" source="campaign-european-research-espionage" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.45833333;exitY=0.00000000;exitDx=0;exitDy=0;entryX=1.00000000;entryY=0.50000000;entryDx=0;entryDy=0;" target="country-italy" value="focusesOnCountry">
+          <mxGeometry relative="1" x="-0.2433601" as="geometry">
+            <Array as="points">
+              <mxPoint x="2870" y="395" />
+              <mxPoint x="820" y="395" />
+              <mxPoint x="820" y="1258" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-20-targetsInternationalBody" edge="1" parent="1" source="campaign-european-research-espionage" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.79166667;exitY=0.00000000;exitDx=0;exitDy=0;entryX=1.00000000;entryY=0.50000000;entryDx=0;entryDy=0;" target="international-body-european-research-cooperation-council" value="targetsInternationalBody">
+          <mxGeometry relative="1" x="-0.54713007" as="geometry">
+            <Array as="points">
+              <mxPoint x="3030" y="350" />
+              <mxPoint x="760" y="350" />
+              <mxPoint x="760" y="1568" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-21-targetsSector" edge="1" parent="1" source="campaign-european-research-espionage" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.14583333;exitY=0.00000000;exitDx=0;exitDy=0;entryX=1.00000000;entryY=0.50000000;entryDx=0;entryDy=0;" target="sector-scientific-research-development" value="targetsSector">
+          <mxGeometry relative="1" x="0.12023898" as="geometry">
+            <Array as="points">
+              <mxPoint x="2720" y="440" />
+              <mxPoint x="880" y="440" />
+              <mxPoint x="880" y="938" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-22-startsWith" edge="1" parent="1" source="threat-research-portal-espionage" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.50000000;exitY=1.00000000;exitDx=0;exitDy=0;entryX=0.50000000;entryY=0.00000000;entryDx=0;entryDy=0;" target="threat-step-research-portal-compromise" value="startsWith">
+          <mxGeometry relative="1" x="0.01960784" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-23-followedBy" edge="1" parent="1" source="threat-step-research-portal-compromise" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=1.00000000;exitY=0.50000000;exitDx=0;exitDy=0;entryX=0.00000000;entryY=0.50000000;entryDx=0;entryDy=0;" target="threat-step-research-document-collection" value="followedBy">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-24-exploits" edge="1" parent="1" source="threat-step-research-portal-compromise" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.00000000;exitY=0.50000000;exitDx=0;exitDy=0;entryX=1.00000000;entryY=0.50000000;entryDx=0;entryDy=0;" target="vulnerability-unclassified-research-portal-weakness" value="exploits">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-25-employsTool" edge="1" parent="1" source="threat-step-research-portal-compromise" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.50000000;exitY=1.00000000;exitDx=0;exitDy=0;entryX=0.50000000;entryY=0.00000000;entryDx=0;entryDy=0;" target="attack-tool-instance-horizon-loader-vm" value="employsTool">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-26-employsTool" edge="1" parent="1" source="threat-step-research-document-collection" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.50000000;exitY=1.00000000;exitDx=0;exitDy=0;entryX=0.50000000;entryY=0.00000000;entryDx=0;entryDy=0;" target="attack-tool-instance-meridian-collector-vm" value="employsTool">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-27-deploysTool" edge="1" parent="1" source="attack-tool-instance-horizon-loader-vm" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=1.00000000;exitY=0.50000000;exitDx=0;exitDy=0;entryX=0.00000000;entryY=0.50000000;entryDx=0;entryDy=0;" target="attack-tool-instance-meridian-collector-vm" value="deploysTool">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-28-toolInstanceOf" edge="1" parent="1" source="attack-tool-instance-horizon-loader-vm" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.50000000;exitY=1.00000000;exitDx=0;exitDy=0;entryX=0.50000000;entryY=0.00000000;entryDx=0;entryDy=0;" target="attack-tool-horizon-loader" value="toolInstanceOf">
+          <mxGeometry relative="1" x="0.31372549" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-29-toolInstanceOf" edge="1" parent="1" source="attack-tool-instance-meridian-collector-vm" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.50000000;exitY=1.00000000;exitDx=0;exitDy=0;entryX=0.50000000;entryY=0.00000000;entryDx=0;entryDy=0;" target="attack-tool-meridian-collector" value="toolInstanceOf">
+          <mxGeometry relative="1" x="0.31372549" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-30-deployedTo" edge="1" parent="1" source="attack-tool-instance-horizon-loader-vm" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.00000000;exitY=0.50000000;exitDx=0;exitDy=0;entryX=1.00000000;entryY=0.30172414;entryDx=0;entryDy=0;" target="node-research-document-vm" value="deployedTo">
+          <mxGeometry relative="1" x="-0.46839929" as="geometry">
+            <Array as="points">
+              <mxPoint x="2450" y="1568" />
+              <mxPoint x="2450" y="915" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-31-deployedTo" edge="1" parent="1" source="attack-tool-instance-meridian-collector-vm" style="edgeStyle=segmentEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.4;strokeColor=#637990;endArrow=block;endFill=1;fontSize=18;fontStyle=1;fontColor=#40576F;labelBackgroundColor=#FFFFFF;labelBorderColor=#D6E0EA;jumpStyle=arc;jumpSize=13;exitX=0.00000000;exitY=0.81896552;exitDx=0;exitDy=0;entryX=1.00000000;entryY=0.69827586;entryDx=0;entryDy=0;" target="node-research-document-vm" value="deployedTo">
+          <mxGeometry relative="1" x="-0.07407407" as="geometry">
+            <Array as="points">
+              <mxPoint x="3920" y="1605" />
+              <mxPoint x="3920" y="1705" />
+              <mxPoint x="2510" y="1705" />
+              <mxPoint x="2510" y="961" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="org-asterion-research-institute" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E8F1FD;strokeColor=#477DB8;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;Organization&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Asterion Research Institute&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="480" x="160" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="sector-scientific-research-development" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E8F1FD;strokeColor=#477DB8;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;Sector&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Scientific Research and Development&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="480" x="160" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="country-italy" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E8F1FD;strokeColor=#477DB8;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;HomeCountry&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Italy&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="480" x="160" y="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="international-body-european-research-cooperation-council" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E8F1FD;strokeColor=#477DB8;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;InternationalBody&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;European Research Cooperation Council&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="480" x="160" y="1510" as="geometry" />
+        </mxCell>
+        <mxCell id="infrastructure-asterion-research-it" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;Infrastructure&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Asterion Research IT Infrastructure&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="460" x="1150" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="node-asterion-physical-hypervisor" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;Node&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Asterion Physical Hypervisor&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="460" x="1900" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="node-research-document-vm" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;Node&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Research Document VM&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="460" x="1900" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="user-asterion-researcher" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;User&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Asterion Researcher Account&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="460" x="1150" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="application-asterion-research-document-portal" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;Application&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Asterion Research Document Portal&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="460" x="1900" y="1510" as="geometry" />
+        </mxCell>
+        <mxCell id="application-instance-research-portal-production" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;ApplicationInstance&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Research Portal Production Instance&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="460" x="1900" y="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="code-research-document-viewer" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;Code&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Research Document Viewer&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="460" x="1150" y="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="information-confidential-research-results" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E7F6F1;strokeColor=#238879;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;Information&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Confidential Research Results&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="460" x="1150" y="1510" as="geometry" />
+        </mxCell>
+        <mxCell id="threat-actor-silent-horizon-group" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF0E2;strokeColor=#D89450;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;ThreatActor&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Silent Horizon Group&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="440" x="3400" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="threat-actor-ghost-meridian" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF0E2;strokeColor=#D89450;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;ThreatActor&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Ghost Meridian&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="440" x="4000" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="campaign-european-research-espionage" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF0E2;strokeColor=#D89450;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;Campaign&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;European Research Espionage Campaign&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="480" x="2650" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="threat-research-portal-espionage" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF0E2;strokeColor=#D89450;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;Threat&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Research Portal Espionage&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="440" x="3400" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="threat-step-research-portal-compromise" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF0E2;strokeColor=#D89450;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;ThreatStep&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Research Portal Compromise&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="440" x="3400" y="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="threat-step-research-document-collection" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF0E2;strokeColor=#D89450;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;ThreatStep&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Research Document Collection&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="440" x="4000" y="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="vulnerability-unclassified-research-portal-weakness" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF0E2;strokeColor=#D89450;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;Vulnerability&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Unclassified Research Portal Weakness&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="480" x="2650" y="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="attack-tool-horizon-loader" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF0E2;strokeColor=#D89450;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;AttackTool&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Horizon Loader&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="440" x="3400" y="1830" as="geometry" />
+        </mxCell>
+        <mxCell id="attack-tool-meridian-collector" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF0E2;strokeColor=#D89450;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;AttackTool&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Meridian Collector&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="440" x="4000" y="1830" as="geometry" />
+        </mxCell>
+        <mxCell id="attack-tool-instance-horizon-loader-vm" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF0E2;strokeColor=#D89450;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;AttackToolInstance&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Horizon Loader VM Instance&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="440" x="3400" y="1510" as="geometry" />
+        </mxCell>
+        <mxCell id="attack-tool-instance-meridian-collector-vm" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF0E2;strokeColor=#D89450;strokeWidth=2.6;align=left;verticalAlign=middle;spacingLeft=17;spacingRight=10;fontColor=#203449;fontSize=18;" value="&lt;b style=&quot;font-size:23px&quot;&gt;AttackToolInstance&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:17px;color:#536579&quot;&gt;Meridian Collector VM Instance&lt;/span&gt;" vertex="1">
+          <mxGeometry height="116" width="440" x="4000" y="1510" as="geometry" />
+        </mxCell>
+        <mxCell id="foot" parent="1" style="text;html=1;align=left;fontSize=20;fontColor=#536579;" value="Arrows follow source → target as declared in implementation.py. Entity class appears above its instance name." vertex="1">
+          <mxGeometry height="48" width="4100" x="58" y="2030" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

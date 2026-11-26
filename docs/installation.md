@@ -96,7 +96,7 @@ from metamodel.core.Model import Model
 from metamodel.organization.entities.Organization import Organization
 
 model = Model()
-organization = model.add_entity(Organization(name="ExampleBank"))
+organization = model.add(Organization(name="ExampleBank"))
 
 print(organization.type)
 print(organization.name)

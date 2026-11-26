@@ -1,13 +1,20 @@
 from __future__ import annotations
 
 from metamodel.core.BaseEntity import BaseEntity
-from metamodel.core.ValidationUtils import require_allowed, require_optional_str
+from metamodel.core.ValidationUtils import require_optional_str, require_optional_url
 
 
 class Organization(BaseEntity):
     """Represents the Organization entity from the metamodel."""
 
-    _domain_attributes = ('legal_name', 'short_name', 'website', 'organization_size', 'criticality', 'maturity_level')
+    _domain_attributes = (
+        'legal_name',
+        'short_name',
+        'website',
+        'organization_size',
+        'criticality',
+        'maturity_level'
+    )
 
     def __init__(
         self,
@@ -57,7 +64,7 @@ class Organization(BaseEntity):
 
     @website.setter
     def website(self, value: str | None) -> None:
-        self._website = require_optional_str(value, "website")
+        self._website = require_optional_url(value, "website")
 
     @property
     def organization_size(self) -> str | None:
@@ -65,7 +72,7 @@ class Organization(BaseEntity):
 
     @organization_size.setter
     def organization_size(self, value: str | None) -> None:
-        self._organization_size = require_allowed(require_optional_str(value, "organization_size"), "organization_size", {None, 'medium', 'enterprise', 'small', 'micro', 'large'})
+        self._organization_size = require_optional_str(value, "organization_size")
 
     @property
     def criticality(self) -> str | None:
@@ -73,7 +80,7 @@ class Organization(BaseEntity):
 
     @criticality.setter
     def criticality(self, value: str | None) -> None:
-        self._criticality = require_allowed(require_optional_str(value, "criticality"), "criticality", {None, 'high', 'medium', 'low', 'critical'})
+        self._criticality = require_optional_str(value, "criticality")
 
     @property
     def maturity_level(self) -> str | None:
@@ -81,5 +88,5 @@ class Organization(BaseEntity):
 
     @maturity_level.setter
     def maturity_level(self, value: str | None) -> None:
-        self._maturity_level = require_allowed(require_optional_str(value, "maturity_level"), "maturity_level", {None, 'defined', 'optimized', 'quantitatively_managed', 'managed', 'initial'})
+        self._maturity_level = require_optional_str(value, "maturity_level")
 

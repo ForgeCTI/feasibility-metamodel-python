@@ -1,7 +1,11 @@
 from __future__ import annotations
 
 from metamodel.core.BaseEntity import BaseEntity
-from metamodel.core.ValidationUtils import require_allowed, require_optional_date_string, require_optional_str
+from metamodel.core.ValidationUtils import(
+    require_optional_date_string,
+    require_optional_str,
+    require_date_order,
+)
 
 
 class Indicator(BaseEntity):
@@ -24,8 +28,8 @@ class Indicator(BaseEntity):
         self._indicator_type: str | None
         self._value: str | None
         self._pattern: str | None
-        self._valid_from: str | None
-        self._valid_until: str | None
+        self._valid_from: str | None = None
+        self._valid_until: str | None = None
         self.indicator_type = indicator_type
         self.value = value
         self.pattern = pattern
@@ -38,7 +42,7 @@ class Indicator(BaseEntity):
 
     @indicator_type.setter
     def indicator_type(self, value: str | None) -> None:
-        self._indicator_type = require_allowed(require_optional_str(value, "indicator_type"), "indicator_type", {None, 'file', 'mutex', 'email', 'registry', 'url', 'ip', 'unknown', 'other', 'domain', 'hash'})
+        self._indicator_type = require_optional_str(value, "indicator_type")
 
     @property
     def value(self) -> str | None:
@@ -62,7 +66,9 @@ class Indicator(BaseEntity):
 
     @valid_from.setter
     def valid_from(self, value: str | None) -> None:
-        self._valid_from = require_optional_date_string(value, "valid_from")
+        value = require_optional_date_string(value, "valid_from")
+        require_date_order(value, self._valid_until)
+        self._valid_from = value
 
     @property
     def valid_until(self) -> str | None:
@@ -70,5 +76,7 @@ class Indicator(BaseEntity):
 
     @valid_until.setter
     def valid_until(self, value: str | None) -> None:
-        self._valid_until = require_optional_date_string(value, "valid_until")
+        value = require_optional_date_string(value, "valid_until")
+        require_date_order(self._valid_from, value)
+        self._valid_until = value
 

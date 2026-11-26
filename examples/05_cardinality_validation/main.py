@@ -11,7 +11,7 @@ def main() -> None:
     model = Model()
 
     # This organization is intentionally left without its expected contextual links.
-    model.add_entity(Organization(name="Organization without sector"))
+    model.add(Organization(name="Organization without sector"))
 
     report = model.validate()
 

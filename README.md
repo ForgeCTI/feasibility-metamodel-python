@@ -35,9 +35,9 @@ from metamodel.organization.entities.Sector import Sector
 from metamodel.organization.rels.operatesIn import operatesIn
 
 model = Model()
-org = model.add_entity(Organization(name="ExampleBank"))
-sector = model.add_entity(Sector(name="Finance", taxonomy_ref="sectors:finance"))
-model.add_relationship(operatesIn(org, sector))
+org = model.add(Organization(name="ExampleBank"))
+sector = model.add(Sector(name="Finance", taxonomy_ref="sectors:finance"))
+model.add(operatesIn(org, sector))
 
 report = model.validate()
 print(report.is_valid)

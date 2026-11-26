@@ -17,7 +17,7 @@ def parseScenario(data: dict, *, factory: Factory | None = None) -> Model:
         entity_type = entity_data.pop("type")
         external_id = entity_data.pop("id", None) or entity_data.pop("ref", None) or f"entity-{index}"
         entity = factory.create_entity(entity_type, **entity_data)
-        model.add_entity(entity)
+        model.add(entity)
         external_ids[external_id] = entity
         external_ids[entity.id] = entity
 
@@ -30,7 +30,7 @@ def parseScenario(data: dict, *, factory: Factory | None = None) -> Model:
         source = external_ids[source_ref]
         target = external_ids[target_ref]
         relationship = factory.create_relationship(relationship_type, source, target)
-        model.add_relationship(relationship)
+        model.add(relationship)
 
     return model
 
