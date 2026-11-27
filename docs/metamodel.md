@@ -14,7 +14,7 @@ The metamodel is organized into three interconnected sub-metamodels:
 | `infrastructure` | Represents the technical environment, resources, users, and information assets.                                         |
 | `cyberThreat`    | Represents CTI concepts such as threat actors, threats, campaigns, TTPs, vulnerabilities, indicators, and attack tools. |
 
-These sub-metamodels are connected through relationships. For example, a threat step can target an infrastructure resource, exploit a vulnerability, and compromise a security requirement associated with an organizational asset.
+These sub-metamodels are connected through relationships. The default Registry currently defines 39 entity classes and 62 relationship classes. For example, a threat step can target an infrastructure resource, exploit a vulnerability, and compromise a security requirement associated with an organizational asset.
 
 ## Package organization
 
@@ -48,7 +48,7 @@ Each relationship also has its own file.
 
 ```text
 src/metamodel/cyberThreat/rels/exploits.py
-src/metamodel/cyberThreat/rels/implementsTtp.py
+src/metamodel/cyberThreat/rels/implementsTTP.py
 src/metamodel/infrastructure/rels/exposesPort.py
 src/metamodel/organization/rels/operatesIn.py
 ```
@@ -63,7 +63,7 @@ The package follows strict naming conventions.
 | Entity class       | Exact metamodel entity name | `class AttackTool`             |
 | Relationship file  | Short lower camel case      | `targetsResource.py`           |
 | Relationship class | Short lower camel case      | `class targetsResource`        |
-| Python attributes  | Snake case                  | `taxonomy_ref`, `ip_addresses` |
+| Python attributes  | Snake case                  | `external_id`, `ip_addresses` |
 
 Entity names preserve acronyms when they are part of the metamodel.
 
@@ -160,7 +160,7 @@ Examples of cardinality constraints include:
 0..*
 ```
 
-Cardinality validation is performed at the model level because it requires knowledge of all entities and relationships in a scenario.
+A cardinality of `None` means that no constraint has been specified; it is distinct from an explicit `"0..*"` constraint. Cardinality validation is performed at the model level because it requires knowledge of all entities and relationships in a scenario.
 
 ```python
 report = model.validate()
@@ -197,8 +197,8 @@ It captures the organization, its sector, jurisdictional context, business requi
 | `basedIn`                | Connects an `Organization` to a `HomeCountry`.                     |
 | `hasBusinessRequirement` | Connects an `Organization` to a `BusinessRequirement`.             |
 | `countryPartOf`          | Connects a `HomeCountry` to an `InternationalBody`.                |
-| `drivesRequirement`      | Connects a `BusinessRequirement` to an `AssetSecurityRequirement`. |
-| `hasAssetRequirement`    | Connects an `Asset` to an `AssetSecurityRequirement`.              |
+| `drivesSecurityRequirement`      | Connects a `BusinessRequirement` to an `AssetSecurityRequirement`. |
+| `hasSecurityRequirement`    | Connects an `Asset` to an `AssetSecurityRequirement`.              |
 | `implementsRequirement`  | Connects an `AssetSecurityRequirement` to a `SecurityRequirement`. |
 
 The organization sub-metamodel is important because feasibility is not only technical. A threat may be technically possible but more or less relevant depending on the organization’s sector, assets, requirements, and exposure.
@@ -237,17 +237,18 @@ It captures nodes, users, ports, connections, applications, operating systems, c
 | `madeBy`                  | Connects an `Infrastructure` to a `Node`.                                             |
 | `usedBy`                  | Connects an `Infrastructure` to a `User`.                                             |
 | `hasNodeType`             | Connects a `Node` to a `NodeType`.                                                    |
-| `hosts`                   | Connects a `Node` to a `Resource`.                                                    |
+| `hostsResource`           | Connects a `Node` to a `Resource`.                                                    |
 | `exposesPort`             | Connects a `Node` to a `Port`.                                                        |
-| `sourceOf`                | Connects a source `Node` to a `Connection`.                                           |
-| `destinationOf`           | Connects a destination `Node` to a `Connection`.                                      |
-| `destinationPort`         | Connects a `Connection` to a destination `Port`.                                      |
+| `isSource`                | Connects a source `Node` to a `Connection`.                                           |
+| `isDestination`           | Connects a destination `Node` to a `Connection`.                                      |
+| `hasDestinationPort`         | Connects a `Connection` to a destination `Port`.                                      |
 | `runsOS`                  | Connects a `Node` to an `OSInstance`.                                                 |
 | `osInstanceOf`            | Connects an `OSInstance` to an `OS`.                                                  |
-| `runsApplication`         | Connects a `Node` to an `ApplicationInstance`.                                        |
+| `runsApp`         | Connects a `Node` to an `ApplicationInstance`.                                        |
 | `applicationInstanceOf`   | Connects an `ApplicationInstance` to an `Application`.                                |
-| `implementsCode`          | Connects a `Resource` or application instance to `Code`.                              |
-| `implementsAsset`         | Connects a `Resource` to an organizational `Asset`.                                   |
+| `resourceImplementsCode`    | Connects a `Resource` to `Code`.                              |
+| `applicationImplementsCode` | Connects an `ApplicationInstance` to `Code`.                   |
+| `resourceImplementsAsset`         | Connects a `Resource` to an organizational `Asset`.                                   |
 | `accessesInformation`     | Connects `Code` to `Information`.                                                     |
 | `listensOn`               | Connects `Code` to a `Port`.                                                          |
 | `hasInformationType`      | Connects `Information` to an `InformationType`.                                       |
@@ -255,7 +256,7 @@ It captures nodes, users, ports, connections, applications, operating systems, c
 | `launches`                | Connects a `User` to `Code`.                                                          |
 | `userAccessesInformation` | Connects a `User` to `Information`.                                                   |
 | `hasUserType`             | Connects a `User` to a `UserType`.                                                    |
-| `runsNode`                | Connects a `Node` to another `Node` when nested or virtualized execution is modelled. |
+| `runs`                | Connects a `Node` to another `Node` when nested or virtualized execution is modelled. |
 
 The infrastructure sub-metamodel is the main bridge between abstract CTI and concrete feasibility. It represents whether the technical conditions required by a threat step are present in the scenario.
 
@@ -293,30 +294,30 @@ It captures adversaries, threat actors, campaigns, threats, attack steps, TTPs, 
 | `relatedTo`                | Connects a `ThreatActor` to an `Adversary`.                       |
 | `aliasOf`                  | Connects one `ThreatActor` alias to another.                      |
 | `initiates`                | Connects a `ThreatActor` to a `Threat`.                           |
-| `hasExpertise`             | Connects a `ThreatActor` or tool to `Expertise`.                  |
+| `hasExpertise`             | Connects a `ThreatActor` to `Expertise`.                  |
 | `hasAdversaryType`         | Connects an `Adversary` to an `AdversaryType`.                    |
 | `threatPartOf`             | Connects a `Threat` to a `Campaign`.                              |
 | `startsWith`               | Connects a `Threat` to its first `ThreatStep`.                    |
 | `followedBy`               | Connects one `ThreatStep` to a following `ThreatStep`.            |
-| `implementsTtp`            | Connects a `ThreatStep` to a `TTP`.                               |
+| `implementsTTP`            | Connects a `ThreatStep` to a `TTP`.                               |
 | `exploits`                 | Connects a `ThreatStep` to a `Vulnerability`.                     |
 | `compromises`              | Connects a `ThreatStep` to an `AssetSecurityRequirement`.         |
 | `targetsResource`          | Connects a `ThreatStep` to a `Resource`.                          |
 | `employsTool`              | Connects a `ThreatStep` to an `AttackToolInstance`.               |
-| `ttpExploits`              | Connects a `TTP` to a `Vulnerability`.                            |
+| `exploitsVulnerability`              | Connects a `TTP` to a `Vulnerability`.                            |
 | `violates`                 | Connects a `TTP` to a `SecurityRequirement`.                      |
 | `targetsSector`            | Connects a `Campaign` to a `Sector`.                              |
 | `focusesOnCountry`         | Connects a `Campaign` to a `HomeCountry`.                         |
-| `targetsBody`              | Connects a `Campaign` to an `InternationalBody`.                  |
+| `targetsInternationalBody`              | Connects a `Campaign` to an `InternationalBody`.                  |
 | `producesIndicator`        | Connects an `AttackToolInstance` to an `Indicator`.               |
 | `associatedToTool`         | Connects an `Indicator` to an `AttackToolInstance`.               |
 | `toolInstanceOf`           | Connects an `AttackToolInstance` to an `AttackTool`.              |
-| `hasToolConfig`            | Connects an `AttackToolInstance` to an `AttackToolConfiguration`. |
+| `hasConfig`            | Connects an `AttackToolInstance` to an `AttackToolConfiguration`. |
 | `designedFor`              | Connects an `AttackToolInstance` to an `OSInstance`.              |
 | `deploysTool`              | Connects one `AttackToolInstance` to another deployed instance.   |
 | `deployedTo`               | Connects an `AttackToolInstance` to a `Node`.                     |
 | `requiresConfig`           | Connects an `AttackTool` to an `AttackToolConfiguration`.         |
-| `requiresExpertise`        | Connects an `AttackTool` to `Expertise`.                          |            |
+| `requiresExpertise`        | Connects an `AttackTool` to `Expertise`.                          |
 | `affectsApplication`       | Connects `SoftwareVulnerability` to an `Application`.             |
 | `affectsOS`                | Connects `SoftwareVulnerability` to an `OS`.                      |
 | `affectsCode`              | Connects `ConfigVulnerability` to `Code`.                         |
@@ -371,7 +372,7 @@ This allows a threat step to be evaluated against actual infrastructure conditio
 
 ## Taxonomies
 
-The metamodel supports taxonomy references for reusable controlled vocabularies.
+The repository includes taxonomy support for reusable controlled vocabularies. However, the current domain entity classes no longer expose a `taxonomy_ref` attribute, and `Model.validate()` does not validate taxonomy references.
 
 A taxonomy is not the same as a scenario instance.
 
@@ -383,36 +384,32 @@ Scenario instance:
   concrete object in a specific model
 ```
 
-For example, an `AttackTool` can reference an attack-tool taxonomy entry:
+For example, an `AttackTool` can be instantiated without a taxonomy reference:
 
 ```python
 from metamodel.cyberThreat.entities.AttackTool import AttackTool
 
-tool = AttackTool(
-    name="Cobalt Strike",
-    taxonomy_ref="attackTools:cobaltStrike",
-)
+tool = AttackTool(name="Cobalt Strike")
 ```
 
-A `TTP` can reference MITRE ATT&CK-like taxonomy entries:
+A `TTP` can record an external MITRE ATT&CK technique identifier in its `external_id` attribute:
 
 ```python
 from metamodel.cyberThreat.entities.TTP import TTP
 
 ttp = TTP(
     name="Exploit Public-Facing Application",
-    taxonomy_ref="mitreAttackEnterprise:T1190",
     external_id="T1190",
 )
 ```
 
-The recommended taxonomy reference format is:
+The taxonomy module uses references in the format:
 
 ```text
 <taxonomy>:<concept>
 ```
 
-Examples:
+Examples of taxonomy identifiers (not entity constructor arguments):
 
 ```text
 attackTools:cobaltStrike
@@ -462,7 +459,7 @@ model.add(entity)
 model.add(relationship)
 ```
 
-The model is responsible for whole-scenario operations such as validation and export.
+The model is responsible for whole-scenario operations such as validation and serialization. `Model.add()` accepts only entity and relationship classes defined in its Registry. To extend the default metamodel, new classes must also be listed in `registry_data.py`, which is loaded by `Registry.load_default()`.
 
 ```python
 report = model.validate()
@@ -474,12 +471,13 @@ The metamodel supports several validation levels.
 
 | Validation type        | Purpose                                                             |
 | ---------------------- | ------------------------------------------------------------------- |
-| Type validation        | Checks that relationships connect compatible entity types.          |
-| Reference validation   | Checks that relationships point to existing entities.               |
-| Cardinality validation | Checks relationship multiplicities.                                 |
-| Model validation       | Runs all relevant checks on a complete scenario.                    |
+| Type validation        | Checks registered classes and compatible relationship endpoint types. |
+| Reference validation   | Checks that relationship endpoints belong to the model.              |
+| Uniqueness validation  | Checks duplicate relationship IDs and directed connections.         |
+| Cardinality validation | Checks relationship multiplicities and reports isolated entities.   |
+| Model validation       | Coordinates validation and aggregates the results.                  |
 
-Validation returns a report.
+Model validation runs structural checks (references, types and uniqueness) first. Cardinality checks run only if no structural errors are found. Validation returns a report.
 
 ```python
 report = model.validate()
@@ -511,10 +509,10 @@ with relationships such as:
 ExampleBank operatesIn Finance
 ExampleBank manages Production infrastructure
 Production infrastructure madeBy public-web-01
-public-web-01 hosts Customer web portal
+public-web-01 hostsResource Customer web portal
 Example actor initiates Web portal compromise
 Web portal compromise startsWith Exploit public-facing web application
-Exploit public-facing web application implementsTtp Exploit Public-Facing Application
+Exploit public-facing web application implementsTTP Exploit Public-Facing Application
 Exploit public-facing web application exploits CVE-like vulnerability
 Exploit public-facing web application targetsResource Customer web portal
 ```
@@ -533,6 +531,52 @@ The metamodel follows these principles:
 | Extensibility               | Parsers, taxonomies, and adapters can be extended.                          |
 | Graph compatibility         | Models can be converted to graph representations such as NetworkX or Neo4j. |
 | Documentation alignment     | The package structure mirrors the conceptual metamodel.                     |
+
+## UML diagram generation
+
+The repository provides a Python script, `scripts/generate_uml.py`, for generating two complementary UML views of the metamodel:
+
+* **Metamodel Entity Structure:** represents the entities of the three sub-metamodels, their domain attributes, and inheritance hierarchies.
+* **Complete Metamodel Class Diagram:** additionally represents relationships between entities and their declared cardinalities.
+
+The diagrams are generated directly from the Python implementation. Entity classes, domain attributes, attribute types, inheritance hierarchies, relationships, and cardinalities are extracted from the registered classes.
+
+The reference file `docs/diagrams/metamodel_v2.drawio`, specifically its `Leonardo's touch` page, provides the class positions used to generate the complete diagram. Relationship paths are computed independently of the connectors defined in the reference file.
+
+### Generating the diagrams
+
+Run the following command from the repository root:
+
+```bash
+python scripts/generate_uml.py --src src --reference docs/diagrams/metamodel_v2.drawio --output-dir docs/diagrams
+```
+
+The generator uses only Python standard-library modules and does not require additional third-party dependencies.
+
+The following files are generated in `docs/diagrams/`:
+
+| File | Description |
+| --- | --- |
+| `metamodel_entities.drawio` | Editable entity structure diagram. |
+| `metamodel_entities.svg` | Vector representation of the entity structure. |
+| `metamodel_complete.drawio` | Editable complete class diagram. |
+| `metamodel_complete.svg` | Vector representation of the complete class diagram. |
+
+### Keeping the diagrams up to date
+
+When extending or modifying the metamodel:
+
+1. Update the Python implementation and register any new entity or relationship classes in `src/metamodel/registry_data.py`.
+2. Update the reference diagram `metamodel_v2.drawio` to maintain consistency with the conceptual metamodel.
+3. When adding or renaming an entity, ensure that a uniquely named corresponding class is present in the `Leonardo's touch` page, with sufficient space around neighbouring classes.
+4. Run the UML generation script again.
+5. Review the generated diagrams for correctness and readability.
+
+Changes to domain attributes, attribute types, inheritance hierarchies, relationships, and cardinalities are extracted from the Python implementation and do not require manual editing of the generated diagrams.
+
+Although new relationships are extracted directly from the registered Python classes, the reference diagram should also be updated to remain consistent with the conceptual metamodel.
+
+The generator is designed around the current metamodel structure. Significant extensions may require adjustments to the reference layout or to the generation algorithm, particularly when class dimensions, relationship density, or domain organization change.
 
 ## Next steps
 

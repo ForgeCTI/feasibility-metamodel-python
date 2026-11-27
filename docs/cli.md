@@ -95,7 +95,6 @@ entities:
   - id: sector1
     type: Sector
     name: Finance
-    taxonomy_ref: sectors:finance
 
 relationships:
   - id: rel1
@@ -116,22 +115,16 @@ The `validate` command loads a scenario and runs model validation.
 metamodel validate scenario.yaml
 ```
 
-Example output:
+The minimal scenario above can be loaded successfully, but it does not satisfy all mandatory cardinalities. Its validation output is:
 
 ```text
-Valid: True
+[error] cardinalityValidator: manages: Organization 'ExampleBank' has 0 target relationship(s); expected 1..*.
+[error] cardinalityValidator: hasBusinessRequirement: Organization 'ExampleBank' has 0 target relationship(s); expected 1..*.
 ```
 
-If validation fails, the command prints validation errors.
+The command prints each validation message with its severity and validator name. It returns exit code `0` when the report contains no errors (including when only warnings are present), and `1` when validation errors are reported. A valid model without warnings produces no output.
 
-Example:
-
-```text
-Valid: False
-Errors:
-- Relationship operatesIn references unknown target entity sector1.
-- Cardinality violation: Organization must operate in at least one Sector.
-```
+These exit codes describe model validation after successful loading; parsing errors may occur before validation.
 
 Use this command before exporting or analyzing a scenario.
 
@@ -190,19 +183,27 @@ Example output:
 {
   "entities": [
     {
-      "id": "generated-internal-id",
+      "id": "generated-organization-id",
       "type": "Organization",
       "name": "ExampleBank",
       "description": null,
-      "source": null
+      "source": null,
+      "legal_name": null,
+      "short_name": null,
+      "website": null,
+      "organization_size": null,
+      "criticality": null,
+      "maturity_level": null
     },
     {
-      "id": "generated-internal-id",
+      "id": "generated-sector-id",
       "type": "Sector",
       "name": "Finance",
       "description": null,
       "source": null,
-      "taxonomy_ref": "sectors:finance"
+      "sector_code": null,
+      "sector_standard": null,
+      "sector_standard_version": null
     }
   ],
   "relationships": [

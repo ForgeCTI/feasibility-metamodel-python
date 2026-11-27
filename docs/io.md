@@ -153,8 +153,7 @@ Example:
     {
       "id": "sector1",
       "type": "Sector",
-      "name": "Finance",
-      "taxonomy_ref": "sectors:finance"
+      "name": "Finance"
     }
   ],
   "relationships": [
@@ -203,7 +202,6 @@ entities:
   - id: sector1
     type: Sector
     name: Finance
-    taxonomy_ref: sectors:finance
 
 relationships:
   - id: rel1
@@ -246,9 +244,9 @@ relationships.csv
 Example `entities.csv`:
 
 ```csv
-id,type,name,description,taxonomy_ref
-org1,Organization,ExampleBank,Example organization,
-sector1,Sector,Finance,,sectors:finance
+id,type,name,description
+org1,Organization,ExampleBank,Example organization
+sector1,Sector,Finance,
 ```
 
 Example `relationships.csv`:
@@ -484,7 +482,6 @@ A serialized scenario should include:
 * entity attributes;
 * relationship endpoints;
 * type names;
-* optional taxonomy references;
 * optional source attributes on entities.
 
 ## Recommended case-study layout
@@ -577,7 +574,7 @@ This is important because file-based scenarios can contain:
 * misspelled entity types;
 * misspelled relationship types;
 * invalid relationship endpoints;
-* incomplete cardinalities;
+* violations of declared cardinalities, including missing mandatory relationships;
 * unsupported STIX mappings;
 * ambiguous draw.io labels.
 
@@ -728,5 +725,5 @@ Continue with:
 
 * [Adapters](adapters.md) to export parsed and validated models;
 * [Validation](validation.md) to understand model correctness checks;
-* [Taxonomies](taxonomies.md) to understand taxonomy-backed entities;
+* [Taxonomies](taxonomies.md) to explore the standalone taxonomy utilities;
 * [Examples](examples/organizationScenario.md) for runnable examples.

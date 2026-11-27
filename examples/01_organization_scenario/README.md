@@ -14,4 +14,10 @@ python examples/01_organization_scenario/main.py
 
 ## Notes
 
-The script is intentionally compact and focuses on one modelling concept. It can be extended with additional entities, relationships, validators, or exports.
+This example focuses on the construction of a partial organization-level scenario and does not aim to satisfy every mandatory relationship cardinality defined by the complete metamodel.
+
+Consequently, `Model.validate()` reports cardinality violations and the model is considered formally invalid (`Valid: False`).
+
+This behavior is expected under the current strict validation rules and does not prevent the example from demonstrating entity and relationship instantiation.
+
+For examples specifically designed to demonstrate validation outcomes, see `13_valid_model`, `14_warning_model`, and `15_invalid_model`.
