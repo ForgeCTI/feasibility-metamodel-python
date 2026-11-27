@@ -44,7 +44,7 @@ For example:
 src/metamodel/cyberThreat/entities/AttackTool.py
 src/metamodel/cyberThreat/entities/TTP.py
 src/metamodel/cyberThreat/rels/exploits.py
-src/metamodel/cyberThreat/rels/implementsTtp.py
+src/metamodel/cyberThreat/rels/implementsTTP.py
 ```
 
 ## Main features
@@ -88,10 +88,14 @@ The package includes validators for checking that instantiated scenarios respect
 
 Validation includes:
 
+* checks that entity and relationship classes are registered in the metamodel;
 * relationship source and target type checks;
 * missing reference checks;
-* cardinality checks;
+* duplicate relationship identifier and connection checks;
+* cardinality checks and isolated-entity warnings;
 * whole-model validation reports.
+
+`Model.validate()` first aggregates structural checks (references, types and uniqueness). Cardinality checks run only if no structural errors were found. Errors invalidate a model; warnings do not.
 
 ### Taxonomy integration
 
@@ -110,15 +114,7 @@ Taxonomies can be used for concepts such as:
 * security requirements;
 * platforms.
 
-For example, a scenario-specific `AttackTool` can reference a taxonomy concept:
-
-```yaml
-type: AttackTool
-name: Cobalt Strike
-taxonomy_ref: attackTools:cobaltStrike
-```
-
-This keeps reusable reference knowledge separate from scenario-specific instances.
+Taxonomy resources remain separate from scenario-specific instances. After the T2 simplification, domain entities no longer expose the `taxonomy_ref` attribute, and taxonomy references are not checked by `Model.validate()`.
 
 ### I/O support
 
@@ -184,38 +180,20 @@ pip install -e ".[all]"
 ```python
 from metamodel.core.Model import Model
 
-from metamodel.organization.entities.Organization import Organization
-from metamodel.organization.entities.Sector import Sector
-from metamodel.organization.rels.operatesIn import operatesIn
+from metamodel.cyberThreat.entities.ThreatActor import ThreatActor
+from metamodel.cyberThreat.entities.Expertise import Expertise
+from metamodel.cyberThreat.rels.hasExpertise import hasExpertise
 
 model = Model()
 
-organization = model.add(
-    Organization(
-        name="ExampleBank",
-        description="Example financial organization",
-        source="Example scenario"
-    )
-)
-
-sector = model.add(
-    Sector(
-        name="Finance",
-        taxonomy_ref="sectors:finance"
-    )
-)
-
-model.add(
-    operatesIn(
-        source_entity=organization,
-        target_entity=sector
-    )
-)
+actor = model.add(ThreatActor(name="Example threat actor"))
+expertise = model.add(Expertise(name="Social engineering"))
+model.add(hasExpertise(actor, expertise))
 
 report = model.validate()
 
-print(report.is_valid)
-print(report.errors)
+print(report.is_valid)  # True
+print(report.errors)    # []
 ```
 
 ## Typical workflow
@@ -225,7 +203,7 @@ A common usage workflow is:
 ```text
 1. Define or load a scenario.
 2. Instantiate entities and relationships.
-3. Validate relationship types, references, and cardinalities.
+3. Validate registered types, references, relationship uniqueness, and cardinalities.
 4. Export the scenario to another representation, such as NetworkX or Neo4j.
 5. Use the resulting model for feasibility analysis or graph-based reasoning.
 ```

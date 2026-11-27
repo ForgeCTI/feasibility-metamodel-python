@@ -180,7 +180,6 @@ Recommended node attributes:
 | `name`            | Human-readable name.                                                             |
 | `description`     | Optional description.                                                            |
 | `source`          | Optional traceability source.                                                    |
-| `taxonomy_ref`    | Optional taxonomy reference, where available.                                    |
 | domain attributes | Entity-specific attributes such as `cvss_score`, `ip_addresses`, or `tool_type`. |
 
 Example node payload:
@@ -190,7 +189,6 @@ Example node payload:
   "id": "generated-id",
   "type": "AttackTool",
   "name": "Cobalt Strike",
-  "taxonomy_ref": "attackTools:cobaltStrike",
   "tool_type": "command_and_control"
 }
 ```
@@ -340,7 +338,7 @@ The relationship type can be upper snake case:
 ```text
 operatesIn      → OPERATES_IN
 targetsResource → TARGETS_RESOURCE
-implementsTtp   → IMPLEMENTS_TTP
+implementsTTP   → IMPLEMENTS_TTP
 ```
 
 Example graph pattern:
@@ -468,7 +466,6 @@ Adapters should follow these rules.
 | Preserve identifiers         | Internal IDs should be included in exported nodes and edges. |
 | Preserve types               | Entity and relationship type names should be exported.       |
 | Preserve attributes          | Domain attributes should be included where possible.         |
-| Preserve taxonomy references | `taxonomy_ref` should be exported when present.              |
 | Validate first               | Export should fail or warn when the model is invalid.        |
 | Keep dependencies optional   | Adapter dependencies should be installed only when needed.   |
 
@@ -667,7 +664,6 @@ Before using an adapter:
 * Does the model contain the expected entities?
 * Does the model contain the expected relationships?
 * Does `model.validate()` return `is_valid = True`?
-* Are taxonomy references preserved?
 * Are STIX generic objects preserved?
 * Are generated outputs written under `output/`?
 * Are credentials or secrets excluded from version control?
@@ -678,5 +674,4 @@ Continue with:
 
 * [I/O](io.md) to understand how models are loaded from files and CTI sources;
 * [Validation](validation.md) to validate models before export;
-* [Taxonomies](taxonomies.md) to understand taxonomy references in exported graphs;
 * [Quickstart](quickstart.md) for a complete executable scenario.

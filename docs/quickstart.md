@@ -18,7 +18,7 @@ In this quickstart, we model a simple CTI feasibility scenario:
 An organization operates in the finance sector.
 
 The organization manages an infrastructure composed of a public-facing web server.
-The web server exposes an HTTPS port and runs a web application.
+The web server exposes an HTTPS port and hosts a web application resource.
 
 A threat actor initiates a threat composed of a threat step.
 The threat step exploits a vulnerability and targets the web application resource.
@@ -60,7 +60,7 @@ from metamodel.infrastructure.rels.manages import manages
 from metamodel.infrastructure.rels.madeBy import madeBy
 from metamodel.infrastructure.rels.hasNodeType import hasNodeType
 from metamodel.infrastructure.rels.exposesPort import exposesPort
-from metamodel.infrastructure.rels.hosts import hosts
+from metamodel.infrastructure.rels.hostsResource import hostsResource
 
 from metamodel.cyberThreat.entities.ThreatActor import ThreatActor
 from metamodel.cyberThreat.entities.Threat import Threat
@@ -71,7 +71,7 @@ from metamodel.cyberThreat.rels.initiates import initiates
 from metamodel.cyberThreat.rels.startsWith import startsWith
 from metamodel.cyberThreat.rels.exploits import exploits
 from metamodel.cyberThreat.rels.targetsResource import targetsResource
-from metamodel.cyberThreat.rels.implementsTtp import implementsTtp
+from metamodel.cyberThreat.rels.implementsTTP import implementsTTP
 
 
 def build_model() -> Model:
@@ -94,7 +94,6 @@ def build_model() -> Model:
     sector = model.add(
         Sector(
             name="Finance",
-            taxonomy_ref="sectors:finance",
         )
     )
 
@@ -122,7 +121,6 @@ def build_model() -> Model:
     web_server_type = model.add(
         NodeType(
             name="Web server",
-            taxonomy_ref="nodeTypes:webServer",
             category="server",
         )
     )
@@ -132,8 +130,6 @@ def build_model() -> Model:
             name="public-web-01",
             hostname="public-web-01.examplebank.test",
             ip_addresses=["203.0.113.10"],
-            exposure="public",
-            criticality="high",
             source="Quickstart scenario",
         )
     )
@@ -145,7 +141,6 @@ def build_model() -> Model:
             protocol="tcp",
             service_name="https",
             state="open",
-            exposure="public",
         )
     )
 
@@ -153,9 +148,6 @@ def build_model() -> Model:
         Resource(
             name="Customer web portal",
             description="Public-facing customer web application.",
-            resource_type="web_application",
-            criticality="high",
-            sensitivity="confidential",
             source="Quickstart scenario",
         )
     )
@@ -189,7 +181,7 @@ def build_model() -> Model:
     )
 
     model.add(
-        hosts(
+        hostsResource(
             source_entity=web_server,
             target_entity=web_application,
         )
@@ -215,7 +207,6 @@ def build_model() -> Model:
             name="Web portal compromise",
             description="Threat scenario targeting the public web portal.",
             objective="Gain unauthorized access to customer data.",
-            status="hypothetical",
             source="Quickstart scenario",
         )
     )
@@ -241,7 +232,6 @@ def build_model() -> Model:
         TTP(
             name="Exploit Public-Facing Application",
             description="Adversaries exploit a public-facing application.",
-            taxonomy_ref="mitreAttackEnterprise:T1190",
             external_id="T1190",
             tactic="initial_access",
             technique="Exploit Public-Facing Application",
@@ -256,7 +246,6 @@ def build_model() -> Model:
             external_id="CVE-2099-0001",
             severity="high",
             cvss_score=8.5,
-            taxonomy_ref="cve:CVE-2099-0001",
             source="Quickstart scenario",
         )
     )
@@ -276,7 +265,7 @@ def build_model() -> Model:
     )
 
     model.add(
-        implementsTtp(
+        implementsTTP(
             source_entity=threat_step,
             target_entity=ttp,
         )
@@ -313,7 +302,12 @@ def main() -> None:
     if report.errors:
         print("Validation errors:")
         for error in report.errors:
-            print(f"- {error}")
+            print(f"- {error.message}")
+
+    if report.warnings:
+        print("Validation warnings:")
+        for warning in report.warnings:
+            print(f"- {warning.message}")
 
     print("\nEntities:")
     for entity in model.entities:
@@ -344,8 +338,19 @@ You should see output similar to:
 ```text
 CTI Feasibility Metamodel quickstart
 Entities: 12
-Relationships: 10
-Valid: True
+Relationships: 11
+Valid: False
+Validation errors:
+- hasBusinessRequirement: Organization 'ExampleBank' has 0 target relationship(s); expected 1..*.
+- runsOS: Node 'public-web-01' has 0 target relationship(s); expected 1.
+- threatPartOf: Threat 'Web portal compromise' has 0 target relationship(s); expected 1.
+- hasExpertise: ThreatActor 'Example financially motivated actor' has 0 target relationship(s); expected 1.
+- exploitsVulnerability: Vulnerability 'Example web application vulnerability' has 0 source relationship(s); expected 1..*.
+- compromises: ThreatStep 'Exploit public-facing web application' has 0 target relationship(s); expected 1.
+- listensOn: Port 'HTTPS' has 0 source relationship(s); expected 1.
+- usedBy: Infrastructure 'ExampleBank production infrastructure' has 0 target relationship(s); expected 1..*.
+- violates: TTP 'Exploit Public-Facing Application' has 0 target relationship(s); expected 1..*.
+- hasDestinationPort: Port 'HTTPS' has 0 source relationship(s); expected 1..*.
 
 Entities:
 - Organization: ExampleBank
@@ -367,13 +372,15 @@ Relationships:
 - madeBy: ExampleBank production infrastructure -> public-web-01
 - hasNodeType: public-web-01 -> Web server
 - exposesPort: public-web-01 -> HTTPS
-- hosts: public-web-01 -> Customer web portal
+- hostsResource: public-web-01 -> Customer web portal
 - initiates: Example financially motivated actor -> Web portal compromise
 - startsWith: Web portal compromise -> Exploit public-facing web application
-- implementsTtp: Exploit public-facing web application -> Exploit Public-Facing Application
+- implementsTTP: Exploit public-facing web application -> Exploit Public-Facing Application
 - exploits: Exploit public-facing web application -> Example web application vulnerability
 - targetsResource: Exploit public-facing web application -> Customer web portal
 ```
+
+The model is intentionally partial: it can be constructed successfully, but formal validation reports errors because some mandatory relationships are missing. The cardinality validator checks minimum cardinalities even when no relationship of a given type is present. Warnings alone do not make a model invalid. See [Validation](validation.md) for details.
 
 The exact output may vary depending on the validation rules and entity attributes currently implemented.
 
@@ -425,10 +432,10 @@ organization.criticality = "critical"
 Invalid values raise exceptions:
 
 ```python
-organization.criticality = "very critical"
+organization.criticality = 123
 ```
 
-This raises a `ValueError` if `very critical` is not an allowed value.
+This raises a `TypeError` because `criticality` must be a string or `None`.
 
 Relationships also check source and target types. For example, `operatesIn` must connect:
 
@@ -441,38 +448,6 @@ It should not connect:
 ```text
 Node → Sector
 ```
-
-## Taxonomy references
-
-Some entities can reference reusable taxonomy concepts.
-
-Example:
-
-```python
-ttp = TTP(
-    name="Exploit Public-Facing Application",
-    taxonomy_ref="mitreAttackEnterprise:T1190",
-    external_id="T1190",
-)
-```
-
-The recommended format is:
-
-```text
-<taxonomy>:<concept>
-```
-
-Examples:
-
-```text
-mitreAttackEnterprise:T1190
-attackTools:cobaltStrike
-sectors:finance
-nodeTypes:webServer
-cve:CVE-2099-0001
-```
-
-Taxonomy references allow the scenario to connect local model instances to reusable controlled vocabularies.
 
 ## Exporting to NetworkX
 
@@ -512,7 +487,6 @@ entities:
   - id: sector1
     type: Sector
     name: Finance
-    taxonomy_ref: sectors:finance
 
 relationships:
   - id: rel1
@@ -528,7 +502,6 @@ File-based scenarios are useful for repeatable case studies and automated valida
 After this quickstart, continue with:
 
 * [Metamodel](metamodel.md) for the full conceptual structure;
-* [Taxonomies](taxonomies.md) for reusable controlled vocabularies;
 * [Validation](validation.md) for model correctness checks;
 * [I/O](io.md) for file-based scenarios and parsers;
 * [Adapters](adapters.md) for NetworkX, Neo4j, and other integrations;

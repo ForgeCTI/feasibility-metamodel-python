@@ -2,6 +2,8 @@ import pytest
 
 from metamodel.core.Model import Model
 from metamodel.core.Registry import Registry
+from metamodel.core.BaseEntity import BaseEntity
+from metamodel.core.BaseRelationship import BaseRelationship
 
 from metamodel.validation.referenceValidator import validateReferences
 from metamodel.validation.typeValidator import validateTypes
@@ -31,6 +33,7 @@ from metamodel.infrastructure.rels.hasNodeType import hasNodeType
 from metamodel.cyberThreat.rels.exploits import exploits
 from metamodel.cyberThreat.rels.exploitsVulnerability import exploitsVulnerability
 from metamodel.cyberThreat.rels.hasExpertise import hasExpertise
+from metamodel.cyberThreat.rels.aliasOf import aliasOf
 
 
 # Reference Validator tests
@@ -549,4 +552,138 @@ def test_structural_errors_skip_cardinalities_with_real_registry():
             "exploits has invalid target type Node.",
         ),
     }
+    assert report.warnings == []
+
+
+
+def test_model_validation_accumulates_structural_errors():
+    class UnknownEntity(BaseEntity):
+        pass
+    class UnknownRelationship(BaseRelationship):
+        source_type = ThreatActor
+        target_type = Sector
+        source_cardinality = "0..*"
+        target_cardinality = "0..*"
+    model = Model()
+    actor = model.add(ThreatActor(name="Actor"))
+    expertise = model.add(Expertise(name="Expertise"))
+    sector = model.add(Sector(name="Sector"))
+    # Error 1: unregistered entity.
+    unknown_entity = UnknownEntity(name="Unknown")
+    model._entities[unknown_entity.id] = unknown_entity
+    # Error 2: invalid target type.
+    invalid_type = model.add(hasExpertise(actor, expertise))
+    invalid_type._target_entity = sector
+    # Errors 3 and 4: both endpoints are outside the model.
+    invalid_reference = operatesIn(
+        Organization(name="External Organization"),
+        Sector(name="External Sector"),
+    )
+    model._relationships.append(invalid_reference)
+    # Error 5: unregistered relationship.
+    unknown_rel = UnknownRelationship(actor, sector)
+    model._relationships.append(unknown_rel)
+    report = model.validate()
+    expected_errors = {
+        (
+            "typeValidator",
+            "Unregistered entity type: UnknownEntity.",
+        ),
+        (
+            "typeValidator",
+            "hasExpertise has invalid target type Sector.",
+        ),
+        (
+            "typeValidator",
+            "Unregistered relationship type: UnknownRelationship.",
+        ),
+        (
+            "referenceValidator",
+            f"Relationship {invalid_reference.id} "
+            "has a source entity not present in the model.",
+        ),
+        (
+            "referenceValidator",
+            f"Relationship {invalid_reference.id} "
+            "has a target entity not present in the model.",
+        ),
+    }
+
+    assert not report.is_valid
+    assert len(report.errors) == 5
+    assert {
+        (error.validator, error.message)
+        for error in report.errors
+    } == expected_errors
+    assert report.warnings == []
+
+
+@pytest.mark.parametrize(
+    "duplicate_kind",
+    ["same_instance", "same_endpoints"],
+)
+def test_model_validation_rejects_duplicate_relationships(duplicate_kind):
+    model = Model()
+
+    actor_a = model.add(ThreatActor(name="Actor A"))
+    actor_b = model.add(ThreatActor(name="Actor B"))
+    expertise = model.add(Expertise(name="Expertise"))
+
+    # Satisfy mandatory hasExpertise cardinalities.
+    model.add(hasExpertise(actor_a, expertise))
+    model.add(hasExpertise(actor_b, expertise))
+
+    relationship = model.add(aliasOf(actor_a, actor_b))
+
+    # Intentionally bypass Model.add().
+    if duplicate_kind == "same_instance":
+        duplicate = relationship
+    else:
+        duplicate = aliasOf(actor_a, actor_b)
+
+    model._relationships.append(duplicate)
+
+    report = model.validate()
+
+    assert not report.is_valid
+    assert len(report.errors) == 1
+    assert report.errors[0].validator == "uniquenessValidator"
+    assert report.warnings == []
+
+
+# Registration validation tests
+
+
+def test_validation_rejects_unregistered_entity():
+    class UnknownEntity(BaseEntity):
+        pass
+    model = Model()
+    entity = UnknownEntity(name="Unknown entity")
+    # Intentionally bypass Model.add().
+    model._entities[entity.id] = entity
+    report = model.validate()
+    assert not report.is_valid
+    assert len(report.errors) == 1
+    assert report.errors[0].validator == "typeValidator"
+    assert "UnknownEntity" in report.errors[0].message
+    assert report.warnings == []
+
+
+def test_validation_rejects_unregistered_relationship():
+    class UnknownRelationship(BaseRelationship):
+        source_type = Application
+        target_type = Application
+        source_cardinality = "0..*"
+        target_cardinality = "0..*"
+    model = Model()
+    app1 = model.add(Application(name="App 1"))
+    app2 = model.add(Application(name="App 2"))
+    # Intentionally bypass Model.add().
+    relationship = UnknownRelationship(app1, app2)
+    model._relationships.append(relationship)
+    report = model.validate()
+    assert not report.is_valid
+    assert len(report.errors) == 1
+    assert report.errors[0].validator == "typeValidator"
+    assert "UnknownRelationship" in report.errors[0].message
     assert report.warnings == []

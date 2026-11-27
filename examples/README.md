@@ -20,6 +20,10 @@ Each example is self-contained in its own sub-folder. This makes it possible to 
 | `10_json_scenario_import` | Load a scenario from JSON. |
 | `11_drawio_instantiation` | Instantiate a model from a draw.io file. |
 | `12_stix_parser` | Parse STIX CTI data into metamodel entities. |
+| `13_valid_model` | Demonstrate a valid model satisfying mandatory cardinalities without errors or warnings. |
+| `14_warning_model` | Demonstrate a valid model containing an isolated entity that generates a warning. |
+| `15_invalid_model` | Demonstrate reference and type validation errors in intentionally corrupted relationships. |
+
 
 ## How to run
 
