@@ -1,6 +1,7 @@
 import pytest
 import importlib
 from metamodel.core.Model import Model
+from metamodel.core.BaseEntity import BaseEntity
 from metamodel.core.BaseRelationship import BaseRelationship
 from metamodel.core.Cardinality import Cardinality
 from metamodel.core.Registry import Registry
@@ -213,7 +214,6 @@ def test_relationships_list_missing_type():
 def test_relationship_wrong_source_type():
     sec1 = Sector(name="Finance")
     sec2 = Sector(name="Other")
-
     with pytest.raises(TypeError):
         operatesIn(sec1, sec2)
 
@@ -221,7 +221,6 @@ def test_relationship_wrong_source_type():
 def test_relationship_wrong_target_type():
     org1 = Organization(name="Example1")
     org2 = Organization(name="Example2")
-
     with pytest.raises(TypeError):
         operatesIn(org1, org2)
 
@@ -330,13 +329,10 @@ def test_update_relationship_rejects_missing_entity():
     model = Model()
     org = model.add(Organization(name="Organization 1"))
     sector = model.add(Sector(name="Finance"))
-
     other_org = Organization(name="External organization")
     rel = model.add(operatesIn(org, sector))
-
     with pytest.raises(ValueError):
         model.update_relationship(rel, source_entity=other_org)
-
     assert rel.source_entity is org
     assert rel.target_entity is sector
     assert model.relationships == [rel]
@@ -347,15 +343,31 @@ def test_update_relationship_rejects_missing_relationship():
     org = model.add(Organization(name="Example"))
     sector = model.add(Sector(name="Finance"))
     other_org = model.add(Organization(name="Other organization"))
-
     rel = operatesIn(org, sector)
-
     with pytest.raises(ValueError):
         model.update_relationship(rel, source_entity=other_org)
-
     assert rel.source_entity is org
     assert rel.target_entity is sector
     assert model.relationships == []
+
+
+def test_reject_unregistered_entity():
+    class UnknownEntity(BaseEntity):
+        pass
+    model = Model()
+    with pytest.raises(ValueError, match="not registered"):
+        model.add(UnknownEntity(name="Unknown"))
+
+
+def test_reject_unregistered_relationship():
+    class UnknownRelationship(BaseRelationship):
+        source_type = Organization
+        target_type = Organization
+    model = Model()
+    app1 = model.add(Organization(name="Org 1"))
+    app2 = model.add(Organization(name="Org 2"))
+    with pytest.raises(ValueError, match="not registered"):
+        model.add(UnknownRelationship(app1, app2))
 
 
 def test_model_to_dict():

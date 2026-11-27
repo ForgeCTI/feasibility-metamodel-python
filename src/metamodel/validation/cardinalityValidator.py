@@ -24,10 +24,6 @@ def validateCardinalities(model) -> ValidationReport:
 
     relationship_classes = Registry.load_default().get_relationship_classes()
 
-    for rel_cls in relationships_by_type:
-        if rel_cls not in relationship_classes:
-            relationship_classes.append(rel_cls)
-
     for rel_cls in relationship_classes:
         rels = relationships_by_type.get(rel_cls, [])
 

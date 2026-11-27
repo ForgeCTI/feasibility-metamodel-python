@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from metamodel.core.BaseEntity import BaseEntity
 from metamodel.core.BaseRelationship import BaseRelationship
+from metamodel.core.Registry import Registry
+from metamodel.core.Exceptions import RegistryError
 
 
 class Model:
@@ -10,6 +12,7 @@ class Model:
     def __init__(self) -> None:
         self._entities: dict[str, BaseEntity] = {}
         self._relationships: list[BaseRelationship] = []
+        self._registry = Registry.load_default()
 
     @property
     def entities(self) -> list[BaseEntity]:
@@ -23,11 +26,29 @@ class Model:
         """Add an entity or relationship to the model."""
 
         if isinstance(obj, BaseEntity):
+            try:
+                registered_class = self._registry.get_entity_class(obj.type)
+            except RegistryError:
+                registered_class = None
+
+            if type(obj) is not registered_class:
+                raise ValueError(
+                    f"entity type {obj.type} is not registered in the metamodel."
+                )
             if obj.id in self._entities:
                 raise ValueError(f"entity with id {obj.id} already exists.")
             self._entities[obj.id] = obj
             return obj
         if isinstance(obj, BaseRelationship):
+            try:
+                registered_class = self._registry.get_relationship_class(obj.type)
+            except RegistryError:
+                registered_class = None
+
+            if type(obj) is not registered_class:
+                raise ValueError(
+                    f"relationship type {obj.type} is not registered in the metamodel."
+                )
             for rel in self._relationships:
                 if rel.id == obj.id:
                     raise ValueError(f"relationship with id {obj.id} already exists.")
